@@ -283,7 +283,7 @@ function renderSynergies() {
               <img src="${pc.img}" alt="${pc.name}" style="width:28px;height:28px;object-fit:cover;border-radius:4px;">
               <strong>${pc.name}</strong>
             </div>
-            <div style="font-size:12px;margin-top:2px;color:#555;">
+            <div style="font-size:12px;margin-top:2px;color:#FFFFFF;">
             ${(() => {
               const desc = state.synergyDescriptions[b];
               if (typeof desc === "string") return desc;
