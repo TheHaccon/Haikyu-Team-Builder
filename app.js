@@ -267,44 +267,35 @@ function renderSynergies() {
     }
 
     if (cat === "stats") {
-      const pairs = state.synergyPairs?.[b] || [];
+      const descObj = state.synergyDescriptions[b];
       let renderedAny = false;
-      for (const [a, c] of pairs) {
-        const pa = pickedMap.get(a.toLowerCase());
-        const pc = pickedMap.get(c.toLowerCase());
-        if (pa && pc) {
+      if (descObj && typeof descObj === "object") {
+        const matchedPlayers = Object.keys(descObj)
+          .map(name => state.players.find(p => p.name === name))
+          .filter(p => p && pickedMap.has(baseName(p.name)));
+        if (matchedPlayers.length >= 2) {
           renderedAny = true;
           const li = document.createElement("li");
           li.innerHTML = `
-            <div style="display:flex;align-items:center;gap:8px;">
-              <img src="${pa.img}" alt="${pa.name}" style="width:28px;height:28px;object-fit:cover;border-radius:4px;">
-              <strong>${pa.name}</strong>
-              <span>×</span>
-              <img src="${pc.img}" alt="${pc.name}" style="width:28px;height:28px;object-fit:cover;border-radius:4px;">
-              <strong>${pc.name}</strong>
-            </div>
-            <div style="font-size:12px;margin-top:2px;color:#FFFFFF;">
-            ${(() => {
-              const desc = state.synergyDescriptions[b];
-              if (typeof desc === "string") return desc;
-              if (typeof desc === "object") {
-                const descA = desc[pa?.name] || "";
-                const descB = desc[pc?.name] || "";
-                return `
-                <div><strong>${pa.name}</strong>: ${descA}</div>
-                <div><strong>${pc.name}</strong>: ${descB}</div>
-                `;
-              }
-              return "";
-            })()}
-            </div>
-            `;
+          <div style="font-weight:bold;margin-bottom:4px;text-decoration: underline;">${b}</div>
+        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+          ${matchedPlayers.map(p => `
+            <img src="${p.img}" alt="${p.name}" style="width:28px;height:28px;object-fit:cover;border-radius:4px;">
+            <strong>${p.name}</strong>
+          `).join('<span>×</span>')}
+        </div>
+        <div style="font-size:12px;margin-top:2px;color:#FFFFFF;">
+          ${matchedPlayers.map(p => `
+            <div><strong>${p.name}</strong>: ${descObj[p.name]}</div>
+          `).join("")}
+        </div>
+      `;
           buffsList.appendChild(li);
         }
       }
       if (!renderedAny) {
         const li = document.createElement("li");
-        li.innerHTML = `<strong>${b}</strong> — ${state.synergyDescriptions[b]||""}`;
+        li.innerHTML = `<strong>${b}</strong> — ${typeof state.synergyDescriptions[b] === "string" ? state.synergyDescriptions[b] : "(description missing)"}`;
         buffsList.appendChild(li);
       }
     }
