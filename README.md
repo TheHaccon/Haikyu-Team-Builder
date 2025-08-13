@@ -9,3 +9,6 @@
 
 build ur team with power/ training / potentials
 to see what would work best and how maxout you can get.
+add custom stats.
+add setter ability team up.
+multiple teamup creation
