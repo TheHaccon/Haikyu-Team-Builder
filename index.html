@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Team Builder</title>
+</head>
+<body>
+  <header>
+    <h1>Haikyu Team Builder</h1>
+    <div id="toolbar-top">
+      <label for="serverSelect">Server:</label>
+      <select id="serverSelect" aria-label="Choose server">
+        <option value="japan">Japan</option>
+        <option value="global">Global</option>
+      </select>
+    </div>
+    <p id="hint">Tip: click a role to open the gallery, right click to clear a slot.</p>
+  </header>
+
+  <main id="layout">
+    <section id="main">
+      <div id="board">
+        <div class="row" id="row-top">
+          <div class="slot"><div class="hex" data-slot="S"></div><div class="label">S</div></div>
+          <div class="slot"><div class="hex" data-slot="MB1"></div><div class="label">MB</div></div>
+          <div class="slot"><div class="hex" data-slot="WS1"></div><div class="label">WS</div></div>
+        </div>
+        <div class="row" id="row-mid">
+          <div class="slot"><div class="hex" data-slot="L"></div><div class="label">L</div></div>
+          <div class="slot"><div class="hex" data-slot="WS2"></div><div class="label">WS</div></div>
+          <div class="slot"><div class="hex" data-slot="MB2"></div><div class="label">MB</div></div>
+          <div class="slot"><div class="hex" data-slot="OP"></div><div class="label">OP</div></div>
+        </div>
+        <div class="row" id="bench-row">
+          <div class="slot"><div class="bench-slot" data-bench></div><div class="label">Bench <button class="remove-bench" type="button">Remove</button></div></div>
+          <div class="slot"><div class="bench-slot" data-bench></div><div class="label">Bench <button class="remove-bench" type="button">Remove</button></div></div>
+          <div class="slot"><div class="bench-slot" data-bench></div><div class="label">Bench <button class="remove-bench" type="button">Remove</button></div></div>
+          <button id="addBench" type="button">+ Bench</button>
+        </div>
+      </div>
+
+      <section id="tabs">
+        <nav id="tabbar" aria-label="Synergy sections">
+          <button class="tabbtn" data-tab="deploy" aria-controls="tab-deploy" aria-selected="true">Deployment Bonds</button>
+          <button class="tabbtn" data-tab="buffs" aria-controls="tab-buffs" aria-selected="false">Stat Buffs</button>
+        </nav>
+        <div id="tab-deploy" class="tabcontent" role="region" aria-labelledby="tab-deploy-label">
+          <h2 id="tab-deploy-label">Deployment Bonds</h2>
+          <ul id="deploy-list">
+            <li>(no active bonds)</li>
+          </ul>
+        </div>
+        <div id="tab-buffs" class="tabcontent" role="region" aria-labelledby="tab-buffs-label" hidden>
+          <h2 id="tab-buffs-label">Stat Buffs</h2>
+          <ul id="buffs-list">
+            <li>(no active buffs)</li>
+          </ul>
+        </div>
+      </section>
+    </section>
+
+    <aside id="school-panel" aria-label="School synergies">
+      <h2>School Synergies</h2>
+      <ul id="school-list">
+        <li>(no active school)</li>
+      </ul>
+    </aside>
+  </main>
+
+  <div id="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalTitle">
+    <div id="sheet">
+      <header id="modal-header">
+        <h3 id="modalTitle">Players</h3>
+        <div id="modal-actions">
+          <input id="search" type="search" placeholder="Search by name or school…" aria-label="Search" />
+          <button id="closeModal" type="button">Close</button>
+        </div>
+      </header>
+      <div id="gallery" aria-live="polite"></div>
+    </div>
+  </div>
+</body>
+</html>
