@@ -29,3 +29,178 @@ h1 {
   font-size: 22px;
 }
 
+#tabs {
+  background: var(--card);
+  border: 1px solid var(--ring);
+  border-radius: 10px;
+  padding: 0;
+}
+
+#tabbar {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid var(--ring);
+  padding: 8px;
+}
+
+#deploy-list, #buffs-list, #school-list {
+  margin: 8px 0 0 18px;
+}
+
+#school-panel {
+  background: var(--card);
+  border: 1px solid var(--ring);
+  border-radius: 10px;
+  padding: 14px;
+}
+
+#school-panel h2 {
+  margin: 0 0 6px 0;
+  font-size: 18px;
+}
+
+#modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: rgba(0,0,0,.55);
+}
+
+#modal[aria-hidden="false"] {
+  display: flex;
+}
+
+#sheet {
+  width: min(960px, 100%);
+  max-height: 85vh;
+  background: var(--card);
+  border: 1px solid var(--ring);
+  border-radius: 12px;
+  overflow: auto;
+}
+
+#modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px;
+  border-bottom: 1px solid var(--ring);
+}
+
+#modal-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+#search, #closeModal {
+  height: 36px;
+  padding: 0 10px;
+  border-radius: 8px;
+  border: 1px solid var(--ring);
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+#closeModal {
+  background: #111827;
+  color: #fff;
+  border-color: #0b1223;
+  cursor: pointer;
+}
+
+#gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+  padding: 12px;
+}
+
+#gallery .card {
+  border: 1px solid var(--ring);
+  border-radius: 10px;
+  background: #f8fafc;
+  padding: 8px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#gallery .card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+#gallery .name {
+  margin-top: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #111827;
+}
+
+#gallery .meta {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+#toolbar-top {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+#hint {
+  margin: 8px 0 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+#layout {
+  max-width: 1200px;
+  margin: 12px auto 24px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 20px;
+  align-items: start;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#board {
+  background: var(--card);
+  border: 1px solid var(--ring);
+  border-radius: 10px;
+  padding: 14px;
+}
+
+#row-top { margin-bottom: 12px; }
+
+#bench-row {
+  margin-top: 14px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#addBench {
+  background: #0f172a;
+  color: #fff;
+  border: 1px solid #0b1223;
+  border-radius: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
