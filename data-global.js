@@ -6,7 +6,7 @@ const characters = [
     { name: "Daichi SSR", role: "OP", img: "img-global/daichiSSR.png", school: "Karasuno", bonds: ["Karasuno's Pillar","karasuno Senior Year"] },
     { name: "Daichi SR", role: "OP", img: "img-global/daichiSR.png", school: "Karasuno", bonds: [] },
     { name: "Sugawara SR", role: "S", img: "img-global/sugawaraSR.png", school: "Karasuno", bonds: ["karasuno Senior Year",] },
-    { name: "Asahi SSR", role: "WS", img: "img-global/asahiSSR.png", school: "Karasuno", bonds: ["karasuno Senior Year","\"Guardian Deity\" and \"Wing Spiker\""] },
+    { name: "Asahi SSR", role: "WS", img: "img-global/asahiSSR.png", school: "Karasuno", bonds: ["karasuno Senior Year","\"Guardian Deity\" and \"Wing Spiker\"","Cannon \& Iron Wall"] },
     { name: "Asahi SR", role: "WS", img: "img-global/asahiSR.png", school: "Karasuno", bonds: [] },
     { name: "Nishinoya SSR", role: "Li", img: "img-global/nishinoyaSSR.png", school: "Karasuno", bonds: ["Karasuno's sophomore", "Kiyoko's Knights","\"Guardian Deity\" and \"Wing Spiker\""] },
     { name: "Nishinoya SR", role: "Li", img: "img-global/nishinoyaSR.png", school: "Karasuno", bonds: [] },
@@ -18,7 +18,7 @@ const characters = [
     { name: "Tadashi R", role: "MB", img: "img-global/tadashiR.png", school: "Karasuno", bonds: [] },
     { name: "Chikara SR", role: "WS", img: "img-global/chikaraSR.png", school: "Karasuno", bonds: ["Karasuno's sophomore", "Karasuno's Pillar"] },
     { name: "Chikara R", role: "WS", img: "img-global/chikaraR.png", school: "Karasuno", bonds: [] },
-    { name: "Hisashi R", role: "WS", img: "img-global/HisashiR.png", school: "Karasuno", bonds: [] },
+    { name: "Hisashi R", role: "WS", img: "img-global/hisashiR.png", school: "Karasuno", bonds: [] },
     { name: "Kazuhito R", role: "WS", img: "img-global/kazuhitoR.png", school: "Karasuno", bonds: [] },
     { name: "Kageyama SR", role: "S", img: "img-global/tobioSR.png", school: "Kitagawa", bonds: [] },
 
@@ -45,12 +45,12 @@ const characters = [
     { name: "Inuoka SR", role: "MB", img: "img-global/inuokaSR.png", school: "Nekoma", bonds: ["Worthy Rival"] },
     { name: "Teshiro SR", role: "S", img: "img-global/teshiroSR.png", school: "Nekoma", bonds: [] },
 
-    { name: "Aone SSR", role: "MB", img: "img-global/aoneSSR.png", school: "Date Kogyo", bonds: [] },
+    { name: "Aone SSR", role: "MB", img: "img-global/aoneSSR.png", school: "Date Kogyo", bonds: ["Cannon \& Iron Wall",] },
     { name: "Aone SR", role: "MB", img: "img-global/aoneSR.png", school: "Date Kogyo", bonds: [] },
     { name: "Kenji SSR", role: "WS", img: "img-global/kenjiSSR.png", school: "Date Kogyo", bonds: [] },
     { name: "Kenji SR", role: "WS", img: "img-global/kenjiSR.png", school: "Date Kogyo", bonds: [] },
     { name: "Kanji SSR", role: "S", img: "img-global/kanjiSSR.png", school: "Date Kogyo", bonds: [] },
-    { name: "Kanji SR", role: "S", img: "img-global/KanjiSR.png", school: "Date Kogyo", bonds: [] },
+    { name: "Kanji SR", role: "S", img: "img-global/kanjiSR.png", school: "Date Kogyo", bonds: [] },
     { name: "Sakunami R", role: "Li", img: "img-global/sakunamiR.png", school: "Date Kogyo", bonds: [] },
     { name: "Kamasaki SR", role: "MB", img: "img-global/kamasakiSR.png", school: "Date Kogyo", bonds: [] },
     { name: "Kaname SR", role: "S", img: "img-global/kanameSR.png", school: "Date Kogyo", bonds: [] },
@@ -79,7 +79,8 @@ const synergyDescriptions = {
     "\"Guardian Deity\" and \"Wing Spiker\"": "When Nishinoya or Asahi casts a skill, increases their Attack Technique and Defense Technique by 6/7/8/9/10%",
     "\"Sheild\" and \"Spear\"":"Increases Tsukishima\'s Block stat by 6/7/8/9/10% and Tadashi Serve stat by 6/7/8/9/10%",
     "TOMODACHI(Friends!)":{"Tanaka SSR": "Power Attack +5/7/9/12/15, Power Attack +1/2/3/4/5%","Yamamoto SR": "Power Attack +5/7/9/12/15, Power Attack +1/2/3/4/5%"},
-    "Karasuno's sophomore": "epic",
+    "Cannon \& Iron Wall": {"Asahi SSR": "Power Attack +5/7/9/12/15 Power Attack +1/2/3/4/5%"},
+    "Karasuno's sophomore": {"Chikara SR":"Power Attack +5/7/9/12/15 Power Attack +1/2/3/4/5%", "Nishinoya SSR": "Set +5/7/9/12/15 Set +1/2/3/4/5%", "Tanaka SSR":"Power Attack +5/7/9/12/15 Power Attack +1/2/3/4/5%"},
     
 };
 
@@ -100,6 +101,7 @@ const synergyMeta = {
     "\"Guardian Deity\" and \"Wing Spiker\"":{ category: "deployment", activation: { scope: "any", min: 2 } },
     "\"Sheild\" and \"Spear\"":{ category: "deployment", activation: { scope: "any", min: 2 } },
     "TOMODACHI(Friends!)":{ category: "stats", activation: { scope: "any", min: 2 } },
+    "Cannon \& Iron Wall":{ category: "stats", activation: { scope: "any", min: 2 } },
     "Karasuno's sophomore": { category: "stats", activation: { scope: "any", min: 3 } },
 };
 
@@ -113,6 +115,7 @@ const synergyPairs = {
     "\"Guardian Deity\" and \"Wing Spiker\"": [["Nishinoya", "Asahi"]],
     "\"Sheild\" and \"Spear\"": [["Tsukishima", "Tadashi"]],
     "TOMODACHI(Friends!)":[["Tanaka","Yamamoto"]],
+    "Cannon \& Iron Wall":[["Asahi", "Aone"]],
     "Karasuno's sophomore": [["Tanaka", "Nishinoya", "Chikara"]],
 };
 
