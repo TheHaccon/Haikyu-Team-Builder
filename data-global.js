@@ -74,6 +74,7 @@ const synergyDescriptions = {
     "Karasuno's sophomore":"epic"
 };
 
+
 //Lowkey just have to remeber that when a bond is create I put it here
 //template: "": { category: "school| stats|deployement", activation: { scope: "starters|any", min:  } },
 const synergyMeta = {
