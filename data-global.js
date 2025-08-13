@@ -23,8 +23,8 @@ const characters = [
     { name: "Kageyama SR", role: "S", img: "img-global/tobioSR.png", school: "Kitagawa", bonds: [] },
 
     { name: "Oikawa SSR", role: "S", img: "img-global/oikawaSSR.png", school: "Aoba Johsai", bonds: [] },
-    { name: "Iwaizumi SSR", role: "MB", img: "img-global/iwaizumiSSR.png", school: "Aoba Johsai", bonds: [] },
-    { name: "Iwaizumi SR", role: "MB", img: "img-global/iwaizumiSR.png", school: "Aoba Johsai", bonds: [] },
+    { name: "Iwaizumi SSR", role: "WS", img: "img-global/iwaizumiSSR.png", school: "Aoba Johsai", bonds: [] },
+    { name: "Iwaizumi SR", role: "WS", img: "img-global/iwaizumiSR.png", school: "Aoba Johsai", bonds: [] },
     { name: "Matsukawa SR", role: "MB", img: "img-global/matsukawaSR.png", school: "Aoba Johsai", bonds: [] },
     { name: "Hanamaki SR", role: "WS", img: "img-global/hanamakiSR.png", school: "Aoba Johsai", bonds: [] },
     { name: "Yahaba SR", role: "S", img: "img-global/yahabaSR.png", school: "Aoba Johsai", bonds: [] },
