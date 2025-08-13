@@ -283,8 +283,22 @@ function renderSynergies() {
               <img src="${pc.img}" alt="${pc.name}" style="width:28px;height:28px;object-fit:cover;border-radius:4px;">
               <strong>${pc.name}</strong>
             </div>
-            <div style="font-size:12px;margin-top:2px;color:#555;">${state.synergyDescriptions[b]||""}</div>
-          `;
+            <div style="font-size:12px;margin-top:2px;color:#555;">
+            ${(() => {
+              const desc = state.synergyDescriptions[b];
+              if (typeof desc === "string") return desc;
+              if (typeof desc === "object") {
+                const descA = desc[pa?.name] || "";
+                const descB = desc[pc?.name] || "";
+                return `
+                <div><strong>${pa.name}</strong>: ${descA}</div>
+                <div><strong>${pc.name}</strong>: ${descB}</div>
+                `;
+              }
+              return "";
+            })()}
+            </div>
+            `;
           buffsList.appendChild(li);
         }
       }
