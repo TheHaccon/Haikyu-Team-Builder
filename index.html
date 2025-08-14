@@ -7,15 +7,32 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <nav class="app-nav">
+
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    ☰
+  </button>
+
+  <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Team Builder</a></li>
+        <li class="nav-disabled"><span>Bonds<small>(coming soon)</small></span></li>
+        <li class="nav-disabled"><span>Players<small>(coming soon)</small></span></li>
+        <li class="nav-disabled"><span>About<small>(coming soon)</small></span></li>
+        <div id="toolbar-top">
+  <label for="serverSelect">Server:</label>
+  <select id="serverSelect" aria-label="Choose server" >
+    <option value="global">Global</option>
+    <option value="japan" disabled class="disabled-select">Japan</option>
+  </select>
+  <span class="coming-soon-note" style="opacity: 0.5;">Japan(coming soon)</span>
+</div>
+  </ul>
+
+
+</nav>
   <header>
     <h1>Haikyu Fly High Team Builder</h1>
-    <!-- <div id="toolbar-top">
-      <label for="serverSelect">Server:</label>
-      <select id="serverSelect" aria-label="Choose server">
-        <option value="global">Global</option>
-        <option value="japan">Japan</option>
-      </select>
-    </div> -->
+    <p><strong>More update coming monday cheers y'all :3</strong></p>
     <p id="hint">Tip: click a role to open the gallery, right click to clear a slot.</p>
   </header>
 
@@ -79,6 +96,11 @@
     </div>
   </div>
   <script type="module" src="app.js"></script>
+    <script>
+  document.getElementById('navToggle').addEventListener('click', () => {
+    document.getElementById('navLinks').classList.toggle('active');
+  });
+</script>
 </body>
 <footer class="app-footer">
   <div class="footer-content">
@@ -91,6 +113,4 @@
     </a>
   </div>
 </footer>
-
-
 </html>
