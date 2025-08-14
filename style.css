@@ -333,14 +333,15 @@ h1 {
 
 .app-nav {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   background: var(--card);
   padding: 12px 20px;
   border-bottom: 1px solid var(--ring);
   position: sticky;
   top: 0;
   z-index: 1000;
+  flex-wrap: wrap;
 }
 
 .nav-links {
@@ -517,9 +518,18 @@ h1 {
     padding: 10px;
   }
 
-  .app-nav {
-    flex-wrap: wrap;
-  }
+ .app-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--card);
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--ring);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
 
   .nav-toggle {
     display: block;
