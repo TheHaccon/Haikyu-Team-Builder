@@ -63,7 +63,7 @@ const characters = [
     { name: "Taro R", role: "OP", img: "img-global/taroR.png", school: "Date Kogyo", bonds: [] },
 
     { name: "Ushijima UR", role: "OP", img: "img-global/ushijimaUR.png", school: "Shiratorizawa", bonds: ["Lifelong Best Friends","Undisputed Aces"] },
-    { name: "Goshiki SSR", role: "WS", img: "img-global/GoshikiSSR.png", school: "Shiratorizawa", bonds: ["Promising Senpai","Undisputed Aces"] },
+    { name: "Goshiki SSR", role: "WS", img: "img-global/goshikiSSR.png", school: "Shiratorizawa", bonds: ["Promising Senpai","Undisputed Aces"] },
     { name: "Tendo SSR", role: "MB", img: "img-global/tendoSSR.png", school: "Shiratorizawa", bonds: ["Lifelong Best Friends","Promising Senpai","Shiratorizawa\'s Middke Blocker","Prediction VS System"] },
     { name: "Taichi SR", role: "MB", img: "img-global/kawanishiSR.png", school: "Shiratorizawa", bonds: ["Shiratorizawa\'s Middke Blocker"] },
 ];
