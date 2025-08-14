@@ -1,9 +1,9 @@
 // template: { name: "", role: "", img: "img-global/", school: "", bonds: [] },
 const characters = [
-    { name: "Hinata SSR", role: "MB", img: "img-global/hinataSSR.png", school: "Karasuno", bonds: ["Flexible Aces", "Worthy Rival", "Surprising Friendship"] },
+    { name: "Hinata SSR", role: "MB", img: "img-global/hinataSSR.png", school: "Karasuno", bonds: ["Flexible Aces", "Worthy Rival", "Surprising Friendship","Rival Friends"] },
     { name: "Hinata SR", role: "MB", img: "img-global/hinataSR.png", school: "Karasuno", bonds: ["Teammates on the Court","\"Sun\" and \"Moon\""] },
     { name: "Kageyama SSR", role: "S", img: "img-global/tobioSSR.png", school: "Karasuno", bonds: ["Teammates on the Court","Building Team Chemistry"] },
-    { name: "Daichi SSR", role: "OP", img: "img-global/daichiSSR.png", school: "Karasuno", bonds: ["Karasuno\'s Pillar","karasuno Senior Year"] },
+    { name: "Daichi SSR", role: "OP", img: "img-global/daichiSSR.png", school: "Karasuno", bonds: ["Karasuno\'s Pillar","karasuno Senior Year","Behind the Smile"] },
     { name: "Daichi SR", role: "OP", img: "img-global/daichiSR.png", school: "Karasuno", bonds: ["Karasuno\'s Pillar(practice)","Leaders Cut from the Same Cloth"] },
     { name: "Sugawara SR", role: "S", img: "img-global/sugawaraSR.png", school: "Karasuno", bonds: ["karasuno Senior Year",] },
     { name: "Asahi SSR", role: "WS", img: "img-global/asahiSSR.png", school: "Karasuno", bonds: ["karasuno Senior Year","\"Guardian Deity\" and \"Wing Spiker\"","Cannon \& Iron Wall"] },
@@ -12,7 +12,7 @@ const characters = [
     { name: "Nishinoya SR", role: "Li", img: "img-global/nishinoyaSR.png", school: "Karasuno", bonds: ["\"Guardian Deity\" and \"Ace\"","Formidable Opponent","Karasuno\'s Sophomore(practice)"] },
     { name: "Tanaka SSR", role: "WS", img: "img-global/tanakaSSR.png", school: "Karasuno", bonds: ["Karasuno\'s sophomore", "Kiyoko\'s Knights","TOMODACHI(Friends!)"] },
     { name: "Tanaka SR", role: "WS", img: "img-global/tanakaSR.png", school: "Karasuno", bonds: ["Karasuno\'s Wing Spiker","Building Team Chemistry","Karasuno\'s Sophomore(practice)"] },
-    { name: "Tsukishima SSR", role: "MB", img: "img-global/tsukishimaSSR.png", school: "Karasuno", bonds: ["\"Shield\" and \"Spear\"",] },
+    { name: "Tsukishima SSR", role: "MB", img: "img-global/tsukishimaSSR.png", school: "Karasuno", bonds: ["\"Shield\" and \"Spear\"","Master and Apprentice"] },
     { name: "Tsukishima SR", role: "MB", img: "img-global/tsukishimaSR.png", school: "Karasuno", bonds: ["Simulated Junior Training Teamate","\"Shield\" and \"Spear\"(practice)","\"Sun\" and \"Moon\""] },
     { name: "Tadashi SR", role: "MB", img: "img-global/tadashiSR.png", school: "Karasuno", bonds: ["\"Shield\" and \"Spear\"",] },
     { name: "Tadashi R", role: "MB", img: "img-global/tadashiR.png", school: "Karasuno", bonds: ["\"Shield\" and \"Spear\"(practice)"] },
@@ -34,9 +34,9 @@ const characters = [
     { name: "Kentaro SSR", role: "OP", img: "img-global/kyotaniSSR.png", school: "Aoba Johsai", bonds: [] },
     { name: "Kentaro SR", role: "OP", img: "img-global/kyotaniSR.png", school: "Aoba Johsai", bonds: [] },
 
-    //{ name: "Kenma SSR", role: "S", img: "img-global/kenmaSSR.png", school: "Nekoma", bonds: [] },
+    { name: "Kenma SSR", role: "S", img: "img-global/kenmaSSR.png", school: "Nekoma", bonds: ["Rival Friends"] },
     { name: "Kenma SR", role: "S", img: "img-global/kenmaSR.png", school: "Nekoma", bonds: [] },
-    //{ name: "Kuroo UR", role: "MB", img: "img-global/kurooUR.png", school: "Nekoma", bonds: [""] },
+    { name: "Kuroo UR", role: "MB", img: "img-global/kurooUR.png", school: "Nekoma", bonds: ["Behind the Smile","Master and Apprentice"] },
     { name: "Kuroo SSR", role: "MB", img: "img-global/kurooSSR.png", school: "Nekoma", bonds: ["Leaders Cut from the Same Cloth"] },
     { name: "Yaku SR", role: "Li", img: "img-global/yakuSR.png", school: "Nekoma", bonds: ["Formidable Opponent"] },
     { name: "Lev SSR", role: "MB", img: "img-global/levSSR.png", school: "Nekoma", bonds: ["Flexible Aces"] },
@@ -98,6 +98,9 @@ const synergyDescriptions = {
     "\"Sun\" and \"Moon\"": {"Tsukishima SR": "Quick Attack +5/7/9/12/15, Quick Attack +1/2/3/4/5%", "Hinata SR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%" },
     "Building Team Chemistry": {"Kageyama SSR": "Serve +5/7/9/12/15, Serve +1/2/3/4/5%", "Tanaka SR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%" },
     "Karasuno\'s Sophomore(practice)":"Increases Receive stat of back row players 6/7/8/9/10%",
+    "Rival Friends": {"Hinata SSR": "Quick Attack +5/7/9/12/15, Quick Attack +1/2/3/4/5%", "Kenma SSR": "Set +5/7/9/12/15, Set +1/2/3/4/5%" },
+    "Behind the Smile": {"Daichi SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%", "Kuroo UR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%" },
+    "Master and Apprentice": {"Tsukishima SSR": "Block +5/7/9/12/15, Block +1/2/3/4/5%","Kuroo UR": "Block +5/7/9/12/15, Block +1/2/3/4/5%"},
 
     "Aoba Johsai's Sophomore": {}
 
@@ -136,6 +139,9 @@ const synergyMeta = {
     "\"Sun\" and \"Moon\"": { category: "stats", activation: { scope: "any", min: 2 } },
     "Building Team Chemistry": { category: "stats", activation: { scope: "any", min: 2 } },
     "Karasuno\'s Sophomore(practice)": { category: "deployment", activation: { scope: "any", min: 3 } },
+    "Rival Friends": { category: "stats", activation: { scope: "any", min: 2 } },
+    "Behind the Smile": { category: "stats", activation: { scope: "any", min: 2 } },
+    "Master and Apprentice": { category: "stats", activation: { scope: "any", min: 2 } },
 };
 
 //put what player create the bond
@@ -164,6 +170,9 @@ const synergyPairs = {
     "\"Sun\" and \"Moon\"": [["Tsukishima", "Hinata"]],
     "Building Team Chemistry": [["Tanaka", "Kageyama"]],
     "Karasuno\'s Sophomore(practice)": [["Tanaka SR", "Nishinoya SR", "Chikara R"]],
+    "Rival Friends": [["Kenma","Hinata"]],
+    "Behind the Smile": [["Daichi","Kuroo"]],
+    "Master and Apprentice": [["Tsukishima","Kuroo"]],
 };
 
 window.characters = characters;
