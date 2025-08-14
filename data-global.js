@@ -47,19 +47,19 @@ const characters = [
     { name: "Inuoka SR", role: "MB", img: "img-global/inuokaSR.png", school: "Nekoma", bonds: ["Worthy Rival","Nekoma\'s Junior"] },
     { name: "Teshiro SR", role: "S", img: "img-global/teshiroSR.png", school: "Nekoma", bonds: ["Nekoma\'s Junior"] },
 
-    { name: "Aone SSR", role: "MB", img: "img-global/aoneSSR.png", school: "Date Kogyo", bonds: ["Cannon \& Iron Wall","Surprising Friendship"] },
+    { name: "Aone SSR", role: "MB", img: "img-global/aoneSSR.png", school: "Date Kogyo", bonds: ["Cannon \& Iron Wall","Surprising Friendship","The Silent and the Snarky"] },
     { name: "Aone SR", role: "MB", img: "img-global/aoneSR.png", school: "Date Kogyo", bonds: [] },
-    { name: "Kenji SSR", role: "WS", img: "img-global/kenjiSSR.png", school: "Date Kogyo", bonds: [] },
+    { name: "Kenji SSR", role: "WS", img: "img-global/kenjiSSR.png", school: "Date Kogyo", bonds: ["Date Kogyo\'s Captains","The Silent and the Snarky","New Captain \& Tall Rookie"] },
     { name: "Kenji SR", role: "WS", img: "img-global/kenjiSR.png", school: "Date Kogyo", bonds: [] },
-    { name: "Kanji SSR", role: "S", img: "img-global/kanjiSSR.png", school: "Date Kogyo", bonds: [] },
+    { name: "Kanji SSR", role: "S", img: "img-global/kanjiSSR.png", school: "Date Kogyo", bonds: ["New Captain \& Tall Rookie","Date Kogyo\'s Setter",] },
     { name: "Kanji SR", role: "S", img: "img-global/kanjiSR.png", school: "Date Kogyo", bonds: ["Simulated Junior Training Teamate"] },
-    { name: "Sakunami R", role: "Li", img: "img-global/sakunamiR.png", school: "Date Kogyo", bonds: [] },
-    { name: "Kamasaki SR", role: "MB", img: "img-global/kamasakiSR.png", school: "Date Kogyo", bonds: [] },
-    { name: "Kaname SR", role: "S", img: "img-global/kanameSR.png", school: "Date Kogyo", bonds: [] },
-    { name: "Sasaya SSR", role: "OP", img: "img-global/takehitoSSR.png", school: "Date Kogyo", bonds: [] },
+    { name: "Sakunami R", role: "Li", img: "img-global/sakunamiR.png", school: "Date Kogyo", bonds: ["Date Kogyo\'s Junior"] },
+    { name: "Kamasaki SR", role: "MB", img: "img-global/kamasakiSR.png", school: "Date Kogyo", bonds: ["Date Kogyo\'s Senior"] },
+    { name: "Kaname SR", role: "S", img: "img-global/kanameSR.png", school: "Date Kogyo", bonds: ["Date Kogyo\'s Captains","Date Kogyo\'s Setter","Date Kogyo\'s Senior",] },
+    { name: "Sasaya SSR", role: "OP", img: "img-global/takehitoSSR.png", school: "Date Kogyo", bonds: ["Date Kogyo\'s Wing Spiker","Date Kogyo\'s Senior"] },
     { name: "Sasaya SR", role: "OP", img: "img-global/takehitoSR.png", school: "Date Kogyo", bonds: [] },
-    { name: "Yutaka SR", role: "WS", img: "img-global/yutakaSR.png", school: "Date Kogyo", bonds: [] },
-    { name: "Jingo R", role: "MB", img: "img-global/jingoR.png", school: "Date Kogyo", bonds: [] },
+    { name: "Yutaka SR", role: "WS", img: "img-global/yutakaSR.png", school: "Date Kogyo", bonds: ["Date Kogyo\'s Wing Spiker"] },
+    { name: "Jingo R", role: "MB", img: "img-global/jingoR.png", school: "Date Kogyo", bonds: ["Date Kogyo\'s Junior"] },
     { name: "Taro R", role: "OP", img: "img-global/taroR.png", school: "Date Kogyo", bonds: [] },
 
     { name: "Ushijima UR", role: "OP", img: "img-global/ushijimaUR.png", school: "Shiratorizawa", bonds: [] },
@@ -121,7 +121,16 @@ const synergyDescriptions = {
     "\"Pivot\" and \"Defensive Pivot\"":{"Yaku SR": "Save +5/7/9/12/15, Save +1/2/3/4/5%","Kenma SSR": "Power Attack +5/7/9/12/15, Power Attack +1/2/3/4/5%"},
     "\"Pivot\" and \"Control Tower\"":"Increases Kenma\'s Set stat by 6/7/8/9/10% and Kuroo\'s Block Stat by 6/7/8/9/10%",
 
+    //Date Kogyo
+    "Date Kogyo\'s Captains":{"Kaname":"No buff","Kenji SSR":"Power Attack +5/7/9/12/15, Power Attack +1/2/3/4/5%"},
+    "The Silent and the Snarky":"Aone and Kenji perform a Double block with 180/195/210/225/240% of Aone\'s Block stat as power;applies \"Enrage\" Debuff to opponent spiker \(reduces Power\/Quick Attack stats by 10%\)",
+    "New Captain \& Tall Rookie":"Increases Block stat of front row players by 2/2.5/3/3.5/4%",
+    "Date Kogyo\'s Wing Spiker":"Increases Yutaka\'s Block stat by 2/2.5/3/3.5/4% and Takehito\'s Power Attack stat by 2/2.5/3/3.5/4%",
+    "Date Kogyo\'s Setter":{"KanameSR":"No buff","Kaji SSR":"Set +5/7/9/12/15, Set +1/2/3/4/5%"},
+    "Date Kogyo\'s Junior":{"Jingo R":"Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Sakunami R":"Quick Attack +5/7/9/12/15, Quick Attack stat by 6/7/8/9/10%"},
+    "Date Kogyo\'s Senior": "When casting Block skills, increases Team morale by 3/3/4/4/5"
 
+    
 };
 
 //Lowkey just have to remeber that when a bond is create I put it here
@@ -177,6 +186,16 @@ const synergyMeta = {
     "The \"Enigmatic\" Teammate": { category: "stats", activation: { scope: "any", min: 2 } },
     "\"Pivot\" and \"Defensive Pivot\"": { category: "stats", activation: { scope: "any", min: 2 } },
     "\"Pivot\" and \"Control Tower\"": { category: "deployment", activation: { scope: "any", min: 2 } },
+
+    "Date Kogyo\'s Captains": { category: "stats", activation: { scope: "any", min: 2 } },
+    "The Silent and the Snarky": { category: "deployment", activation: { scope: "any", min: 2 } },
+    "New Captain \& Tall Rookie": { category: "deployment", activation: { scope: "any", min: 2 } },
+    "Date Kogyo\'s Wing Spiker": { category: "deployment", activation: { scope: "any", min: 2 } },
+    "Date Kogyo\'s Setter": { category: "stats", activation: { scope: "any", min: 2 } },
+    "Date Kogyo\'s Junior": { category: "stats", activation: { scope: "any", min: 2 } },
+    "Date Kogyo\'s Senior": { category: "deployment", activation: { scope: "any", min: 3 } },
+
+    
 };
 
 //put what player create the bond
@@ -225,6 +244,14 @@ const synergyPairs = {
     "The \"Enigmatic\" Teammate":[["Kenma", "Lev"]],
     "\"Pivot\" and \"Defensive Pivot\"":[["Kenma", "Yaku"]],
     "\"Pivot\" and \"Control Tower\"":[["Kenma", "Kuroo"]],
+    
+    "Date Kogyo\'s Captains":[["Kenji","Kaname"]],
+    "The Silent and the Snarky":[["Aone","Kenji"]],
+    "New Captain \& Tall Rookie":[["Kenji","Kanji"]],
+    "Date Kogyo\'s Wing Spiker": [["Yutaka","Takehito"]],
+    "Date Kogyo\'s Setter":[["Kanji","Kaname"]],
+    "Date Kogyo\'s Junior": [["Jingo","Sakunami"]],
+    "Date Kogyo\'s Senior": [["Takehito"," Kaname","Kamasaki"]]
 };
 
 window.characters = characters;
