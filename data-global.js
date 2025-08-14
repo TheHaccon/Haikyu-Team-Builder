@@ -31,10 +31,12 @@ const characters = [
     { name: "Watari SR", role: "Li", img: "img-global/watariSR.png", school: "Aoba Johsai", bonds: [] },
     { name: "Kindaichi SR", role: "MB", img: "img-global/kindaichiSR.png", school: "Aoba Johsai", bonds: [] },
     { name: "Kunimi SR", role: "OP", img: "img-global/kunimiSR.png", school: "Aoba Johsai", bonds: [] },
-    { name: "Mad Dog SSR", role: "OP", img: "img-global/kyotaniSSR.png", school: "Aoba Johsai", bonds: [] },
-    { name: "Mad Dog SR", role: "OP", img: "img-global/kyotaniSR.png", school: "Aoba Johsai", bonds: [] },
+    { name: "Kentaro SSR", role: "OP", img: "img-global/kyotaniSSR.png", school: "Aoba Johsai", bonds: [] },
+    { name: "Kentaro SR", role: "OP", img: "img-global/kyotaniSR.png", school: "Aoba Johsai", bonds: [] },
 
+    //{ name: "Kenma SSR", role: "S", img: "img-global/kenmaSSR.png", school: "Nekoma", bonds: [] },
     { name: "Kenma SR", role: "S", img: "img-global/kenmaSR.png", school: "Nekoma", bonds: [] },
+    //{ name: "Kuroo UR", role: "MB", img: "img-global/kurooUR.png", school: "Nekoma", bonds: [""] },
     { name: "Kuroo SSR", role: "MB", img: "img-global/kurooSSR.png", school: "Nekoma", bonds: ["Leaders Cut from the Same Cloth"] },
     { name: "Yaku SR", role: "Li", img: "img-global/yakuSR.png", school: "Nekoma", bonds: ["Formidable Opponent"] },
     { name: "Lev SSR", role: "MB", img: "img-global/levSSR.png", school: "Nekoma", bonds: ["Flexible Aces"] },
@@ -71,6 +73,7 @@ const synergyDescriptions = {
     "Nekoma": "Increases Receive stat of all players present by 15%",
     "Date Kogyo": "Increases Block stat of all players present by 15%",
 
+    //karasuno bond
     "Karasuno\'s Pillar": "When achieving a PERFECT receive, increases Team Morale by 3/3/4/4/5",
     "Flexible Aces": { "Hinata SSR": "Block +5/7/9/12/15, Block +1/2/3/4/5%", "Lev SSR": "Quick Attack +5/7/9/12/15, Quick Attack +1/2/3/4/5%"},
     "Worthy Rival": {"Hinata SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%", "Inuoka SR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%"},
@@ -95,6 +98,8 @@ const synergyDescriptions = {
     "\"Sun\" and \"Moon\"": {"Tsukishima SR": "Quick Attack +5/7/9/12/15, Quick Attack +1/2/3/4/5%", "Hinata SR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%" },
     "Building Team Chemistry": {"Kageyama SSR": "Serve +5/7/9/12/15, Serve +1/2/3/4/5%", "Tanaka SR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%" },
     "Karasuno\'s Sophomore(practice)":"Increases Receive stat of back row players 6/7/8/9/10%",
+
+    "Aoba Johsai's Sophomore": {}
 
 };
 
