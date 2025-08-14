@@ -22,17 +22,17 @@ const characters = [
     { name: "Kazuhito R", role: "MB", img: "img-global/kazuhitoR.png", school: "Karasuno", bonds: ["Bench cheer","The Returning Trio"] },
     { name: "Kageyama SR", role: "S", img: "img-global/tobioSR.png", school: "Kitagawa", bonds: [] },
 
-    { name: "Oikawa SSR", role: "S", img: "img-global/oikawaSSR.png", school: "Aoba Johsai", bonds: [] },
-    { name: "Iwaizumi SSR", role: "WS", img: "img-global/iwaizumiSSR.png", school: "Aoba Johsai", bonds: [] },
-    { name: "Iwaizumi SR", role: "WS", img: "img-global/iwaizumiSR.png", school: "Aoba Johsai", bonds: [] },
-    { name: "Matsukawa SR", role: "MB", img: "img-global/matsukawaSR.png", school: "Aoba Johsai", bonds: [] },
-    { name: "Hanamaki SR", role: "WS", img: "img-global/hanamakiSR.png", school: "Aoba Johsai", bonds: [] },
-    { name: "Yahaba SR", role: "S", img: "img-global/yahabaSR.png", school: "Aoba Johsai", bonds: [] },
-    { name: "Watari SR", role: "Li", img: "img-global/watariSR.png", school: "Aoba Johsai", bonds: [] },
-    { name: "Kindaichi SR", role: "MB", img: "img-global/kindaichiSR.png", school: "Aoba Johsai", bonds: [] },
-    { name: "Kunimi SR", role: "OP", img: "img-global/kunimiSR.png", school: "Aoba Johsai", bonds: [] },
-    { name: "Kentaro SSR", role: "OP", img: "img-global/kyotaniSSR.png", school: "Aoba Johsai", bonds: [] },
-    { name: "Kentaro SR", role: "OP", img: "img-global/kyotaniSR.png", school: "Aoba Johsai", bonds: [] },
+    { name: "Oikawa SSR", role: "S", img: "img-global/oikawaSSR.png", school: "Aoba Johsai", bonds: ["Team chemistry"] },
+    { name: "Iwaizumi SSR", role: "WS", img: "img-global/iwaizumiSSR.png", school: "Aoba Johsai", bonds: ["The Wolf Pack"] },
+    { name: "Iwaizumi SR", role: "WS", img: "img-global/iwaizumiSR.png", school: "Aoba Johsai", bonds: ["The Wolf Pack(Practice)","Team Chemistry"] },
+    { name: "Matsukawa SR", role: "MB", img: "img-global/matsukawaSR.png", school: "Aoba Johsai", bonds: ["Seijoh\'s Senior Year Pillars"] },
+    { name: "Hanamaki SR", role: "WS", img: "img-global/hanamakiSR.png", school: "Aoba Johsai", bonds: ["Seijoh\'s Senior Year Pillars"] },
+    { name: "Yahaba SR", role: "S", img: "img-global/yahabaSR.png", school: "Aoba Johsai", bonds: ["Aoba Johsai's Sophomore","Hidden Fire"] },
+    { name: "Watari SR", role: "Li", img: "img-global/watariSR.png", school: "Aoba Johsai", bonds: ["Aoba Johsai's Sophomore"] },
+    { name: "Kindaichi SR", role: "MB", img: "img-global/kindaichiSR.png", school: "Aoba Johsai", bonds: ["Blunt and Composed"] },
+    { name: "Kunimi SR", role: "OP", img: "img-global/kunimiSR.png", school: "Aoba Johsai", bonds: ["Blunt and Composed"] },
+    { name: "Kentaro SSR", role: "OP", img: "img-global/kyotaniSSR.png", school: "Aoba Johsai", bonds: ["Aoba Johsai's Sophomore","Hidden Fire","The Wolf Pack"] },
+    { name: "Kentaro SR", role: "OP", img: "img-global/kyotaniSR.png", school: "Aoba Johsai", bonds: ["The Wolf Pack(Practice)"] },
 
     { name: "Kenma SSR", role: "S", img: "img-global/kenmaSSR.png", school: "Nekoma", bonds: ["Rival Friends"] },
     { name: "Kenma SR", role: "S", img: "img-global/kenmaSR.png", school: "Nekoma", bonds: [] },
@@ -102,7 +102,14 @@ const synergyDescriptions = {
     "Behind the Smile": {"Daichi SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%", "Kuroo UR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%" },
     "Master and Apprentice": {"Tsukishima SSR": "Block +5/7/9/12/15, Block +1/2/3/4/5%","Kuroo UR": "Block +5/7/9/12/15, Block +1/2/3/4/5%"},
 
-    "Aoba Johsai's Sophomore": {}
+    //Aoba Johsai
+    "Aoba Johsai's Sophomore": {"Watari SR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%", "Yahaba SR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%", "Kentaro SSR": "No buff" },
+    "Blunt and Composed":"Increases Kindaichi\'s Quick Attack stat by 6/7/8/9/10% and  Kunimi\'s Power Attack stat by 6/7/8/9/10%",
+    "The Wolf Pack":"Increases  Iwaizumi and Kentaro\'s Power Attack stat by 6/7/8/9/10%",
+    "Hidden Fire":{"Kentaro SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Yahaba SR": "No buff"},
+    "Seijoh\'s Senior Year Pillars": "Increases Matsukawa\'s Block stat by 6/67/8/9/10% and Hanamaki\'s Receive stat by 6/7/8/9/10%",
+    "The Wolf Pack(Practice)": "Increases Iwaisumi and Kentaro's Awareness by 6/7/8/9/10%",
+    "Team chemistry" : "Increases Oikawa and Iwaizumi's Awareness by 6/7/8/9/10%"
 
 };
 
@@ -142,6 +149,15 @@ const synergyMeta = {
     "Rival Friends": { category: "stats", activation: { scope: "any", min: 2 } },
     "Behind the Smile": { category: "stats", activation: { scope: "any", min: 2 } },
     "Master and Apprentice": { category: "stats", activation: { scope: "any", min: 2 } },
+
+    "Aoba Johsai's Sophomore": { category: "stats", activation: { scope: "any", min: 3 } },
+    "Blunt and Composed": { category: "deployment", activation: { scope: "any", min: 2 } },
+    "The Wolf Pack": { category: "deployment", activation: { scope: "any", min: 2 } },
+    "Hidden Fire":{ category: "stats", activation: { scope: "any", min: 2 } },
+    "Seijoh\'s Senior Year Pillars": { category: "deployment", activation: { scope: "any", min: 2 } },
+    "The Wolf Pack(Practice)": { category: "deployment", activation: { scope: "any", min: 2 } },
+    "Team chemistry" : { category: "deployment", activation: { scope: "any", min: 2 } },
+
 };
 
 //put what player create the bond
@@ -173,6 +189,14 @@ const synergyPairs = {
     "Rival Friends": [["Kenma","Hinata"]],
     "Behind the Smile": [["Daichi","Kuroo"]],
     "Master and Apprentice": [["Tsukishima","Kuroo"]],
+
+    "Aoba Johsai's Sophomore":[["Watari", "Yahaba", "Kentaro"]],
+    "Blunt and Composed":[["Kindaichi", "Kunimi"]],
+    "The Wolf Pack":[["Kindaichi", "Kunimi"]],
+    "Hidden Fire":[["Kentaro", "Yahaba"]],
+    "Seijoh\'s Senior Year Pillars":[["Matsukawa", "Hanamaki"]],
+    "The Wolf Pack(Practice)":[["Iwaizumi", "Kentaro"]],
+    "Team chemistry":[["Okawa", "Iwaizumi"]],
 };
 
 window.characters = characters;
