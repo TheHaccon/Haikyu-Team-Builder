@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Team Builder</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <!-- <nav class="app-nav">
+  <nav class="app-nav">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
 
-
-  <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Team Builder</a></li>
-        <li class="nav-disabled"><span>Bonds<small>(coming soon)</small></span></li>
-        <li class="nav-disabled"><span>Players<small>(coming soon)</small></span></li>
-        <li class="nav-disabled"><span>About<small>(coming soon)</small></span></li>
-        <div id="toolbar-top">
-  <label for="serverSelect">Server:</label>
-  <select id="serverSelect" aria-label="Choose server" >
-    <option value="global">Global</option>
-    <option value="japan" disabled class="disabled-select">Japan</option>
-  </select>
-  <span class="coming-soon-note" style="opacity: 0.5;">Japan(coming soon)</span>
-</div>
-  </ul>
-
-
-</nav> -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Team Builder</a></li>
+      <li class="nav-disabled"><span>Bonds<small>(coming soon)</small></span></li>
+      <li class="nav-disabled"><span>Players<small>(coming soon)</small></span></li>
+      <li class="nav-disabled"><span>About<small>(coming soon)</small></span></li>
+      <div id="toolbar-top">
+        <label for="serverSelect">Server:</label>
+        <select id="serverSelect" aria-label="Choose server">
+          <option value="global">Global</option>
+          <option value="japan" disabled class="disabled-select">Japan</option>
+        </select>
+        <span class="coming-soon-note" style="opacity: 0.5;">Japan(coming soon)</span>
+      </div>
+    </ul>
+  </nav>
   <header>
     <h1>Haikyu Fly High Team Builder</h1>
     <p><strong>More update coming monday cheers y'all :3</strong></p>
@@ -37,15 +37,36 @@
     <section id="main">
       <div id="board">
         <div class="row" id="row-top">
-          <div class="slot"><div class="hex" data-slot="S"></div><div class="label">S</div></div>
-          <div class="slot"><div class="hex" data-slot="MB1"></div><div class="label">MB</div></div>
-          <div class="slot"><div class="hex" data-slot="WS1"></div><div class="label">WS</div></div>
+          <div class="slot">
+            <div class="hex" data-slot="S"></div>
+            <div class="label">S</div>
+          </div>
+          <div class="slot">
+            <div class="hex" data-slot="MB1"></div>
+            <div class="label">MB</div>
+          </div>
+          <div class="slot">
+            <div class="hex" data-slot="WS1"></div>
+            <div class="label">WS</div>
+          </div>
         </div>
         <div class="row" id="row-mid">
-          <div class="slot"><div class="hex" data-slot="LI"></div><div class="label">Li</div></div>
-          <div class="slot"><div class="hex" data-slot="WS2"></div><div class="label">WS</div></div>
-          <div class="slot"><div class="hex" data-slot="MB2"></div><div class="label">MB</div></div>
-          <div class="slot"><div class="hex" data-slot="OP"></div><div class="label">OP</div></div>
+          <div class="slot">
+            <div class="hex" data-slot="LI"></div>
+            <div class="label">Li</div>
+          </div>
+          <div class="slot">
+            <div class="hex" data-slot="WS2"></div>
+            <div class="label">WS</div>
+          </div>
+          <div class="slot">
+            <div class="hex" data-slot="MB2"></div>
+            <div class="label">MB</div>
+          </div>
+          <div class="slot">
+            <div class="hex" data-slot="OP"></div>
+            <div class="label">OP</div>
+          </div>
         </div>
         <div class="row" id="bench-row">
           <button id="addBench" type="button">+ Bench</button>
@@ -54,7 +75,8 @@
 
       <section id="tabs">
         <nav id="tabbar" aria-label="Synergy sections">
-          <button class="tabbtn" data-tab="deploy" aria-controls="tab-deploy" aria-selected="true">Deployment Bonds</button>
+          <button class="tabbtn" data-tab="deploy" aria-controls="tab-deploy" aria-selected="true">Deployment
+            Bonds</button>
           <button class="tabbtn" data-tab="buffs" aria-controls="tab-buffs" aria-selected="false">Stat Buffs</button>
         </nav>
         <div id="tab-deploy" class="tabcontent" role="region" aria-labelledby="tab-deploy-label">
@@ -93,11 +115,11 @@
     </div>
   </div>
   <script type="module" src="app.js"></script>
-    <!-- <script>
+  <script>
   document.getElementById('navToggle').addEventListener('click', () => {
     document.getElementById('navLinks').classList.toggle('active');
   });
-</script> -->
+</script>
 </body>
 <footer class="app-footer">
   <div class="footer-content">
@@ -110,4 +132,5 @@
     </a>
   </div>
 </footer>
+
 </html>
