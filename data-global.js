@@ -22,7 +22,7 @@ const characters = [
     { name: "Kazuhito R", role: "MB", img: "img-global/kazuhitoR.png", school: "Karasuno", bonds: ["Bench cheer","The Returning Trio"] },
     { name: "Kageyama SR", role: "S", img: "img-global/tobioSR.png", school: "Kitagawa", bonds: [] },
 
-    { name: "Oikawa SSR", role: "S", img: "img-global/oikawaSSR.png", school: "Aoba Johsai", bonds: ["Team chemistry"] },
+    { name: "Oikawa SSR", role: "S", img: "img-global/oikawaSSR.png", school: "Aoba Johsai", bonds: ["Team Chemistry"] },
     { name: "Iwaizumi SSR", role: "WS", img: "img-global/iwaizumiSSR.png", school: "Aoba Johsai", bonds: ["The Wolf Pack"] },
     { name: "Iwaizumi SR", role: "WS", img: "img-global/iwaizumiSR.png", school: "Aoba Johsai", bonds: ["The Wolf Pack(Practice)","Team Chemistry"] },
     { name: "Matsukawa SR", role: "MB", img: "img-global/matsukawaSR.png", school: "Aoba Johsai", bonds: ["Seijoh\'s Senior Year Pillars"] },
@@ -109,7 +109,10 @@ const synergyDescriptions = {
     "Hidden Fire":{"Kentaro SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Yahaba SR": "No buff"},
     "Seijoh\'s Senior Year Pillars": "Increases Matsukawa\'s Block stat by 6/67/8/9/10% and Hanamaki\'s Receive stat by 6/7/8/9/10%",
     "The Wolf Pack(Practice)": "Increases Iwaisumi and Kentaro's Awareness by 6/7/8/9/10%",
-    "Team chemistry" : "Increases Oikawa and Iwaizumi's Awareness by 6/7/8/9/10%"
+    "Team Chemistry" : "Increases Oikawa and Iwaizumi's Awareness by 6/7/8/9/10%",
+
+    //Nekoma
+    
 
 };
 
@@ -156,7 +159,7 @@ const synergyMeta = {
     "Hidden Fire":{ category: "stats", activation: { scope: "any", min: 2 } },
     "Seijoh\'s Senior Year Pillars": { category: "deployment", activation: { scope: "any", min: 2 } },
     "The Wolf Pack(Practice)": { category: "deployment", activation: { scope: "any", min: 2 } },
-    "Team chemistry" : { category: "deployment", activation: { scope: "any", min: 2 } },
+    "Team Chemistry" : { category: "deployment", activation: { scope: "any", min: 2 } },
 
 };
 
@@ -196,7 +199,7 @@ const synergyPairs = {
     "Hidden Fire":[["Kentaro", "Yahaba"]],
     "Seijoh\'s Senior Year Pillars":[["Matsukawa", "Hanamaki"]],
     "The Wolf Pack(Practice)":[["Iwaizumi", "Kentaro"]],
-    "Team chemistry":[["Okawa", "Iwaizumi"]],
+    "Team Chemistry":[["Oikawa", "Iwaizumi"]],
 };
 
 window.characters = characters;
