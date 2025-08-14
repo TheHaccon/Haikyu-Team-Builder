@@ -34,18 +34,18 @@ const characters = [
     { name: "Kentaro SSR", role: "OP", img: "img-global/kyotaniSSR.png", school: "Aoba Johsai", bonds: ["Aoba Johsai's Sophomore","Hidden Fire","The Wolf Pack"] },
     { name: "Kentaro SR", role: "OP", img: "img-global/kyotaniSR.png", school: "Aoba Johsai", bonds: ["The Wolf Pack(Practice)"] },
 
-    { name: "Kenma SSR", role: "S", img: "img-global/kenmaSSR.png", school: "Nekoma", bonds: ["Rival Friends"] },
-    { name: "Kenma SR", role: "S", img: "img-global/kenmaSR.png", school: "Nekoma", bonds: [] },
-    { name: "Kuroo UR", role: "MB", img: "img-global/kurooUR.png", school: "Nekoma", bonds: ["Behind the Smile","Master and Apprentice"] },
-    { name: "Kuroo SSR", role: "MB", img: "img-global/kurooSSR.png", school: "Nekoma", bonds: ["Leaders Cut from the Same Cloth"] },
-    { name: "Yaku SR", role: "Li", img: "img-global/yakuSR.png", school: "Nekoma", bonds: ["Formidable Opponent"] },
-    { name: "Lev SSR", role: "MB", img: "img-global/levSSR.png", school: "Nekoma", bonds: ["Flexible Aces"] },
-    { name: "Lev SR", role: "MB", img: "img-global/levSR.png", school: "Nekoma", bonds: [] },
-    { name: "Yamamoto SR", role: "WS", img: "img-global/yamamotoSR.png", school: "Nekoma", bonds: ["TOMODACHI(Friends!)"] },
-    { name: "Kai SR", role: "OP", img: "img-global/kaiSR.png", school: "Nekoma", bonds: [] },
-    { name: "Fukunaga SR", role: "WS", img: "img-global/fukunagaSR.png", school: "Nekoma", bonds: [] },
-    { name: "Inuoka SR", role: "MB", img: "img-global/inuokaSR.png", school: "Nekoma", bonds: ["Worthy Rival"] },
-    { name: "Teshiro SR", role: "S", img: "img-global/teshiroSR.png", school: "Nekoma", bonds: [] },
+    { name: "Kenma SSR", role: "S", img: "img-global/kenmaSSR.png", school: "Nekoma", bonds: ["Rival Friends","\"Brain\" and \"Control Tower\"","Grit and Competitive","The \"Enigmatic\" Teammate"] },
+    { name: "Kenma SR", role: "S", img: "img-global/kenmaSR.png", school: "Nekoma", bonds: ["\"Pivot\" and \"Defensive Pivot\"","\"Pivot\" and \"Control Tower\""] },
+    { name: "Kuroo UR", role: "MB", img: "img-global/kurooUR.png", school: "Nekoma", bonds: ["Behind the Smile","Master and Apprentice","\"Brain\" and \"Control Tower\""] },
+    { name: "Kuroo SSR", role: "MB", img: "img-global/kurooSSR.png", school: "Nekoma", bonds: ["Leaders Cut from the Same Cloth","\"Pivot\" and \"Control Tower\""] },
+    { name: "Yaku SR", role: "Li", img: "img-global/yakuSR.png", school: "Nekoma", bonds: ["Formidable Opponent","One-on-One Training","\"Pivot\" and \"Defensive Pivot\""] },
+    { name: "Lev SSR", role: "MB", img: "img-global/levSSR.png", school: "Nekoma", bonds: ["Flexible Aces","Nekoma\'s Junior","The \"Enigmatic\" Teammate"] },
+    { name: "Lev SR", role: "MB", img: "img-global/levSR.png", school: "Nekoma", bonds: ["One-on-One Training"] },
+    { name: "Yamamoto SR", role: "WS", img: "img-global/yamamotoSR.png", school: "Nekoma", bonds: ["TOMODACHI(Friends!)","Nekoma\'s Wing Spiker","Grit and Competitive"] },
+    { name: "Kai SR", role: "OP", img: "img-global/kaiSR.png", school: "Nekoma", bonds: ["Nekoma\'s Wing Spiker"] },
+    { name: "Fukunaga SR", role: "WS", img: "img-global/fukunagaSR.png", school: "Nekoma", bonds: ["Nekoma\'s Wing Spiker"] },
+    { name: "Inuoka SR", role: "MB", img: "img-global/inuokaSR.png", school: "Nekoma", bonds: ["Worthy Rival","Nekoma\'s Junior"] },
+    { name: "Teshiro SR", role: "S", img: "img-global/teshiroSR.png", school: "Nekoma", bonds: ["Nekoma\'s Junior"] },
 
     { name: "Aone SSR", role: "MB", img: "img-global/aoneSSR.png", school: "Date Kogyo", bonds: ["Cannon \& Iron Wall","Surprising Friendship"] },
     { name: "Aone SR", role: "MB", img: "img-global/aoneSR.png", school: "Date Kogyo", bonds: [] },
@@ -112,7 +112,15 @@ const synergyDescriptions = {
     "Team Chemistry" : "Increases Oikawa and Iwaizumi's Awareness by 6/7/8/9/10%",
 
     //Nekoma
-    
+    "Nekoma\'s Junior":{"Teshiro SR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Inuoka SR": "No buff", "Lev SSR":"No Buff"},
+    "\"Brain\" and \"Control Tower\"":"Kenma sets the ball, Kuroo performs a Quick Spike with 265/280/295/310/325% of Quick Attack stat as power",
+    "Nekoma\'s Wing Spiker":"Increases Receive and Power Attack stats of players present by 4/5/6/7/8%",
+    "Grit and Competitive":{"Yamamoto SR": "No buff","Kenma SSR": "Set +5/7/9/12/15, Set +1/2/3/4/5%"},
+    "One-on-One Training":{"Lev SR": "Block +5/7/9/12/15, Block +1/2/3/4/5%","Yaku SR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%"},
+    "The \"Enigmatic\" Teammate":{"Lev SSR": "Block +5/7/9/12/15, Block +1/2/3/4/5%","Kenma SSR": "No buff"},
+    "\"Pivot\" and \"Defensive Pivot\"":{"Yaku SR": "Save +5/7/9/12/15, Save +1/2/3/4/5%","Kenma SSR": "Power Attack +5/7/9/12/15, Power Attack +1/2/3/4/5%"},
+    "\"Pivot\" and \"Control Tower\"":"Increases Kenma\'s Set stat by 6/7/8/9/10% and Kuroo\'s Block Stat by 6/7/8/9/10%",
+
 
 };
 
@@ -159,8 +167,16 @@ const synergyMeta = {
     "Hidden Fire":{ category: "stats", activation: { scope: "any", min: 2 } },
     "Seijoh\'s Senior Year Pillars": { category: "deployment", activation: { scope: "any", min: 2 } },
     "The Wolf Pack(Practice)": { category: "deployment", activation: { scope: "any", min: 2 } },
-    "Team Chemistry" : { category: "deployment", activation: { scope: "any", min: 2 } },
+    "Team Chemistry": { category: "deployment", activation: { scope: "any", min: 2 } },
 
+    "Nekoma\'s Junior": { category: "stats", activation: { scope: "any", min: 3 } },
+    "\"Brain\" and \"Control Tower\"": { category: "deployment", activation: { scope: "any", min: 2 } },
+    "Nekoma\'s Wing Spiker": { category: "deployment", activation: { scope: "any", min: 3 } },
+    "Grit and Competitive": { category: "stats", activation: { scope: "any", min: 2 } },
+    "One-on-One Training": { category: "stats", activation: { scope: "any", min: 2 } },
+    "The \"Enigmatic\" Teammate": { category: "stats", activation: { scope: "any", min: 2 } },
+    "\"Pivot\" and \"Defensive Pivot\"": { category: "stats", activation: { scope: "any", min: 2 } },
+    "\"Pivot\" and \"Control Tower\"": { category: "deployment", activation: { scope: "any", min: 2 } },
 };
 
 //put what player create the bond
@@ -200,6 +216,15 @@ const synergyPairs = {
     "Seijoh\'s Senior Year Pillars":[["Matsukawa", "Hanamaki"]],
     "The Wolf Pack(Practice)":[["Iwaizumi", "Kentaro"]],
     "Team Chemistry":[["Oikawa", "Iwaizumi"]],
+
+    "Nekoma\'s Junior":[["Teshiro", "Inuoka","Lev"]],
+    "\"Brain\" and \"Control Tower\"":[["Kenma", "Kuroo"]],
+    "Nekoma\'s Wing Spiker":[["Ifukunaga", "Kai","Yamamoto"]],
+    "Grit and Competitive":[["Kenma", "Yamamoto"]],
+    "One-on-One Training":[["Lev", "Yaku"]],
+    "The \"Enigmatic\" Teammate":[["Kenma", "Lev"]],
+    "\"Pivot\" and \"Defensive Pivot\"":[["Kenma", "Yaku"]],
+    "\"Pivot\" and \"Control Tower\"":[["Kenma", "Kuroo"]],
 };
 
 window.characters = characters;
