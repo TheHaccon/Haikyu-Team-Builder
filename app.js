@@ -300,16 +300,6 @@ function renderSynergies() {
       }
     }
   }
-
-  Object.entries(schools).forEach(([s,c])=>{
-    const need = state.synergyMeta?.[s]?.activation?.min ?? 4;
-    if (c>=need && state.synergyDescriptions[s]) {
-      const li = document.createElement("li");
-      li.innerHTML = `<strong>School: ${s}</strong> — ${state.synergyDescriptions[s]}`;
-      buffsList.appendChild(li);
-    }
-  });
-
   if (!anyDeploy) deployList.innerHTML = `<li>(no active bonds)</li>`;
   if (!buffsList.children.length) buffsList.innerHTML = `<li>(no active buffs)</li>`;
 }
