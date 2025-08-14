@@ -12,7 +12,7 @@ const characters = [
     { name: "Nishinoya SR", role: "Li", img: "img-global/nishinoyaSR.png", school: "Karasuno", bonds: ["\"Guardian Deity\" and \"Ace\"","Formidable Opponent","Karasuno\'s Sophomore(practice)"] },
     { name: "Tanaka SSR", role: "WS", img: "img-global/tanakaSSR.png", school: "Karasuno", bonds: ["Karasuno\'s sophomore", "Kiyoko\'s Knights","TOMODACHI(Friends!)"] },
     { name: "Tanaka SR", role: "WS", img: "img-global/tanakaSR.png", school: "Karasuno", bonds: ["Karasuno\'s Wing Spiker","Building Team Chemistry","Karasuno\'s Sophomore(practice)"] },
-    { name: "Tsukishima SSR", role: "MB", img: "img-global/tsukishimaSSR.png", school: "Karasuno", bonds: ["\"Shield\" and \"Spear\"","Master and Apprentice"] },
+    { name: "Tsukishima SSR", role: "MB", img: "img-global/tsukishimaSSR.png", school: "Karasuno", bonds: ["\"Shield\" and \"Spear\"","Master and Apprentice","Prediction VS System"] },
     { name: "Tsukishima SR", role: "MB", img: "img-global/tsukishimaSR.png", school: "Karasuno", bonds: ["Simulated Junior Training Teamate","\"Shield\" and \"Spear\"(practice)","\"Sun\" and \"Moon\""] },
     { name: "Tadashi SR", role: "MB", img: "img-global/tadashiSR.png", school: "Karasuno", bonds: ["\"Shield\" and \"Spear\"",] },
     { name: "Tadashi R", role: "MB", img: "img-global/tadashiR.png", school: "Karasuno", bonds: ["\"Shield\" and \"Spear\"(practice)"] },
@@ -62,8 +62,10 @@ const characters = [
     { name: "Jingo R", role: "MB", img: "img-global/jingoR.png", school: "Date Kogyo", bonds: ["Date Kogyo\'s Junior"] },
     { name: "Taro R", role: "OP", img: "img-global/taroR.png", school: "Date Kogyo", bonds: [] },
 
-    { name: "Ushijima UR", role: "OP", img: "img-global/ushijimaUR.png", school: "Shiratorizawa", bonds: [] },
-    { name: "Taichi SR", role: "MB", img: "img-global/kawanishiSR.png", school: "Shiratorizawa", bonds: [] },
+    { name: "Ushijima UR", role: "OP", img: "img-global/ushijimaUR.png", school: "Shiratorizawa", bonds: ["Lifelong Best Friends","Undisputed Aces"] },
+    { name: "Goshiki SSR", role: "WS", img: "img-global/GoshikiSSR.png", school: "Shiratorizawa", bonds: ["Promising Senpai","Undisputed Aces"] },
+    { name: "Tendo SSR", role: "MB", img: "img-global/tendoSSR.png", school: "Shiratorizawa", bonds: ["Lifelong Best Friends","Promising Senpai","Shiratorizawa\'s Middke Blocker","Prediction VS System"] },
+    { name: "Taichi SR", role: "MB", img: "img-global/kawanishiSR.png", school: "Shiratorizawa", bonds: ["Shiratorizawa\'s Middke Blocker"] },
 ];
 // tempalte: "": "",
 const synergyDescriptions = {
@@ -122,15 +124,21 @@ const synergyDescriptions = {
     "\"Pivot\" and \"Control Tower\"":"Increases Kenma\'s Set stat by 6/7/8/9/10% and Kuroo\'s Block Stat by 6/7/8/9/10%",
 
     //Date Kogyo
-    "Date Kogyo\'s Captains":{"Kaname":"No buff","Kenji SSR":"Power Attack +5/7/9/12/15, Power Attack +1/2/3/4/5%"},
+    "Date Kogyo\'s Captains":{"Kaname SR":"No buff","Kenji SSR":"Power Attack +5/7/9/12/15, Power Attack +1/2/3/4/5%"},
     "The Silent and the Snarky":"Aone and Kenji perform a Double block with 180/195/210/225/240% of Aone\'s Block stat as power;applies \"Enrage\" Debuff to opponent spiker \(reduces Power\/Quick Attack stats by 10%\)",
     "New Captain \& Tall Rookie":"Increases Block stat of front row players by 2/2.5/3/3.5/4%",
     "Date Kogyo\'s Wing Spiker":"Increases Yutaka\'s Block stat by 2/2.5/3/3.5/4% and Takehito\'s Power Attack stat by 2/2.5/3/3.5/4%",
     "Date Kogyo\'s Setter":{"KanameSR":"No buff","Kaji SSR":"Set +5/7/9/12/15, Set +1/2/3/4/5%"},
     "Date Kogyo\'s Junior":{"Jingo R":"Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Sakunami R":"Quick Attack +5/7/9/12/15, Quick Attack stat by 6/7/8/9/10%"},
-    "Date Kogyo\'s Senior": "When casting Block skills, increases Team morale by 3/3/4/4/5"
+    "Date Kogyo\'s Senior": "When casting Block skills, increases Team morale by 3/3/4/4/5",
 
-    
+    //Shiratorizawa
+    "Lifelong Best Friends":"Increases Ushijima\'s Attack Technique by 3/3.5/4/4.5/5% and Tendo\'s Defense Technique by 3/3.5/4/4.5/5%",
+    "Promising Senpai":{"Tendo SSR":"Quick Attack +5/7/9/12/15, Quick Attack +1/2/3/4/5%","Goshiki SSR":"Power Attack +5/7/9/12/15, Power Attack +1/2/3/4/5%"},
+    "Undisputed Aces":{"Goshiki SSR":"Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Ushijima UR":"Power Attack +5/7/9/12/15, Power Attack +1/2/3/4/5%"},
+    "Shiratorizawa\'s Middke Blocker":"Increases Block stat of your side\'s front row players by 5/5.5/6/6.5/7%",
+    "Prediction VS System":{"Tsukishima SSR":"No buff","Tendo SSR":"Block +5/7/9/12/15, Block +1/2/3/4/5%"},
+
 };
 
 //Lowkey just have to remeber that when a bond is create I put it here
@@ -195,7 +203,12 @@ const synergyMeta = {
     "Date Kogyo\'s Junior": { category: "stats", activation: { scope: "any", min: 2 } },
     "Date Kogyo\'s Senior": { category: "deployment", activation: { scope: "any", min: 3 } },
 
-    
+    "Lifelong Best Friends":{ category: "deployment", activation: { scope: "any", min: 2 } },
+    "Promising Senpai":{ category: "stats", activation: { scope: "any", min: 2 } },
+    "Undisputed Aces":{ category: "stats", activation: { scope: "any", min: 2 } },
+    "Shiratorizawa\'s Middke Blocker":{ category: "deployment", activation: { scope: "any", min: 2 } },
+    "Prediction VS System":{ category: "stats", activation: { scope: "any", min: 2 } },
+
 };
 
 //put what player create the bond
