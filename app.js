@@ -259,12 +259,32 @@ function renderSynergies() {
     if (!isActive) continue;
 
     const cat = meta?.category || "deployment";
-    if (cat === "deployment") {
-      anyDeploy = true;
-      const li = document.createElement("li");
-      li.innerHTML = `<strong>${b}</strong> — ${state.synergyDescriptions[b]||""}`;
-      deployList.appendChild(li);
-    }
+if (cat === "deployment") {
+  anyDeploy = true;
+  const desc = state.synergyDescriptions[b];
+  const matchedPlayers = state.players.filter(p =>
+    p.bonds?.includes(b) && pickedMap.has(baseName(p.name))
+  );
+
+  if (matchedPlayers.length > 0) {
+    const li = document.createElement("li");
+    li.innerHTML = `
+      <div style="font-weight:bold; margin-bottom:4px; text-decoration: underline;">${b}</div>
+      <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:6px;">
+        ${matchedPlayers.map(p => `
+          <img src="${p.img}" alt="${p.name}" style="width:28px;height:28px;object-fit:cover;border-radius:4px;">
+          <strong>${p.name}</strong>
+        `).join('<span>×</span>')}
+      </div>
+      <div style="font-size:14px; color:#FFFFFF;">
+        ${desc || "(description missing)"}
+      </div>
+    `;
+    deployList.appendChild(li);
+  }
+}
+
+
 
     if (cat === "stats") {
       const descObj = state.synergyDescriptions[b];
