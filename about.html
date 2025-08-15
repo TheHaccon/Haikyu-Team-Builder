@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="app-nav">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Team Builder</a></li>
+      <li class="nav-disabled"><span>Bonds<small>(coming soon)</small></span></li>
+      <li class="nav-disabled"><span>Players<small>(coming soon)</small></span></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <main style="padding: 20px; max-width: 800px; margin: auto;">
+    <h1>About This Project</h1>
+    <p>Hi! I'm TheHaccon, the creator of this tool. I'm building this Team Builder to help players easily plan their teams based on synergies and bonds.</p>
+    <p>Future updates planned:</p>
+    <ul>
+      <li>Bonds feature with detailed combo previews</li>
+      <li>Player database & filtering</li>
+      <li>Save & share teams</li>
+      <li>Multi-language support</li>
+      <li>Resource counter</li>
+    </ul>
+
+    <h2>Roadmap</h2>
+    <p>You can track the feature roadmap and issues on GitHub:</p>
+    <p>
+      <a href="https://github.com/users/TheHaccon/projects/5/views/2" target="_blank">
+        View GitHub Roadmap →
+      </a>
+    </p>
+  </main>
+
+  <footer class="app-footer">
+    <div class="footer-content">
+      <a href="https://discordapp.com/users/192790568479358977" target="_blank" title="Add me on Discord">
+        <img src="icon/Discord.png" alt="Discord" class="footer-icon" />
+      </a>
+      •
+      <a href="https://ko-fi.com/K3K51JN9Z2" target="_blank" title="Support me on Ko-fi">
+        <img src="icon/Kofi.png" alt="Ko-fi" class="footer-icon" />
+      </a>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
