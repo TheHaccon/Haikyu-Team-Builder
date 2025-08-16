@@ -10,11 +10,20 @@
   <nav class="app-nav">
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Team Builder</a></li>
-      <li class="nav-disabled"><span>Bonds<small>(coming soon)</small></span></li>
-      <li class="nav-disabled"><span>Players<small>(coming soon)</small></span></li>
-      <li><a href="about.html">About</a></li>
-    </ul>
+            <li><a href="index.html">Team Builder</a></li>
+            <li class="nav-disabled"><span>Bonds<small>(coming soon)</small></span></li>
+            <li><a href="players.html">Players (New not fully done)</a></li>
+            <li class="nav-disabled"><span>Resources counter<small>(coming soon)</small></span></li>
+            <li><a href="about.html">About (New)</a></li>
+            <div id="toolbar-top">
+                <label for="serverSelect">Server:</label>
+                <select id="serverSelect" aria-label="Choose server">
+                    <option value="global">Global</option>
+                    <option value="japan" disabled class="disabled-select">Japan</option>
+                </select>
+                <span class="coming-soon-note" style="opacity: 0.5;">Japan(coming soon)</span>
+            </div>
+        </ul>
   </nav>
 
   <main style="padding: 20px; max-width: 800px; margin: auto;">
