@@ -6,6 +6,7 @@
       img: "img-char/hinataSSR.png",
       school: "Karasuno",
       rarity: "SSR",
+      position:"Middle Blocker",
       stats: {
         lvl1: {
           Serve: 103,
@@ -24,7 +25,7 @@
           Save: "TBD"
         },
       },
-      tags: ["Wing Spiker", "Karasuno", "SSR"]
+      tags: ["Middle Blocker", "Karasuno", "SSR"]
     },
     {
       id: "hinata(Practice)",
@@ -32,6 +33,7 @@
       img: "img-char/hinataSR.png",
       school: "Karasuno",
       rarity: "SR",
+      position:"Middle Blocker",
       stats: {
         lvl1: {
           Serve: 83,
@@ -51,7 +53,7 @@
           Technique: 76
         }
       },
-      tags: ["Wing Spiker", "Karasuno", "SR"]
+      tags: ["Middle Blocker", "Karasuno", "SR"]
     },
     {
       id: "kageyama(Practice)",
@@ -59,6 +61,7 @@
       img: "img-char/kageyamaSSR.png",
       school: "Karasuno",
       rarity: "SSR",
+      position: "Setter",
       stats: {
         lvl1: {
           Serve: 115,
@@ -86,6 +89,7 @@
       img: "img-char/daichiSSR.png",
       school: "Karasuno",
       rarity: "SSR",
+      position:"Opposite Hitter",
       stats: {
         lvl1: {
           Serve: 103,
@@ -113,6 +117,7 @@
       img: "img-char/daichiSR.png",
       school: "Karasuno",
       rarity: "SR",
+      position:"Opposite Hitter",
       stats: {
         lvl1: {
           Serve: 84,
@@ -140,6 +145,7 @@
       img: "img-char/sugawaraSR.png",
       school: "Karasuno",
       rarity: "SR",
+      position:"Setter",
       stats: {
         lvl1: {
           Serve: 99,
@@ -167,6 +173,7 @@
       img: "img-char/asahiSSR.png",
       school: "Karasuno",
       rarity: "SSR",
+      position:"Wing Spiker",
       stats: {
         lvl1: {
           Serve: 116,
@@ -194,6 +201,7 @@
       img: "img-char/asahiSR.png",
       school: "Karasuno",
       rarity: "SR",
+      position:"Wing Spiker",
       stats: {
         lvl1: {
           Serve: 94,
@@ -221,6 +229,7 @@
       img: "img-char/nishinoyaSSR.png",
       school: "Karasuno",
       rarity: "SSR",
+      position:"Libero",
       stats: {
         lvl1: {
           Serve: 99,
@@ -248,6 +257,7 @@
       img: "img-char/nishinoyaSR.png",
       school: "Karasuno",
       rarity: "SR",
+      position:"Libero",
       stats: {
         lvl1: {
           Serve: 81,
@@ -275,6 +285,7 @@
       img: "img-char/tanakaSSR.png",
       school: "Karasuno",
       rarity: "SSR",
+      position:"Wing Spiker",
       stats: {
         lvl1: {
           Serve: 104,
@@ -302,6 +313,7 @@
       img: "img-char/TanakaSR.png",
       school: "Karasuno",
       rarity: "SR",
+      position:"Wing Spiker",
       stats: {
         lvl1: {
           Serve: 84,
@@ -329,6 +341,7 @@
       img: "img-char/tsukishimaSSR.png",
       school: "Karasuno",
       rarity: "SSR",
+      position:"Middle Blocker",
       stats: {
         lvl1: {
           Serve: 106,
@@ -356,6 +369,7 @@
       img: "img-char/tsukishimaSR.png",
       school: "Karasuno",
       rarity: "SR",
+      position:"Middle Blocker",
       stats: {
         lvl1: {
           Serve: 86,
@@ -383,6 +397,7 @@
       img: "img-char/tadashiSR.png",
       school: "Karasuno",
       rarity: "SR",
+      position:"Middle Blocker",
       stats: {
         lvl1: {
           Serve: 99,
@@ -410,6 +425,7 @@
       img: "img-char/tadashiR.png",
       school: "Karasuno",
       rarity: "R",
+      position:"Middle Blocker",
       stats: {
         lvl1: {
           Serve: 90,
@@ -431,12 +447,13 @@
       },
       tags: ["Middle Blocker", "Karasuno", "R"]
     },
-        {
+    {
       id: "chikara",
       name: "Chikara Ennoshita",
       img: "img-char/chikaraSR.png",
       school: "Karasuno",
       rarity: "SR",
+      position:"Wing Spiker",
       stats: {
         lvl1: {
           Serve: 84,
@@ -464,6 +481,7 @@
       img: "img-char/chikaraR.png",
       school: "Karasuno",
       rarity: "R",
+      position:"Wing spiker",
       stats: {
         lvl1: {
           Serve: 77,
@@ -491,6 +509,7 @@
       img: "img-char/kinoshitaR.png",
       school: "Karasuno",
       rarity: "R",
+      position:"Wing Spiker",
       stats: {
         lvl1: {
           Serve: 86,
@@ -519,6 +538,7 @@
       img: "img-char/naritaR.png",
       school: "Karasuno",
       rarity: "R",
+      position:"Middle Blocker",
       stats: {
         lvl1: {
           Serve: 79,
@@ -546,6 +566,7 @@
   const grid = document.getElementById("playerGrid");
   const filterSchool = document.getElementById("filterSchool");
   const filterRarity = document.getElementById("filterRarity");
+  const filterPosition = document.getElementById("filterPosition");
 
   function statList(stats = {}) {
     const keys = Object.keys(stats.lvl1 || {});
@@ -584,11 +605,13 @@
   function renderFiltered() {
     const school = filterSchool.value;
     const rarity = filterRarity.value;
+    const position = filterPosition.value;
 
     const filtered = players.filter(p => {
       const matchSchool = school === "" || p.school === school;
       const matchRarity = rarity === "" || p.rarity === rarity;
-      return matchSchool && matchRarity;
+      const matchPosition = position === "" || p.position === position;
+      return matchSchool && matchRarity && matchPosition;
     });
 
     grid.innerHTML = filtered.map(cardTemplate).join("");
@@ -597,6 +620,8 @@
   // Events
   filterSchool.addEventListener("change", renderFiltered);
   filterRarity.addEventListener("change", renderFiltered);
+  filterPosition.addEventListener("change", renderFiltered);
+
 
   // Initial render
   renderFiltered();
