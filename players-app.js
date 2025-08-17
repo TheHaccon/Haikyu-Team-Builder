@@ -1036,7 +1036,7 @@
       tags: ["Middle Blocker", "Nekoma", "SSR"]
     },
     {
-      id: "kenma",
+      id: "lev(Practice)",
       name: "Lev Haiba (Practice)",
       img: "img-char/levSR.png",
       school: "Nekoma",
@@ -1062,6 +1062,146 @@
         }
       },
       tags: ["Middle Blocker", "Nekoma", "SR"]
+    },
+    {
+      id: "yamamoto",
+      name: "Taketora Yamamoto",
+      img: "img-char/yamamotoSR.png",
+      school: "Nekoma",
+      rarity: "SR",
+      position:"Wing Spiker",
+      stats: {
+        lvl1: {
+          Serve: 85,
+          Power_Attack: 98,
+          Set: 80,
+          Receive: 94,
+          Block: 89,
+          Save: 80
+        },
+        max: {
+          Attack: 70,
+          Block: 65,
+          Defense: 67,
+          Receive: 70,
+          Speed: 75,
+          Stamina: 78,
+          Technique: 88
+        }
+      },
+      tags: ["Wing Spiker", "Nekoma", "SR"]
+    },
+    {
+      id: "kai",
+      name: "Nobuyuki Kai",
+      img: "img-char/kaiSR.png",
+      school: "Nekoma",
+      rarity: "SR",
+      position:"Opposite Hitter",
+      stats: {
+        lvl1: {
+          Serve: 84,
+          Power_Attack: 89,
+          Set: 80,
+          Receive: 98,
+          Block: 89,
+          Save: 85
+        },
+        max: {
+          Attack: 70,
+          Block: 65,
+          Defense: 67,
+          Receive: 70,
+          Speed: 75,
+          Stamina: 78,
+          Technique: 88
+        }
+      },
+      tags: ["Opposite Hitter", "Nekoma", "SR"]
+    },
+    {
+      id: "fukunaga",
+      name: "Shohei Fukunaga",
+      img: "img-char/fukunagaSR.png",
+      school: "Nekoma",
+      rarity: "SR",
+      position:"Wing Spiker",
+      stats: {
+        lvl1: {
+          Serve: 84,
+          Power_Attack: 98,
+          Set: 80,
+          Receive: 94,
+          Block: 89,
+          Save: 80
+        },
+        max: {
+          Attack: 70,
+          Block: 65,
+          Defense: 67,
+          Receive: 70,
+          Speed: 75,
+          Stamina: 78,
+          Technique: 88
+        }
+      },
+      tags: ["Wing Spiker", "Nekoma", "SR"]
+    },
+    {
+      id: "inuoka",
+      name: "So Inuoka",
+      img: "img-char/inuokaSR.png",
+      school: "Nekoma",
+      rarity: "SR",
+      position:"Middle Blocker",
+      stats: {
+        lvl1: {
+          Serve: 86,
+          Quick_Attack: 94,
+          Set: 82,
+          Receive: 84,
+          Block: 98,
+          Save: 80
+        },
+        max: {
+          Attack: 70,
+          Block: 65,
+          Defense: 67,
+          Receive: 70,
+          Speed: 75,
+          Stamina: 78,
+          Technique: 88
+        }
+      },
+      tags: ["Middle Blocker", "Nekoma", "SR"]
+    },
+    {
+      id: "teshiro",
+      name: "Tamahiko Teshiro",
+      img: "img-char/teshiroSR.png",
+      school: "Nekoma",
+      rarity: "SR",
+      position:"Setter",
+      stats: {
+        lvl1: {
+          Serve: 98,
+          Power_Attack: 88,
+          Set: 93,
+          Receive: 80,
+          Block: 88,
+          Save: 75
+        },
+        max: {
+          Attack: 70,
+          Block: 65,
+          Defense: 67,
+          Receive: 70,
+          Speed: 75,
+          Stamina: 78,
+          Technique: 88
+        }
+      },
+      tags: ["Setter", "Nekoma", "SR"]
     },
   ];
 
