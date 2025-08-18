@@ -175,7 +175,6 @@ header p {
   cursor: pointer;
 }
 
-/* Nav links layout */
 .nav-links {
   list-style: none;
   display: flex;
@@ -259,6 +258,63 @@ header p {
   filter: brightness(1.2);
 }
 
+.skills {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.skill {
+  position: relative;
+  cursor: pointer;
+}
+
+.skill img {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--ring);
+  border-radius: 6px;
+}
+
+.skill-detail {
+  display: none;
+  position: absolute;
+  bottom: 110%;
+  left: 0;
+  background: var(--card);
+  color: var(--text);
+  padding: 6px 10px;
+  border: 1px solid var(--ring);
+  border-radius: 6px;
+  font-size: 12px;
+  width: max-content;
+  max-width: 240px;
+  white-space: normal;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.skill:hover .skill-detail {
+  display: block;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.skill-tag {
+  font-size: 12px;
+  background: var(--ring);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--text);
+}
+
+
 @media (max-width: 520px) {
   .details-grid {
     grid-template-columns: 1fr;
@@ -311,4 +367,43 @@ header p {
   .server-select-container {
     margin-left: 0;
   }
+
+  .skills {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.skill {
+  position: relative;
+  cursor: pointer;
+}
+
+.skill img {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--ring);
+  border-radius: 6px;
+}
+
+.skill-detail {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background: var(--card);
+  color: var(--text);
+  padding: 6px 10px;
+  border: 1px solid var(--ring);
+  border-radius: 6px;
+  font-size: 12px;
+  width: 200px;
+  z-index: 1;
+}
+
+.skill:hover .skill-detail {
+  display: block;
+}
+
 }

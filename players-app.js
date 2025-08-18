@@ -6,7 +6,7 @@
       img: "img-char/hinataSSR.png",
       school: "Karasuno",
       rarity: "SSR",
-      position:"Middle Blocker",
+      position: "Middle Blocker",
       stats: {
         lvl1: {
           Serve: 103,
@@ -25,7 +25,41 @@
           Save: "TBD"
         },
       },
-      tags: ["Middle Blocker", "Karasuno", "SSR"]
+      tags: ["Middle Blocker", "Karasuno", "SSR"],
+      skills: [
+        {
+          name: "The Greatest Decoy",
+          icon: "skills/hinataS1.png",
+          tags: [
+            "Passive", "Chance to trigger",
+          ],
+          description: "While Hinata is present, increases Power\/Quick Attack stat of players on your side by 7/10/13%"
+        },
+        {
+          name: "Quick Duo",
+          icon: "skills/hinataS2.png",
+          tags: [
+            "Passive", "Quick Spike Boost",
+          ],
+          description: "Hinata performs a Quick Spike and the setter is a Quick Attack-type player, increases this spike's power by 15/17/19% of that setter\'s Quick Attack stat."
+        },
+        {
+          name: "On The Ball",
+          icon: "skills/hinataS3.png",
+          tags: [
+            "Passive", "Chance to trigger",
+          ],
+          description: "Increases Hinata\'s Awareness by 6/7/7%, When Hinata lands a Critical hit, additionally increases Awareness by 4/4/5%, stacking up to 1 times."
+        },
+        {
+          name: "Soaring Teen",
+          icon: "skills/hinataS4.png",
+          tags: [
+            "Ultimate", "Active", "Quick Attack", "Critical Power Up"
+          ],
+          description: "Hinata performs a Quick Spike with 235/250/265/280/295% of his attack stat as power. If this spike is a Critical hit, increases its power by an additional 20% of his Quick Attack stat."
+        },
+      ],
     },
     {
       id: "hinata(Practice)",
@@ -33,7 +67,7 @@
       img: "img-char/hinataSR.png",
       school: "Karasuno",
       rarity: "SR",
-      position:"Middle Blocker",
+      position: "Middle Blocker",
       stats: {
         lvl1: {
           Serve: 83,
@@ -53,7 +87,41 @@
           Technique: 76
         }
       },
-      tags: ["Middle Blocker", "Karasuno", "SR"]
+      tags: ["Middle Blocker", "Karasuno", "SR"],
+      skills: [
+        {
+          name: "Relentless Runner",
+          icon: "skills/hinata2S1.png",
+          tags: [
+            "Passive",
+          ],
+          description: "Increases Hinata (Practice)\'s Quick Attack stat by 10/12/14%"
+        },
+        {
+          name: "Undying Spirit",
+          icon: "skills/hinata2S2.png",
+          tags: [
+            "Passive", "Enhance Team",
+          ],
+          description: "When Hinata (Practice) scores, players on your side receive \"Spike Intuition\" (lasts for 8 net crossings), increasing Spike power by 6/7.5/9% of the player\'s Power/Quick Attack stat"
+        },
+        {
+          name: "Above The Block",
+          icon: "skills/hinata2S3.png",
+          tags: [
+            "Passive", "Counter Block",
+          ],
+          description: "When  Hinata (Practice) performs a Quick Spike, reduces opponent\'s blocking power by 7/9.5/12% of the blocking player\'s Block stat"
+        },
+        {
+          name: "Soaring Teen",
+          icon: "skills/hinataS4.png",
+          tags: [
+            "Ultimate", "Active", "Quick Attack", "Stat Bonus"
+          ],
+          description: " Hinata (Practice) performs a Quick Spike with 215/230/245/260/275% of Quick Attack stat as power; for this Spike, HINATA (Practice)\'s Strength increases by 10%"
+        },
+      ],
     },
     {
       id: "kageyama(Practice)",
@@ -89,7 +157,7 @@
       img: "img-char/daichiSSR.png",
       school: "Karasuno",
       rarity: "SSR",
-      position:"Opposite Hitter",
+      position: "Opposite Hitter",
       stats: {
         lvl1: {
           Serve: 103,
@@ -117,7 +185,7 @@
       img: "img-char/daichiSR.png",
       school: "Karasuno",
       rarity: "SR",
-      position:"Opposite Hitter",
+      position: "Opposite Hitter",
       stats: {
         lvl1: {
           Serve: 84,
@@ -145,7 +213,7 @@
       img: "img-char/sugawaraSR.png",
       school: "Karasuno",
       rarity: "SR",
-      position:"Setter",
+      position: "Setter",
       stats: {
         lvl1: {
           Serve: 99,
@@ -173,7 +241,7 @@
       img: "img-char/asahiSSR.png",
       school: "Karasuno",
       rarity: "SSR",
-      position:"Wing Spiker",
+      position: "Wing Spiker",
       stats: {
         lvl1: {
           Serve: 116,
@@ -201,7 +269,7 @@
       img: "img-char/asahiSR.png",
       school: "Karasuno",
       rarity: "SR",
-      position:"Wing Spiker",
+      position: "Wing Spiker",
       stats: {
         lvl1: {
           Serve: 94,
@@ -229,7 +297,7 @@
       img: "img-char/nishinoyaSSR.png",
       school: "Karasuno",
       rarity: "SSR",
-      position:"Libero",
+      position: "Libero",
       stats: {
         lvl1: {
           Serve: 99,
@@ -257,7 +325,7 @@
       img: "img-char/nishinoyaSR.png",
       school: "Karasuno",
       rarity: "SR",
-      position:"Libero",
+      position: "Libero",
       stats: {
         lvl1: {
           Serve: 81,
@@ -285,7 +353,7 @@
       img: "img-char/tanakaSSR.png",
       school: "Karasuno",
       rarity: "SSR",
-      position:"Wing Spiker",
+      position: "Wing Spiker",
       stats: {
         lvl1: {
           Serve: 104,
@@ -310,10 +378,10 @@
     {
       id: "ryunosuke(Practice)",
       name: "Ryunosuke Tanaka (Practice)",
-      img: "img-char/TanakaSR.png",
+      img: "img-char/tanakaSR.png",
       school: "Karasuno",
       rarity: "SR",
-      position:"Wing Spiker",
+      position: "Wing Spiker",
       stats: {
         lvl1: {
           Serve: 84,
@@ -341,7 +409,7 @@
       img: "img-char/tsukishimaSSR.png",
       school: "Karasuno",
       rarity: "SSR",
-      position:"Middle Blocker",
+      position: "Middle Blocker",
       stats: {
         lvl1: {
           Serve: 106,
@@ -369,7 +437,7 @@
       img: "img-char/tsukishimaSR.png",
       school: "Karasuno",
       rarity: "SR",
-      position:"Middle Blocker",
+      position: "Middle Blocker",
       stats: {
         lvl1: {
           Serve: 86,
@@ -397,7 +465,7 @@
       img: "img-char/tadashiSR.png",
       school: "Karasuno",
       rarity: "SR",
-      position:"Middle Blocker",
+      position: "Middle Blocker",
       stats: {
         lvl1: {
           Serve: 99,
@@ -425,7 +493,7 @@
       img: "img-char/tadashiR.png",
       school: "Karasuno",
       rarity: "R",
-      position:"Middle Blocker",
+      position: "Middle Blocker",
       stats: {
         lvl1: {
           Serve: 90,
@@ -453,7 +521,7 @@
       img: "img-char/chikaraSR.png",
       school: "Karasuno",
       rarity: "SR",
-      position:"Wing Spiker",
+      position: "Wing Spiker",
       stats: {
         lvl1: {
           Serve: 84,
@@ -481,7 +549,7 @@
       img: "img-char/chikaraR.png",
       school: "Karasuno",
       rarity: "R",
-      position:"Wing spiker",
+      position: "Wing spiker",
       stats: {
         lvl1: {
           Serve: 77,
@@ -509,7 +577,7 @@
       img: "img-char/kinoshitaR.png",
       school: "Karasuno",
       rarity: "R",
-      position:"Wing Spiker",
+      position: "Wing Spiker",
       stats: {
         lvl1: {
           Serve: 86,
@@ -537,7 +605,7 @@
       img: "img-char/naritaR.png",
       school: "Karasuno",
       rarity: "R",
-      position:"Middle Blocker",
+      position: "Middle Blocker",
       stats: {
         lvl1: {
           Serve: 79,
@@ -565,7 +633,7 @@
       img: "img-char/oikawaSSR.png",
       school: "Aoba Johsai",
       rarity: "SSR",
-      position:"Setter",
+      position: "Setter",
       stats: {
         lvl1: {
           Serve: 122,
@@ -593,7 +661,7 @@
       img: "img-char/iwaizumiSSR.png",
       school: "Aoba Johsai",
       rarity: "SSR",
-      position:"Wing Spiker",
+      position: "Wing Spiker",
       stats: {
         lvl1: {
           Serve: 104,
@@ -621,7 +689,7 @@
       img: "img-char/iwaizumiSR.png",
       school: "Aoba Johsai",
       rarity: "SSR",
-      position:"Wing Spiker",
+      position: "Wing Spiker",
       stats: {
         lvl1: {
           Serve: 85,
@@ -649,7 +717,7 @@
       img: "img-char/matsukawaSR.png",
       school: "Aoba Johsai",
       rarity: "SR",
-      position:"Middle Blocker",
+      position: "Middle Blocker",
       stats: {
         lvl1: {
           Serve: 86,
@@ -677,7 +745,7 @@
       img: "img-char/hanamakiSR.png",
       school: "Aoba Johsai",
       rarity: "SR",
-      position:"Wing Spiker",
+      position: "Wing Spiker",
       stats: {
         lvl1: {
           Serve: 84,
@@ -705,7 +773,7 @@
       img: "img-char/yahabaSR.png",
       school: "Aoba Johsai",
       rarity: "SR",
-      position:"Setter",
+      position: "Setter",
       stats: {
         lvl1: {
           Serve: 98,
@@ -733,7 +801,7 @@
       img: "img-char/watariSR.png",
       school: "Aoba Johsai",
       rarity: "SR",
-      position:"Libero",
+      position: "Libero",
       stats: {
         lvl1: {
           Serve: 81,
@@ -761,7 +829,7 @@
       img: "img-char/kindaichiSR.png",
       school: "Aoba Johsai",
       rarity: "SR",
-      position:"Middle Blocker",
+      position: "Middle Blocker",
       stats: {
         lvl1: {
           Serve: 84,
@@ -789,7 +857,7 @@
       img: "img-char/kunimiSR.png",
       school: "Aoba Johsai",
       rarity: "SR",
-      position:"Opposite Hitter",
+      position: "Opposite Hitter",
       stats: {
         lvl1: {
           Serve: 84,
@@ -817,7 +885,7 @@
       img: "img-char/kyotaniSSR.png",
       school: "Aoba Johsai",
       rarity: "SSR",
-      position:"Opposite Hitter",
+      position: "Opposite Hitter",
       stats: {
         lvl1: {
           Serve: 116,
@@ -845,7 +913,7 @@
       img: "img-char/kyotaniSR.png",
       school: "Aoba Johsai",
       rarity: "SR",
-      position:"Opposite Hitter",
+      position: "Opposite Hitter",
       stats: {
         lvl1: {
           Serve: 95,
@@ -873,7 +941,7 @@
       img: "img-char/kenmaSSR.png",
       school: "Nekoma",
       rarity: "SSR",
-      position:"Setter",
+      position: "Setter",
       stats: {
         lvl1: {
           Serve: 104,
@@ -901,7 +969,7 @@
       img: "img-char/kenmaSR.png",
       school: "Nekoma",
       rarity: "SR",
-      position:"Setter",
+      position: "Setter",
       stats: {
         lvl1: {
           Serve: 85,
@@ -929,7 +997,7 @@
       img: "img-char/kurooUR.png",
       school: "Nekoma",
       rarity: "UR",
-      position:"Middle Blocker",
+      position: "Middle Blocker",
       stats: {
         lvl1: {
           Serve: 123,
@@ -957,7 +1025,7 @@
       img: "img-char/kurooSSR.png",
       school: "Nekoma",
       rarity: "SSR",
-      position:"Middle Blocker",
+      position: "Middle Blocker",
       stats: {
         lvl1: {
           Serve: 107,
@@ -985,7 +1053,7 @@
       img: "img-char/yakuSR.png",
       school: "Nekoma",
       rarity: "SR",
-      position:"Libero",
+      position: "Libero",
       stats: {
         lvl1: {
           Serve: 81,
@@ -1013,7 +1081,7 @@
       img: "img-char/levSSR.png",
       school: "Nekoma",
       rarity: "SSR",
-      position:"Middle Blocker",
+      position: "Middle Blocker",
       stats: {
         lvl1: {
           Serve: 106,
@@ -1041,7 +1109,7 @@
       img: "img-char/levSR.png",
       school: "Nekoma",
       rarity: "SR",
-      position:"Middle Blocker",
+      position: "Middle Blocker",
       stats: {
         lvl1: {
           Serve: 86,
@@ -1069,7 +1137,7 @@
       img: "img-char/yamamotoSR.png",
       school: "Nekoma",
       rarity: "SR",
-      position:"Wing Spiker",
+      position: "Wing Spiker",
       stats: {
         lvl1: {
           Serve: 85,
@@ -1097,7 +1165,7 @@
       img: "img-char/kaiSR.png",
       school: "Nekoma",
       rarity: "SR",
-      position:"Opposite Hitter",
+      position: "Opposite Hitter",
       stats: {
         lvl1: {
           Serve: 84,
@@ -1125,7 +1193,7 @@
       img: "img-char/fukunagaSR.png",
       school: "Nekoma",
       rarity: "SR",
-      position:"Wing Spiker",
+      position: "Wing Spiker",
       stats: {
         lvl1: {
           Serve: 84,
@@ -1153,7 +1221,7 @@
       img: "img-char/inuokaSR.png",
       school: "Nekoma",
       rarity: "SR",
-      position:"Middle Blocker",
+      position: "Middle Blocker",
       stats: {
         lvl1: {
           Serve: 86,
@@ -1181,7 +1249,7 @@
       img: "img-char/teshiroSR.png",
       school: "Nekoma",
       rarity: "SR",
-      position:"Setter",
+      position: "Setter",
       stats: {
         lvl1: {
           Serve: 98,
@@ -1209,7 +1277,7 @@
       img: "img-char/aoneSSR.png",
       school: "Date Kogyo",
       rarity: "SSR",
-      position:"Middle Blocker",
+      position: "Middle Blocker",
       stats: {
         lvl1: {
           Serve: 107,
@@ -1237,7 +1305,7 @@
       img: "img-char/aoneSR.png",
       school: "Date Kogyo",
       rarity: "SR",
-      position:"Middle Blocker",
+      position: "Middle Blocker",
       stats: {
         lvl1: {
           Serve: 87,
@@ -1265,7 +1333,7 @@
       img: "img-char/futakuchiSSR.png",
       school: "Date Kogyo",
       rarity: "SSR",
-      position:"Wing Spiker",
+      position: "Wing Spiker",
       stats: {
         lvl1: {
           Serve: 107,
@@ -1293,7 +1361,7 @@
       img: "img-char/futakuchiSR.png",
       school: "Date Kogyo",
       rarity: "SR",
-      position:"Wing Spiker",
+      position: "Wing Spiker",
       stats: {
         lvl1: {
           Serve: 87,
@@ -1321,7 +1389,7 @@
       img: "img-char/kanjiSSR.png",
       school: "Date Kogyo",
       rarity: "SSR",
-      position:"Setter",
+      position: "Setter",
       stats: {
         lvl1: {
           Serve: 103,
@@ -1349,7 +1417,7 @@
       img: "img-char/kanjiSR.png",
       school: "Date Kogyo",
       rarity: "SR",
-      position:"Setter",
+      position: "Setter",
       stats: {
         lvl1: {
           Serve: 84,
@@ -1377,7 +1445,7 @@
       img: "img-char/sakunamiR.png",
       school: "Date Kogyo",
       rarity: "R",
-      position:"Libero",
+      position: "Libero",
       stats: {
         lvl1: {
           Serve: 74,
@@ -1405,7 +1473,7 @@
       img: "img-char/kamasakiSR.png",
       school: "Date Kogyo",
       rarity: "SR",
-      position:"Middle Blocker",
+      position: "Middle Blocker",
       stats: {
         lvl1: {
           Serve: 87,
@@ -1433,7 +1501,7 @@
       img: "img-char/moniwaSR.png",
       school: "Date Kogyo",
       rarity: "SR",
-      position:"Setter",
+      position: "Setter",
       stats: {
         lvl1: {
           Serve: 93,
@@ -1461,7 +1529,7 @@
       img: "img-char/sasayaSSR.png",
       school: "Date Kogyo",
       rarity: "SSR",
-      position:"Opposite Hitter",
+      position: "Opposite Hitter",
       stats: {
         lvl1: {
           Serve: 104,
@@ -1489,7 +1557,7 @@
       img: "img-char/sasayaSR.png",
       school: "Date Kogyo",
       rarity: "SR",
-      position:"Opposite Hitter",
+      position: "Opposite Hitter",
       stats: {
         lvl1: {
           Serve: 85,
@@ -1517,7 +1585,7 @@
       img: "img-char/obaraSR.png",
       school: "Date Kogyo",
       rarity: "SR",
-      position:"Wing Spiker",
+      position: "Wing Spiker",
       stats: {
         lvl1: {
           Serve: 84,
@@ -1545,7 +1613,7 @@
       img: "img-char/onagawaR.png",
       school: "Date Kogyo",
       rarity: "R",
-      position:"Opposite Hitter",
+      position: "Opposite Hitter",
       stats: {
         lvl1: {
           Serve: 77,
@@ -1573,7 +1641,7 @@
       img: "img-char/fukiageR.png",
       school: "Date Kogyo",
       rarity: "R",
-      position:"Middle Blocker",
+      position: "Middle Blocker",
       stats: {
         lvl1: {
           Serve: 77,
@@ -1601,7 +1669,7 @@
       img: "img-char/ushijimaUR.png",
       school: "Shiratorizawa",
       rarity: "UR",
-      position:"Opposite Hitter",
+      position: "Opposite Hitter",
       stats: {
         lvl1: {
           Serve: 134,
@@ -1629,7 +1697,7 @@
       img: "img-char/tendoSSR.png",
       school: "Shiratorizawa",
       rarity: "SSR",
-      position:"Middle Blocker",
+      position: "Middle Blocker",
       stats: {
         lvl1: {
           Serve: 106,
@@ -1657,7 +1725,7 @@
       img: "img-char/goshikiSSR.png",
       school: "Shiratorizawa",
       rarity: "SSR",
-      position:"Wing Spiker",
+      position: "Wing Spiker",
       stats: {
         lvl1: {
           Serve: 104,
@@ -1685,7 +1753,7 @@
       img: "img-char/kawanishiSR.png",
       school: "Shiratorizawa",
       rarity: "SR",
-      position:"Middle Blocker",
+      position: "Middle Blocker",
       stats: {
         lvl1: {
           Serve: 87,
@@ -1732,22 +1800,51 @@
   function cardTemplate(p, i) {
     const id = p.id || `p-${i}`;
     return `
-      <section class="card" data-id="${id}" data-school="${p.school}" data-rarity="${p.rarity}">
-        <span class="player-name">${p.name}</span>
-        <div class="details-grid">
-          <div>
-            ${statList(p.stats)}
-            ${Array.isArray(p.tags) && p.tags.length
-        ? `<div class="badges">${p.tags.map(t => `<span class="badge">${t}</span>`).join("")}</div>`
-        : ""}
-          </div>
-          <div class="img-wrap">
-            <img src="${p.img}" alt="${p.name}">
-          </div>
+    <section class="card" data-id="${id}" data-school="${p.school}" data-rarity="${p.rarity}">
+      <span class="player-name">${p.name}</span>
+      <div class="details-grid">
+        <div>
+          ${statList(p.stats)}
+
+          ${Array.isArray(p.tags) && p.tags.length
+        ? `<div class="badges">
+                ${p.tags.map(t => `<span class="badge">${t}</span>`).join("")}
+               </div>`
+        : ""
+      }
+
+          ${Array.isArray(p.skills) && p.skills.length
+        ? `<div class="skills">
+                ${p.skills.map((s, index) => `
+                  <div class="skill" data-skill-index="${index}">
+                    <img src="${s.icon}" alt="${s.name}" title="${s.name}">
+                    <div class="skill-detail hidden">
+                      ${Array.isArray(s.tags) && s.tags.length
+            ? `<div class="skill-tags">
+                            ${s.tags.map(tag => `
+                              <span class="skill-tag">${tag.label || tag}</span>
+                            `).join("")}
+                          </div>`
+            : ""
+          }
+                      <div class="skill-desc">${s.description}</div>
+                    </div>
+                  </div>
+                `).join("")}
+              </div>`
+        : ""
+      }
         </div>
-      </section>
-    `;
+
+        <div class="img-wrap">
+          <img src="${p.img}" alt="${p.name}">
+        </div>
+      </div>
+    </section>
+  `;
   }
+
+
 
   function renderFiltered() {
     const school = filterSchool.value;
