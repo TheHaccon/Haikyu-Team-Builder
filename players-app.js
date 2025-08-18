@@ -1203,6 +1203,510 @@
       },
       tags: ["Setter", "Nekoma", "SR"]
     },
+    {
+      id: "aone",
+      name: "Takanobu Aone",
+      img: "img-char/aoneSSR.png",
+      school: "Date Kogyo",
+      rarity: "SSR",
+      position:"Middle Blocker",
+      stats: {
+        lvl1: {
+          Serve: 107,
+          Quick_Attack: 115,
+          Set: 100,
+          Receive: 103,
+          Block: 122,
+          Save: 97
+        },
+        max: {
+          Attack: 70,
+          Block: 65,
+          Defense: 67,
+          Receive: 70,
+          Speed: 75,
+          Stamina: 78,
+          Technique: 88
+        }
+      },
+      tags: ["Middle Blocker", "Date Kogyo", "SSR"]
+    },
+    {
+      id: "aone(Practice)",
+      name: "Takanobu Aone (Practice)",
+      img: "img-char/aoneSR.png",
+      school: "Date Kogyo",
+      rarity: "SR",
+      position:"Middle Blocker",
+      stats: {
+        lvl1: {
+          Serve: 87,
+          Quick_Attack: 94,
+          Set: 82,
+          Receive: 84,
+          Block: 99,
+          Save: 79
+        },
+        max: {
+          Attack: 70,
+          Block: 65,
+          Defense: 67,
+          Receive: 70,
+          Speed: 75,
+          Stamina: 78,
+          Technique: 88
+        }
+      },
+      tags: ["Middle Blocker", "Date Kogyo", "SR"]
+    },
+    {
+      id: "kenji",
+      name: "Kenji Futakuchi",
+      img: "img-char/futakuchiSSR.png",
+      school: "Date Kogyo",
+      rarity: "SSR",
+      position:"Wing Spiker",
+      stats: {
+        lvl1: {
+          Serve: 107,
+          Power_Attack: 115,
+          Set: 100,
+          Receive: 104,
+          Block: 121,
+          Save: 98
+        },
+        max: {
+          Attack: 70,
+          Block: 65,
+          Defense: 67,
+          Receive: 70,
+          Speed: 75,
+          Stamina: 78,
+          Technique: 88
+        }
+      },
+      tags: ["Wing Spiker", "Date Kogyo", "SSR"]
+    },
+    {
+      id: "kenji(Practice)",
+      name: "Kenji Futakuchi (Practice)",
+      img: "img-char/futakuchiSR.png",
+      school: "Date Kogyo",
+      rarity: "SR",
+      position:"Wing Spiker",
+      stats: {
+        lvl1: {
+          Serve: 87,
+          Power_Attack: 94,
+          Set: 82,
+          Receive: 85,
+          Block: 99,
+          Save: 80
+        },
+        max: {
+          Attack: 70,
+          Block: 65,
+          Defense: 67,
+          Receive: 70,
+          Speed: 75,
+          Stamina: 78,
+          Technique: 88
+        }
+      },
+      tags: ["Wing Spiker", "Date Kogyo", "SR"]
+    },
+    {
+      id: "Kanji",
+      name: "Kanji Koganegawa",
+      img: "img-char/kanjiSSR.png",
+      school: "Date Kogyo",
+      rarity: "SSR",
+      position:"Setter",
+      stats: {
+        lvl1: {
+          Serve: 103,
+          Power_Attack: 115,
+          Set: 121,
+          Receive: 97,
+          Block: 116,
+          Save: 91
+        },
+        max: {
+          Attack: 70,
+          Block: 65,
+          Defense: 67,
+          Receive: 70,
+          Speed: 75,
+          Stamina: 78,
+          Technique: 88
+        }
+      },
+      tags: ["Setter", "Date Kogyo", "SSR"]
+    },
+    {
+      id: "Kanji(Practice)",
+      name: "Kanji Koganegawa (Practice)",
+      img: "img-char/kanjiSR.png",
+      school: "Date Kogyo",
+      rarity: "SR",
+      position:"Setter",
+      stats: {
+        lvl1: {
+          Serve: 84,
+          Power_Attack: 94,
+          Set: 99,
+          Receive: 79,
+          Block: 94,
+          Save: 74
+        },
+        max: {
+          Attack: 70,
+          Block: 65,
+          Defense: 67,
+          Receive: 70,
+          Speed: 75,
+          Stamina: 78,
+          Technique: 88
+        }
+      },
+      tags: ["Setter", "Date Kogyo", "SR"]
+    },
+    {
+      id: "sakunami",
+      name: "Kosuke Sakunami",
+      img: "img-char/sakunamiR.png",
+      school: "Date Kogyo",
+      rarity: "R",
+      position:"Libero",
+      stats: {
+        lvl1: {
+          Serve: 74,
+          Power_Attack: 74,
+          Set: 81,
+          Receive: 90,
+          Block: 72,
+          Save: 86
+        },
+        max: {
+          Attack: 70,
+          Block: 65,
+          Defense: 67,
+          Receive: 70,
+          Speed: 75,
+          Stamina: 78,
+          Technique: 88
+        }
+      },
+      tags: ["Libero", "Date Kogyo", "R"]
+    },
+    {
+      id: "kamasaki",
+      name: "Yasushi kamasaki",
+      img: "img-char/kamasakiSR.png",
+      school: "Date Kogyo",
+      rarity: "SR",
+      position:"Middle Blocker",
+      stats: {
+        lvl1: {
+          Serve: 87,
+          Quick_Attack: 94,
+          Set: 81,
+          Receive: 84,
+          Block: 98,
+          Save: 80
+        },
+        max: {
+          Attack: 70,
+          Block: 65,
+          Defense: 67,
+          Receive: 70,
+          Speed: 75,
+          Stamina: 78,
+          Technique: 88
+        }
+      },
+      tags: ["Middle Blocker", "Date Kogyo", "SR"]
+    },
+    {
+      id: "moniwa",
+      name: "Kaname Moniwa",
+      img: "img-char/moniwaSR.png",
+      school: "Date Kogyo",
+      rarity: "SR",
+      position:"Setter",
+      stats: {
+        lvl1: {
+          Serve: 93,
+          Power_Attack: 88,
+          Set: 98,
+          Receive: 79,
+          Block: 89,
+          Save: 75
+        },
+        max: {
+          Attack: 70,
+          Block: 65,
+          Defense: 67,
+          Receive: 70,
+          Speed: 75,
+          Stamina: 78,
+          Technique: 88
+        }
+      },
+      tags: ["Setter", "Date Kogyo", "SR"]
+    },
+    {
+      id: "sasaya",
+      name: "Takehito Sasaya",
+      img: "img-char/sasayaSSR.png",
+      school: "Date Kogyo",
+      rarity: "SSR",
+      position:"Opposite Hitter",
+      stats: {
+        lvl1: {
+          Serve: 104,
+          Power_Attack: 121,
+          Set: 98,
+          Receive: 115,
+          Block: 110,
+          Save: 99
+        },
+        max: {
+          Attack: 70,
+          Block: 65,
+          Defense: 67,
+          Receive: 70,
+          Speed: 75,
+          Stamina: 78,
+          Technique: 88
+        }
+      },
+      tags: ["Opposite Hitter", "Date Kogyo", "SSR"]
+    },
+    {
+      id: "sasaya(Practice)",
+      name: "Takehito Sasaya (Practice)",
+      img: "img-char/sasayaSR.png",
+      school: "Date Kogyo",
+      rarity: "SR",
+      position:"Opposite Hitter",
+      stats: {
+        lvl1: {
+          Serve: 85,
+          Power_Attack: 99,
+          Set: 80,
+          Receive: 94,
+          Block: 90,
+          Save: 81
+        },
+        max: {
+          Attack: 70,
+          Block: 65,
+          Defense: 67,
+          Receive: 70,
+          Speed: 75,
+          Stamina: 78,
+          Technique: 88
+        }
+      },
+      tags: ["Opposite Hitter", "Date Kogyo", "SR"]
+    },
+    {
+      id: "obara",
+      name: "Yutaka Obara",
+      img: "img-char/obaraSR.png",
+      school: "Date Kogyo",
+      rarity: "SR",
+      position:"Wing Spiker",
+      stats: {
+        lvl1: {
+          Serve: 84,
+          Power_Attack: 98,
+          Set: 79,
+          Receive: 93,
+          Block: 89,
+          Save: 79
+        },
+        max: {
+          Attack: 70,
+          Block: 65,
+          Defense: 67,
+          Receive: 70,
+          Speed: 75,
+          Stamina: 78,
+          Technique: 88
+        }
+      },
+      tags: ["Wing Spiker", "Date Kogyo", "SR"]
+    },
+    {
+      id: "onagawa",
+      name: "Taro Onagawa",
+      img: "img-char/onagawaR.png",
+      school: "Date Kogyo",
+      rarity: "R",
+      position:"Opposite Hitter",
+      stats: {
+        lvl1: {
+          Serve: 77,
+          Power_Attack: 90,
+          Set: 73,
+          Receive: 86,
+          Block: 82,
+          Save: 73
+        },
+        max: {
+          Attack: 70,
+          Block: 65,
+          Defense: 67,
+          Receive: 70,
+          Speed: 75,
+          Stamina: 78,
+          Technique: 88
+        }
+      },
+      tags: ["Opposite Hitter", "Date Kogyo", "R"]
+    },
+    {
+      id: "fukiage",
+      name: "Jingo Fukiage",
+      img: "img-char/fukiageR.png",
+      school: "Date Kogyo",
+      rarity: "R",
+      position:"Middle Blocker",
+      stats: {
+        lvl1: {
+          Serve: 77,
+          Quick_Attack: 90,
+          Set: 73,
+          Receive: 77,
+          Block: 82,
+          Save: 81
+        },
+        max: {
+          Attack: 70,
+          Block: 65,
+          Defense: 67,
+          Receive: 70,
+          Speed: 75,
+          Stamina: 78,
+          Technique: 88
+        }
+      },
+      tags: ["Middle Blocker", "Date Kogyo", "R"]
+    },
+    {
+      id: "ushijima",
+      name: "Wakatoshi Ushijima",
+      img: "img-char/ushijimaUR.png",
+      school: "Shiratorizawa",
+      rarity: "UR",
+      position:"Opposite Hitter",
+      stats: {
+        lvl1: {
+          Serve: 134,
+          Power_Attack: 140,
+          Set: 112,
+          Receive: 126,
+          Block: 120,
+          Save: 112
+        },
+        max: {
+          Attack: 70,
+          Block: 65,
+          Defense: 67,
+          Receive: 70,
+          Speed: 75,
+          Stamina: 78,
+          Technique: 88
+        }
+      },
+      tags: ["Opposite Hitter", "Shiratorizawa", "UR"]
+    },
+    {
+      id: "tendo",
+      name: "Satori Tendo",
+      img: "img-char/tendoSSR.png",
+      school: "Shiratorizawa",
+      rarity: "SSR",
+      position:"Middle Blocker",
+      stats: {
+        lvl1: {
+          Serve: 106,
+          Quick_Attack: 115,
+          Set: 100,
+          Receive: 103,
+          Block: 122,
+          Save: 96
+        },
+        max: {
+          Attack: 70,
+          Block: 65,
+          Defense: 67,
+          Receive: 70,
+          Speed: 75,
+          Stamina: 78,
+          Technique: 88
+        }
+      },
+      tags: ["Middle Blocker", "Shiratorizawa", "SSR"]
+    },
+    {
+      id: "goshiki",
+      name: "Tsutomu Goshiki",
+      img: "img-char/goshikiSSR.png",
+      school: "Shiratorizawa",
+      rarity: "SSR",
+      position:"Wing Spiker",
+      stats: {
+        lvl1: {
+          Serve: 104,
+          Power_Attack: 121,
+          Set: 98,
+          Receive: 115,
+          Block: 109,
+          Save: 98
+        },
+        max: {
+          Attack: 70,
+          Block: 65,
+          Defense: 67,
+          Receive: 70,
+          Speed: 75,
+          Stamina: 78,
+          Technique: 88
+        }
+      },
+      tags: ["Wing Spiker", "Shiratorizawa", "SSR"]
+    },
+    {
+      id: "kawanishi",
+      name: "Taichi Kawanishi",
+      img: "img-char/kawanishiSR.png",
+      school: "Shiratorizawa",
+      rarity: "SR",
+      position:"Middle Blocker",
+      stats: {
+        lvl1: {
+          Serve: 87,
+          Quick_Attack: 94,
+          Set: 82,
+          Receive: 84,
+          Block: 99,
+          Save: 79
+        },
+        max: {
+          Attack: 70,
+          Block: 65,
+          Defense: 67,
+          Receive: 70,
+          Speed: 75,
+          Stamina: 78,
+          Technique: 88
+        }
+      },
+      tags: ["Middle Blocker", "Shiratorizawa", "SR"]
+    },
   ];
 
   // add this to the class="stats" once the data is out \| ${stats.max[k]}
