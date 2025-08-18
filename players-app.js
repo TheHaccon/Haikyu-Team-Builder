@@ -646,7 +646,7 @@
     {
       id: "matsukawa",
       name: "Issei Matsukawa",
-      img: "img-char/matsukawaSSR.png",
+      img: "img-char/matsukawaSR.png",
       school: "Aoba Johsai",
       rarity: "SR",
       position:"Middle Blocker",
