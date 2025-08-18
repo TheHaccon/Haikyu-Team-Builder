@@ -387,23 +387,25 @@ header p {
   border-radius: 6px;
 }
 
-.skill-detail {
-  display: none;
-  position: absolute;
-  top: 50px;
-  left: 0;
-  background: var(--card);
-  color: var(--text);
-  padding: 6px 10px;
-  border: 1px solid var(--ring);
-  border-radius: 6px;
-  font-size: 12px;
-  width: 200px;
-  z-index: 1;
-}
+  .skill-detail {
+    position: static;
+    display: block;
+    background: var(--card);
+    color: var(--text);
+    padding: 6px 10px;
+    border: 1px solid var(--ring);
+    border-radius: 6px;
+    font-size: 12px;
+    width: 100%;
+    box-shadow: none;
+    margin-top: 6px;
+  }
 
 .skill:hover .skill-detail {
   display: block;
 }
+  .hidden {
+    display: none !important;
+  }
 
 }

@@ -149,7 +149,41 @@
           Technique: 90
         }
       },
-      tags: ["Setter", "Karasuno", "SSR"]
+      tags: ["Setter", "Karasuno", "SSR"],
+      skills: [
+        {
+          name: "Tricky Serve",
+          icon: "skills/kageyamaS1.png",
+          tags: [
+            "Passive","Serve",
+          ],
+          description: "Kageyama performs a Jump Serve with 120/135/150% of Serve stat as power"
+        },
+        {
+          name: "Sharp Observer",
+          icon: "skills/kageyamaS2.png",
+          tags: [
+            "Passive", "Set",
+          ],
+          description: "Kageyama performs a Set with 115/130/145% of Set stat as power;for this play, your side\'s spikers\' Strenght increases by 10%"
+        },
+        {
+          name: "The King Awakens",
+          icon: "skills/kageyamaS3.png",
+          tags: [
+            "Passive", "Awareness Up",
+          ],
+          description: "While Kageyama is present, increases your side\'s players' Awareness by 10% and increases Spike power by 6/8/10% of the player\'s Power/Quick Attack stat"
+        },
+        {
+          name: "Surprise Dump",
+          icon: "skills/kageyamaS4.png",
+          tags: [
+            "Ultimate", "Active", "Setter Dump", "Block Break"
+          ],
+          description: "Kageyama performs an unblockable Setter Dump with 225/240/255/270/285% of Set stat as power"
+        },
+      ],
     },
     {
       id: "daichi",
@@ -1807,9 +1841,11 @@
           ${statList(p.stats)}
 
           ${Array.isArray(p.tags) && p.tags.length
-        ? `<div class="badges">
+        ? `
+        <div class="badges">
                 ${p.tags.map(t => `<span class="badge">${t}</span>`).join("")}
-               </div>`
+               </div>
+               <p> Skills </p>`
         : ""
       }
 
@@ -1843,6 +1879,31 @@
     </section>
   `;
   }
+
+  document.addEventListener("DOMContentLoaded", () => {
+  const isMobile = window.matchMedia("(max-width: 520px)").matches;
+
+  if (isMobile) {
+    document.querySelectorAll(".skill").forEach(skill => {
+      skill.addEventListener("click", () => {
+        // Close other open tooltips
+        document.querySelectorAll(".skill-detail").forEach(d => {
+          if (d !== skill.querySelector(".skill-detail")) d.classList.add("hidden");
+        });
+
+        const detail = skill.querySelector(".skill-detail");
+        detail.classList.toggle("hidden");
+      });
+    });
+
+    // Optional: close when tapping outside
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".skill")) {
+        document.querySelectorAll(".skill-detail").forEach(d => d.classList.add("hidden"));
+      }
+    });
+  }
+});
 
 
 
