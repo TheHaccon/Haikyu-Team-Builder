@@ -115,7 +115,7 @@
         },
         {
           name: "Soaring Teen",
-          icon: "skills/hinataS4.png",
+          icon: "skills/hinata2S4.png",
           tags: [
             "Ultimate", "Active", "Quick Attack", "Stat Bonus"
           ],
