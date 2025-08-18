@@ -524,7 +524,42 @@
           Technique: 88
         }
       },
-      tags: ["Libero", "Karasuno", "SSR"]
+      tags: ["Libero", "Karasuno", "SSR"],
+      skills: [
+        {
+          name: "Guardian Deity",
+          icon: "skills/nishinoyaS1.png",
+          tags: [
+            "Passive", "Power Attack Boost",
+          ],
+          description: "When Yu Nishinoya's Save result is not BAD, increases the power of the next Power Spike skill used by your Power-type player by 15% of his Power Attack stat."
+        },
+        {
+          name: "Libero Supreme",
+          icon: "skills/nishinoyaS2.png",
+          tags: [
+            "Passive", "Save",
+          ],
+          description: "Yu Nishinoya performs a Save with 120% of Save stat as power."
+        },
+        {
+          name: "Inspire Morale",
+          icon: "skills/nishinoyaS3.png",
+          tags: [
+            "Passive", "Team Morale",
+          ],
+          description: "When Yu Nishinoya enters the court, increases your Team Morale by 18."
+        },
+        {
+          name: "Rolling Thunder",
+          icon: "skills/nishinoyaS4.png",
+          tags: [
+            "Ultimate", "Passive", "Receive", "Power Attack Skill Cooldown Reduction",
+          ],
+          description: "Yu Nishinoya consumes 20 additional Stamina to perform a Receive with 220% of Receive stat power; if the Receive result is not BAD, reduces the cooldown of your side's next Power Spike skill by 6 net crossings."
+        },
+      ]
+
     },
     {
       id: "yu(Practice)",
