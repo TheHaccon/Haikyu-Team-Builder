@@ -155,7 +155,7 @@
           name: "Tricky Serve",
           icon: "skills/kageyamaS1.png",
           tags: [
-            "Passive","Serve",
+            "Passive", "Serve",
           ],
           description: "Kageyama performs a Jump Serve with 120/135/150% of Serve stat as power"
         },
@@ -211,7 +211,41 @@
           Technique: 88
         }
       },
-      tags: ["Opposite Hitter", "Karasuno", "SSR"]
+      tags: ["Opposite Hitter", "Karasuno", "SSR"],
+      skills: [
+        {
+          name: "Steady Reception",
+          icon: "skills/daichiS1.png",
+          tags: [
+            "Passive", "Restore Teammate's Stamina",
+          ],
+          description: "When Daichi Sawamura performs a Receive, restores 3/5/7 Stamina to the teammate with the lowest Stamina."
+        },
+        {
+          name: "Sledgehammer Spike",
+          icon: "skills/daichiS2.png",
+          tags: [
+            "Active", "Power Attack",
+          ],
+          description: "Daichi Sawamura performs a Power Spike with 120/135/150% of his Power Attack stat."
+        },
+        {
+          name: "Team Backbone",
+          icon: "skills/daichiS3.png",
+          tags: [
+            "Passive", "Receive Power Up",
+          ],
+          description: "While Daichi Sawamura is present, increases receive power of your side\'s back row players by 10/12/14% of their Receive stat."
+        },
+        {
+          name: "Reliable Defense",
+          icon: "skills/daichiS4.png",
+          tags: [
+            "Ultimate", "Passive", "Receive", "Power Attack Boost",
+          ],
+          description: "Daichi Sawamura performs a Receive with 220/235/250/265/280% of his Receive stat. If your side\’s next Spike is a Power Spike, increases that spike\'s power by 15% of the spiker\’s Power Attack stat."
+        },
+      ],
     },
     {
       id: "daichi(Practice)",
@@ -239,7 +273,41 @@
           Technique: 88
         }
       },
-      tags: ["Opposite Hitter", "Karasuno", "SR"]
+      tags: ["Opposite Hitter", "Karasuno", "SR"],
+      skills: [
+        {
+          name: "Solid Defense",
+          icon: "skills/daichi2S1.png",
+          tags: [
+            "Passive",
+          ],
+          description: "Increases Daichi Sawamura (Practice)'s Save and Receive stats by 10/12/14%."
+        },
+        {
+          name: "Captain's Strength",
+          icon: "skills/daichi2S2.png",
+          tags: [
+            "Active", "Power Attack",
+          ],
+          description: "Daichi Sawamura (Practice) performs a Power Spike with 120/135/150% of Power Attack stat as power."
+        },
+        {
+          name: "Captain's Coverage",
+          icon: "skills/daichi2S3.png",
+          tags: [
+            "Passive", "Restore Teammate's Stamina",
+          ],
+          description: "Daichi Sawamura (Practice) consumes 1 additional Stamina whenever he touches the ball. When your side scores, that player recovers 3 Stamina. While Sawamura is on the court, increases Receive power by 8/10/12% of the receiving player's Receive stat."
+        },
+        {
+          name: "Precision Reception",
+          icon: "skills/daichi2S4.png",
+          tags: [
+            "Ultimate", "Passive", "Receive", "Power Up",
+          ],
+          description: "Daichi Sawamura (Practice) performs a Receive with 215/230/245/260/275% of Receive stat as power; when your side's player next casts an attack skill, increases the power of this touch by 10% of the player's corresponding stat."
+        },
+      ],
     },
     {
       id: "koshi",
@@ -267,7 +335,41 @@
           Technique: 88
         }
       },
-      tags: ["Setter", "Karasuno", "SR"]
+      tags: ["Setter", "Karasuno", "SR"],
+      skills: [
+        {
+          name: "Senpai's Prowess",
+          icon: "skills/sugawaraS1.png",
+          tags: [
+            "Passive", "Serve",
+          ],
+          description: "Koshi Sugawara performs an Overhand Serve with 120/135/150% of Serve stat as power."
+        },
+        {
+          name: "Offensive Tactics",
+          icon: "skills/sugawaraS2.png",
+          tags: [
+            "Passive", "Set", "Power Attack Boost",
+          ],
+          description: "Koshi Sugawara performs a Set with 115/130/145% of Set stat as power; while Koshi Sugawara is present, increases the power of Power Spike skills used by your Power-type players by 5% of their Power Attack stat."
+        },
+        {
+          name: "Rallying Spirit",
+          icon: "skills/sugawaraS3.png",
+          tags: [
+            "Passive", "Stamina",
+          ],
+          description: "While Koshi Sugawara is present, reduces your side's Power Spike skills' Stamina consumption by 20/30/40%."
+        },
+        {
+          name: "Senpai's Worth",
+          icon: "skills/sugawaraS4.png",
+          tags: [
+            "Ultimate", "Passive", "Set", "Enhance Team",
+          ],
+          description: "Koshi Sugawara performs a Set that increases your side's next spike power by 100/115/130/145/160% of his Power/Quick Attack stat; when performing a Power Spike, additionally increases this spike's power by 10/10/15/15/15% of his Power Attack stat."
+        },
+      ],
     },
     {
       id: "asahi",
@@ -295,7 +397,42 @@
           Technique: 88
         }
       },
-      tags: ["Wing Spike", "Karasuno", "SSR"]
+      tags: ["Wing Spike", "Karasuno", "SSR"],
+      skills: [
+        {
+          name: "Proficient Defense",
+          icon: "skills/asahiS1.png",
+          tags: [
+            "Passive", "Receive",
+          ],
+          description: "Asahi Azumane performs a Receive with 120/135/150% of Receive stat as power."
+        },
+        {
+          name: "Bullet Serve",
+          icon: "skills/asahiS2.png",
+          tags: [
+            "Passive", "Serve",
+          ],
+          description: "Asahi Azumane performs a Jump Serve with 120/135/150% of Serve stat as power."
+        },
+        {
+          name: "Ace's Aura",
+          icon: "skills/asahiS3.png",
+          tags: [
+            "Passive", "Stamina",
+          ],
+          description: "When Asahi Azumane's Stamina is above 70, increases his Power Spike's power by 15/17.5/20% of Power Attack stat."
+        },
+        {
+          name: "Charged Spike",
+          icon: "skills/asahiS4.png",
+          tags: [
+            "Ultimate", "Active", "Power Attack", "Stamina Burst",
+          ],
+          description: "Asahi Azumane consumes 30 additional Stamina to perform a Power Spike with 235/250/265/280/295% of Power Attack stat as power, receives 1 stack of 'Power Charge'; when casting [Charged Spike] skill, each stack of 'Power Charge' increases Power Spike power by 50% of Power Attack stat."
+        },
+      ]
+
     },
     {
       id: "asahi(Practice)",
@@ -323,8 +460,44 @@
           Technique: 88
         }
       },
-      tags: ["Wing Spiker", "Karasuno", "SR"]
+      tags: ["Wing Spiker", "Karasuno", "SR"],
+      skills: [
+        {
+          name: "Cannon Spike",
+          icon: "skills/asahi2S1.png",
+          tags: [
+            "Passive",
+          ],
+          description: "Increases Asahi Azumane (Practice)'s Power Attack stat by 10/12/14%."
+        },
+        {
+          name: "Pressure Field",
+          icon: "skills/asahi2S2.png",
+          tags: [
+            "Passive", "Weaken Opponent",
+          ],
+          description: "When Asahi Azumane (Practice) scores with Power Spike, reduces opponent's receiving players' Receive stat by 7/9.5/12%, lasting for 4 net crossings."
+        },
+        {
+          name: "Advantage Pressure",
+          icon: "skills/asahi2S3.png",
+          tags: [
+            "Passive", "Power Attack Boost",
+          ],
+          description: "When your side is leading in points, increases Asahi Azumane (Practice)'s Power Spike power by 10/12.5/15% of Power Attack stat."
+        },
+        {
+          name: "Exhaust Spike",
+          icon: "skills/asahi2S4.png",
+          tags: [
+            "Ultimate", "Active", "Power Attack", "Stamina Burst",
+          ],
+          description: "Asahi Azumane (Practice) consumes 3 additional Stamina to perform a Power Spike with 225/240/255/270/285% of Power Attack stat as power."
+        },
+      ]
+
     },
+
     {
       id: "yu",
       name: "Yu Nishinoya",
@@ -1881,29 +2054,29 @@
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-  const isMobile = window.matchMedia("(max-width: 520px)").matches;
+    const isMobile = window.matchMedia("(max-width: 520px)").matches;
 
-  if (isMobile) {
-    document.querySelectorAll(".skill").forEach(skill => {
-      skill.addEventListener("click", () => {
-        // Close other open tooltips
-        document.querySelectorAll(".skill-detail").forEach(d => {
-          if (d !== skill.querySelector(".skill-detail")) d.classList.add("hidden");
+    if (isMobile) {
+      document.querySelectorAll(".skill").forEach(skill => {
+        skill.addEventListener("click", () => {
+          // Close other open tooltips
+          document.querySelectorAll(".skill-detail").forEach(d => {
+            if (d !== skill.querySelector(".skill-detail")) d.classList.add("hidden");
+          });
+
+          const detail = skill.querySelector(".skill-detail");
+          detail.classList.toggle("hidden");
         });
-
-        const detail = skill.querySelector(".skill-detail");
-        detail.classList.toggle("hidden");
       });
-    });
 
-    // Optional: close when tapping outside
-    document.addEventListener("click", (e) => {
-      if (!e.target.closest(".skill")) {
-        document.querySelectorAll(".skill-detail").forEach(d => d.classList.add("hidden"));
-      }
-    });
-  }
-});
+      // Optional: close when tapping outside
+      document.addEventListener("click", (e) => {
+        if (!e.target.closest(".skill")) {
+          document.querySelectorAll(".skill-detail").forEach(d => d.classList.add("hidden"));
+        }
+      });
+    }
+  });
 
 
 
