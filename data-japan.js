@@ -1,9 +1,9 @@
 // template: { name: "", role: "", img: "img-japan/", school: "", bonds: [] },
 const characters = [
-    { name: "Hinata SP", role: "MB", img: "img-japan/hinataSP.png", school: "Karasuno", bonds: [] },
+    { name: "Hinata SP", role: "MB", img: "img-japan/hinataSP.png", school: "Karasuno", bonds: ["Similar Builds","Weird Duo (Hanami)",] },
     { name: "Hinata SSR", role: "MB", img: "img-japan/hinataSSR.png", school: "Karasuno", bonds: ["Flexible Aces", "Worthy Rival", "Surprising Friendship","Rival Friends","Weird Duo","Karasuno's Failing Grades Group"] },
     { name: "Hinata SR", role: "MB", img: "img-japan/hinataSR.png", school: "Karasuno", bonds: ["Teammates on the Court","\"Sun\" and \"Moon\"",] },
-    { name: "Kageyama UR", role: "S", img: "img-japan/tobioUR.png", school: "Karasuno", bonds: ["Weird Duo","The King and The Great King","Karasuno's Setters","Karasuno's Failing Grades Group"] },
+    { name: "Kageyama UR", role: "S", img: "img-japan/tobioUR.png", school: "Karasuno", bonds: ["Weird Duo","The King and The Great King","Karasuno's Setters","Karasuno's Failing Grades Group","Weird Duo (Hanami)"] },
     { name: "Kageyama SSR", role: "S", img: "img-japan/tobioSSR.png", school: "Karasuno", bonds: ["Teammates on the Court","Building Team Chemistry"] },
     { name: "Daichi SSR", role: "OP", img: "img-japan/daichiSSR.png", school: "Karasuno", bonds: ["Karasuno\'s Pillar","karasuno Senior Year","Behind the Smile"] },
     { name: "Daichi SR", role: "OP", img: "img-japan/daichiSR.png", school: "Karasuno", bonds: ["Karasuno\'s Pillar(practice)","Leaders Cut from the Same Cloth"] },
@@ -55,7 +55,7 @@ const characters = [
     { name: "Inuoka SR", role: "MB", img: "img-japan/inuokaSR.png", school: "Nekoma", bonds: ["Worthy Rival","Nekoma\'s Junior"] },
     { name: "Teshiro SR", role: "S", img: "img-japan/teshiroSR.png", school: "Nekoma", bonds: ["Nekoma\'s Junior"] },
 
-    { name: "Aone SP", role: "MB", img: "img-japan/aoneSR.png", school: "Date Kogyo", bonds: [] },
+    { name: "Aone SP", role: "MB", img: "img-japan/aoneSP.png", school: "Date Kogyo", bonds: [] },
     { name: "Aone SSR", role: "MB", img: "img-japan/aoneSSR.png", school: "Date Kogyo", bonds: ["Cannon \& Iron Wall","Surprising Friendship","The Silent and the Snarky"] },
     { name: "Aone SR", role: "MB", img: "img-japan/aoneSR.png", school: "Date Kogyo", bonds: [] },
     { name: "Kenji SSR", role: "WS", img: "img-japan/kenjiSSR.png", school: "Date Kogyo", bonds: ["Date Kogyo\'s Captains","The Silent and the Snarky","New Captain \& Tall Rookie"] },
@@ -86,7 +86,7 @@ const characters = [
     { name: "Akaashi SSR", role: "S", img: "img-japan/akaashiSSR.png",school: "Fukurodani", bonds: [] },
     { name: "Konoha SSR", role: "OP", img: "img-japan/konohaSSR.png",school: "Fukurodani", bonds: [] },
     { name: "Sarukui SSR", role: "Li", img: "img-japan/sarukuiSSR.png",school: "Fukurodani", bonds: [] },
-    { name: "Komi SSR", role: "WS", img: "img-japan/komiSSR.png",school: "Fukurodani", bonds: [] },
+    { name: "Komi SR", role: "WS", img: "img-japan/komiSR.png",school: "Fukurodani", bonds: [] },
     { name: "Onaga R", role: "MB", img: "img-japan/onagaR.png",school: "Fukurodani", bonds: [] },
     { name: "Washio SSR", role: "MB", img: "img-japan/washioSSR.png",school: "Fukurodani", bonds: [] },
 
@@ -106,8 +106,14 @@ const characters = [
     { name: "Suna SSR", role: "MB", img: "img-japan/sunaSSR.png",school: "Inarizaki", bonds: [] },
     { name: "Osamu UR", role: "MB", img: "img-japan/osamuUR.png",school: "Inarizaki", bonds: [] },
     { name: "Kosaku R", role: "WS", img: "img-japan/kosakuR.png",school: "Inarizaki", bonds: [] },
-    { name: "Riseki R", role: "WS", img: "img-japan/kosakuR.png",school: "Inarizaki", bonds: [] },
-    { name: "Akagi SSR", role: "WS", img: "img-japan/kosakuR.png",school: "Inarizaki", bonds: [] },
+    { name: "Riseki R", role: "WS", img: "img-japan/risekiR.png",school: "Inarizaki", bonds: [] },
+    { name: "Akagi SSR", role: "WS", img: "img-japan/akagiSSR.png",school: "Inarizaki", bonds: [] },
+   
+    { name: "Hoshiumi UR", role: "WS", img: "img-japan/hoshiumiUR.png",school: "Inarizaki", bonds: ["Similar Builds"] },
+    { name: "Hirugami UR", role: "MB", img: "img-japan/hirugamiUR.png",school: "Inarizaki", bonds: [] },
+
+    { name: "Sakusa UR", role: "WS", img: "img-japan/sakusaUR.png",school: "Inarizaki", bonds: [] },
+    { name: "Komori UR", role: "Li", img: "img-japan/komoriUR.png",school: "Inarizaki", bonds: [] },
 
 ];
 // tempalte: "": "",
@@ -149,9 +155,11 @@ const synergyDescriptions = {
     "Weird Duo": "Hinata performs a Quick Attack with 280/295/310/325/340% Speed. Awareness +30%, Power +(Awareness ×30/35/40/45/50%, max 60/70/80/90/100%). Cannot be blocked. Resets cooldown on scoring.",
     "The King and The Great King": {"Kageyama UR": "Serve +5/7/9/12/15, Serve +1/2/3/4/5%","Oikawa UR": "Serve +5/7/9/12/15, Serve +1/2/3/4/5%"},
     "Karasuno's Setters": {"Kageyama": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%","Sugawara": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%"},
-    "Karasuno's Failing Grades Group": {"Hinata SSR": "","Kageyama UR": "","Nishinoya SSR": "","Tanaka SSR": "Strong Attack +5/7/9/12/15, Strong Attack +1/2/3/4/5%",
+    "Karasuno's Failing Grades Group": {"Hinata SSR": "","Kageyama UR": "","Nishinoya SSR": "","Tanaka SSR": "Strong Attack +5/7/9/12/15, Strong Attack +1/2/3/4/5%"},
     "Team's Guardians": {"Nishinoya SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Yaku SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%"},
-},
+    "Similar Builds": {"Hinata (Hanami)": "Quick Attack +5/7/9/12/15, Quick Attack +1/2/3/4/5%","Hoshiumi": "Strong Attack +5/7/9/12/15, Strong Attack +1/2/3/4/5%"},
+    "Weird Duo (Hanami)": "When an ally uses a Receive skill, consumes 1 [Never Give Up] stack to increase their Reaction by 6%. If Hinata (Hanami) uses Receive, his Reaction increases by an additional 9% and Kageyama gains 1 stack of [Never Give Up]. Hinata (Hanami)'s Special also grants Kageyama 1 stack of [Never Give Up].",
+
     //Aoba Johsai
     "Aoba Johsai's Sophomore": {"Watari SR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%", "Yahaba SR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%", "Kentaro SSR": "No buff" },
     "Blunt and Composed":"Increases Kindaichi\'s Quick Attack stat by 6/7/8/9/10% and  Kunimi\'s Power Attack stat by 6/7/8/9/10%",
@@ -230,8 +238,9 @@ const synergyMeta = {
     "Karasuno's Setters": { category: "stats", activation: { scope: "any", min: 2 } },
     "Karasuno's Failing Grades Group": { category: "stats", activation: { scope: "any", min: 4 } },
     "Team's Guardians": { category: "stats", activation: { scope: "any", min: 2 } },
-
-
+    "Similar Builds": { category: "stats", activation: { scope: "pair", min: 2 } },
+    "Weird Duo (Hanami)": { category: "special", activation: { scope: "pair", min: 2 } },
+    
     "Aoba Johsai's Sophomore": { category: "stats", activation: { scope: "any", min: 3 } },
     "Blunt and Composed": { category: "deployment", activation: { scope: "any", min: 2 } },
     "The Wolf Pack": { category: "deployment", activation: { scope: "any", min: 2 } },
@@ -299,6 +308,8 @@ const synergyPairs = {
     "Karasuno's Setters": [["Kageyama","Sugawara"]],// double setter
     "Karasuno's Failing Grades Group": [["Hinata","Kageyama","Nishinoya","Tanaka"]],
     "Team's Guardians": [["Nishinoya","Yaku"]],
+    "Similar Builds": [["Hinata","Hoshiumi"]],
+    "Weird Duo (Hanami)": [["Hinata","Kageyama"]],
 
     "Aoba Johsai's Sophomore":[["Watari", "Yahaba", "Kentaro"]],
     "Blunt and Composed":[["Kindaichi", "Kunimi"]],
