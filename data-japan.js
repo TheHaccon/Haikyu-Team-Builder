@@ -1,6 +1,6 @@
 // template: { name: "", role: "", img: "img-japan/", school: "", bonds: [] },
 const characters = [
-    { name: "Hinata SP", role: "MB", img: "img-japan/hinataSP.png", school: "Karasuno", bonds: ["Similar Builds","Weird Duo (Hanami)",] },
+    { name: "Hinata SP", role: "MB", img: "img-japan/hinataSP.png", school: "Karasuno", bonds: ["Similar Builds","Weird Duo (Hanami)","Hanami","Number One Disciple"] },
     { name: "Hinata SSR", role: "MB", img: "img-japan/hinataSSR.png", school: "Karasuno", bonds: ["Flexible Aces", "Worthy Rival", "Surprising Friendship","Rival Friends","Weird Duo","Karasuno's Failing Grades Group"] },
     { name: "Hinata SR", role: "MB", img: "img-japan/hinataSR.png", school: "Karasuno", bonds: ["Teammates on the Court","\"Sun\" and \"Moon\"",] },
     { name: "Kageyama UR", role: "S", img: "img-japan/tobioUR.png", school: "Karasuno", bonds: ["Weird Duo","The King and The Great King","Karasuno's Setters","Karasuno's Failing Grades Group","Weird Duo (Hanami)"] },
@@ -40,7 +40,7 @@ const characters = [
     { name: "Kentaro SSR", role: "OP", img: "img-japan/kyotaniSSR.png", school: "Aoba Johsai", bonds: ["Aoba Johsai's Sophomore","Hidden Fire","The Wolf Pack"] },
     { name: "Kentaro SR", role: "OP", img: "img-japan/kyotaniSR.png", school: "Aoba Johsai", bonds: ["The Wolf Pack(Practice)"] },
 
-    { name: "Kenma SP", role: "S", img: "img-japan/kenmaSP.png", school: "Nekoma", bonds: [] },
+    { name: "Kenma SP", role: "S", img: "img-japan/kenmaSP.png", school: "Nekoma", bonds: ["Hanami"] },
     { name: "Kenma SSR", role: "S", img: "img-japan/kenmaSSR.png", school: "Nekoma", bonds: ["Rival Friends","\"Brain\" and \"Control Tower\"","Grit and Competitive","The \"Enigmatic\" Teammate"] },
     { name: "Kenma SR", role: "S", img: "img-japan/kenmaSR.png", school: "Nekoma", bonds: ["\"Pivot\" and \"Defensive Pivot\"","\"Pivot\" and \"Control Tower\""] },
     { name: "Kuroo UR", role: "MB", img: "img-japan/kurooUR.png", school: "Nekoma", bonds: ["Behind the Smile","Master and Apprentice","\"Brain\" and \"Control Tower\""] },
@@ -80,7 +80,7 @@ const characters = [
     { name: "Ohira SSR", role: "WS", img: "img-japan/ohiraSSR.png",school: "Shiratorizawa", bonds: [] },
     { name: "Yamagata SSR", role: "Li", img: "img-japan/yamagataSSR.png",school: "Shiratorizawa", bonds: [] },
 
-    { name: "Bokuto SP", role: "WS", img: "img-japan/bokutoSP.png",school: "Fukurodani", bonds: [] },
+    { name: "Bokuto SP", role: "WS", img: "img-japan/bokutoSP.png",school: "Fukurodani", bonds: ["Number One Disciple"] },
     { name: "Bokuto UR", role: "WS", img: "img-japan/bokutoUR.png",school: "Fukurodani", bonds: [] },
     { name: "Akaashi SP", role: "S", img: "img-japan/akaashiSP.png",school: "Fukurodani", bonds: [] },
     { name: "Akaashi SSR", role: "S", img: "img-japan/akaashiSSR.png",school: "Fukurodani", bonds: [] },
@@ -157,8 +157,11 @@ const synergyDescriptions = {
     "Karasuno's Setters": {"Kageyama": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%","Sugawara": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%"},
     "Karasuno's Failing Grades Group": {"Hinata SSR": "","Kageyama UR": "","Nishinoya SSR": "","Tanaka SSR": "Strong Attack +5/7/9/12/15, Strong Attack +1/2/3/4/5%"},
     "Team's Guardians": {"Nishinoya SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Yaku SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%"},
-    "Similar Builds": {"Hinata (Hanami)": "Quick Attack +5/7/9/12/15, Quick Attack +1/2/3/4/5%","Hoshiumi": "Strong Attack +5/7/9/12/15, Strong Attack +1/2/3/4/5%"},
+    "Similar Builds": {"Hinata SP": "Quick Attack +5/7/9/12/15, Quick Attack +1/2/3/4/5%","Hoshiumi": "Strong Attack +5/7/9/12/15, Strong Attack +1/2/3/4/5%"},
     "Weird Duo (Hanami)": "When an ally uses a Receive skill, consumes 1 [Never Give Up] stack to increase their Reaction by 6%. If Hinata (Hanami) uses Receive, his Reaction increases by an additional 9% and Kageyama gains 1 stack of [Never Give Up]. Hinata (Hanami)'s Special also grants Kageyama 1 stack of [Never Give Up].",
+    "Hanami": "At match start, Kenma (Hanami) gains 3 [Gapless Defense] stacks and increases the cap to 13; each stack increases his Awareness by 0.8%. When Hinata (Hanami) makes a Nice Play, his Quick Attack increases by 1%.",
+    "Strange Friendship": {"Hinata SP": "Quick Attack +5/7/9/12/15, Quick Attack +1/2/3/4/5%","Aone SP": "Block +5/7/9/12/15, Block +1/2/3/4/5%"},
+    "Number One Disciple": {"Hinata SP": "Quick Attack +5/7/9/12/15, Quick Attack +1/2/3/4/5%","Bokuto SP": "Strong Attack +5/7/9/12/15, Strong Attack +1/2/3/4/5%"},
 
     //Aoba Johsai
     "Aoba Johsai's Sophomore": {"Watari SR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%", "Yahaba SR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%", "Kentaro SSR": "No buff" },
@@ -238,9 +241,12 @@ const synergyMeta = {
     "Karasuno's Setters": { category: "stats", activation: { scope: "any", min: 2 } },
     "Karasuno's Failing Grades Group": { category: "stats", activation: { scope: "any", min: 4 } },
     "Team's Guardians": { category: "stats", activation: { scope: "any", min: 2 } },
-    "Similar Builds": { category: "stats", activation: { scope: "pair", min: 2 } },
-    "Weird Duo (Hanami)": { category: "special", activation: { scope: "pair", min: 2 } },
-    
+    "Similar Builds": { category: "stats", activation: { scope: "any", min: 2 } },
+    "Weird Duo (Hanami)": { category: "deployment", activation: { scope: "any", min: 2 } },
+    "Hanami": { category: "deployment", activation: { scope: "any", min: 2 } },
+    "Strange Friendship": { category: "stats", activation: { scope: "any", min: 2 } },
+    "Number One Disciple": { category: "stats", activation: { scope: "any", min: 2 } },
+
     "Aoba Johsai's Sophomore": { category: "stats", activation: { scope: "any", min: 3 } },
     "Blunt and Composed": { category: "deployment", activation: { scope: "any", min: 2 } },
     "The Wolf Pack": { category: "deployment", activation: { scope: "any", min: 2 } },
@@ -310,6 +316,9 @@ const synergyPairs = {
     "Team's Guardians": [["Nishinoya","Yaku"]],
     "Similar Builds": [["Hinata","Hoshiumi"]],
     "Weird Duo (Hanami)": [["Hinata","Kageyama"]],
+    "Hanami": [["Hinata","Kenma"]],
+    "Strange Friendship": [["Hinata","Aone"]],
+    "Number One Disciple": [["Hinata","Bokuto"]],
 
     "Aoba Johsai's Sophomore":[["Watari", "Yahaba", "Kentaro"]],
     "Blunt and Composed":[["Kindaichi", "Kunimi"]],
@@ -334,7 +343,8 @@ const synergyPairs = {
     "Date Kogyo\'s Wing Spiker": [["Yutaka","Takehito"]],
     "Date Kogyo\'s Setter":[["Kanji","Kaname"]],
     "Date Kogyo\'s Junior": [["Jingo","Sakunami"]],
-    "Date Kogyo\'s Senior": [["Takehito"," Kaname","Kamasaki"]]
+    "Date Kogyo\'s Senior": [["Takehito"," Kaname","Kamasaki"]],
+    
 };
 
 window.characters = characters;
