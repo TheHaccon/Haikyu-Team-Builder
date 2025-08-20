@@ -1,9 +1,9 @@
 // template: { name: "", role: "", img: "img-japan/", school: "", bonds: [] },
 const characters = [
     { name: "Hinata SP", role: "MB", img: "img-japan/hinataSP.png", school: "Karasuno", bonds: ["Similar Builds","Weird Duo (Hanami)","Hanami","Number One Disciple","Karasuno's Red Mark Squad (Hanami ver.)","Sun vs Moon"] },
-    { name: "Hinata SSR", role: "MB", img: "img-japan/hinataSSR.png", school: "Karasuno", bonds: ["Flexible Aces", "Worthy Rival", "Surprising Friendship","Rival Friends","Weird Duo","Karasuno's Failing Grades Group"] },
+    { name: "Hinata SSR", role: "MB", img: "img-japan/hinataSSR.png", school: "Karasuno", bonds: ["Flexible Aces", "Worthy Rival", "Surprising Friendship","Rival Friends","Weird Duo","Karasuno's Failing Grades Group","The Absolute King VS the Freak Duo"] },
     { name: "Hinata SR", role: "MB", img: "img-japan/hinataSR.png", school: "Karasuno", bonds: ["Teammates on the Court","\"Sun\" and \"Moon\"",] },
-    { name: "Kageyama UR", role: "S", img: "img-japan/tobioUR.png", school: "Karasuno", bonds: ["Weird Duo","The King and The Great King","Karasuno's Setters","Karasuno's Failing Grades Group","Weird Duo (Hanami)","Karasuno's Red Mark Squad (Hanami ver.)","Karasuno Geniuses","Karasuno's Setters"] },
+    { name: "Kageyama UR", role: "S", img: "img-japan/tobioUR.png", school: "Karasuno", bonds: ["Weird Duo","The King and The Great King","Karasuno's Setters","Karasuno's Failing Grades Group","Weird Duo (Hanami)","Karasuno's Red Mark Squad (Hanami ver.)","Karasuno Geniuses","Karasuno's Setters","The Absolute King VS the Freak Duo"] },
     { name: "Kageyama SSR", role: "S", img: "img-japan/tobioSSR.png", school: "Karasuno", bonds: ["Teammates on the Court","Building Team Chemistry"] },
     { name: "Daichi SSR", role: "OP", img: "img-japan/daichiSSR.png", school: "Karasuno", bonds: ["Karasuno\'s Pillar","karasuno Senior Year","Behind the Smile","Karasuno 3rd Years"] },
     { name: "Daichi SR", role: "OP", img: "img-japan/daichiSR.png", school: "Karasuno", bonds: ["Karasuno\'s Pillar(practice)","Leaders Cut from the Same Cloth"] },
@@ -71,14 +71,14 @@ const characters = [
     { name: "Jingo R", role: "MB", img: "img-japan/jingoR.png", school: "Date Kogyo", bonds: ["Date Kogyo\'s Junior"] },
     { name: "Taro R", role: "OP", img: "img-japan/taroR.png", school: "Date Kogyo", bonds: [] },
 
-    { name: "Ushijima UR", role: "OP", img: "img-japan/ushijimaUR.png", school: "Shiratorizawa", bonds: ["Lifelong Best Friends","Undisputed Aces","Fated Rivals","Ushiwaka and Benkei"] },
-    { name: "Goshiki SSR", role: "WS", img: "img-japan/goshikiSSR.png", school: "Shiratorizawa", bonds: ["Promising Senpai","Undisputed Aces"] },
-    { name: "Tendo SSR", role: "MB", img: "img-japan/tendoSSR.png", school: "Shiratorizawa", bonds: ["Lifelong Best Friends","Promising Senpai","Shiratorizawa\'s Middke Blocker","Prediction VS System"] },
-    { name: "Taichi SR", role: "MB", img: "img-japan/kawanishiSR.png", school: "Shiratorizawa", bonds: ["Shiratorizawa\'s Middke Blocker"] },
-    { name: "Shirabu SSR", role: "S", img: "img-japan/shirabuSSR.png",school: "Shiratorizawa", bonds: [] },
-    { name: "Semi SSR", role: "S", img: "img-japan/semiSSR.png",school: "Shiratorizawa", bonds: [] },
-    { name: "Ohira SSR", role: "WS", img: "img-japan/ohiraSSR.png",school: "Shiratorizawa", bonds: ["Ushiwaka and Benkei"] },
-    { name: "Yamagata SSR", role: "Li", img: "img-japan/yamagataSSR.png",school: "Shiratorizawa", bonds: [] },
+    { name: "Ushijima UR", role: "OP", img: "img-japan/ushijimaUR.png", school: "Shiratorizawa", bonds: ["Lifelong Best Friends","Undisputed Aces","Fated Rivals","Ushiwaka and Benkei","The Absolute King and the Steadfast Setter","The Absolute King VS the Freak Duo","Shiratorizawa 3rd Years"] },
+    { name: "Goshiki SSR", role: "WS", img: "img-japan/goshikiSSR.png", school: "Shiratorizawa", bonds: ["Promising Senpai","Undisputed Aces","Shiratorizawa's WS"] },
+    { name: "Tendo SSR", role: "MB", img: "img-japan/tendoSSR.png", school: "Shiratorizawa", bonds: ["Lifelong Best Friends","Promising Senpai","Shiratorizawa\'s Middke Blocker","Prediction VS System","Shiratorizawa 3rd Years"] },
+    { name: "Taichi SR", role: "MB", img: "img-japan/kawanishiSR.png", school: "Shiratorizawa", bonds: ["Shiratorizawa\'s Middke Blocker","Shiratorizawa 2nd Years"] },
+    { name: "Shirabu SSR", role: "S", img: "img-japan/shirabuSSR.png",school: "Shiratorizawa", bonds: ["The Absolute King and the Steadfast Setter","Shiratorizawa 2nd Years","Setters of Different Types"] },
+    { name: "Semi SSR", role: "S", img: "img-japan/semiSSR.png",school: "Shiratorizawa", bonds: ["Shiratorizawa 3rd Years","Setters of Different Types"] },
+    { name: "Ohira SSR", role: "WS", img: "img-japan/ohiraSSR.png",school: "Shiratorizawa", bonds: ["Ushiwaka and Benkei","Shiratorizawa 3rd Years","Shiratorizawa's WS"] },
+    { name: "Yamagata SSR", role: "Li", img: "img-japan/yamagataSSR.png",school: "Shiratorizawa", bonds: ["Shiratorizawa 3rd Years"] },
 
     { name: "Bokuto SP", role: "WS", img: "img-japan/bokutoSP.png",school: "Fukurodani", bonds: ["Number One Disciple","The Moment They Fell for Volleyball","Beach"] },
     { name: "Bokuto UR", role: "WS", img: "img-japan/bokutoUR.png",school: "Fukurodani", bonds: [] },
@@ -221,6 +221,13 @@ const synergyDescriptions = {
     "Shiratorizawa\'s Middke Blocker":"Increases Block stat of your side\'s front row players by 5/5.5/6/6.5/7%",
     "Prediction VS System":{"Tsukishima SSR":"No buff","Tendo SSR":"Block +5/7/9/12/15, Block +1/2/3/4/5%"},
     "Ushiwaka and Benkei": {"Ushijima UR": "Block +5/7/9/12/15, Block +1/2/3/4/5%","Ohira SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%"},
+    "The Absolute King and the Steadfast Setter": "When Shirabu sets, Ushijima performs a [Spike] with 260% of [Spike] power. Ushijima’s [Power] increases by 10% for this spike.",
+    "The Absolute King VS the Freak Duo": {"Ushijima UR": "Spike +5/7/9/12/15, Spike +1/2/3/4/5%","Hinata SSR":"","Kageyama UR":""},
+    "Shiratorizawa 2nd Years": {"Shirabu SSR": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%","Taichi SR": "Quick +5/7/9/12/15, Quick +1/2/3/4/5%"},
+    "Shiratorizawa 3rd Years": {"Ushijima UR": "","Yamagata SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Ohira SSR": "Spike +5/7/9/12/15, Spike +1/2/3/4/5%","Semi SSR": "Serve +5/7/9/12/15, Serve +1/2/3/4/5%","Tendo SSR": "Block +5/7/9/12/15, Block +1/2/3/4/5%"},
+    "Setters of Different Types": {"Shirabu SSR": "Serve +5/7/9/12/15, Serve +1/2/3/4/5%","Semi SSR": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%"},
+    "Shiratorizawa's WS": "Allies’ [Spike] increases by 4%",
+
 
 };
 
@@ -326,6 +333,13 @@ const synergyMeta = {
     "Shiratorizawa\'s Middke Blocker":{ category: "deployment", activation: { scope: "any", min: 2 } },
     "Prediction VS System":{ category: "stats", activation: { scope: "any", min: 2 } },
     "Ushiwaka and Benkei": { category: "stats", activation: { scope: "any", min: 2 } },
+    "The Absolute King and the Steadfast Setter": { category: "deployment", activation: { scope: "any", min: 2 } },
+    "The Absolute King VS the Freak Duo": { category: "stats", activation: { scope: "any", min: 3 } },
+    "Shiratorizawa 2nd Years": { category: "stats", activation: { scope: "any", min: 2 } },
+    "Shiratorizawa 3rd Years": { category: "stats", activation: { scope: "any", min: 5 } },
+    "Setters of Different Types": { category: "stats", activation: { scope: "any", min: 2 } },
+    "Shiratorizawa's WS": { category: "deployment", activation: { scope: "any", min: 2 } },
+
 
 
 };
@@ -417,6 +431,15 @@ const synergyPairs = {
     "Cannon and Iron Wall":[["Aone", "Asahi"]],
 
     "Ushiwaka and Benkei":[["Ushijima","Ohira Shion"]],
+    "The Absolute King and the Steadfast Setter":[["Shirabu","Ushijima"]],
+    "The Absolute King VS the Freak Duo":[["Ushijima","Hinata","Kageyama"]],
+    "Shiratorizawa 2nd Years":[["Shirabu","Kawanishi"]],
+    "Shiratorizawa 3rd Years": [["Yamagata", "Ohira", "Semi", "Tendo", "Ushijima"]],
+    "Setters of Different Types": [["Shirabu", "Semi"]],
+    "Shiratorizawa's WS": [["Ohira", "Goshiki"]],
+
+
+
     
 };
 
