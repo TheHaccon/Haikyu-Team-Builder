@@ -1,22 +1,22 @@
 // template: { name: "", role: "", img: "img-japan/", school: "", bonds: [] },
 const characters = [
-    { name: "Hinata SP", role: "MB", img: "img-japan/hinataSP.png", school: "Karasuno", bonds: ["Similar Builds","Weird Duo (Hanami)","Hanami","Number One Disciple","Karasuno's Red Mark Squad (Hanami ver.)"] },
+    { name: "Hinata SP", role: "MB", img: "img-japan/hinataSP.png", school: "Karasuno", bonds: ["Similar Builds","Weird Duo (Hanami)","Hanami","Number One Disciple","Karasuno's Red Mark Squad (Hanami ver.)","Sun vs Moon"] },
     { name: "Hinata SSR", role: "MB", img: "img-japan/hinataSSR.png", school: "Karasuno", bonds: ["Flexible Aces", "Worthy Rival", "Surprising Friendship","Rival Friends","Weird Duo","Karasuno's Failing Grades Group"] },
     { name: "Hinata SR", role: "MB", img: "img-japan/hinataSR.png", school: "Karasuno", bonds: ["Teammates on the Court","\"Sun\" and \"Moon\"",] },
-    { name: "Kageyama UR", role: "S", img: "img-japan/tobioUR.png", school: "Karasuno", bonds: ["Weird Duo","The King and The Great King","Karasuno's Setters","Karasuno's Failing Grades Group","Weird Duo (Hanami)","Karasuno's Red Mark Squad (Hanami ver.)"] },
+    { name: "Kageyama UR", role: "S", img: "img-japan/tobioUR.png", school: "Karasuno", bonds: ["Weird Duo","The King and The Great King","Karasuno's Setters","Karasuno's Failing Grades Group","Weird Duo (Hanami)","Karasuno's Red Mark Squad (Hanami ver.)","Karasuno Geniuses","Karasuno's Setters"] },
     { name: "Kageyama SSR", role: "S", img: "img-japan/tobioSSR.png", school: "Karasuno", bonds: ["Teammates on the Court","Building Team Chemistry"] },
-    { name: "Daichi SSR", role: "OP", img: "img-japan/daichiSSR.png", school: "Karasuno", bonds: ["Karasuno\'s Pillar","karasuno Senior Year","Behind the Smile"] },
+    { name: "Daichi SSR", role: "OP", img: "img-japan/daichiSSR.png", school: "Karasuno", bonds: ["Karasuno\'s Pillar","karasuno Senior Year","Behind the Smile","Karasuno 3rd Years"] },
     { name: "Daichi SR", role: "OP", img: "img-japan/daichiSR.png", school: "Karasuno", bonds: ["Karasuno\'s Pillar(practice)","Leaders Cut from the Same Cloth"] },
-    { name: "Sugawara SP", role: "S", img: "img-japan/sugawaraSP.png", school: "Karasuno", bonds: [] },
+    { name: "Sugawara SP", role: "S", img: "img-japan/sugawaraSP.png", school: "Karasuno", bonds: ["After School","Karasuno 3rd Years","Karasuno's Setters"] },
     { name: "Sugawara SR", role: "S", img: "img-japan/sugawaraSR.png", school: "Karasuno", bonds: ["karasuno Senior Year","Karasuno's Setters",] },
-    { name: "Asahi SSR", role: "WS", img: "img-japan/asahiSSR.png", school: "Karasuno", bonds: ["karasuno Senior Year","\"Guardian Deity\" and \"Wing Spiker\"","Cannon \& Iron Wall"] },
+    { name: "Asahi SSR", role: "WS", img: "img-japan/asahiSSR.png", school: "Karasuno", bonds: ["karasuno Senior Year","\"Guardian Deity\" and \"Wing Spiker\"","Cannon \& Iron Wall","Karasuno 3rd Years","Cannon and Iron Wall"] },
     { name: "Asahi SR", role: "WS", img: "img-japan/asahiSR.png", school: "Karasuno", bonds: ["\"Guardian Deity\" and \"Ace\"","Karasuno\'s Wing Spiker"] },
-    { name: "Nishinoya SP", role: "Li", img: "img-japan/nishinoyaSP.png", school: "Karasuno", bonds: ["Karasuno's Red Mark Squad (Hanami ver.)"] },
+    { name: "Nishinoya SP", role: "Li", img: "img-japan/nishinoyaSP.png", school: "Karasuno", bonds: ["Karasuno's Red Mark Squad (Hanami ver.)","Protectors of Kiyoko","After School","Karasuno Geniuses","Team's Guardians (After School)"] },
     { name: "Nishinoya SSR", role: "Li", img: "img-japan/nishinoyaSSR.png", school: "Karasuno", bonds: ["Karasuno\'s sophomore", "Kiyoko\'s Knights","\"Guardian Deity\" and \"Wing Spiker\"","Karasuno's Failing Grades Group","Team's Guardians"] },
     { name: "Nishinoya SR", role: "Li", img: "img-japan/nishinoyaSR.png", school: "Karasuno", bonds: ["\"Guardian Deity\" and \"Ace\"","Formidable Opponent","Karasuno\'s Sophomore(practice)"] },
-    { name: "Tanaka SSR", role: "WS", img: "img-japan/tanakaSSR.png", school: "Karasuno", bonds: ["Karasuno\'s sophomore", "Kiyoko\'s Knights","TOMODACHI(Friends!)","Karasuno's Failing Grades Group","Karasuno's Red Mark Squad (Hanami ver.)"] },
+    { name: "Tanaka SSR", role: "WS", img: "img-japan/tanakaSSR.png", school: "Karasuno", bonds: ["Karasuno\'s sophomore", "Kiyoko\'s Knights","TOMODACHI(Friends!)","Karasuno's Failing Grades Group","Karasuno's Red Mark Squad (Hanami ver.)","Protectors of Kiyoko"] },
     { name: "Tanaka SR", role: "WS", img: "img-japan/tanakaSR.png", school: "Karasuno", bonds: ["Karasuno\'s Wing Spiker","Building Team Chemistry","Karasuno\'s Sophomore(practice)"] },
-    { name: "Tsukishima SP", role: "MB", img: "img-japan/tsukishimaSP.png", school: "Karasuno", bonds: [] },
+    { name: "Tsukishima SP", role: "MB", img: "img-japan/tsukishimaSP.png", school: "Karasuno", bonds: ["Sun vs Moon","The Moment They Fell for Volleyball"] },
     { name: "Tsukishima SSR", role: "MB", img: "img-japan/tsukishimaSSR.png", school: "Karasuno", bonds: ["\"Shield\" and \"Spear\"","Master and Apprentice","Prediction VS System"] },
     { name: "Tsukishima SR", role: "MB", img: "img-japan/tsukishimaSR.png", school: "Karasuno", bonds: ["Simulated Junior Training Teamate","\"Shield\" and \"Spear\"(practice)","\"Sun\" and \"Moon\""] },
     { name: "Tadashi SR", role: "MB", img: "img-japan/tadashiSR.png", school: "Karasuno", bonds: ["\"Shield\" and \"Spear\"",] },
@@ -27,38 +27,38 @@ const characters = [
     { name: "Kazuhito R", role: "MB", img: "img-japan/kazuhitoR.png", school: "Karasuno", bonds: ["Bench cheer","The Returning Trio"] },
     { name: "Kageyama SR", role: "S", img: "img-japan/tobioSR.png", school: "Kitagawa", bonds: [] },
 
-    { name: "Oikawa UR", role: "S", img: "img-japan/oikawaUR.png", school: "Aoba Johsai", bonds: ["The King and The Great King"] },
+    { name: "Oikawa UR", role: "S", img: "img-japan/oikawaUR.png", school: "Aoba Johsai", bonds: ["The King and The Great King","To Greater Heights","Breath of Aoba","Fated Rivals","Merciless Trust"] },
     { name: "Oikawa SSR", role: "S", img: "img-japan/oikawaSSR.png", school: "Aoba Johsai", bonds: ["Team Chemistry"] },
-    { name: "Iwaizumi SSR", role: "WS", img: "img-japan/iwaizumiSSR.png", school: "Aoba Johsai", bonds: ["The Wolf Pack"] },
+    { name: "Iwaizumi SSR", role: "WS", img: "img-japan/iwaizumiSSR.png", school: "Aoba Johsai", bonds: ["The Wolf Pack","Breath of Aoba"] },
     { name: "Iwaizumi SR", role: "WS", img: "img-japan/iwaizumiSR.png", school: "Aoba Johsai", bonds: ["The Wolf Pack(Practice)","Team Chemistry"] },
     { name: "Matsukawa SR", role: "MB", img: "img-japan/matsukawaSR.png", school: "Aoba Johsai", bonds: ["Seijoh\'s Senior Year Pillars"] },
     { name: "Hanamaki SR", role: "WS", img: "img-japan/hanamakiSR.png", school: "Aoba Johsai", bonds: ["Seijoh\'s Senior Year Pillars"] },
     { name: "Yahaba SR", role: "S", img: "img-japan/yahabaSR.png", school: "Aoba Johsai", bonds: ["Aoba Johsai's Sophomore","Hidden Fire"] },
     { name: "Watari SR", role: "Li", img: "img-japan/watariSR.png", school: "Aoba Johsai", bonds: ["Aoba Johsai's Sophomore"] },
-    { name: "Kindaichi SR", role: "MB", img: "img-japan/kindaichiSR.png", school: "Aoba Johsai", bonds: ["Blunt and Composed"] },
+    { name: "Kindaichi SR", role: "MB", img: "img-japan/kindaichiSR.png", school: "Aoba Johsai", bonds: ["Blunt and Composed","To Greater Heights"] },
     { name: "Kunimi SR", role: "OP", img: "img-japan/kunimiSR.png", school: "Aoba Johsai", bonds: ["Blunt and Composed"] },
-    { name: "Kentaro SSR", role: "OP", img: "img-japan/kyotaniSSR.png", school: "Aoba Johsai", bonds: ["Aoba Johsai's Sophomore","Hidden Fire","The Wolf Pack"] },
+    { name: "Kentaro SSR", role: "OP", img: "img-japan/kyotaniSSR.png", school: "Aoba Johsai", bonds: ["Aoba Johsai's Sophomore","Hidden Fire","The Wolf Pack","Merciless Trust"] },
     { name: "Kentaro SR", role: "OP", img: "img-japan/kyotaniSR.png", school: "Aoba Johsai", bonds: ["The Wolf Pack(Practice)"] },
 
-    { name: "Kenma SP", role: "S", img: "img-japan/kenmaSP.png", school: "Nekoma", bonds: ["Hanami"] },
+    { name: "Kenma SP", role: "S", img: "img-japan/kenmaSP.png", school: "Nekoma", bonds: ["Hanami","Perseverance and Tenacity"] },
     { name: "Kenma SSR", role: "S", img: "img-japan/kenmaSSR.png", school: "Nekoma", bonds: ["Rival Friends","\"Brain\" and \"Control Tower\"","Grit and Competitive","The \"Enigmatic\" Teammate"] },
     { name: "Kenma SR", role: "S", img: "img-japan/kenmaSR.png", school: "Nekoma", bonds: ["\"Pivot\" and \"Defensive Pivot\"","\"Pivot\" and \"Control Tower\""] },
-    { name: "Kuroo UR", role: "MB", img: "img-japan/kurooUR.png", school: "Nekoma", bonds: ["Behind the Smile","Master and Apprentice","\"Brain\" and \"Control Tower\""] },
+    { name: "Kuroo UR", role: "MB", img: "img-japan/kurooUR.png", school: "Nekoma", bonds: ["Behind the Smile","Master and Apprentice","\"Brain\" and \"Control Tower\"","Reliable Seniors"] },
     { name: "Kuroo SSR", role: "MB", img: "img-japan/kurooSSR.png", school: "Nekoma", bonds: ["Leaders Cut from the Same Cloth","\"Pivot\" and \"Control Tower\""] },
     { name: "Yaku SR", role: "Li", img: "img-japan/yakuSR.png", school: "Nekoma", bonds: ["Formidable Opponent","One-on-One Training","\"Pivot\" and \"Defensive Pivot\""] },
-    { name: "Yaku SSR", role: "Li", img: "img-japan/yakuSSR.png", school: "Nekoma", bonds: ["Team's Guardians"] },
-    { name: "Lev SSR", role: "MB", img: "img-japan/levSSR.png", school: "Nekoma", bonds: ["Flexible Aces","Nekoma\'s Junior","The \"Enigmatic\" Teammate"] },
+    { name: "Yaku SSR", role: "Li", img: "img-japan/yakuSSR.png", school: "Nekoma", bonds: ["Team's Guardians","Team's Guardians (After School)","Reliable Seniors","Protective Guidance"] },
+    { name: "Lev SSR", role: "MB", img: "img-japan/levSSR.png", school: "Nekoma", bonds: ["Flexible Aces","Nekoma\'s Junior","The \"Enigmatic\" Teammate","Protective Guidance"] },
     { name: "Lev SR", role: "MB", img: "img-japan/levSR.png", school: "Nekoma", bonds: ["One-on-One Training"] },
-    { name: "Yamamoto SR", role: "WS", img: "img-japan/yamamotoSR.png", school: "Nekoma", bonds: ["TOMODACHI(Friends!)","Nekoma\'s Wing Spiker","Grit and Competitive"] },
-    { name: "Kai SR", role: "OP", img: "img-japan/kaiSR.png", school: "Nekoma", bonds: ["Nekoma\'s Wing Spiker"] },
+    { name: "Yamamoto SR", role: "WS", img: "img-japan/yamamotoSR.png", school: "Nekoma", bonds: ["TOMODACHI(Friends!)","Nekoma\'s Wing Spiker","Grit and Competitive","Perseverance and Tenacity"] },
+    { name: "Kai SR", role: "OP", img: "img-japan/kaiSR.png", school: "Nekoma", bonds: ["Nekoma\'s Wing Spiker","Reliable Seniors"] },
     { name: "Fukunaga SR", role: "WS", img: "img-japan/fukunagaSR.png", school: "Nekoma", bonds: ["Nekoma\'s Wing Spiker"] },
     { name: "Inuoka SR", role: "MB", img: "img-japan/inuokaSR.png", school: "Nekoma", bonds: ["Worthy Rival","Nekoma\'s Junior"] },
     { name: "Teshiro SR", role: "S", img: "img-japan/teshiroSR.png", school: "Nekoma", bonds: ["Nekoma\'s Junior"] },
 
-    { name: "Aone SP", role: "MB", img: "img-japan/aoneSP.png", school: "Date Kogyo", bonds: [] },
+    { name: "Aone SP", role: "MB", img: "img-japan/aoneSP.png", school: "Date Kogyo", bonds: ["Silence and Sarcasm","Beach","Cannon and Iron Wall"] },
     { name: "Aone SSR", role: "MB", img: "img-japan/aoneSSR.png", school: "Date Kogyo", bonds: ["Cannon \& Iron Wall","Surprising Friendship","The Silent and the Snarky"] },
     { name: "Aone SR", role: "MB", img: "img-japan/aoneSR.png", school: "Date Kogyo", bonds: [] },
-    { name: "Kenji SSR", role: "WS", img: "img-japan/kenjiSSR.png", school: "Date Kogyo", bonds: ["Date Kogyo\'s Captains","The Silent and the Snarky","New Captain \& Tall Rookie"] },
+    { name: "Kenji SSR", role: "WS", img: "img-japan/kenjiSSR.png", school: "Date Kogyo", bonds: ["Date Kogyo\'s Captains","The Silent and the Snarky","New Captain \& Tall Rookie","Silence and Sarcasm"] },
     { name: "Kenji SR", role: "WS", img: "img-japan/kenjiSR.png", school: "Date Kogyo", bonds: [] },
     { name: "Kanji SSR", role: "S", img: "img-japan/kanjiSSR.png", school: "Date Kogyo", bonds: ["New Captain \& Tall Rookie","Date Kogyo\'s Setter",] },
     { name: "Kanji SR", role: "S", img: "img-japan/kanjiSR.png", school: "Date Kogyo", bonds: ["Simulated Junior Training Teamate"] },
@@ -71,7 +71,7 @@ const characters = [
     { name: "Jingo R", role: "MB", img: "img-japan/jingoR.png", school: "Date Kogyo", bonds: ["Date Kogyo\'s Junior"] },
     { name: "Taro R", role: "OP", img: "img-japan/taroR.png", school: "Date Kogyo", bonds: [] },
 
-    { name: "Ushijima UR", role: "OP", img: "img-japan/ushijimaUR.png", school: "Shiratorizawa", bonds: ["Lifelong Best Friends","Undisputed Aces"] },
+    { name: "Ushijima UR", role: "OP", img: "img-japan/ushijimaUR.png", school: "Shiratorizawa", bonds: ["Lifelong Best Friends","Undisputed Aces","Fated Rivals"] },
     { name: "Goshiki SSR", role: "WS", img: "img-japan/goshikiSSR.png", school: "Shiratorizawa", bonds: ["Promising Senpai","Undisputed Aces"] },
     { name: "Tendo SSR", role: "MB", img: "img-japan/tendoSSR.png", school: "Shiratorizawa", bonds: ["Lifelong Best Friends","Promising Senpai","Shiratorizawa\'s Middke Blocker","Prediction VS System"] },
     { name: "Taichi SR", role: "MB", img: "img-japan/kawanishiSR.png", school: "Shiratorizawa", bonds: ["Shiratorizawa\'s Middke Blocker"] },
@@ -80,9 +80,9 @@ const characters = [
     { name: "Ohira SSR", role: "WS", img: "img-japan/ohiraSSR.png",school: "Shiratorizawa", bonds: [] },
     { name: "Yamagata SSR", role: "Li", img: "img-japan/yamagataSSR.png",school: "Shiratorizawa", bonds: [] },
 
-    { name: "Bokuto SP", role: "WS", img: "img-japan/bokutoSP.png",school: "Fukurodani", bonds: ["Number One Disciple"] },
+    { name: "Bokuto SP", role: "WS", img: "img-japan/bokutoSP.png",school: "Fukurodani", bonds: ["Number One Disciple","The Moment They Fell for Volleyball","Beach"] },
     { name: "Bokuto UR", role: "WS", img: "img-japan/bokutoUR.png",school: "Fukurodani", bonds: [] },
-    { name: "Akaashi SP", role: "S", img: "img-japan/akaashiSP.png",school: "Fukurodani", bonds: [] },
+    { name: "Akaashi SP", role: "S", img: "img-japan/akaashiSP.png",school: "Fukurodani", bonds: ["Beach"] },
     { name: "Akaashi SSR", role: "S", img: "img-japan/akaashiSSR.png",school: "Fukurodani", bonds: [] },
     { name: "Konoha SSR", role: "OP", img: "img-japan/konohaSSR.png",school: "Fukurodani", bonds: [] },
     { name: "Sarukui SSR", role: "Li", img: "img-japan/sarukuiSSR.png",school: "Fukurodani", bonds: [] },
@@ -123,6 +123,9 @@ const synergyDescriptions = {
     "Aoba Johsai": "Increases Power Attack stats of all players present by 15%",
     "Nekoma": "Increases Receive stat of all players present by 15%",
     "Date Kogyo": "Increases Block stat of all players present by 15%",
+    "Fukurōdani": "When 4 or more members from Fukurōdani Academy are on the court, the team's Morale increases by 20.",
+    "Jōzenji": " all allies gain 2 stacks of [Play More]. Each stack of [Play More] increases Power Attack and Quick Attack by 2.5%, up to 4 stacks.",
+    "Inarizaki": "Increases Attack and Defense stat of all players present +5%",
 
     //karasuno bond
     "Karasuno\'s Pillar": "When achieving a PERFECT receive, increases Team Morale by 3/3/4/4/5",
@@ -154,7 +157,7 @@ const synergyDescriptions = {
     "Master and Apprentice": {"Tsukishima SSR": "Block +5/7/9/12/15, Block +1/2/3/4/5%","Kuroo UR": "Block +5/7/9/12/15, Block +1/2/3/4/5%"},
     "Weird Duo": "Hinata performs a Quick Attack with 280/295/310/325/340% Speed. Awareness +30%, Power +(Awareness ×30/35/40/45/50%, max 60/70/80/90/100%). Cannot be blocked. Resets cooldown on scoring.",
     "The King and The Great King": {"Kageyama UR": "Serve +5/7/9/12/15, Serve +1/2/3/4/5%","Oikawa UR": "Serve +5/7/9/12/15, Serve +1/2/3/4/5%"},
-    "Karasuno's Setters": {"Kageyama": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%","Sugawara": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%"},
+    "Karasuno's Setters": {"Kageyama SSR": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%","Sugawara SR": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%"},
     "Karasuno's Failing Grades Group": {"Hinata SSR": "","Kageyama UR": "","Nishinoya SSR": "","Tanaka SSR": "Strong Attack +5/7/9/12/15, Strong Attack +1/2/3/4/5%"},
     "Team's Guardians": {"Nishinoya SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Yaku SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%"},
     "Similar Builds": {"Hinata SP": "Quick Attack +5/7/9/12/15, Quick Attack +1/2/3/4/5%","Hoshiumi": "Strong Attack +5/7/9/12/15, Strong Attack +1/2/3/4/5%"},
@@ -163,6 +166,15 @@ const synergyDescriptions = {
     "Strange Friendship": {"Hinata SP": "Quick Attack +5/7/9/12/15, Quick Attack +1/2/3/4/5%","Aone SP": "Block +5/7/9/12/15, Block +1/2/3/4/5%"},
     "Number One Disciple": {"Hinata SP": "Quick Attack +5/7/9/12/15, Quick Attack +1/2/3/4/5%","Bokuto SP": "Strong Attack +5/7/9/12/15, Strong Attack +1/2/3/4/5%"},
     "Karasuno's Red Mark Squad (Hanami ver.)": {"Hinata SP": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Nishinoya SP": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%","Tanaka": "","Kageyama": ""},
+    "Protectors of Kiyoko": {"Nishinoya SP": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Tanaka SSR": "Spike +5/7/9/12/15, Spike +1/2/3/4/5%"},
+    "After School": "Increases Nishinoya (After School)'s Reaction by 5%; if Sugawara (After School) is on the court and Nishinoya (After School)'s Stamina is below 80, his Reaction increases by an additional 5%",
+    "Karasuno Geniuses": "Increases Nishinoya (After School)'s Receive by 5% and Reaction by 5%. When Nishinoya (After School) uses his Ultimate, Kageyama gains 1 stack of [Hates to Lose]. If this Ultimate is a Nice Play, then after the play, the first ally Spike (Power/Quick) increases its power by 20% for the spiker.",
+    "Team's Guardians (After School)": {"Nishinoya SP": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Yaku SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%"},
+    "Sun vs Moon": "When allies perform a Toss, increases their Awareness by 10% until the ball crosses the net twice. If Hinata (Hanami)'s Quick Attack results in a Nice Play, the cooldown of [High Jump] is reduced by 2 net crossings. Tsukishima (Fireworks) gains Awareness equal to 50% of Hinata (Hanami)'s Awareness, up to 50%. Effect lasts until the ball crosses the net 4 times.",
+    "Karasuno 3rd Years": {"Asahi SSR": "Power +5/7/9/12/15, Power +1/2/3/4/5%","Daichi SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Sugawara SP": "Block +5/7/9/12/15, Block +1/2/3/4/5%"},
+    "Karasuno's Setters": {"Sugawara SP": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%","Kageyama UR": ""},
+    "The Moment They Fell for Volleyball": {"Bokuto SP": "Spikes +5/7/9/12/15, Spikes +1/2/3/4/5%","Tsukishima SP": "Quick +5/7/9/12/15, Quick +1/2/3/4/5%"},
+
 
     //Aoba Johsai
     "Aoba Johsai's Sophomore": {"Watari SR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%", "Yahaba SR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%", "Kentaro SSR": "No buff" },
@@ -172,6 +184,10 @@ const synergyDescriptions = {
     "Seijoh\'s Senior Year Pillars": "Increases Matsukawa\'s Block stat by 6/67/8/9/10% and Hanamaki\'s Receive stat by 6/7/8/9/10%",
     "The Wolf Pack(Practice)": "Increases Iwaisumi and Kentaro's Awareness by 6/7/8/9/10%",
     "Team Chemistry" : "Increases Oikawa and Iwaizumi's Awareness by 6/7/8/9/10%",
+    "To Greater Heights": {"Oikawa URR": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%","Kindaichi SSR": ""},
+    "Breath of Aoba": "When Oikawa performs a toss, Iwaizumi performs a Spike with 255% Attack power. Gains 2 stacks of [Attack Rhythm]. For each stack of [Attack Rhythm], all allies' Awareness increases by 1%. Max 10 stacks.",
+    "Merciless Trust": {"Oikawa UR": "Block +5/7/9/12/15, Block +1/2/3/4/5%","Kentaro SSR": "Spike +5/7/9/12/15, Spike +1/2/3/4/5%"},
+    "Fated Rivals": {"Oikawa UR": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%", "Ushijima UR": ""},
 
     //Nekoma
     "Nekoma\'s Junior":{"Teshiro SR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Inuoka SR": "No buff", "Lev SSR":"No Buff"},
@@ -182,6 +198,9 @@ const synergyDescriptions = {
     "The \"Enigmatic\" Teammate":{"Lev SSR": "Block +5/7/9/12/15, Block +1/2/3/4/5%","Kenma SSR": "No buff"},
     "\"Pivot\" and \"Defensive Pivot\"":{"Yaku SR": "Save +5/7/9/12/15, Save +1/2/3/4/5%","Kenma SSR": "Power Attack +5/7/9/12/15, Power Attack +1/2/3/4/5%"},
     "\"Pivot\" and \"Control Tower\"":"Increases Kenma\'s Set stat by 6/7/8/9/10% and Kuroo\'s Block Stat by 6/7/8/9/10%",
+    "Reliable Seniors": {"Kuroo UR": "Quick Attack +5/7/9/12/15, Quick Attack +1/2/3/4/5%","Yaku SSR": "","Kai SR": ""},
+    "Protective Guidance": "increases Yaku receive by 6% and Lev Quick Attack by 6%",
+    "Perseverance and Tenacity": {"Kenma SP": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%","Yamamoto SR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%"},
 
     //Date Kogyo
     "Date Kogyo\'s Captains":{"Kaname SR":"No buff","Kenji SSR":"Power Attack +5/7/9/12/15, Power Attack +1/2/3/4/5%"},
@@ -191,6 +210,9 @@ const synergyDescriptions = {
     "Date Kogyo\'s Setter":{"KanameSR":"No buff","Kaji SSR":"Set +5/7/9/12/15, Set +1/2/3/4/5%"},
     "Date Kogyo\'s Junior":{"Jingo R":"Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Sakunami R":"Quick Attack +5/7/9/12/15, Quick Attack stat by 6/7/8/9/10%"},
     "Date Kogyo\'s Senior": "When casting Block skills, increases Team morale by 3/3/4/4/5",
+    "Silence and Sarcasm": {"Aone SP": "Block +5/7/9/12/15, Block +1/2/3/4/5%","Futakuchi SSR": ""},
+    "Beach":"While allies are in Team Spirit Awakening, during a 2/3-man block, participating members' [Reaction] +6%. Effect lasts until the ball crosses the net 2 times. At rally start, allies' Team Spirit +20.",
+    "Cannon and Iron Wall": {"Aone SP": "Serve +5/7/9/12/15, Serve +1/2/3/4/5%", "Asahi SSR":""},
 
     //Shiratorizawa
     "Lifelong Best Friends":"Increases Ushijima\'s Attack Technique by 3/3.5/4/4.5/5% and Tendo\'s Defense Technique by 3/3.5/4/4.5/5%",
@@ -248,7 +270,14 @@ const synergyMeta = {
     "Strange Friendship": { category: "stats", activation: { scope: "any", min: 2 } },
     "Number One Disciple": { category: "stats", activation: { scope: "any", min: 2 } },
     "Karasuno's Red Mark Squad (Hanami ver.)": { category: "stats", activation: { scope: "any", min: 4 } },
-
+    "Protectors of Kiyoko": { category: "stats", activation: { scope: "any", min: 2 } },
+    "After School": { category: "deployment", activation: { scope: "any", min: 2 } },
+    "Karasuno Geniuses": { category: "deployment", activation: { scope: "any", min: 2 } },
+    "Team's Guardians (After School)": { category: "stats", activation: { scope: "any", min: 2 } },
+    "Sun vs Moon": { category: "deployment", activation: { scope: "any", min: 2 } },
+    "Karasuno 3rd Years": { category: "stats", activation: { scope: "any", min: 3 } },
+    "Karasuno's Setters": { category: "stats", activation: { scope: "any", min: 2 } },
+    "The Moment They Fell for Volleyball":{ category: "stats", activation: { scope: "any", min: 2 } },
 
     "Aoba Johsai's Sophomore": { category: "stats", activation: { scope: "any", min: 3 } },
     "Blunt and Composed": { category: "deployment", activation: { scope: "any", min: 2 } },
@@ -257,7 +286,12 @@ const synergyMeta = {
     "Seijoh\'s Senior Year Pillars": { category: "deployment", activation: { scope: "any", min: 2 } },
     "The Wolf Pack(Practice)": { category: "deployment", activation: { scope: "any", min: 2 } },
     "Team Chemistry": { category: "deployment", activation: { scope: "any", min: 2 } },
+    "To Greater Heights": { category: "stats", activation: { scope: "any", min: 2 } },
+    "Breath of Aoba": { category: "deployment", activation: { scope: "any", min: 2 } },
+    "Merciless Trust": { category: "stats", activation: { scope: "any", min: 2 } },
+    "Fated Rivals": { category: "stats", activation: { scope: "any", min: 2 } },
 
+    
     "Nekoma\'s Junior": { category: "stats", activation: { scope: "any", min: 3 } },
     "\"Brain\" and \"Control Tower\"": { category: "deployment", activation: { scope: "any", min: 2 } },
     "Nekoma\'s Wing Spiker": { category: "deployment", activation: { scope: "any", min: 3 } },
@@ -266,6 +300,11 @@ const synergyMeta = {
     "The \"Enigmatic\" Teammate": { category: "stats", activation: { scope: "any", min: 2 } },
     "\"Pivot\" and \"Defensive Pivot\"": { category: "stats", activation: { scope: "any", min: 2 } },
     "\"Pivot\" and \"Control Tower\"": { category: "deployment", activation: { scope: "any", min: 2 } },
+    "Reliable Seniors": { category: "stats", activation: { scope: "any", min: 3 } },
+    "Protective Guidance": { category: "deployment", activation: { scope: "any", min: 2 } },
+    "Perseverance and Tenacity": { category: "stats", activation: { scope: "any", min: 2 } },
+
+
 
     "Date Kogyo\'s Captains": { category: "stats", activation: { scope: "any", min: 2 } },
     "The Silent and the Snarky": { category: "deployment", activation: { scope: "any", min: 2 } },
@@ -274,6 +313,11 @@ const synergyMeta = {
     "Date Kogyo\'s Setter": { category: "stats", activation: { scope: "any", min: 2 } },
     "Date Kogyo\'s Junior": { category: "stats", activation: { scope: "any", min: 2 } },
     "Date Kogyo\'s Senior": { category: "deployment", activation: { scope: "any", min: 3 } },
+    "Silence and Sarcasm": { category: "stats", activation: { scope: "any", min: 2 } },
+    "Beach": { category: "deployment", activation: { scope: "any", min: 3 } },
+    "Cannon and Iron Wall": { category: "stats", activation: { scope: "any", min: 2 } },
+
+
 
     "Lifelong Best Friends":{ category: "deployment", activation: { scope: "any", min: 2 } },
     "Promising Senpai":{ category: "stats", activation: { scope: "any", min: 2 } },
@@ -323,7 +367,14 @@ const synergyPairs = {
     "Strange Friendship": [["Hinata","Aone"]],
     "Number One Disciple": [["Hinata","Bokuto"]],
     "Karasuno's Red Mark Squad (Hanami ver.)": [["Hinata", "Nishinoya", "Tanaka", "Kageyama"]],
-
+    "Protectors of Kiyoko": [["Nishinoya", "Tanaka"]],
+    "After School": [["Nishinoya", "Sugawara"]],
+    "Karasuno Geniuses": [["Nishinoya", "Kageyama"]],
+    "Team's Guardians (After School)": [["Nishinoya", "Yaku"]],
+    "Sun vs Moon": [["Hinata","Tsukishima"]],
+    "Karasuno 3rd Years": [["Sugawara", "Daichi", "Asahi"]],
+    "Karasuno's Setters": [["Kageyama","Sugawara"]],
+    "The Moment They Fell for Volleyball":[["Bokuto","Tsukishima"]],
 
     "Aoba Johsai's Sophomore":[["Watari", "Yahaba", "Kentaro"]],
     "Blunt and Composed":[["Kindaichi", "Kunimi"]],
@@ -332,6 +383,11 @@ const synergyPairs = {
     "Seijoh\'s Senior Year Pillars":[["Matsukawa", "Hanamaki"]],
     "The Wolf Pack(Practice)":[["Iwaizumi", "Kentaro"]],
     "Team Chemistry":[["Oikawa", "Iwaizumi"]],
+    "To Greater Heights":[["Oikawa", "Kindaichi"]],
+    "Breath of Aoba":[["Oikawa", "Iwaizumi"]],
+    "Merciless Trust":[["Oikawa","Kentaro"]],
+    "Fated Rivals":[["Oikawa","Ushijima"]],
+
 
     "Nekoma\'s Junior":[["Teshiro", "Inuoka","Lev"]],
     "\"Brain\" and \"Control Tower\"":[["Kenma", "Kuroo"]],
@@ -341,6 +397,10 @@ const synergyPairs = {
     "The \"Enigmatic\" Teammate":[["Kenma", "Lev"]],
     "\"Pivot\" and \"Defensive Pivot\"":[["Kenma", "Yaku"]],
     "\"Pivot\" and \"Control Tower\"":[["Kenma", "Kuroo"]],
+    "Reliable Seniors":[["Kuroo","Yaku","Kai"]],
+    "Protective Guidance":[["Yaku","Lev"]],
+    "Perseverance and Tenacity":[["Kenma", "Yamamoto"]],
+
     
     "Date Kogyo\'s Captains":[["Kenji","Kaname"]],
     "The Silent and the Snarky":[["Aone","Kenji"]],
@@ -349,6 +409,10 @@ const synergyPairs = {
     "Date Kogyo\'s Setter":[["Kanji","Kaname"]],
     "Date Kogyo\'s Junior": [["Jingo","Sakunami"]],
     "Date Kogyo\'s Senior": [["Takehito"," Kaname","Kamasaki"]],
+    "Silence and Sarcasm":[["Aone (Beach)", "Futakuchi"]],
+    "Beach":[["Aone", "Futakuchi", "Koganegawa"]],
+    "Cannon and Iron Wall":[["Aone", "Asahi"]],
+
     
 };
 
