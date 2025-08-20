@@ -1,9 +1,9 @@
 // template: { name: "", role: "", img: "img-japan/", school: "", bonds: [] },
 const characters = [
-    { name: "Hinata SP", role: "MB", img: "img-japan/hinataSP.png", school: "Karasuno", bonds: ["Similar Builds","Weird Duo (Hanami)","Hanami","Number One Disciple"] },
+    { name: "Hinata SP", role: "MB", img: "img-japan/hinataSP.png", school: "Karasuno", bonds: ["Similar Builds","Weird Duo (Hanami)","Hanami","Number One Disciple","Karasuno's Red Mark Squad (Hanami ver.)"] },
     { name: "Hinata SSR", role: "MB", img: "img-japan/hinataSSR.png", school: "Karasuno", bonds: ["Flexible Aces", "Worthy Rival", "Surprising Friendship","Rival Friends","Weird Duo","Karasuno's Failing Grades Group"] },
     { name: "Hinata SR", role: "MB", img: "img-japan/hinataSR.png", school: "Karasuno", bonds: ["Teammates on the Court","\"Sun\" and \"Moon\"",] },
-    { name: "Kageyama UR", role: "S", img: "img-japan/tobioUR.png", school: "Karasuno", bonds: ["Weird Duo","The King and The Great King","Karasuno's Setters","Karasuno's Failing Grades Group","Weird Duo (Hanami)"] },
+    { name: "Kageyama UR", role: "S", img: "img-japan/tobioUR.png", school: "Karasuno", bonds: ["Weird Duo","The King and The Great King","Karasuno's Setters","Karasuno's Failing Grades Group","Weird Duo (Hanami)","Karasuno's Red Mark Squad (Hanami ver.)"] },
     { name: "Kageyama SSR", role: "S", img: "img-japan/tobioSSR.png", school: "Karasuno", bonds: ["Teammates on the Court","Building Team Chemistry"] },
     { name: "Daichi SSR", role: "OP", img: "img-japan/daichiSSR.png", school: "Karasuno", bonds: ["Karasuno\'s Pillar","karasuno Senior Year","Behind the Smile"] },
     { name: "Daichi SR", role: "OP", img: "img-japan/daichiSR.png", school: "Karasuno", bonds: ["Karasuno\'s Pillar(practice)","Leaders Cut from the Same Cloth"] },
@@ -11,10 +11,10 @@ const characters = [
     { name: "Sugawara SR", role: "S", img: "img-japan/sugawaraSR.png", school: "Karasuno", bonds: ["karasuno Senior Year","Karasuno's Setters",] },
     { name: "Asahi SSR", role: "WS", img: "img-japan/asahiSSR.png", school: "Karasuno", bonds: ["karasuno Senior Year","\"Guardian Deity\" and \"Wing Spiker\"","Cannon \& Iron Wall"] },
     { name: "Asahi SR", role: "WS", img: "img-japan/asahiSR.png", school: "Karasuno", bonds: ["\"Guardian Deity\" and \"Ace\"","Karasuno\'s Wing Spiker"] },
-    { name: "Nishinoya SP", role: "Li", img: "img-japan/nishinoyaSP.png", school: "Karasuno", bonds: [] },
+    { name: "Nishinoya SP", role: "Li", img: "img-japan/nishinoyaSP.png", school: "Karasuno", bonds: ["Karasuno's Red Mark Squad (Hanami ver.)"] },
     { name: "Nishinoya SSR", role: "Li", img: "img-japan/nishinoyaSSR.png", school: "Karasuno", bonds: ["Karasuno\'s sophomore", "Kiyoko\'s Knights","\"Guardian Deity\" and \"Wing Spiker\"","Karasuno's Failing Grades Group","Team's Guardians"] },
     { name: "Nishinoya SR", role: "Li", img: "img-japan/nishinoyaSR.png", school: "Karasuno", bonds: ["\"Guardian Deity\" and \"Ace\"","Formidable Opponent","Karasuno\'s Sophomore(practice)"] },
-    { name: "Tanaka SSR", role: "WS", img: "img-japan/tanakaSSR.png", school: "Karasuno", bonds: ["Karasuno\'s sophomore", "Kiyoko\'s Knights","TOMODACHI(Friends!)","Karasuno's Failing Grades Group"] },
+    { name: "Tanaka SSR", role: "WS", img: "img-japan/tanakaSSR.png", school: "Karasuno", bonds: ["Karasuno\'s sophomore", "Kiyoko\'s Knights","TOMODACHI(Friends!)","Karasuno's Failing Grades Group","Karasuno's Red Mark Squad (Hanami ver.)"] },
     { name: "Tanaka SR", role: "WS", img: "img-japan/tanakaSR.png", school: "Karasuno", bonds: ["Karasuno\'s Wing Spiker","Building Team Chemistry","Karasuno\'s Sophomore(practice)"] },
     { name: "Tsukishima SP", role: "MB", img: "img-japan/tsukishimaSP.png", school: "Karasuno", bonds: [] },
     { name: "Tsukishima SSR", role: "MB", img: "img-japan/tsukishimaSSR.png", school: "Karasuno", bonds: ["\"Shield\" and \"Spear\"","Master and Apprentice","Prediction VS System"] },
@@ -162,6 +162,7 @@ const synergyDescriptions = {
     "Hanami": "At match start, Kenma (Hanami) gains 3 [Gapless Defense] stacks and increases the cap to 13; each stack increases his Awareness by 0.8%. When Hinata (Hanami) makes a Nice Play, his Quick Attack increases by 1%.",
     "Strange Friendship": {"Hinata SP": "Quick Attack +5/7/9/12/15, Quick Attack +1/2/3/4/5%","Aone SP": "Block +5/7/9/12/15, Block +1/2/3/4/5%"},
     "Number One Disciple": {"Hinata SP": "Quick Attack +5/7/9/12/15, Quick Attack +1/2/3/4/5%","Bokuto SP": "Strong Attack +5/7/9/12/15, Strong Attack +1/2/3/4/5%"},
+    "Karasuno's Red Mark Squad (Hanami ver.)": {"Hinata SP": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Nishinoya SP": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%","Tanaka": "","Kageyama": ""},
 
     //Aoba Johsai
     "Aoba Johsai's Sophomore": {"Watari SR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%", "Yahaba SR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%", "Kentaro SSR": "No buff" },
@@ -246,6 +247,8 @@ const synergyMeta = {
     "Hanami": { category: "deployment", activation: { scope: "any", min: 2 } },
     "Strange Friendship": { category: "stats", activation: { scope: "any", min: 2 } },
     "Number One Disciple": { category: "stats", activation: { scope: "any", min: 2 } },
+    "Karasuno's Red Mark Squad (Hanami ver.)": { category: "stats", activation: { scope: "any", min: 4 } },
+
 
     "Aoba Johsai's Sophomore": { category: "stats", activation: { scope: "any", min: 3 } },
     "Blunt and Composed": { category: "deployment", activation: { scope: "any", min: 2 } },
@@ -319,6 +322,8 @@ const synergyPairs = {
     "Hanami": [["Hinata","Kenma"]],
     "Strange Friendship": [["Hinata","Aone"]],
     "Number One Disciple": [["Hinata","Bokuto"]],
+    "Karasuno's Red Mark Squad (Hanami ver.)": [["Hinata", "Nishinoya", "Tanaka", "Kageyama"]],
+
 
     "Aoba Johsai's Sophomore":[["Watari", "Yahaba", "Kentaro"]],
     "Blunt and Composed":[["Kindaichi", "Kunimi"]],
