@@ -71,13 +71,13 @@ const characters = [
     { name: "Jingo R", role: "MB", img: "img-japan/jingoR.png", school: "Date Kogyo", bonds: ["Date Kogyo\'s Junior"] },
     { name: "Taro R", role: "OP", img: "img-japan/taroR.png", school: "Date Kogyo", bonds: [] },
 
-    { name: "Ushijima UR", role: "OP", img: "img-japan/ushijimaUR.png", school: "Shiratorizawa", bonds: ["Lifelong Best Friends","Undisputed Aces","Fated Rivals"] },
+    { name: "Ushijima UR", role: "OP", img: "img-japan/ushijimaUR.png", school: "Shiratorizawa", bonds: ["Lifelong Best Friends","Undisputed Aces","Fated Rivals","Ushiwaka and Benkei"] },
     { name: "Goshiki SSR", role: "WS", img: "img-japan/goshikiSSR.png", school: "Shiratorizawa", bonds: ["Promising Senpai","Undisputed Aces"] },
     { name: "Tendo SSR", role: "MB", img: "img-japan/tendoSSR.png", school: "Shiratorizawa", bonds: ["Lifelong Best Friends","Promising Senpai","Shiratorizawa\'s Middke Blocker","Prediction VS System"] },
     { name: "Taichi SR", role: "MB", img: "img-japan/kawanishiSR.png", school: "Shiratorizawa", bonds: ["Shiratorizawa\'s Middke Blocker"] },
     { name: "Shirabu SSR", role: "S", img: "img-japan/shirabuSSR.png",school: "Shiratorizawa", bonds: [] },
     { name: "Semi SSR", role: "S", img: "img-japan/semiSSR.png",school: "Shiratorizawa", bonds: [] },
-    { name: "Ohira SSR", role: "WS", img: "img-japan/ohiraSSR.png",school: "Shiratorizawa", bonds: [] },
+    { name: "Ohira SSR", role: "WS", img: "img-japan/ohiraSSR.png",school: "Shiratorizawa", bonds: ["Ushiwaka and Benkei"] },
     { name: "Yamagata SSR", role: "Li", img: "img-japan/yamagataSSR.png",school: "Shiratorizawa", bonds: [] },
 
     { name: "Bokuto SP", role: "WS", img: "img-japan/bokutoSP.png",school: "Fukurodani", bonds: ["Number One Disciple","The Moment They Fell for Volleyball","Beach"] },
@@ -220,6 +220,7 @@ const synergyDescriptions = {
     "Undisputed Aces":{"Goshiki SSR":"Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Ushijima UR":"Power Attack +5/7/9/12/15, Power Attack +1/2/3/4/5%"},
     "Shiratorizawa\'s Middke Blocker":"Increases Block stat of your side\'s front row players by 5/5.5/6/6.5/7%",
     "Prediction VS System":{"Tsukishima SSR":"No buff","Tendo SSR":"Block +5/7/9/12/15, Block +1/2/3/4/5%"},
+    "Ushiwaka and Benkei": {"Ushijima UR": "Block +5/7/9/12/15, Block +1/2/3/4/5%","Ohira SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%"},
 
 };
 
@@ -324,6 +325,8 @@ const synergyMeta = {
     "Undisputed Aces":{ category: "stats", activation: { scope: "any", min: 2 } },
     "Shiratorizawa\'s Middke Blocker":{ category: "deployment", activation: { scope: "any", min: 2 } },
     "Prediction VS System":{ category: "stats", activation: { scope: "any", min: 2 } },
+    "Ushiwaka and Benkei": { category: "stats", activation: { scope: "any", min: 2 } },
+
 
 };
 
@@ -413,6 +416,7 @@ const synergyPairs = {
     "Beach":[["Aone", "Futakuchi", "Koganegawa"]],
     "Cannon and Iron Wall":[["Aone", "Asahi"]],
 
+    "Ushiwaka and Benkei":[["Ushijima","Ohira Shion"]],
     
 };
 
