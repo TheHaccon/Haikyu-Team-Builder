@@ -1796,7 +1796,7 @@
     {
       id: "sasaya(Practice)",
       name: "Takehito Sasaya (Practice)",
-      img: "img-char/sasayaSR.png",
+      img: "img-char/sasayaPractice.png",
       school: "Date Kogyo",
       rarity: "SR",
       position: "Opposite Hitter",

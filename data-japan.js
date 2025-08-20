@@ -75,7 +75,7 @@ const characters = [
     { name: "Goshiki SSR", role: "WS", img: "img-japan/goshikiSSR.png", school: "Shiratorizawa", bonds: ["Promising Senpai","Undisputed Aces"] },
     { name: "Tendo SSR", role: "MB", img: "img-japan/tendoSSR.png", school: "Shiratorizawa", bonds: ["Lifelong Best Friends","Promising Senpai","Shiratorizawa\'s Middke Blocker","Prediction VS System"] },
     { name: "Taichi SR", role: "MB", img: "img-japan/kawanishiSR.png", school: "Shiratorizawa", bonds: ["Shiratorizawa\'s Middke Blocker"] },
-    { name: "Shirabu SSR", role: "S", img: "img-japan/kenjiroSSR.png",school: "Shiratorizawa", bonds: [] },
+    { name: "Shirabu SSR", role: "S", img: "img-japan/shirabuSSR.png",school: "Shiratorizawa", bonds: [] },
     { name: "Semi SSR", role: "S", img: "img-japan/semiSSR.png",school: "Shiratorizawa", bonds: [] },
     { name: "Ohira SSR", role: "WS", img: "img-japan/ohiraSSR.png",school: "Shiratorizawa", bonds: [] },
     { name: "Yamagata SSR", role: "Li", img: "img-japan/yamagataSSR.png",school: "Shiratorizawa", bonds: [] },
