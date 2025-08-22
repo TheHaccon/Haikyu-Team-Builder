@@ -1,9 +1,9 @@
 // template: { name: "", role: "", img: "img-japan/", school: "", bonds: [] },
 const characters = [
     { name: "Hinata SP", role: "MB", img: "img-japan/hinataSP.png", school: "Karasuno", bonds: ["Similar Builds","Weird Duo (Hanami)","Hanami","Number One Disciple","Karasuno's Red Mark Squad (Hanami ver.)","Sun vs Moon"] },
-    { name: "Hinata SSR", role: "MB", img: "img-japan/hinataSSR.png", school: "Karasuno", bonds: ["Flexible Aces", "Worthy Rival", "Surprising Friendship","Rival Friends","Weird Duo","Karasuno's Failing Grades Group","The Absolute King VS the Freak Duo","Number One Disciple"] },
+    { name: "Hinata SSR", role: "MB", img: "img-japan/hinataSSR.png", school: "Karasuno", bonds: ["Flexible Aces", "Worthy Rival", "Surprising Friendship","Rival Friends","Weird Duo","Karasuno's Failing Grades Group","The Absolute King VS the Freak Duo","Number One Disciple","Similar Physique Teammates"] },
     { name: "Hinata SR", role: "MB", img: "img-japan/hinataSR.png", school: "Karasuno", bonds: ["Teammates on the Court","\"Sun\" and \"Moon\"",] },
-    { name: "Kageyama UR", role: "S", img: "img-japan/tobioUR.png", school: "Karasuno", bonds: ["Weird Duo","The King and The Great King","Karasuno's Setters","Karasuno's Failing Grades Group","Weird Duo (Hanami)","Karasuno's Red Mark Squad (Hanami ver.)","Karasuno Geniuses","Karasuno's Setters","The Absolute King VS the Freak Duo"] },
+    { name: "Kageyama UR", role: "S", img: "img-japan/tobioUR.png", school: "Karasuno", bonds: ["Weird Duo","The King and The Great King","Karasuno's Setters","Karasuno's Failing Grades Group","Weird Duo (Hanami)","Karasuno's Red Mark Squad (Hanami ver.)","Karasuno Geniuses","Karasuno's Setters","The Absolute King VS the Freak Duo","Youth Camp Setters","Japan Youth Training Camp Teammates","Youth Training Camp"] },
     { name: "Kageyama SSR", role: "S", img: "img-japan/tobioSSR.png", school: "Karasuno", bonds: ["Teammates on the Court","Building Team Chemistry"] },
     { name: "Daichi SSR", role: "OP", img: "img-japan/daichiSSR.png", school: "Karasuno", bonds: ["Karasuno\'s Pillar","karasuno Senior Year","Behind the Smile","Karasuno 3rd Years","The Value of the 'Stage'"] },
     { name: "Daichi SR", role: "OP", img: "img-japan/daichiSR.png", school: "Karasuno", bonds: ["Karasuno\'s Pillar(practice)","Leaders Cut from the Same Cloth"] },
@@ -99,22 +99,22 @@ const characters = [
     { name: "Numajiri R", role: "OP", img: "img-japan/numajiriR.png",school: "Johzenji", bonds: [] },
     { name: "Tsuchiyu R", role: "Li", img: "img-japan/tsuchiyuR.png",school: "Johzenji", bonds: [] },
 
-    { name: "Kita SSR", role: "WS", img: "img-japan/kitaSSR.png",school: "Inarizaki", bonds: [] },
-    { name: "Omimi SR", role: "MB", img: "img-japan/omimiSR.png",school: "Inarizaki", bonds: [] },
-    { name: "Ojiro SSR", role: "WS", img: "img-japan/ojiroSSR.png",school: "Inarizaki", bonds: [] },
-    { name: "Ginjima SSR", role: "WS", img: "img-japan/ginjimaSSR.png",school: "Inarizaki", bonds: [] },
-    { name: "Atsumu UR", role: "S", img: "img-japan/atsumuUR.png",school: "Inarizaki", bonds: [] },
-    { name: "Suna SSR", role: "MB", img: "img-japan/sunaSSR.png",school: "Inarizaki", bonds: [] },
-    { name: "Osamu UR", role: "MB", img: "img-japan/osamuUR.png",school: "Inarizaki", bonds: [] },
-    { name: "Kosaku R", role: "WS", img: "img-japan/kosakuR.png",school: "Inarizaki", bonds: [] },
-    { name: "Riseki R", role: "WS", img: "img-japan/risekiR.png",school: "Inarizaki", bonds: [] },
-    { name: "Akagi SSR", role: "WS", img: "img-japan/akagiSSR.png",school: "Inarizaki", bonds: [] },
+    { name: "Kita SSR", role: "WS", img: "img-japan/kitaSSR.png",school: "Inarizaki", bonds: ["Head and Core","Third Year from Inarizaki","Inarizaki WS Teammates"] },
+    { name: "Omimi SR", role: "MB", img: "img-japan/omimiSR.png",school: "Inarizaki", bonds: ["Inarizaki's Middle Blockers","Third Year from Inarizaki"] },
+    { name: "Ojiro SSR", role: "WS", img: "img-japan/ojiroSSR.png",school: "Inarizaki", bonds: ["Friends from Volleyball Class","Third Year from Inarizaki","Inarizaki WS Teammates"] },
+    { name: "Ginjima SSR", role: "WS", img: "img-japan/ginjimaSSR.png",school: "Inarizaki", bonds: ["Inarizaki 2nd Years","Inarizaki WS Teammates"] },
+    { name: "Atsumu UR", role: "S", img: "img-japan/atsumuUR.png",school: "Inarizaki", bonds: ["Head and Core","Youth Camp Setters","Strongest High School Twins","Friends from Volleyball Class","Inarizaki 2nd Years","Japan Youth Training Camp Teammates"] },
+    { name: "Suna SSR", role: "MB", img: "img-japan/sunaSSR.png",school: "Inarizaki", bonds: ["Classmates","Inarizaki's Middle Blockers","Inarizaki 2nd Years"] },
+    { name: "Osamu UR", role: "MB", img: "img-japan/osamuUR.png",school: "Inarizaki", bonds: ["Head and Core","Strongest High School Twins","Classmates","Friends from Volleyball Class","Inarizaki 2nd Years"] },
+    { name: "Kosaku R", role: "WS", img: "img-japan/kosakuR.png",school: "Inarizaki", bonds: ["Inarizaki 2nd Years","Inarizaki WS Teammates"] },
+    { name: "Riseki R", role: "WS", img: "img-japan/risekiR.png",school: "Inarizaki", bonds: ["Inarizaki WS Teammates"] },
+    { name: "Akagi SSR", role: "Li", img: "img-japan/akagiSSR.png",school: "Inarizaki", bonds: ["Third Year from Inarizaki",] },
    
-    { name: "Hoshiumi UR", role: "WS", img: "img-japan/hoshiumiUR.png",school: "Inarizaki", bonds: ["Similar Builds"] },
-    { name: "Hirugami UR", role: "MB", img: "img-japan/hirugamiUR.png",school: "Inarizaki", bonds: [] },
+    { name: "Hoshiumi UR", role: "WS", img: "img-japan/hoshiumiUR.png",school: "Inarizaki", bonds: ["Similar Builds","Japan Youth Training Camp Teammates","Youth Training Camp","Similar Physique Teammates","Friends from Junior High"] },
+    { name: "Hirugami UR", role: "MB", img: "img-japan/hirugamiUR.png",school: "Inarizaki", bonds: ["Friends from Junior High"] },
 
-    { name: "Sakusa UR", role: "WS", img: "img-japan/sakusaUR.png",school: "Inarizaki", bonds: [] },
-    { name: "Komori UR", role: "Li", img: "img-japan/komoriUR.png",school: "Inarizaki", bonds: [] },
+    { name: "Sakusa UR", role: "WS", img: "img-japan/sakusaUR.png",school: "Inarizaki", bonds: ["Japan Youth Training Camp Teammates","Top Spiker and Top-Class Libero"] },
+    { name: "Komori UR", role: "Li", img: "img-japan/komoriUR.png",school: "Inarizaki", bonds: ["Japan Youth Training Camp Teammates","Top Spiker and Top-Class Libero"] },
 
 ];
 // tempalte: "": "",
@@ -175,6 +175,8 @@ const synergyDescriptions = {
     "Karasuno 3rd Years": {"Asahi SSR": "Power +5/7/9/12/15, Power +1/2/3/4/5%","Daichi SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Sugawara SP": "Block +5/7/9/12/15, Block +1/2/3/4/5%"},
     "Karasuno's Setters": {"Sugawara SP": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%","Kageyama UR": ""},
     "The Moment They Fell for Volleyball": {"Bokuto SP": "Spikes +5/7/9/12/15, Spikes +1/2/3/4/5%","Tsukishima SP": "Quick +5/7/9/12/15, Quick +1/2/3/4/5%"},
+    "Friends from Volleyball Class":{"Atsumu UR":"Serve +5/7/9/12/15, Serve +1/2/3/4/5%", "Osamu UR":"Quick Attack +5/7/9/12/15, Quick Attack +1/2/3/4/5%", "Ojiro SSR":"Power Attack +5/7/9/12/15, Power Attack +1/2/3/4/5%"},
+
 
 
     //Aoba Johsai
@@ -243,8 +245,26 @@ const synergyDescriptions = {
 
     //Jozenji
     "The Value of the 'Stage'": {"Terushima SSR": "Block +5/7/9/12/15, Block +1/2/3/4/5%","Daichi SSR":""},
-    "Two High-Energy Guys": {"Terushima SSR": "Attack +5/7/9/12/15, Attack +1/2/3/4/5%", "Bobata R":""},
-    "Jouzenji's WS": {"Terushima SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Higashiyama SR": "Attack +5/7/9/12/15, Attack +1/2/3/4/5%"},
+    "Two High-Energy Guys": { "Bobata R":"","Terushima SSR": "Attack +5/7/9/12/15, Attack +1/2/3/4/5%"},
+    "Jouzenji's WS": {"Higashiyama SR": "Attack +5/7/9/12/15, Attack +1/2/3/4/5%","Terushima SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%"},
+
+    //Inarizaki
+    "Head and Core":"Atsumu: Attack Technique +3%, gains 3 stacks of [Donpishari] (Toss +2% per stack, max 10). Kita: Main Parameter +3%, gains 1 stack of [Reliable Action] (Receive +2% per stack, max 3).",
+    "Youth Camp Setters":{"Kageyama UR":"Toss +5/7/9/12/15, Toss +1/2/3/4/5%","Atsumu UR":"Toss +5/7/9/12/15, Toss +1/2/3/4/5%"},
+    "Strongest High School Twins":"Atsumu tosses to Osamu who performs a minus tempo Twin Quick with [Quick] ×265% power, and Osamu’s Attack Technique increases by 15% while either twin is on court; cannot be blocked",
+    "Classmates":{"Suna SSR":"Quick Attack +5/7/9/12/15, Quick Attack +1/2/3/4/5%","Osamu UR":"Block +5/7/9/12/15, Block +1/2/3/4/5%"},
+    "Inarizaki's Middle Blockers":{"Suna SSR":"Block +5/7/9/12/15, Block +1/2/3/4/5%", "Oomimi SR":"Block +5/7/9/12/15, Block +1/2/3/4/5%"},
+    "Third Year from Inarizaki": {"Kita SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Ojiro SSR": "Power Attack +5/7/9/12/15, Power Attack +1/2/3/4/5%","Akagi SSR": "Cover +5/7/9/12/15, Cover +1/2/3/4/5%","Omimi SR": "Block +5/7/9/12/15, Block +1/2/3/4/5%"},
+    "Inarizaki 2nd Years": {"Suna SSR": "Quick Spike +5/7/9/12/15, Quick Spike +1/2/3/4/5%","Ginjima SSR": "Power Spike +5/7/9/12/15, Power Spike +1/2/3/4/5%","Osamu UR": "Quick Spike +5/7/9/12/15, Quick Spike +1/2/3/4/5%","Atsumu UR":"","Kosaku R":""},
+    "Japan Youth Training Camp Teammates":{"Kageyama UR": "","Atsumu UR": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%","Sakusa UR": "Strong Spike +5/7/9/12/15, Strong Spike +1/2/3/4/5%","Komori UR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Hoshiumi UR": "Strong Spike +5/7/9/12/15, Strong Spike +1/2/3/4/5%"},
+    "Inarizaki WS Teammates": {"Kita SSR": "Cover +5/7/9/12/15, Cover +1/2/3/4/5%","Ojiro SSR": "Serve +5/7/9/12/15, Serve +1/2/3/4/5%","Ginjima SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Kosaku R": "Serve +5/7/9/12/15, Serve +1/2/3/4/5%","Riseki R": "Serve +5/7/9/12/15, Serve +1/2/3/4/5%"},
+
+    "Youth Training Camp": {"Hoshiumi UR": "Serve +5/7/9/12/15, Serve +1/2/3/4/5%","Kageyama UR":""},
+    "Similar Physique Teammates": {"Hinata SSR":"","Hoshiumi UR": "Power Strike +5/7/9/12/15, Power Strike +1/2/3/4/5%"},
+    "Friends from Junior High": "Hoshiumi's main parameter increases by 6%. Front row allies' [Block] increases by 6%. At the start of the match, Hoshiumi gains 1 stack of [All-Rounder] and Hirugami gains 1 stack of [Solid Block].",
+    "Top Spiker and Top-Class Libero": "Sakusa’s [Spike] increases by 10%, and Komori’s [Receive] increases by 10%. All allies’ [Receive] power increases by 20% of their [Receive] stat.",
+
+
 
 };
 
@@ -374,6 +394,22 @@ const synergyMeta = {
     "The Value of the 'Stage'": { category: "stats",activation: {scope: "any",min: 2}},
     "Two High-Energy Guys": { category: "stats",activation: {scope: "any",min: 2}},
     "Jouzenji's WS": { category: "stats",activation: {scope: "any",min: 2}},
+
+    "Head and Core": { category: "deployment",activation: {scope: "any",min: 3}},
+    "Youth Camp Setters": { category: "stats",activation: {scope: "any",min: 2}},
+    "Strongest High School Twins": { category: "deployment",activation: {scope: "any",min: 2}},
+    "Classmates": { category: "stats",activation: {scope: "any",min: 2}},
+    "Friends from Volleyball Class": { category: "stats",activation: {scope: "any",min: 3}},
+    "Inarizaki's Middle Blockers": { category: "stats",activation: {scope: "any",min: 2}},
+    "Third Year from Inarizaki": { category: "stats",activation: {scope: "any",min: 4}},
+    "Inarizaki 2nd Years": { category: "stats",activation: {scope: "any",min: 5}},
+    "Japan Youth Training Camp Teammates": { category: "stats",activation: {scope: "any",min: 5}},
+    "Inarizaki WS Teammates": { category: "stats",activation: {scope: "any",min: 5}},
+
+    "Youth Training Camp": { category: "stats",activation: {scope: "any",min: 2}},
+    "Similar Physique Teammates": { category: "stats",activation: {scope: "any",min: 2}},
+    "Friends from Junior High": { category: "deployment",activation: {scope: "any",min: 2}},
+    "Top Spiker and Top-Class Libero": { category: "deployment",activation: {scope: "any",min: 2}},
 };
 
 //put what player create the bond
@@ -484,7 +520,22 @@ const synergyPairs = {
     "The Value of the 'Stage'": [["Daichi","Terushima"]],
     "Two High-Energy Guys": [["Bobata","Terushima"]],
     "Jouzenji's WS": [["Higashiyama","Terushima"]],
-    
+
+    "Head and Core":[["Kita","Atsumu","Osamu"]],
+    "Youth Camp Setters":[["Kageyama","Atsumu"]],
+    "Strongest High School Twins":[["Atsumu","Osamu"]],
+    "Classmates":[["Suna","Osamu"]],
+    "Friends from Volleyball Class":[["Atsumu","Osamu","Ojiro"]],
+    "Inarizaki's Middle Blockers":[["Suna","Omimi"]],
+    "Third Year from Inarizaki":[["Kita","Akagi","Ojiro","Omimi"]],
+    "Inarizaki 2nd Years":[["Suna","Kosaku","Atsumu","Osamu","Ginjuma"]],
+    "Japan Youth Training Camp Teammates":[["Kageyama","Sakusa","Atsumu","Komori","Hoshiumi"]],
+    "Inarizaki WS Teammates":[["Kita","Ojiro","Ginjima","Kosaku","Riseki"]],
+
+    "Youth Training Camp":[["Kageyama","Hoshiumi"]],
+    "Similar Physique Teammates":[["Hinata","Hoshiumi"]],
+    "Friends from Junior High":[["Hirugami","Hoshiumi"]],
+    "Top Spiker and Top-Class Libero":[["Komori","Sakusa"]],
 };
 
 window.characters = characters;
