@@ -319,23 +319,21 @@ if (cat === "stats") {
   if (!descObj || typeof descObj !== "object") continue;
 
   const requiredFull = Object.keys(descObj);
-  const picked = getAllPicked();
-  const pickedBaseSet = new Set(picked.map(p => baseName(p.name)));
+  const pickedFullNames = new Set(getAllPicked().map(p => p.name));
 
   const entries = requiredFull.map(fullName => {
-    const bn = baseName(fullName);
-    const isPicked = pickedBaseSet.has(bn);
+    const isPicked = pickedFullNames.has(fullName);
     let img = null;
     const exact = state.players.find(p => p.name === fullName);
     if (exact) img = exact.img;
     else {
-      const cand = state.players.find(p => baseName(p.name) === bn);
+      const cand = state.players.find(p => baseName(p.name) === baseName(fullName));
       if (cand) img = cand.img;
     }
     return { name: fullName, img, isPicked, text: descObj[fullName] };
   });
 
-  const missingList = requiredFull.filter(n => !pickedBaseSet.has(baseName(n)));
+  const missingList = requiredFull.filter(n => !pickedFullNames.has(n));
   const missingPretty = missingList.join(", ");
   const hasAnyPicked = entries.some(e => e.isPicked);
   if (!hasAnyPicked) continue;
