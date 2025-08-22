@@ -259,6 +259,7 @@ const synergyDescriptions = {
     "Japan Youth Training Camp Teammates":{"Kageyama UR": "","Atsumu UR": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%","Sakusa UR": "Strong Spike +5/7/9/12/15, Strong Spike +1/2/3/4/5%","Komori UR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Hoshiumi UR": "Strong Spike +5/7/9/12/15, Strong Spike +1/2/3/4/5%"},
     "Inarizaki WS Teammates": {"Kita SSR": "Cover +5/7/9/12/15, Cover +1/2/3/4/5%","Ojiro SSR": "Serve +5/7/9/12/15, Serve +1/2/3/4/5%","Ginjima SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Kosaku R": "Serve +5/7/9/12/15, Serve +1/2/3/4/5%","Riseki R": "Serve +5/7/9/12/15, Serve +1/2/3/4/5%"},
 
+    //Kamomedai
     "Youth Training Camp": {"Hoshiumi UR": "Serve +5/7/9/12/15, Serve +1/2/3/4/5%","Kageyama UR":""},
     "Similar Physique Teammates": {"Hinata SSR":"","Hoshiumi UR": "Power Strike +5/7/9/12/15, Power Strike +1/2/3/4/5%"},
     "Friends from Junior High": "Hoshiumi's main parameter increases by 6%. Front row allies' [Block] increases by 6%. At the start of the match, Hoshiumi gains 1 stack of [All-Rounder] and Hirugami gains 1 stack of [Solid Block].",
