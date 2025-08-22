@@ -5,7 +5,7 @@ const characters = [
     { name: "Hinata SR", role: "MB", img: "img-japan/hinataSR.png", school: "Karasuno", bonds: ["Teammates on the Court","\"Sun\" and \"Moon\"",] },
     { name: "Kageyama UR", role: "S", img: "img-japan/tobioUR.png", school: "Karasuno", bonds: ["Weird Duo","The King and The Great King","Karasuno's Setters","Karasuno's Failing Grades Group","Weird Duo (Hanami)","Karasuno's Red Mark Squad (Hanami ver.)","Karasuno Geniuses","Karasuno's Setters","The Absolute King VS the Freak Duo"] },
     { name: "Kageyama SSR", role: "S", img: "img-japan/tobioSSR.png", school: "Karasuno", bonds: ["Teammates on the Court","Building Team Chemistry"] },
-    { name: "Daichi SSR", role: "OP", img: "img-japan/daichiSSR.png", school: "Karasuno", bonds: ["Karasuno\'s Pillar","karasuno Senior Year","Behind the Smile","Karasuno 3rd Years"] },
+    { name: "Daichi SSR", role: "OP", img: "img-japan/daichiSSR.png", school: "Karasuno", bonds: ["Karasuno\'s Pillar","karasuno Senior Year","Behind the Smile","Karasuno 3rd Years","The Value of the 'Stage'"] },
     { name: "Daichi SR", role: "OP", img: "img-japan/daichiSR.png", school: "Karasuno", bonds: ["Karasuno\'s Pillar(practice)","Leaders Cut from the Same Cloth"] },
     { name: "Sugawara SP", role: "S", img: "img-japan/sugawaraSP.png", school: "Karasuno", bonds: ["After School","Karasuno 3rd Years","Karasuno's Setters"] },
     { name: "Sugawara SR", role: "S", img: "img-japan/sugawaraSR.png", school: "Karasuno", bonds: ["karasuno Senior Year","Karasuno's Setters",] },
@@ -16,7 +16,7 @@ const characters = [
     { name: "Nishinoya SR", role: "Li", img: "img-japan/nishinoyaSR.png", school: "Karasuno", bonds: ["\"Guardian Deity\" and \"Ace\"","Formidable Opponent","Karasuno\'s Sophomore(practice)"] },
     { name: "Tanaka SSR", role: "WS", img: "img-japan/tanakaSSR.png", school: "Karasuno", bonds: ["Karasuno\'s sophomore", "Kiyoko\'s Knights","TOMODACHI(Friends!)","Karasuno's Failing Grades Group","Karasuno's Red Mark Squad (Hanami ver.)","Protectors of Kiyoko"] },
     { name: "Tanaka SR", role: "WS", img: "img-japan/tanakaSR.png", school: "Karasuno", bonds: ["Karasuno\'s Wing Spiker","Building Team Chemistry","Karasuno\'s Sophomore(practice)"] },
-    { name: "Tsukishima SP", role: "MB", img: "img-japan/tsukishimaSP.png", school: "Karasuno", bonds: ["Sun vs Moon","The Moment They Fell for Volleyball"] },
+    { name: "Tsukishima SP", role: "MB", img: "img-japan/tsukishimaSP.png", school: "Karasuno", bonds: ["Sun vs Moon","The Moment They Fell for Volleyball","Tokyo Training Camp Buddies"] },
     { name: "Tsukishima SSR", role: "MB", img: "img-japan/tsukishimaSSR.png", school: "Karasuno", bonds: ["\"Shield\" and \"Spear\"","Master and Apprentice","Prediction VS System","The Moment They Fell for Volleyball","Tokyo Training Camp Self-Practice Buddies"] },
     { name: "Tsukishima SR", role: "MB", img: "img-japan/tsukishimaSR.png", school: "Karasuno", bonds: ["Simulated Junior Training Teamate","\"Shield\" and \"Spear\"(practice)","\"Sun\" and \"Moon\""] },
     { name: "Tadashi SR", role: "MB", img: "img-japan/tadashiSR.png", school: "Karasuno", bonds: ["\"Shield\" and \"Spear\"",] },
@@ -43,6 +43,7 @@ const characters = [
     { name: "Kenma SP", role: "S", img: "img-japan/kenmaSP.png", school: "Nekoma", bonds: ["Hanami","Perseverance and Tenacity"] },
     { name: "Kenma SSR", role: "S", img: "img-japan/kenmaSSR.png", school: "Nekoma", bonds: ["Rival Friends","\"Brain\" and \"Control Tower\"","Grit and Competitive","The \"Enigmatic\" Teammate"] },
     { name: "Kenma SR", role: "S", img: "img-japan/kenmaSR.png", school: "Nekoma", bonds: ["\"Pivot\" and \"Defensive Pivot\"","\"Pivot\" and \"Control Tower\""] },
+    { name: "Kuroo SP", role: "MB", img: "img-japan/kurooSP.png", school: "Nekoma", bonds: ["Tokyo Training Camp Buddies"] },
     { name: "Kuroo UR", role: "MB", img: "img-japan/kurooUR.png", school: "Nekoma", bonds: ["Behind the Smile","Master and Apprentice","\"Brain\" and \"Control Tower\"","Reliable Seniors","Tokyo Training Camp Self-Practice Buddies"] },
     { name: "Kuroo SSR", role: "MB", img: "img-japan/kurooSSR.png", school: "Nekoma", bonds: ["Leaders Cut from the Same Cloth","\"Pivot\" and \"Control Tower\""] },
     { name: "Yaku SR", role: "Li", img: "img-japan/yakuSR.png", school: "Nekoma", bonds: ["Formidable Opponent","One-on-One Training","\"Pivot\" and \"Defensive Pivot\""] },
@@ -80,9 +81,9 @@ const characters = [
     { name: "Ohira SSR", role: "WS", img: "img-japan/ohiraSSR.png",school: "Shiratorizawa", bonds: ["Ushiwaka and Benkei","Shiratorizawa 3rd Years","Shiratorizawa's WS"] },
     { name: "Yamagata SSR", role: "Li", img: "img-japan/yamagataSSR.png",school: "Shiratorizawa", bonds: ["Shiratorizawa 3rd Years"] },
 
-    { name: "Bokuto SP", role: "WS", img: "img-japan/bokutoSP.png",school: "Fukurodani", bonds: ["Number One Disciple","The Moment They Fell for Volleyball","Beach",,"Kizuna Skills"] },
+    { name: "Bokuto SP", role: "WS", img: "img-japan/bokutoSP.png",school: "Fukurodani", bonds: ["Number One Disciple","The Moment They Fell for Volleyball","Beach",,"Kizuna Skills","Miracle Ace & Considerate Setter","Tokyo Training Camp Buddies"] },
     { name: "Bokuto UR", role: "WS", img: "img-japan/bokutoUR.png",school: "Fukurodani", bonds: ["The Moment They Fell for Volleyball","Tokyo Training Camp Self-Practice Buddies","Miracle Ace and the Stubborn Setter","Number One Disciple","Fukurodani WS","Fukurodani 3rd Years"] },
-    { name: "Akaashi SP", role: "S", img: "img-japan/akaashiSP.png",school: "Fukurodani", bonds: ["Beach",,"Kizuna Skills"] },
+    { name: "Akaashi SP", role: "S", img: "img-japan/akaashiSP.png",school: "Fukurodani", bonds: ["Beach",,"Kizuna Skills","Miracle Ace & Considerate Setter","Tokyo Training Camp Buddies"] },
     { name: "Akaashi SSR", role: "S", img: "img-japan/akaashiSSR.png",school: "Fukurodani", bonds: ["Tokyo Training Camp Self-Practice Buddies","Miracle Ace and the Stubborn Setter"] },
     { name: "Konoha SSR", role: "OP", img: "img-japan/konohaSSR.png",school: "Fukurodani", bonds: ["Fukurodani 3rd Years"] },
     { name: "Sarukui SSR", role: "Li", img: "img-japan/sarukuiSSR.png",school: "Fukurodani", bonds: ["Fukurodani WS","Fukurodani 3rd Years"] },
@@ -90,10 +91,10 @@ const characters = [
     { name: "Onaga R", role: "MB", img: "img-japan/onagaR.png",school: "Fukurodani", bonds: ["Fukurodani MBs"] },
     { name: "Washio SSR", role: "MB", img: "img-japan/washioSSR.png",school: "Fukurodani", bonds: ["Fukurodani MBs","Fukurodani 3rd Years"] },
 
-    { name: "Terushima SSR", role: "WS", img: "img-japan/terushimaSSR.png",school: "Johzenji", bonds: [] },
-    { name: "Bobata R", role: "MB", img: "img-japan/bobataR.png",school: "Johzenji", bonds: [] },
+    { name: "Terushima SSR", role: "WS", img: "img-japan/terushimaSSR.png",school: "Johzenji", bonds: ["The Value of the 'Stage'","Two High-Energy Guys","Jouzenji's WS"] },
+    { name: "Bobata R", role: "MB", img: "img-japan/bobataR.png",school: "Johzenji", bonds: ["Two High-Energy Guys"] },
     { name: "Futamata SR", role: "S", img: "img-japan/futamataSR.png",school: "Johzenji", bonds: [] },
-    { name: "Higashiyama SR", role: "WS", img: "img-japan/higashiyamaSR.png",school: "Johzenji", bonds: [] },
+    { name: "Higashiyama SR", role: "WS", img: "img-japan/higashiyamaSR.png",school: "Johzenji", bonds: ["Jouzenji's WS"] },
     { name: "Izaka R", role: "MB", img: "img-japan/izakaR.png",school: "Johzenji", bonds: [] },
     { name: "Numajiri R", role: "OP", img: "img-japan/numajiriR.png",school: "Johzenji", bonds: [] },
     { name: "Tsuchiyu R", role: "Li", img: "img-japan/tsuchiyuR.png",school: "Johzenji", bonds: [] },
@@ -237,7 +238,13 @@ const synergyDescriptions = {
     "Fukurodani MBs": {"Washio SSR": "Quick Attack +5/7/9/12/15, Quick Attack +1/2/3/4/5%","Onaga R":""},
     "Fukurodani 3rd Years": {"Bokuto UR": "","Komi SR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Konoha": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Sarukui SSR": "Power +5/7/9/12/15, Power +1/2/3/4/5%", "Washio SSR": "Block +5/7/9/12/15, Block +1/2/3/4/5%"},
     "Kizuna Skills":"Akaashi (Beach)'s [Toss] +6%. While an ally has Team Spirit activated, Bokuto (Beach)'s [Power] +18% and Akaashi (Beach)'s [Toss] gains an additional +5%.",
+    "Miracle Ace & Considerate Setter": "Akaashi (Beach) Toss +6%. While teammates are in Team Spirit mode, Bokuto (Beach) gets +18% Power. Akaashi (Beach) Toss +5% more during this time.",
+    "Tokyo Training Camp Buddies": {"Bokuto SP": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Akaashi SP": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%","Tsukishima SP": "Block +5/7/9/12/15, Block +1/2/3/4/5%","Kuroo SP": "Block +5/7/9/12/15, Block +1/2/3/4/5%"},
 
+    //Jozenji
+    "The Value of the 'Stage'": {"Terushima SSR": "Block +5/7/9/12/15, Block +1/2/3/4/5%","Daichi SSR":""},
+    "Two High-Energy Guys": {"Terushima SSR": "Attack +5/7/9/12/15, Attack +1/2/3/4/5%", "Bobata R":""},
+    "Jouzenji's WS": {"Terushima SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Higashiyama SR": "Attack +5/7/9/12/15, Attack +1/2/3/4/5%"},
 
 };
 
@@ -249,6 +256,9 @@ const synergyMeta = {
     "Aoba Johsai": { category: "school", activation: { scope: "starters", min: 4 } },
     "Nekoma": { category: "school", activation: { scope: "starters", min: 4 } },
     "Date Kogyo": { category: "school", activation: { scope: "starters", min: 4 } },
+    "Fukurōdani": { category: "school", activation: { scope: "starters", min: 4 } },
+    "Jōzenji": { category: "school", activation: { scope: "starters", min: 4 } },
+    "Inarizaki": { category: "school", activation: { scope: "starters", min: 4 } },
 
     "Karasuno\'s Pillar": { category: "deployment", activation: { scope: "any", min: 2 } },
     "Flexible Aces": { category: "stats", activation: { scope: "any", min: 2 } },
@@ -358,8 +368,12 @@ const synergyMeta = {
     "Fukurodani MBs": { category: "stats", activation: { scope:"any", min:2} },
     "Fukurodani 3rd Years": { category: "stats", activation: { scope:"any", min:2} },
     "Kizuna Skills": { category: "deployment", activation: { scope:"any", min:2} },
+    "Miracle Ace & Considerate Setter": { category: "deployment", activation: { scope: "any", min: 2 } },
+    "Tokyo Training Camp Buddies": { category: "stats",activation: {scope: "any",min: 4}},
 
-
+    "The Value of the 'Stage'": { category: "stats",activation: {scope: "any",min: 2}},
+    "Two High-Energy Guys": { category: "stats",activation: {scope: "any",min: 2}},
+    "Jouzenji's WS": { category: "stats",activation: {scope: "any",min: 2}},
 };
 
 //put what player create the bond
@@ -463,10 +477,13 @@ const synergyPairs = {
     "Fukurodani WS": [["Bokuto", "Sarukui"]],
     "Fukurodani MBs":[["Onaga","Washio"]],
     "Fukurodani 3rd Years": [["Bokuto", "Komi", "Konoha", "Sarukui", "Washio"]],
-    "Kizuna Skills":[["Bokuto","Akaashi"]]
+    "Kizuna Skills":[["Bokuto","Akaashi"]],
+    "Miracle Ace & Considerate Setter": [["Bokuto", "Akaashi"]],
+    "Tokyo Training Camp Buddies": [["Bokuto", "Akaashi", "Tsukishima", "Kuroo"]],
 
-
-
+    "The Value of the 'Stage'": [["Daichi","Terushima"]],
+    "Two High-Energy Guys": [["Bobata","Terushima"]],
+    "Jouzenji's WS": [["Higashiyama","Terushima"]],
     
 };
 
