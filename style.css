@@ -398,6 +398,22 @@ h1 {
   font-style: italic;
 }
 
+.server-option {
+  padding: 6px 12px;
+  border: 1px solid var(--ring);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  user-select: none;
+  color: white;
+}
+
+.server-option.active {
+  background: var(--accent, #2563eb);
+  border-color: var(--accent, #2563eb);
+  font-weight: bold;
+}
+
 @media (max-width: 768px) {
   header, #layout {
     padding: 0 12px;

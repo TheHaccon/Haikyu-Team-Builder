@@ -176,7 +176,7 @@ const synergyMeta = {
     "Karasuno\'s Sophomore(practice)": { category: "deployment", activation: { scope: "any", min: 3 } },
     "Rival Friends": { category: "stats", activation: { scope: "any", min: 2 } },
     "Behind the Smile": { category: "stats", activation: { scope: "any", min: 2 } },
-    "Master and Apprentice": { category: "stats", activation: { scope: "any", min: 2 } },
+    "Master and Apprentice": { category: "stats", activation: { scope: "any", min: 1 } },
 
     "Aoba Johsai's Sophomore": { category: "stats", activation: { scope: "any", min: 3 } },
     "Blunt and Composed": { category: "deployment", activation: { scope: "any", min: 2 } },

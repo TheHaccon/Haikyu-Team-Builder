@@ -1,4 +1,4 @@
-const RARITIES = new Set(["UR","SSR","SR","SP","R","N"]);
+const RARITIES = new Set(["UR", "SSR", "SR", "SP", "R", "N"]);
 
 const serverSelect = document.getElementById("serverSelect");
 const benchRow = document.getElementById("bench-row");
@@ -22,16 +22,32 @@ const state = {
   synergyDescriptions: {},
   synergyMeta: null,
   synergyPairs: null,
-  starters: { S:null, MB1:null, WS1:null, L:null, WS2:null, MB2:null, OP:null },
+  starters: { S: null, MB1: null, WS1: null, LI: null, WS2: null, MB2: null, OP: null },
   bench: [],
-  ui: { activeSlotKey:null, targetBenchIndex:null, filterRole:null }
+  ui: { activeSlotKey: null, targetBenchIndex: null, filterRole: null }
 };
 
-function baseName(name="") {
+function baseName(name = "") {
   const parts = String(name).trim().split(/\s+/);
-  if (parts.length && RARITIES.has(parts[parts.length-1].toUpperCase())) parts.pop();
+  if (parts.length && RARITIES.has(parts[parts.length - 1].toUpperCase())) parts.pop();
   return parts.join(" ").toLowerCase();
 }
+
+function requiredBaseNamesForBond(bondName) {
+  const pairs = state.synergyPairs?.[bondName];
+  if (Array.isArray(pairs) && pairs.length) {
+    const set = new Set();
+    for (const group of pairs) for (const n of group) set.add(String(n).toLowerCase());
+    return Array.from(set);
+  }
+  const desc = state.synergyDescriptions[bondName];
+  if (desc && typeof desc === "object") {
+    const bases = Object.keys(desc).map(k => baseName(k)).filter(Boolean);
+    return Array.from(new Set(bases));
+  }
+  return [];
+}
+
 
 function benchSlots() {
   return Array.from(benchRow.querySelectorAll("[data-bench]"));
@@ -46,12 +62,12 @@ function getExpectedRole(slotKey) {
 
 async function loadDataset(server) {
   const path = server === "global" ? "data-global.js" : "data-japan.js";
-  const text = await fetch(path).then(r=>r.text());
+  const text = await fetch(path).then(r => r.text());
   const factory = new Function(`${text}; return {characters: typeof characters!=="undefined"?characters:[], synergyDescriptions: typeof synergyDescriptions!=="undefined"?synergyDescriptions:{}, synergyMeta: typeof synergyMeta!=="undefined"?synergyMeta:null, synergyPairs: typeof synergyPairs!=="undefined"?synergyPairs:null};`);
   const data = factory();
-  const norm = data.characters.map(c=>({
+  const norm = data.characters.map(c => ({
     name: c.name,
-    role: (c.role||"").toUpperCase(),
+    role: (c.role || "").toUpperCase(),
     img: c.img,
     school: c.school || "",
     bonds: Array.isArray(c.bonds) ? c.bonds.filter(Boolean) : Array.isArray(c.links) ? c.links.filter(Boolean) : []
@@ -60,10 +76,11 @@ async function loadDataset(server) {
   state.synergyDescriptions = data.synergyDescriptions || {};
   state.synergyMeta = data.synergyMeta || null;
   state.synergyPairs = data.synergyPairs || null;
-  Object.keys(state.starters).forEach(k=>state.starters[k]=null);
-  state.bench = benchSlots().map(()=>null);
+  Object.keys(state.starters).forEach(k => state.starters[k] = null);
+  state.bench = benchSlots().map(() => null);
   renderBoard();
 }
+
 
 function renderTile(el, player) {
   el.innerHTML = player ? `<img src="${player.img}" alt="${player.name}">` : "";
@@ -71,11 +88,11 @@ function renderTile(el, player) {
 }
 
 function renderBoard() {
-  document.querySelectorAll(".hex[data-slot]").forEach(hex=>{
+  document.querySelectorAll(".hex[data-slot]").forEach(hex => {
     const key = hex.dataset.slot;
     renderTile(hex, state.starters[key]);
   });
-  benchSlots().forEach((b,i)=>renderTile(b, state.bench[i] || null));
+  benchSlots().forEach((b, i) => renderTile(b, state.bench[i] || null));
   renderSynergies();
   syncAddBenchButton();
 }
@@ -86,7 +103,7 @@ function openModalForRole(slotKey) {
   state.ui.filterRole = getExpectedRole(slotKey);
   searchInput.value = "";
   buildRoleGallery();
-  modal.setAttribute("aria-hidden","false");
+  modal.setAttribute("aria-hidden", "false");
 }
 
 function openModalForBench(index) {
@@ -95,11 +112,11 @@ function openModalForBench(index) {
   state.ui.filterRole = null;
   searchInput.value = "";
   buildBenchGallery(index);
-  modal.setAttribute("aria-hidden","false");
+  modal.setAttribute("aria-hidden", "false");
 }
 
 function closeModal() {
-  modal.setAttribute("aria-hidden","true");
+  modal.setAttribute("aria-hidden", "true");
   gallery.innerHTML = "";
   state.ui.activeSlotKey = null;
   state.ui.targetBenchIndex = null;
@@ -113,23 +130,23 @@ function getAllPicked() {
 function buildRoleGallery() {
   const role = state.ui.filterRole;
   const q = (searchInput.value || "").toLowerCase();
-  let items = state.players.filter(p=>p.role===role);
-  if (q) items = items.filter(p=>p.name.toLowerCase().includes(q) || (p.school||"").toLowerCase().includes(q));
-  items.sort((a,b)=>a.name.localeCompare(b.name));
+  let items = state.players.filter(p => p.role === role);
+  if (q) items = items.filter(p => p.name.toLowerCase().includes(q) || (p.school || "").toLowerCase().includes(q));
+  items.sort((a, b) => a.name.localeCompare(b.name));
   const picked = getAllPicked();
   gallery.innerHTML = "";
   for (const p of items) {
-    const exactTaken = picked.some(x=>x.name===p.name);
-    const variantTaken = picked.some(x=>baseName(x.name)===baseName(p.name) && x.name!==p.name);
+    const exactTaken = picked.some(x => x.name === p.name);
+    const variantTaken = picked.some(x => baseName(x.name) === baseName(p.name) && x.name !== p.name);
     const card = document.createElement("div");
     card.className = "card";
-    card.innerHTML = `<img src="${p.img}" alt="${p.name}"><div class="name">${p.name}</div><div class="meta">${p.school ? p.school+" · " : ""}${p.role}</div>`;
+    card.innerHTML = `<img src="${p.img}" alt="${p.name}"><div class="name">${p.name}</div><div class="meta">${p.school ? p.school + " · " : ""}${p.role}</div>`;
     if (exactTaken || variantTaken) {
-      card.style.opacity=".45";
-      card.style.pointerEvents="none";
+      card.style.opacity = ".45";
+      card.style.pointerEvents = "none";
       card.title = exactTaken ? "Already selected" : "Another rarity selected";
     } else {
-      card.addEventListener("click", ()=>assignToStarter(state.ui.activeSlotKey, p));
+      card.addEventListener("click", () => assignToStarter(state.ui.activeSlotKey, p));
     }
     gallery.appendChild(card);
   }
@@ -138,22 +155,22 @@ function buildRoleGallery() {
 function buildBenchGallery(targetIndex) {
   const q = (searchInput.value || "").toLowerCase();
   let items = state.players.slice();
-  if (q) items = items.filter(p=>p.name.toLowerCase().includes(q) || (p.school||"").toLowerCase().includes(q));
-  items.sort((a,b)=>a.name.localeCompare(b.name));
+  if (q) items = items.filter(p => p.name.toLowerCase().includes(q) || (p.school || "").toLowerCase().includes(q));
+  items.sort((a, b) => a.name.localeCompare(b.name));
   const picked = getAllPicked();
   gallery.innerHTML = "";
   for (const p of items) {
-    const exactTaken = picked.some(x=>x.name===p.name);
-    const variantTaken = picked.some(x=>baseName(x.name)===baseName(p.name) && x.name!==p.name);
+    const exactTaken = picked.some(x => x.name === p.name);
+    const variantTaken = picked.some(x => baseName(x.name) === baseName(p.name) && x.name !== p.name);
     const card = document.createElement("div");
     card.className = "card";
-    card.innerHTML = `<img src="${p.img}" alt="${p.name}"><div class="name">${p.name}</div><div class="meta">${p.school ? p.school+" · " : ""}${p.role}</div>`;
+    card.innerHTML = `<img src="${p.img}" alt="${p.name}"><div class="name">${p.name}</div><div class="meta">${p.school ? p.school + " · " : ""}${p.role}</div>`;
     if (exactTaken || variantTaken) {
-      card.style.opacity=".45";
-      card.style.pointerEvents="none";
+      card.style.opacity = ".45";
+      card.style.pointerEvents = "none";
       card.title = exactTaken ? "Already selected" : "Another rarity selected";
     } else {
-      card.addEventListener("click", ()=>{
+      card.addEventListener("click", () => {
         state.bench[targetIndex] = p;
         closeModal();
         renderBoard();
@@ -168,8 +185,8 @@ function assignToStarter(slotKey, player) {
   const expected = getExpectedRole(slotKey);
   if (player.role !== expected) { alert(`This slot expects role ${expected}.`); return; }
   const picked = getAllPicked();
-  if (picked.some(x=>x.name===player.name)) { alert(`"${player.name}" is already selected.`); return; }
-  if (picked.some(x=>baseName(x.name)===baseName(player.name) && x.name!==player.name)) { alert(`Another rarity of "${baseName(player.name)}" is already selected.`); return; }
+  if (picked.some(x => x.name === player.name)) { alert(`"${player.name}" is already selected.`); return; }
+  if (picked.some(x => baseName(x.name) === baseName(player.name) && x.name !== player.name)) { alert(`Another rarity of "${baseName(player.name)}" is already selected.`); return; }
   state.starters[slotKey] = player;
   closeModal();
   renderBoard();
@@ -192,7 +209,7 @@ function addBenchSlot() {
   wrap.className = "slot";
   const slot = document.createElement("div");
   slot.className = "bench-slot";
-  slot.setAttribute("data-bench","");
+  slot.setAttribute("data-bench", "");
   const label = document.createElement("div");
   label.className = "label";
   label.innerHTML = `Bench <button class="remove-bench" type="button">Remove</button>`;
@@ -228,17 +245,17 @@ function pickedByBaseNameMap() {
 function renderSynergies() {
   const starters = Object.values(state.starters).filter(Boolean);
   const bench = state.bench.filter(Boolean);
-  const schools = starters.reduce((acc,p)=>{ if(p.school){ acc[p.school]=(acc[p.school]||0)+1; } return acc; },{});
-  const bonds = [...starters, ...bench].reduce((acc,p)=>{ (p.bonds||[]).forEach(b=>{ acc[b]=(acc[b]||0)+1; }); return acc; },{});
+  const schools = starters.reduce((acc, p) => { if (p.school) { acc[p.school] = (acc[p.school] || 0) + 1; } return acc; }, {});
+  const bonds = [...starters, ...bench].reduce((acc, p) => { (p.bonds || []).forEach(b => { acc[b] = (acc[b] || 0) + 1; }); return acc; }, {});
 
   schoolList.innerHTML = "";
   let anySchool = false;
-  Object.entries(schools).forEach(([s,c])=>{
+  Object.entries(schools).forEach(([s, c]) => {
     const need = state.synergyMeta?.[s]?.activation?.min ?? 4;
-    if (c>=need) {
+    if (c >= need) {
       anySchool = true;
       const li = document.createElement("li");
-      li.innerHTML = `<strong>${s}</strong> — ${state.synergyDescriptions[s]||""}`;
+      li.innerHTML = `<strong>${s}</strong> — ${state.synergyDescriptions[s] || ""}`;
       schoolList.appendChild(li);
     }
   });
@@ -249,6 +266,8 @@ function renderSynergies() {
   let anyDeploy = false;
 
   const pickedMap = pickedByBaseNameMap();
+  const picked = getAllPicked();
+  const pickedBaseSet = new Set(picked.map(p => baseName(p.name)));
 
   const bondNames = Object.keys(bonds);
   for (const b of bondNames) {
@@ -256,73 +275,98 @@ function renderSynergies() {
     const min = meta?.activation?.min || 2;
     const count = bonds[b] || 0;
     const isActive = count >= min;
-    if (!isActive) continue;
-
     const cat = meta?.category || "deployment";
-if (cat === "deployment") {
-  anyDeploy = true;
-  const desc = state.synergyDescriptions[b];
-  const matchedPlayers = state.players.filter(p =>
-    p.bonds?.includes(b) && pickedMap.has(baseName(p.name))
-  );
 
+if (cat === "deployment") {
+  const desc = state.synergyDescriptions[b];
+  const requiredRoster = state.players.filter(p => p.bonds?.includes(b));
+  const pickedFullNames = new Set(getAllPicked().map(p => p.name));
+  const matchedPlayers = requiredRoster.filter(p => pickedFullNames.has(p.name));
   if (matchedPlayers.length > 0) {
+    anyDeploy = true;
+    const missingPlayers = requiredRoster.filter(p => !pickedFullNames.has(p.name));
     const li = document.createElement("li");
+    const row = [
+      ...matchedPlayers.map(p => `
+        <div style="display:flex;align-items:center;gap:6px;">
+          <img src="${p.img}" alt="${p.name}" style="width:28px;height:28px;object-fit:cover;border-radius:4px;">
+          <strong>${p.name}</strong>
+        </div>
+      `),
+      ...missingPlayers.map(p => `
+        <div style="display:flex;align-items:center;gap:6px;opacity:.45;">
+          <img src="${p.img}" alt="${p.name}" style="width:28px;height:28px;object-fit:cover;border-radius:4px;filter:grayscale(100%);">
+          <strong>${p.name}</strong>
+          <span style="font-size:12px;color:#9ca3af;">(missing)</span>
+        </div>
+      `)
+    ].join('<span>×</span>');
     li.innerHTML = `
       <div style="font-weight:bold; margin-bottom:4px; text-decoration: underline;">${b}</div>
       <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:6px;">
-        ${matchedPlayers.map(p => `
-          <img src="${p.img}" alt="${p.name}" style="width:28px;height:28px;object-fit:cover;border-radius:4px;">
-          <strong>${p.name}</strong>
-        `).join('<span>×</span>')}
+        ${row}
       </div>
       <div style="font-size:14px; color:#FFFFFF;">
-        ${desc || "(description missing)"}
+        ${matchedPlayers.length >= min ? (desc || "") : (missingPlayers.length ? "Missing: " + missingPlayers.map(p => p.name).join(", ") : "")}
       </div>
     `;
     deployList.appendChild(li);
   }
+  continue;
 }
+if (cat === "stats") {
+  const descObj = state.synergyDescriptions[b];
+  if (!descObj || typeof descObj !== "object") continue;
 
+  const requiredFull = Object.keys(descObj);
+  const picked = getAllPicked();
+  const pickedBaseSet = new Set(picked.map(p => baseName(p.name)));
 
-
-    if (cat === "stats") {
-      const descObj = state.synergyDescriptions[b];
-      let renderedAny = false;
-      if (descObj && typeof descObj === "object") {
-        const matchedPlayers = Object.keys(descObj)
-          .map(name => state.players.find(p => p.name === name))
-          .filter(p => p && pickedMap.has(baseName(p.name)));
-        if (matchedPlayers.length >= 2) {
-          renderedAny = true;
-          const li = document.createElement("li");
-          li.innerHTML = `
-          <div style="font-weight:bold;margin-bottom:4px;text-decoration: underline;">${b}</div>
-        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-          ${matchedPlayers.map(p => `
-            <img src="${p.img}" alt="${p.name}" style="width:28px;height:28px;object-fit:cover;border-radius:4px;">
-            <strong>${p.name}</strong>
-          `).join('<span>×</span>')}
-        </div>
-        <div style="font-size:12px;margin-top:2px;color:#FFFFFF;">
-          ${matchedPlayers.map(p => `
-            <div><strong>${p.name}</strong>: ${descObj[p.name]}</div>
-          `).join("")}
-        </div>
-      `;
-          buffsList.appendChild(li);
-        }
-      }
-      if (!renderedAny) {
-        const li = document.createElement("li");
-        li.innerHTML = `<strong>${b}</strong> — ${typeof state.synergyDescriptions[b] === "string" ? state.synergyDescriptions[b] : "(description missing)"}`;
-        buffsList.appendChild(li);
-      }
+  const entries = requiredFull.map(fullName => {
+    const bn = baseName(fullName);
+    const isPicked = pickedBaseSet.has(bn);
+    let img = null;
+    const exact = state.players.find(p => p.name === fullName);
+    if (exact) img = exact.img;
+    else {
+      const cand = state.players.find(p => baseName(p.name) === bn);
+      if (cand) img = cand.img;
     }
-  }
+    return { name: fullName, img, isPicked, text: descObj[fullName] };
+  });
+
+  const missingList = requiredFull.filter(n => !pickedBaseSet.has(baseName(n)));
+  const missingPretty = missingList.join(", ");
+  const hasAnyPicked = entries.some(e => e.isPicked);
+  if (!hasAnyPicked) continue;
+
+  const li = document.createElement("li");
+  li.innerHTML = `
+    <div style="font-weight:bold;margin-bottom:4px;text-decoration: underline;">
+      ${b}
+    </div>
+    <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:6px;">
+      ${entries.map(e => `
+        <div style="display:flex;align-items:center;gap:6px;${e.isPicked ? "" : "opacity:.45;"}">
+          ${e.img ? `<img src="${e.img}" alt="${e.name}" style="width:28px;height:28px;object-fit:cover;border-radius:4px;${e.isPicked ? "" : "filter:grayscale(100%);"}">` : ""}
+          <strong>${e.name}</strong>
+          ${e.isPicked ? "" : `<span style="font-size:12px;color:#9ca3af;">(missing)</span>`}
+        </div>
+      `).join('<span>×</span>')}
+    </div>
+    <div style="font-size:12px;color:#FFFFFF;">
+      ${entries.map(e => `<div><strong>${e.name}</strong>: ${e.text}</div>`).join("")}
+    </div>
+  `;
+  buffsList.appendChild(li);
+  continue;
+}
+}
   if (!anyDeploy) deployList.innerHTML = `<li>(no active bonds)</li>`;
   if (!buffsList.children.length) buffsList.innerHTML = `<li>(no active buffs)</li>`;
 }
+
+
 
 function onHexClick(e) {
   const hex = e.currentTarget;
@@ -354,17 +398,33 @@ function onBenchContext(e) {
 
 function onSearchInput() {
   if (state.ui.filterRole) buildRoleGallery();
-  else if (state.ui.targetBenchIndex!=null) buildBenchGallery(state.ui.targetBenchIndex);
+  else if (state.ui.targetBenchIndex != null) buildBenchGallery(state.ui.targetBenchIndex);
 }
 
 function onTabClick(e) {
   const btn = e.target.closest(".tabbtn");
   if (!btn) return;
-  Array.from(tabbar.querySelectorAll(".tabbtn")).forEach(b=>b.setAttribute("aria-selected", b===btn ? "true" : "false"));
+  Array.from(tabbar.querySelectorAll(".tabbtn")).forEach(b => b.setAttribute("aria-selected", b === btn ? "true" : "false"));
   const tab = btn.dataset.tab;
-  if (tab==="deploy") { tabDeploy.hidden=false; tabBuffs.hidden=true; }
-  else { tabDeploy.hidden=true; tabBuffs.hidden=false; }
+  if (tab === "deploy") { tabDeploy.hidden = false; tabBuffs.hidden = true; }
+  else { tabDeploy.hidden = true; tabBuffs.hidden = false; }
 }
+
+function wireServerToggle() {
+  const toggle = document.getElementById("serverToggle");
+  if (!toggle) return;
+  const opts = toggle.querySelectorAll(".server-option");
+  opts.forEach(opt => {
+    opt.addEventListener("click", () => {
+      opts.forEach(o => o.classList.remove("active"));
+      opt.classList.add("active");
+      const server = opt.dataset.server === "japan" ? "japan" : "global";
+      state.server = server;
+      loadDataset(server);
+    });
+  });
+}
+
 
 function wire() {
   document.querySelectorAll(".hex[data-slot]").forEach(hex=>{
@@ -379,10 +439,12 @@ function wire() {
   searchInput.addEventListener("input", onSearchInput);
   tabbar.addEventListener("click", onTabClick);
   if (serverSelect) serverSelect.addEventListener("change", ()=>loadDataset(serverSelect.value));
+  wireServerToggle();
 }
 
+
 function init() {
-  state.bench = benchSlots().map(()=>null);
+  state.bench = benchSlots().map(() => null);
   wire();
   loadDataset(state.server);
 }
