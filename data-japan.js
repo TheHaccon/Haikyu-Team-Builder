@@ -110,11 +110,11 @@ const characters = [
     { name: "Riseki R", role: "WS", img: "img-japan/risekiR.png",school: "Inarizaki", bonds: ["Inarizaki WS Teammates"] },
     { name: "Akagi SSR", role: "Li", img: "img-japan/akagiSSR.png",school: "Inarizaki", bonds: ["Third Year from Inarizaki",] },
    
-    { name: "Hoshiumi UR", role: "WS", img: "img-japan/hoshiumiUR.png",school: "Inarizaki", bonds: ["Similar Builds","Japan Youth Training Camp Teammates","Youth Training Camp","Similar Physique Teammates","Friends from Junior High"] },
-    { name: "Hirugami UR", role: "MB", img: "img-japan/hirugamiUR.png",school: "Inarizaki", bonds: ["Friends from Junior High"] },
+    { name: "Hoshiumi UR", role: "WS", img: "img-japan/hoshiumiUR.png",school: "Kamomedai", bonds: ["Similar Builds","Japan Youth Training Camp Teammates","Youth Training Camp","Similar Physique Teammates","Friends from Junior High"] },
+    { name: "Hirugami UR", role: "MB", img: "img-japan/hirugamiUR.png",school: "Kamomedai", bonds: ["Friends from Junior High"] },
 
-    { name: "Sakusa UR", role: "WS", img: "img-japan/sakusaUR.png",school: "Inarizaki", bonds: ["Japan Youth Training Camp Teammates","Top Spiker and Top-Class Libero"] },
-    { name: "Komori UR", role: "Li", img: "img-japan/komoriUR.png",school: "Inarizaki", bonds: ["Japan Youth Training Camp Teammates","Top Spiker and Top-Class Libero"] },
+    { name: "Sakusa UR", role: "WS", img: "img-japan/sakusaUR.png",school: "Itachiyama", bonds: ["Japan Youth Training Camp Teammates","Top Spiker and Top-Class Libero"] },
+    { name: "Komori UR", role: "Li", img: "img-japan/komoriUR.png",school: "Itachiyama", bonds: ["Japan Youth Training Camp Teammates","Top Spiker and Top-Class Libero"] },
 
 ];
 // tempalte: "": "",
