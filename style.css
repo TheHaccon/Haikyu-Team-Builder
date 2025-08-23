@@ -8,9 +8,12 @@
   --danger: #dc2626;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif;
@@ -43,7 +46,9 @@ h1 {
   padding: 8px;
 }
 
-#deploy-list, #buffs-list, #school-list {
+#deploy-list,
+#buffs-list,
+#school-list {
   margin: 8px 0 0 18px;
 }
 
@@ -67,7 +72,7 @@ h1 {
   justify-content: center;
   padding: 18px;
   z-index: 1;
-  background: rgba(0,0,0,.55);
+  background: rgba(0, 0, 0, .55);
 }
 
 #modal[aria-hidden="false"] {
@@ -98,7 +103,8 @@ h1 {
   align-items: center;
 }
 
-#search, #closeModal {
+#search,
+#closeModal {
   height: 36px;
   padding: 0 10px;
   border-radius: 8px;
@@ -154,7 +160,9 @@ h1 {
   display: flex;
   gap: 10px;
   align-items: center;
-  margin-bottom: 8px;
+  margin-left: auto;
+  margin-bottom: 0;
+  /* important */
 }
 
 #hint {
@@ -186,7 +194,9 @@ h1 {
   padding: 14px;
 }
 
-#row-top { margin-bottom: 12px; }
+#row-top {
+  margin-bottom: 12px;
+}
 
 #bench-row {
   margin-top: 14px;
@@ -414,8 +424,35 @@ h1 {
   font-weight: bold;
 }
 
+.server-toggle {
+  display: flex;
+  gap: 8px;
+}
+
+.server-option {
+  padding: 6px 12px;
+  border: 1px solid var(--ring);
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.server-option.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
+.server-label {
+  font-size: 16px;
+  font-weight: bold;
+  opacity: .9;
+}
+
 @media (max-width: 768px) {
-  header, #layout {
+
+  header,
+  #layout {
     padding: 0 12px;
   }
 
@@ -427,11 +464,6 @@ h1 {
   #layout {
     display: flex;
     flex-direction: column;
-  }
-
-  #toolbar-top {
-    flex-direction: column;
-    align-items: stretch;
   }
 
   #gallery {
@@ -468,7 +500,8 @@ h1 {
     align-items: stretch;
   }
 
-  #search, #closeModal {
+  #search,
+  #closeModal {
     width: 100%;
     margin-bottom: 6px;
   }
@@ -513,6 +546,7 @@ h1 {
     width: 100%;
     padding: 10px;
   }
+
   .nav-toggle {
     display: block;
   }
@@ -534,6 +568,22 @@ h1 {
   .server-select-container {
     margin-left: 0;
   }
-  
-}
 
+    #toolbar-top {
+    margin-left: 0;        /* stop pushing it right */
+    width: 100%;           /* let it span the menu width */
+    justify-content: center;
+    flex-wrap: wrap;       /* allow wrap if space is tight */
+    order: 99;             /* place after the nav links */
+    padding: 6px 0;
+    gap: 8px;
+  }
+  .server-toggle { gap: 8px; }
+  .server-option { padding: 6px 12px; }
+  .server-label { font-size: 14px; }
+  .coming-soon-note {
+    width: 100%;
+    text-align: center;
+    opacity: .7;
+  }
+}
