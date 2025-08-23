@@ -105,7 +105,7 @@ const characters = [
     { name: "Ginjima SSR", role: "WS", img: "img-japan/ginjimaSSR.png",school: "Inarizaki", bonds: ["Inarizaki 2nd Years","Inarizaki WS Teammates"] },
     { name: "Atsumu UR", role: "S", img: "img-japan/atsumuUR.png",school: "Inarizaki", bonds: ["Head and Core","Youth Camp Setters","Strongest High School Twins","Friends from Volleyball Class","Inarizaki 2nd Years","Japan Youth Training Camp Teammates"] },
     { name: "Suna SSR", role: "MB", img: "img-japan/sunaSSR.png",school: "Inarizaki", bonds: ["Classmates","Inarizaki's Middle Blockers","Inarizaki 2nd Years"] },
-    { name: "Osamu UR", role: "MB", img: "img-japan/osamuUR.png",school: "Inarizaki", bonds: ["Head and Core","Strongest High School Twins","Classmates","Friends from Volleyball Class","Inarizaki 2nd Years"] },
+    { name: "Osamu UR", role: "OP", img: "img-japan/osamuUR.png",school: "Inarizaki", bonds: ["Head and Core","Strongest High School Twins","Classmates","Friends from Volleyball Class","Inarizaki 2nd Years"] },
     { name: "Kosaku R", role: "WS", img: "img-japan/kosakuR.png",school: "Inarizaki", bonds: ["Inarizaki 2nd Years","Inarizaki WS Teammates"] },
     { name: "Riseki R", role: "WS", img: "img-japan/risekiR.png",school: "Inarizaki", bonds: ["Inarizaki WS Teammates"] },
     { name: "Akagi SSR", role: "Li", img: "img-japan/akagiSSR.png",school: "Inarizaki", bonds: ["Third Year from Inarizaki",] },
