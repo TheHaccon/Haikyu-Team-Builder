@@ -29,14 +29,14 @@ function onlyActiveStats() {
 const MAX_BENCH_SLOTS = 6;
 
 const state = {
-  server: serverSelect ? serverSelect.value : "global",
+  server: "global",
   players: [],
   synergyDescriptions: {},
   synergyMeta: null,
   synergyPairs: null,
   starters: { S: null, MB1: null, WS1: null, LI: null, WS2: null, MB2: null, OP: null },
   bench: [],
-  ui: { activeSlotKey: null, targetBenchIndex: null, filterRole: null, onlyActive: false }
+  ui: { activeSlotKey: null, targetBenchIndex: null, filterRole: null }
 };
 
 function baseName(name = "") {
@@ -44,22 +44,6 @@ function baseName(name = "") {
   if (parts.length && RARITIES.has(parts[parts.length - 1].toUpperCase())) parts.pop();
   return parts.join(" ").toLowerCase();
 }
-
-function requiredBaseNamesForBond(bondName) {
-  const pairs = state.synergyPairs?.[bondName];
-  if (Array.isArray(pairs) && pairs.length) {
-    const set = new Set();
-    for (const group of pairs) for (const n of group) set.add(String(n).toLowerCase());
-    return Array.from(set);
-  }
-  const desc = state.synergyDescriptions[bondName];
-  if (desc && typeof desc === "object") {
-    const bases = Object.keys(desc).map(k => baseName(k)).filter(Boolean);
-    return Array.from(new Set(bases));
-  }
-  return [];
-}
-
 
 function benchSlots() {
   return Array.from(benchRow.querySelectorAll("[data-bench]"));
@@ -92,7 +76,6 @@ async function loadDataset(server) {
   state.bench = benchSlots().map(() => null);
   renderBoard();
 }
-
 
 function renderTile(el, player) {
   el.innerHTML = player ? `<img src="${player.img}" alt="${player.name}">` : "";
@@ -248,12 +231,6 @@ function syncAddBenchButton() {
   addBenchBtn.disabled = benchSlots().length >= MAX_BENCH_SLOTS;
 }
 
-function pickedByBaseNameMap() {
-  const map = new Map();
-  for (const p of getAllPicked()) map.set(baseName(p.name), p);
-  return map;
-}
-
 function renderSynergies() {
   const starters = Object.values(state.starters).filter(Boolean);
   const bench = state.bench.filter(Boolean);
@@ -353,7 +330,7 @@ function renderSynergies() {
       const li = document.createElement("li");
       li.innerHTML = `
         <div style="font-weight:bold;margin-bottom:4px;text-decoration: underline;">
-          ${b}${(!onlyStats && missingList) ? ` — <span style="color:#9ca3af">Missing: ${missingList}</span>` : ""}
+          ${b}
         </div>
         <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:6px;">
           ${entries.map(e => `
@@ -376,10 +353,6 @@ function renderSynergies() {
   if (!deployList.children.length) deployList.innerHTML = `<li>(no active bonds)</li>`;
   if (!buffsList.children.length) buffsList.innerHTML = `<li>(no active buffs)</li>`;
 }
-
-
-
-
 
 function onHexClick(e) {
   const hex = e.currentTarget;
@@ -439,9 +412,6 @@ function onTabClick(e) {
   syncTabFilters();
 }
 
-
-
-
 function wireServerToggle() {
   const toggle = document.getElementById("serverToggle");
   if (!toggle) return;
@@ -457,12 +427,9 @@ function wireServerToggle() {
   });
 }
 
-
 function wire() {
   deployFilterRadios.forEach(r => r.addEventListener('change', () => renderSynergies()));
   statsFilterRadios.forEach(r => r.addEventListener('change', () => renderSynergies()));
-
-
   document.querySelectorAll(".hex[data-slot]").forEach(hex => {
     hex.addEventListener("click", onHexClick);
     hex.addEventListener("contextmenu", onHexContext);
@@ -474,10 +441,9 @@ function wire() {
   modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
   searchInput.addEventListener("input", onSearchInput);
   tabbar.addEventListener("click", onTabClick);
-  if (serverSelect) serverSelect.addEventListener("change", () => loadDataset(serverSelect.value));
   wireServerToggle();
+  syncTabFilters();
 }
-
 
 function init() {
   state.bench = benchSlots().map(() => null);
