@@ -13,6 +13,13 @@ const modal = document.getElementById("modal");
 const gallery = document.getElementById("gallery");
 const searchInput = document.getElementById("search");
 const closeModalBtn = document.getElementById("closeModal");
+const bondFilterRadios = document.querySelectorAll('#bond-filter input[name="bondFilter"]');
+function onlyActiveFilter() {
+  const el = document.querySelector('#bond-filter input[name="bondFilter"]:checked');
+  return !!el && el.value === 'active';
+}
+
+
 
 const MAX_BENCH_SLOTS = 6;
 
@@ -24,7 +31,7 @@ const state = {
   synergyPairs: null,
   starters: { S: null, MB1: null, WS1: null, LI: null, WS2: null, MB2: null, OP: null },
   bench: [],
-  ui: { activeSlotKey: null, targetBenchIndex: null, filterRole: null }
+  ui: { activeSlotKey: null, targetBenchIndex: null, filterRole: null, onlyActive:false }
 };
 
 function baseName(name = "") {
@@ -245,17 +252,19 @@ function pickedByBaseNameMap() {
 function renderSynergies() {
   const starters = Object.values(state.starters).filter(Boolean);
   const bench = state.bench.filter(Boolean);
-  const schools = starters.reduce((acc, p) => { if (p.school) { acc[p.school] = (acc[p.school] || 0) + 1; } return acc; }, {});
-  const bonds = [...starters, ...bench].reduce((acc, p) => { (p.bonds || []).forEach(b => { acc[b] = (acc[b] || 0) + 1; }); return acc; }, {});
+  const onlyActive = (document.querySelector('#bond-filter input[name="bondFilter"]:checked')?.value === 'active');
+
+  const schools = starters.reduce((acc,p)=>{ if(p.school){ acc[p.school]=(acc[p.school]||0)+1; } return acc; },{});
+  const bondsPickedCount = [...starters, ...bench].reduce((acc,p)=>{ (p.bonds||[]).forEach(b=>{ acc[b]=(acc[b]||0)+1; }); return acc; },{});
 
   schoolList.innerHTML = "";
   let anySchool = false;
-  Object.entries(schools).forEach(([s, c]) => {
+  Object.entries(schools).forEach(([s,c])=>{
     const need = state.synergyMeta?.[s]?.activation?.min ?? 4;
-    if (c >= need) {
+    if (c>=need) {
       anySchool = true;
       const li = document.createElement("li");
-      li.innerHTML = `<strong>${s}</strong> — ${state.synergyDescriptions[s] || ""}`;
+      li.innerHTML = `<strong>${s}</strong> — ${state.synergyDescriptions[s]||""}`;
       schoolList.appendChild(li);
     }
   });
@@ -263,106 +272,106 @@ function renderSynergies() {
 
   deployList.innerHTML = "";
   buffsList.innerHTML = "";
-  let anyDeploy = false;
 
-  const pickedMap = pickedByBaseNameMap();
   const picked = getAllPicked();
+  const pickedFullNames = new Set(picked.map(p => p.name));
   const pickedBaseSet = new Set(picked.map(p => baseName(p.name)));
 
-  const bondNames = Object.keys(bonds);
+  const bondNames = Object.keys(bondsPickedCount);
   for (const b of bondNames) {
     const meta = state.synergyMeta ? state.synergyMeta[b] : null;
     const min = meta?.activation?.min || 2;
-    const count = bonds[b] || 0;
-    const isActive = count >= min;
     const cat = meta?.category || "deployment";
 
-if (cat === "deployment") {
-  const desc = state.synergyDescriptions[b];
-  const requiredRoster = state.players.filter(p => p.bonds?.includes(b));
-  const pickedFullNames = new Set(getAllPicked().map(p => p.name));
-  const matchedPlayers = requiredRoster.filter(p => pickedFullNames.has(p.name));
-  if (matchedPlayers.length > 0) {
-    anyDeploy = true;
-    const missingPlayers = requiredRoster.filter(p => !pickedFullNames.has(p.name));
-    const li = document.createElement("li");
-    const row = [
-      ...matchedPlayers.map(p => `
-        <div style="display:flex;align-items:center;gap:6px;">
-          <img src="${p.img}" alt="${p.name}" style="width:28px;height:28px;object-fit:cover;border-radius:4px;">
-          <strong>${p.name}</strong>
-        </div>
-      `),
-      ...missingPlayers.map(p => `
-        <div style="display:flex;align-items:center;gap:6px;opacity:.45;">
-          <img src="${p.img}" alt="${p.name}" style="width:28px;height:28px;object-fit:cover;border-radius:4px;filter:grayscale(100%);">
-          <strong>${p.name}</strong>
-          <span style="font-size:12px;color:#9ca3af;">(missing)</span>
-        </div>
-      `)
-    ].join('<span>×</span>');
-    li.innerHTML = `
-      <div style="font-weight:bold; margin-bottom:4px; text-decoration: underline;">${b}</div>
-      <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:6px;">
-        ${row}
-      </div>
-      <div style="font-size:14px; color:#FFFFFF;">
-        ${matchedPlayers.length >= min ? (desc || "") : (missingPlayers.length ? "Missing: " + missingPlayers.map(p => p.name).join(", ") : "")}
-      </div>
-    `;
-    deployList.appendChild(li);
-  }
-  continue;
-}
-if (cat === "stats") {
-  const descObj = state.synergyDescriptions[b];
-  if (!descObj || typeof descObj !== "object") continue;
+    if (cat === "deployment") {
+      const desc = state.synergyDescriptions[b];
+      const requiredRoster = state.players.filter(p => p.bonds?.includes(b));
+      const matchedPlayers = requiredRoster.filter(p => pickedFullNames.has(p.name));
+      const missingPlayers = requiredRoster.filter(p => !pickedFullNames.has(p.name));
+      const isActive = matchedPlayers.length >= min;
 
-  const requiredFull = Object.keys(descObj);
-  const pickedFullNames = new Set(getAllPicked().map(p => p.name));
+      if (onlyActive && !isActive) continue;
+      if (matchedPlayers.length === 0 && !(!onlyActive && missingPlayers.length)) continue;
 
-  const entries = requiredFull.map(fullName => {
-    const isPicked = pickedFullNames.has(fullName);
-    let img = null;
-    const exact = state.players.find(p => p.name === fullName);
-    if (exact) img = exact.img;
-    else {
-      const cand = state.players.find(p => baseName(p.name) === baseName(fullName));
-      if (cand) img = cand.img;
+      const li = document.createElement("li");
+      const row = [
+        ...matchedPlayers.map(p => `
+          <div style="display:flex;align-items:center;gap:6px;">
+            <img src="${p.img}" alt="${p.name}" style="width:28px;height:28px;object-fit:cover;border-radius:4px;">
+            <strong>${p.name}</strong>
+          </div>
+        `),
+        ...(!isActive ? missingPlayers.map(p => `
+          <div style="display:flex;align-items:center;gap:6px;opacity:.45;">
+            <img src="${p.img}" alt="${p.name}" style="width:28px;height:28px;object-fit:cover;border-radius:4px;filter:grayscale(100%);">
+            <strong>${p.name}</strong>
+            <span style="font-size:12px;color:#9ca3af;">(missing)</span>
+          </div>
+        `) : [])
+      ].join('<span>×</span>');
+
+      li.innerHTML = `
+        <div style="font-weight:bold; margin-bottom:4px; text-decoration: underline;">${b}</div>
+        <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:6px;">${row}</div>
+        <div style="font-size:14px; color:#FFFFFF;">
+          ${isActive ? (desc || "") : (!onlyActive && missingPlayers.length ? "Missing: " + missingPlayers.map(p=>p.name).join(", ") : "")}
+        </div>
+      `;
+      deployList.appendChild(li);
+      continue;
     }
-    return { name: fullName, img, isPicked, text: descObj[fullName] };
-  });
 
-  const missingList = requiredFull.filter(n => !pickedFullNames.has(n));
-  const missingPretty = missingList.join(", ");
-  const hasAnyPicked = entries.some(e => e.isPicked);
-  if (!hasAnyPicked) continue;
+    if (cat === "stats") {
+      const descObj = state.synergyDescriptions[b];
+      if (!descObj || typeof descObj !== "object") continue;
 
-  const li = document.createElement("li");
-  li.innerHTML = `
-    <div style="font-weight:bold;margin-bottom:4px;text-decoration: underline;">
-      ${b}
-    </div>
-    <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:6px;">
-      ${entries.map(e => `
-        <div style="display:flex;align-items:center;gap:6px;${e.isPicked ? "" : "opacity:.45;"}">
-          ${e.img ? `<img src="${e.img}" alt="${e.name}" style="width:28px;height:28px;object-fit:cover;border-radius:4px;${e.isPicked ? "" : "filter:grayscale(100%);"}">` : ""}
-          <strong>${e.name}</strong>
-          ${e.isPicked ? "" : `<span style="font-size:12px;color:#9ca3af;">(missing)</span>`}
+      const requiredFull = Object.keys(descObj);
+      const entries = requiredFull.map(fullName => {
+        const isPicked = pickedFullNames.has(fullName); // exact variant
+        let img = null;
+        const exact = state.players.find(p => p.name === fullName);
+        if (exact) img = exact.img;
+        else {
+          const cand = state.players.find(p => baseName(p.name) === baseName(fullName));
+          if (cand) img = cand.img;
+        }
+        return { name: fullName, img, isPicked, text: descObj[fullName] };
+      });
+
+      const isActiveStats = requiredFull.every(n => pickedFullNames.has(n));
+      if (onlyActive && !isActiveStats) continue;
+
+      const hasAnyPicked = entries.some(e => e.isPicked);
+      if (!hasAnyPicked) continue;
+
+      const missingList = requiredFull.filter(n => !pickedFullNames.has(n)).join(", ");
+      const li = document.createElement("li");
+      li.innerHTML = `
+        <div style="font-weight:bold;margin-bottom:4px;text-decoration: underline;">
+          ${b}
         </div>
-      `).join('<span>×</span>')}
-    </div>
-    <div style="font-size:12px;color:#FFFFFF;">
-      ${entries.map(e => `<div><strong>${e.name}</strong>: ${e.text}</div>`).join("")}
-    </div>
-  `;
-  buffsList.appendChild(li);
-  continue;
-}
-}
-  if (!anyDeploy) deployList.innerHTML = `<li>(no active bonds)</li>`;
+        <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:6px;">
+          ${entries.map(e => `
+            <div style="display:flex;align-items:center;gap:6px;${e.isPicked ? "" : "opacity:.45;"}">
+              ${e.img ? `<img src="${e.img}" alt="${e.name}" style="width:28px;height:28px;object-fit:cover;border-radius:4px;${e.isPicked ? "" : "filter:grayscale(100%);"}">` : ""}
+              <strong>${e.name}</strong>
+              ${e.isPicked ? "" : `<span style="font-size:12px;color:#9ca3af;">(missing)</span>`}
+            </div>
+          `).join('<span>×</span>')}
+        </div>
+        <div style="font-size:12px;color:#FFFFFF;">
+          ${entries.map(e => `<div><strong>${e.name}</strong>: ${e.text}</div>`).join("")}
+        </div>
+      `;
+      buffsList.appendChild(li);
+      continue;
+    }
+  }
+
+  if (!deployList.children.length) deployList.innerHTML = `<li>(no active bonds)</li>`;
   if (!buffsList.children.length) buffsList.innerHTML = `<li>(no active buffs)</li>`;
 }
+
 
 
 
@@ -425,6 +434,8 @@ function wireServerToggle() {
 
 
 function wire() {
+bondFilterRadios.forEach(r => r.addEventListener('change', () => renderSynergies()));
+
   document.querySelectorAll(".hex[data-slot]").forEach(hex=>{
     hex.addEventListener("click", onHexClick);
     hex.addEventListener("contextmenu", onHexContext);
