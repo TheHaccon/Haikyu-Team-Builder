@@ -13,13 +13,18 @@ const modal = document.getElementById("modal");
 const gallery = document.getElementById("gallery");
 const searchInput = document.getElementById("search");
 const closeModalBtn = document.getElementById("closeModal");
-const bondFilterRadios = document.querySelectorAll('#bond-filter input[name="bondFilter"]');
-function onlyActiveFilter() {
-  const el = document.querySelector('#bond-filter input[name="bondFilter"]:checked');
+const deployFilterRadios = document.querySelectorAll('#deploy-filter input[name="deployFilter"]');
+const statsFilterRadios = document.querySelectorAll('#stats-filter input[name="statsFilter"]');
+
+//bond button not sure if I'll keep
+function onlyActiveDeploy() {
+  const el = document.querySelector('#deploy-filter input[name="deployFilter"]:checked');
   return !!el && el.value === 'active';
 }
-
-
+function onlyActiveStats() {
+  const el = document.querySelector('#stats-filter input[name="statsFilter"]:checked');
+  return !!el && el.value === 'active';
+}
 
 const MAX_BENCH_SLOTS = 6;
 
@@ -31,7 +36,7 @@ const state = {
   synergyPairs: null,
   starters: { S: null, MB1: null, WS1: null, LI: null, WS2: null, MB2: null, OP: null },
   bench: [],
-  ui: { activeSlotKey: null, targetBenchIndex: null, filterRole: null, onlyActive:false }
+  ui: { activeSlotKey: null, targetBenchIndex: null, filterRole: null, onlyActive: false }
 };
 
 function baseName(name = "") {
@@ -252,7 +257,8 @@ function pickedByBaseNameMap() {
 function renderSynergies() {
   const starters = Object.values(state.starters).filter(Boolean);
   const bench = state.bench.filter(Boolean);
-  const onlyActive = (document.querySelector('#bond-filter input[name="bondFilter"]:checked')?.value === 'active');
+  const onlyDeploy = onlyActiveDeploy();
+  const onlyStats = onlyActiveStats();
 
   const schools = starters.reduce((acc,p)=>{ if(p.school){ acc[p.school]=(acc[p.school]||0)+1; } return acc; },{});
   const bondsPickedCount = [...starters, ...bench].reduce((acc,p)=>{ (p.bonds||[]).forEach(b=>{ acc[b]=(acc[b]||0)+1; }); return acc; },{});
@@ -275,7 +281,6 @@ function renderSynergies() {
 
   const picked = getAllPicked();
   const pickedFullNames = new Set(picked.map(p => p.name));
-  const pickedBaseSet = new Set(picked.map(p => baseName(p.name)));
 
   const bondNames = Object.keys(bondsPickedCount);
   for (const b of bondNames) {
@@ -290,8 +295,8 @@ function renderSynergies() {
       const missingPlayers = requiredRoster.filter(p => !pickedFullNames.has(p.name));
       const isActive = matchedPlayers.length >= min;
 
-      if (onlyActive && !isActive) continue;
-      if (matchedPlayers.length === 0 && !(!onlyActive && missingPlayers.length)) continue;
+      if (onlyDeploy && !isActive) continue;
+      if (matchedPlayers.length === 0 && !(!onlyDeploy && missingPlayers.length)) continue;
 
       const li = document.createElement("li");
       const row = [
@@ -314,7 +319,7 @@ function renderSynergies() {
         <div style="font-weight:bold; margin-bottom:4px; text-decoration: underline;">${b}</div>
         <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:6px;">${row}</div>
         <div style="font-size:14px; color:#FFFFFF;">
-          ${isActive ? (desc || "") : (!onlyActive && missingPlayers.length ? "Missing: " + missingPlayers.map(p=>p.name).join(", ") : "")}
+          ${isActive ? (desc || "") : (!onlyDeploy && missingPlayers.length ? "Missing: " + missingPlayers.map(p=>p.name).join(", ") : "")}
         </div>
       `;
       deployList.appendChild(li);
@@ -327,7 +332,7 @@ function renderSynergies() {
 
       const requiredFull = Object.keys(descObj);
       const entries = requiredFull.map(fullName => {
-        const isPicked = pickedFullNames.has(fullName); // exact variant
+        const isPicked = pickedFullNames.has(fullName);
         let img = null;
         const exact = state.players.find(p => p.name === fullName);
         if (exact) img = exact.img;
@@ -339,7 +344,7 @@ function renderSynergies() {
       });
 
       const isActiveStats = requiredFull.every(n => pickedFullNames.has(n));
-      if (onlyActive && !isActiveStats) continue;
+      if (onlyStats && !isActiveStats) continue;
 
       const hasAnyPicked = entries.some(e => e.isPicked);
       if (!hasAnyPicked) continue;
@@ -348,7 +353,7 @@ function renderSynergies() {
       const li = document.createElement("li");
       li.innerHTML = `
         <div style="font-weight:bold;margin-bottom:4px;text-decoration: underline;">
-          ${b}
+          ${b}${(!onlyStats && missingList) ? ` — <span style="color:#9ca3af">Missing: ${missingList}</span>` : ""}
         </div>
         <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:6px;">
           ${entries.map(e => `
@@ -371,6 +376,7 @@ function renderSynergies() {
   if (!deployList.children.length) deployList.innerHTML = `<li>(no active bonds)</li>`;
   if (!buffsList.children.length) buffsList.innerHTML = `<li>(no active buffs)</li>`;
 }
+
 
 
 
@@ -408,14 +414,33 @@ function onSearchInput() {
   else if (state.ui.targetBenchIndex != null) buildBenchGallery(state.ui.targetBenchIndex);
 }
 
+const deployFilterBox = document.getElementById('deploy-filter');
+const statsFilterBox = document.getElementById('stats-filter');
+
+function syncTabFilters() {
+  const deployVisible = !tabDeploy.hidden;
+  const statsVisible = !tabBuffs.hidden;
+  if (deployFilterBox) deployFilterBox.hidden = !deployVisible;
+  if (statsFilterBox) statsFilterBox.hidden = !statsVisible;
+}
+
 function onTabClick(e) {
   const btn = e.target.closest(".tabbtn");
   if (!btn) return;
-  Array.from(tabbar.querySelectorAll(".tabbtn")).forEach(b => b.setAttribute("aria-selected", b === btn ? "true" : "false"));
+  Array.from(tabbar.querySelectorAll(".tabbtn")).forEach(b=>b.setAttribute("aria-selected", b===btn ? "true" : "false"));
   const tab = btn.dataset.tab;
-  if (tab === "deploy") { tabDeploy.hidden = false; tabBuffs.hidden = true; }
-  else { tabDeploy.hidden = true; tabBuffs.hidden = false; }
+  if (tab==="deploy") { 
+    tabDeploy.hidden=false; 
+    tabBuffs.hidden=true; 
+  } else { 
+    tabDeploy.hidden=true; 
+    tabBuffs.hidden=false; 
+  }
+  syncTabFilters();
 }
+
+
+
 
 function wireServerToggle() {
   const toggle = document.getElementById("serverToggle");
@@ -434,9 +459,11 @@ function wireServerToggle() {
 
 
 function wire() {
-bondFilterRadios.forEach(r => r.addEventListener('change', () => renderSynergies()));
+  deployFilterRadios.forEach(r => r.addEventListener('change', () => renderSynergies()));
+  statsFilterRadios.forEach(r => r.addEventListener('change', () => renderSynergies()));
 
-  document.querySelectorAll(".hex[data-slot]").forEach(hex=>{
+
+  document.querySelectorAll(".hex[data-slot]").forEach(hex => {
     hex.addEventListener("click", onHexClick);
     hex.addEventListener("contextmenu", onHexContext);
   });
@@ -444,10 +471,10 @@ bondFilterRadios.forEach(r => r.addEventListener('change', () => renderSynergies
   benchRow.addEventListener("contextmenu", onBenchContext);
   addBenchBtn.addEventListener("click", addBenchSlot);
   closeModalBtn.addEventListener("click", closeModal);
-  modal.addEventListener("click", e=>{ if (e.target===modal) closeModal(); });
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
   searchInput.addEventListener("input", onSearchInput);
   tabbar.addEventListener("click", onTabClick);
-  if (serverSelect) serverSelect.addEventListener("change", ()=>loadDataset(serverSelect.value));
+  if (serverSelect) serverSelect.addEventListener("change", () => loadDataset(serverSelect.value));
   wireServerToggle();
 }
 
