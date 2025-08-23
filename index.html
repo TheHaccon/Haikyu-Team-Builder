@@ -75,17 +75,26 @@
 
       <section id="tabs">
         <nav id="tabbar" aria-label="Synergy sections">
+
           <button class="tabbtn" data-tab="deploy" aria-controls="tab-deploy" aria-selected="true">Deployment
             Bonds</button>
           <button class="tabbtn" data-tab="buffs" aria-controls="tab-buffs" aria-selected="false">Stat Buffs</button>
         </nav>
         <div id="tab-deploy" class="tabcontent" role="region" aria-labelledby="tab-deploy-label">
+          <div id="bond-filter">
+            <label><input type="radio" name="bondFilter" value="all" checked> All</label>
+            <label><input type="radio" name="bondFilter" value="active"> Active only</label>
+          </div>
           <h2 id="tab-deploy-label">Deployment Bonds</h2>
           <ul id="deploy-list">
             <li>(no active bonds)</li>
           </ul>
         </div>
         <div id="tab-buffs" class="tabcontent" role="region" aria-labelledby="tab-buffs-label" hidden>
+          <div id="bond-filter">
+            <label><input type="radio" name="bondFilter" value="all" checked> All</label>
+            <label><input type="radio" name="bondFilter" value="active"> Active only</label>
+          </div>
           <h2 id="tab-buffs-label">Stat Buffs</h2>
           <ul id="buffs-list">
             <li>(no active buffs)</li>
