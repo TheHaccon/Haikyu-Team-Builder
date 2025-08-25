@@ -559,7 +559,6 @@
           description: "Yu Nishinoya consumes 20 additional Stamina to perform a Receive with 220% of Receive stat power; if the Receive result is not BAD, reduces the cooldown of your side's next Power Spike skill by 6 net crossings."
         },
       ]
-
     },
     {
       id: "yu(Practice)",
@@ -587,7 +586,42 @@
           Technique: 88
         }
       },
-      tags: ["Libero", "Karasuno", "SR"]
+      tags: ["Libero", "Karasuno", "SR"],
+      skills: [
+        {
+          name: "Primal Instinct",
+          icon: "skills/nishinoya2S1.png",
+          tags: [
+            "Passive", "Enhance Team",
+          ],
+          description: "When Yu Nishinoya (Practice)'s Save result is not BAD, increases your side's Spike power by 7/9.5/12% of the player's Power/Quick Attack stat."
+        },
+        {
+          name: "Elite Libero",
+          icon: "skills/nishinoya2S2.png",
+          tags: [
+            "Passive", "Save",
+          ],
+          description: "Yu Nishinoya (Practice) performs a Save with 120/135/150% of Save stat as power."
+        },
+        {
+          name: "Team's Lifeblood",
+          icon: "skills/nishinoya2S3.png",
+          tags: [
+            "Passive", "Team Morale",
+          ],
+          description: "Yu Nishinoya (Practice)'s Receive stat increases by 7/9.5/12%; when Yu Nishinoya (Practice)'s Receive result is not BAD, increases your Team Morale by 5."
+        },
+        {
+          name: "Genius Defense",
+          icon: "skills/nishinoya2S4.png",
+          tags: [
+            "Ultimate", "Passive", "Receive", "Counter Quick Attack",
+          ],
+          description: "Yu Nishinoya (Practice) performs a Receive with 215/230/245/260/275% of Receive stat as power; when receiving an opponent's Quick Spike, increases this receive's power by 8% of Receive stat."
+        },
+      ]
+
     },
     {
       id: "ryunosuke",
@@ -615,7 +649,42 @@
           Technique: 88
         }
       },
-      tags: ["Wing Spiker", "Karasuno", "SSR"]
+      tags: ["Wing Spiker", "Karasuno", "SSR"],
+      skills: [
+        {
+          name: "The Ace Arrives",
+          icon: "skills/tanakaS1.png",
+          tags: [
+            "Passive", "Power Attack Boost",
+          ],
+          description: "Increases the power of Ryunosuke Tanaka's 1st Power Spike in each match by 25/40/55% of Power Attack stat."
+        },
+        {
+          name: "Tenacious Spirit",
+          icon: "skills/tanakaS2.png",
+          tags: [
+            "Passive", "Receive",
+          ],
+          description: "Ryunosuke Tanaka performs a Receive with 115/130/145% of Receive stat as power; for this Receive, Tanaka's Reflex increases by 10%."
+        },
+        {
+          name: "Burning Passion",
+          icon: "skills/tanakaS3.png",
+          tags: [
+            "Passive", "Reduce Opponent's Stamina",
+          ],
+          description: "Increases Ryunosuke Tanaka's Power Spike power by 10/12/14% of Power Attack stat; his Power Spike reduces opponent's blocking and receiving players' Stamina by 5."
+        },
+        {
+          name: "Super Inner Cross",
+          icon: "skills/tanakaS4.png",
+          tags: [
+            "Ultimate", "Active", "Power Attack", "Power Up",
+          ],
+          description: "Ryunosuke Tanaka consumes 5 extra Stamina to perform a Short Diagonal Spike with 250/260/275/290/305% of Power Attack stat as power; when this is Tanaka's first spike in this set, increases spike power by an additional 30% of Tanaka's Power Attack stat."
+        },
+      ]
+
     },
     {
       id: "ryunosuke(Practice)",
@@ -643,7 +712,42 @@
           Technique: 88
         }
       },
-      tags: ["Wing Spiker", "Karasuno", "SR"]
+      tags: ["Wing Spiker", "Karasuno", "SR"],
+      skills: [
+        {
+          name: "Saving Spirit",
+          icon: "skills/tanaka2S1.png",
+          tags: [
+            "Passive",
+          ],
+          description: "Increases Ryunosuke Tanaka (Practice)'s Save stat by 7/9.5/12%."
+        },
+        {
+          name: "Provocative Nature",
+          icon: "skills/tanaka2S2.png",
+          tags: [
+            "Active", "Power Attack", "Weaken Opponent's Receive",
+          ],
+          description: "Ryunosuke Tanaka (Practice) performs a Power Spike with 115/130/145% of Power Attack stat as power; applies [Taunt] Debuff to opponent's receiving player (lasts 2 net crossings), reducing their receive power by 3/4/5% of their Receive stat."
+        },
+        {
+          name: "Continuous Growth",
+          icon: "skills/tanaka2S3.png",
+          tags: [
+            "Passive", "Stat Bonus",
+          ],
+          description: "Ryunosuke Tanaka (Practice) receives 1 stack of 'Progress' after a Receive, each stack of 'Progress' increases Ryunosuke Tanaka (Practice)'s Receive stat by 4/5/6%, up to 3 stacks."
+        },
+        {
+          name: "Stalwart Receive",
+          icon: "skills/tanaka2S4.png",
+          tags: [
+            "Ultimate", "Passive", "Receive", "Counter Quick Attack",
+          ],
+          description: "Ryunosuke Tanaka (Practice) performs a Receive with 215/230/245/260/275% of Receive stat as power; when receiving an opponent's Quick Attack, Tanaka (Practice)'s Reflex increases by 5%."
+        },
+      ]
+
     },
     {
       id: "kei",
@@ -671,7 +775,42 @@
           Technique: 88
         }
       },
-      tags: ["Middle Blocker", "Karasuno", "SSR"]
+      tags: ["Middle Blocker", "Karasuno", "SSR"],
+      skills: [
+        {
+          name: "Karasuno's Composure",
+          icon: "skills/tsukishimaS1.png",
+          tags: [
+            "Passive", "Enhance Team",
+          ],
+          description: "While Kei Tsukishima is on the court, increases the Strength of your Quick Attack-type players by 10/12.5/15%."
+        },
+        {
+          name: "Tactical Quick Attack",
+          icon: "skills/tsukishimaS2.png",
+          tags: [
+            "Active", "Quick Attack", "Enhance Team",
+          ],
+          description: "Kei Tsukishima performs a Quick Spike with 115/130/145% of his Quick Attack stat. The next time a teammate casts a Spike skill, their Awareness is increased by 5%."
+        },
+        {
+          name: "Moonrise",
+          icon: "skills/tsukishimaS3.png",
+          tags: [
+            "Passive", "Block Power Up",
+          ],
+          description: "While Kei Tsukishima is present, increases Block power of your side's front row players by 8/10/12% of their Block stat."
+        },
+        {
+          name: "Kei's Retort",
+          icon: "skills/tsukishimaS4.png",
+          tags: [
+            "Ultimate", "Active", "Block", "Apply Debuff",
+          ],
+          description: "Kei Tsukishima performs a Block with 195/210/225/240/255% of his Block stat as power. Applies the 'Enrage' debuff to the opposing spiker (reducing their Power/Quick Attack stats by 10%)."
+        },
+      ]
+
     },
     {
       id: "kei(Practice)",
