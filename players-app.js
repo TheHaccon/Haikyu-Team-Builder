@@ -838,7 +838,42 @@
           Technique: 88
         }
       },
-      tags: ["Middle Blocker", "Karasuno", "SR"]
+      tags: ["Middle Blocker", "Karasuno", "SR"],
+      skills: [
+        {
+          name: "Elevated Strike",
+          icon: "skills/tsukishima2S1.png",
+          tags: [
+            "Active", "Quick Attack",
+          ],
+          description: "Kei Tsukishima (Practice) performs a Quick Spike with 110/120/140% of Quick Attack stat as power."
+        },
+        {
+          name: "Block Tactician",
+          icon: "skills/tsukishima2S2.png",
+          tags: [
+            "Passive",
+          ],
+          description: "Increases Kei Tsukishima (Practice)'s Block stat by 6/7.5/9%; when he performs a Block, increases his Reflex by 5%."
+        },
+        {
+          name: "Quick Attack Strategy",
+          icon: "skills/tsukishima2S3.png",
+          tags: [
+            "Passive",
+          ],
+          description: "Increases Kei Tsukishima (Practice)'s Quick Attack stat by 6/7.5/9%; when he performs a Quick Spike, increases his Awareness by 5%."
+        },
+        {
+          name: "Delayed Block",
+          icon: "skills/tsukishima2S4.png",
+          tags: [
+            "Ultimate", "Active", "Block",
+          ],
+          description: "Kei Tsukishima (Practice) performs a Block with 180/195/210/225/240% of Block stat as power."
+        },
+      ]
+
     },
     {
       id: "tadashi",
@@ -866,7 +901,42 @@
           Technique: 88
         }
       },
-      tags: ["Middle Blocker", "Karasuno", "SR"]
+      tags: ["Middle Blocker", "Karasuno", "SR"],
+      skills: [
+        {
+          name: "Serve Stability",
+          icon: "skills/tadashiS1.png",
+          tags: [
+            "Passive", "Manual Serve",
+          ],
+          description: "When Tadashi Yamaguchi’s Serve results in a PERFECT, increases its power by 20/25/30% of his Serve stat. When it results in a BAD, reduces its power by 20/25/30% of his Serve stat."
+        },
+        {
+          name: "Spotlight Serve",
+          icon: "skills/tadashiS2.png",
+          tags: [
+            "Passive", "Awareness Up",
+          ],
+          description: "Increases the power of Tadashi Yamaguchi's 1st Serve in each match by 15/30/45% of his Serve stat. Also increases his Awareness by 15% for that serve."
+        },
+        {
+          name: "Point by Point",
+          icon: "skills/tadashiS3.png",
+          tags: [
+            "Passive",
+          ],
+          description: "Increases Tadashi Yamaguchi's Serve stat by 10/12/14%."
+        },
+        {
+          name: "Defiant Float",
+          icon: "skills/tadashiS4.png",
+          tags: [
+            "Ultimate", "Passive", "Serve",
+          ],
+          description: "Tadashi Yamaguchi performs a Jump Float Serve with 210/225/240/225/270% of his Serve stat as power. If your side is behind, this serve's power is additionally increased by 25% of his Serve stat."
+        },
+      ]
+
     },
     {
       id: "tadashi(Practice)",
