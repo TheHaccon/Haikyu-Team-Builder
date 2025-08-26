@@ -56,7 +56,10 @@ function getExpectedRole(slotKey) {
   return slotKey;
 }
 
+let isLoading = false;
+
 async function loadDataset(server) {
+  isLoading = true;
   const path = server === "global" ? "data-global.js" : "data-japan.js";
   const text = await fetch(path).then(r => r.text());
   const factory = new Function(`${text}; return {characters: typeof characters!=="undefined"?characters:[], synergyDescriptions: typeof synergyDescriptions!=="undefined"?synergyDescriptions:{}, synergyMeta: typeof synergyMeta!=="undefined"?synergyMeta:null, synergyPairs: typeof synergyPairs!=="undefined"?synergyPairs:null};`);
@@ -75,6 +78,7 @@ async function loadDataset(server) {
   Object.keys(state.starters).forEach(k => state.starters[k] = null);
   state.bench = benchSlots().map(() => null);
   renderBoard();
+  isLoading = false;
 }
 
 function renderTile(el, player) {
@@ -84,9 +88,8 @@ function renderTile(el, player) {
 
 function ensureTeamSwitcher() {
   let el = document.getElementById("teamSwitcher");
-  if (!el) {
-    const board = document.getElementById("board");
-    if (!board) return null;
+  const board = document.getElementById("board");
+  if (!el && board) {
     el = document.createElement("div");
     el.id = "teamSwitcher";
     el.className = "team-switcher";
@@ -103,7 +106,7 @@ function renderBoard() {
   benchSlots().forEach((b, i) => renderTile(b, state.bench[i] || null));
   renderSynergies();
   syncAddBenchButton();
-  updateActiveTeam();
+  if (!isLoading) updateActiveTeam();
 }
 
 function openModalForRole(slotKey) {
