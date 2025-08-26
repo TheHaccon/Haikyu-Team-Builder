@@ -82,6 +82,19 @@ function renderTile(el, player) {
   el.dataset.name = player?.name || "";
 }
 
+function ensureTeamSwitcher() {
+  let el = document.getElementById("teamSwitcher");
+  if (!el) {
+    const board = document.getElementById("board");
+    if (!board) return null;
+    el = document.createElement("div");
+    el.id = "teamSwitcher";
+    el.className = "team-switcher";
+    board.insertBefore(el, board.firstChild);
+  }
+  return el;
+}
+
 function renderBoard() {
   document.querySelectorAll(".hex[data-slot]").forEach(hex => {
     const key = hex.dataset.slot;
@@ -423,18 +436,24 @@ function wireServerToggle() {
       opt.classList.add("active");
       const server = opt.dataset.server === "japan" ? "japan" : "global";
       state.server = server;
-      loadDataset(server);
+      activeTeamIndex = 0;
+      loadDataset(server).then(() => {
+        renderTeamSwitcher();
+        loadActiveTeam();
+      });
     });
   });
 }
 
-let teams = JSON.parse(localStorage.getItem("teams") || "[]");
-let activeTeamIndex = 0;
-
-if (teams.length === 0) {
-  teams.push(createEmptyTeam("Team 1"));
-  localStorage.setItem("teams", JSON.stringify(teams));
+let allTeams = JSON.parse(localStorage.getItem("allTeams") || "{}");
+if (!allTeams.global) {
+  allTeams.global = [{ name: "Team 1", starters: { S: null, MB1: null, WS1: null, LI: null, WS2: null, MB2: null, OP: null }, bench: [] }];
 }
+if (!allTeams.japan) {
+  allTeams.japan = [{ name: "Team 1", starters: { S: null, MB1: null, WS1: null, LI: null, WS2: null, MB2: null, OP: null }, bench: [] }];
+}
+
+let activeTeamIndex = 0;
 
 function createEmptyTeam(name) {
   return {
@@ -444,40 +463,48 @@ function createEmptyTeam(name) {
   };
 }
 
-function saveTeams() {
-  localStorage.setItem("teams", JSON.stringify(teams));
+function getCurrentTeams() {
+  return allTeams[state.server];
+}
+
+function persistTeams() {
+  localStorage.setItem("allTeams", JSON.stringify(allTeams));
 }
 
 function loadActiveTeam() {
-  const team = teams[activeTeamIndex];
+  const teams = getCurrentTeams();
+  const team = teams[activeTeamIndex] || teams[0];
   state.starters = { ...team.starters };
   state.bench = [...team.bench];
   renderBoard();
 }
 
 function updateActiveTeam() {
+  const teams = getCurrentTeams();
   teams[activeTeamIndex].starters = { ...state.starters };
   teams[activeTeamIndex].bench = [...state.bench];
-  saveTeams();
+  persistTeams();
 }
 
 function renderTeamSwitcher() {
-  const switcher = document.getElementById("teamSwitcher");
+  const switcher = ensureTeamSwitcher();
+  if (!switcher) return;
   switcher.innerHTML = "";
+  const teams = getCurrentTeams();
 
   teams.forEach((t, i) => {
     const btn = document.createElement("button");
     btn.className = "team-btn" + (i === activeTeamIndex ? " active" : "");
     btn.innerHTML = `
       <span class="team-label">${t.name}</span>
-      ${i > 0 ? '<span class="team-x"> X </span>' : ''}
+      ${i > 0 ? '<span class="team-x">×</span>' : ''}
     `;
     btn.addEventListener("click", (e) => {
       if (e.target.classList.contains("team-x")) {
         removeTeam(i);
       } else {
         activeTeamIndex = i;
-        saveTeams();
+        persistTeams();
         loadActiveTeam();
         renderTeamSwitcher();
       }
@@ -489,10 +516,11 @@ function renderTeamSwitcher() {
   addBtn.className = "team-btn add";
   addBtn.textContent = "+";
   addBtn.addEventListener("click", () => {
-    const newTeam = createEmptyTeam("Team " + (teams.length + 1));
-    teams.push(newTeam);
-    activeTeamIndex = teams.length - 1;
-    saveTeams();
+    const teamsNow = getCurrentTeams();
+    const newTeam = createEmptyTeam("Team " + (teamsNow.length + 1));
+    teamsNow.push(newTeam);
+    activeTeamIndex = teamsNow.length - 1;
+    persistTeams();
     loadActiveTeam();
     renderTeamSwitcher();
   });
@@ -500,17 +528,16 @@ function renderTeamSwitcher() {
 }
 
 function removeTeam(index) {
-  if (index <= 0) return; // always keep Team 1
+  if (index <= 0) return;
+  const teams = getCurrentTeams();
   teams.splice(index, 1);
   if (activeTeamIndex >= teams.length) {
     activeTeamIndex = teams.length - 1;
   }
-  saveTeams();
+  persistTeams();
   loadActiveTeam();
   renderTeamSwitcher();
 }
-
-
 
 function wire() {
   deployFilterRadios.forEach(r => r.addEventListener('change', () => renderSynergies()));
@@ -538,6 +565,5 @@ function init() {
     loadActiveTeam();
   });
 }
-
 
 init();
