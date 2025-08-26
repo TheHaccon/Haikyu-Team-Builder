@@ -191,7 +191,8 @@ h1 {
   background: var(--card);
   border: 1px solid var(--ring);
   border-radius: 10px;
-  padding: 14px;
+  position: relative;
+  padding-top: 20px;
 }
 
 #row-top {
@@ -482,6 +483,64 @@ h1 {
   align-items: center
 }
 
+.team-switcher {
+  position: absolute;
+  top: -31px;
+  left: 10px;
+  display: flex;
+  gap: 6px;
+  align-items: flex-end;
+  z-index: 0;
+}
+
+
+.team-btn {
+  appearance: none;
+  border: 1px solid var(--ring);
+  border-bottom: none;
+  background: var(--card);
+  color: var(--text);
+  padding: 6px 12px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transform: translateY(1px);
+  transition: background 0.2s, color 0.2s;
+}
+
+.team-btn.active {
+  background: var(--bg);
+  border-color: var(--ring);
+  color: var(--text);
+  font-weight: 600;
+  box-shadow: 0 2px 0 var(--bg);
+  transform: translateY(0);
+}
+
+.team-btn.add {
+  background: var(--card);
+  color: var(--muted);
+}
+
+.team-btn:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.team-x {
+  margin-left: 6px;
+  color: var(--muted);
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.team-x:hover {
+  color: var(--danger);
+}
+
 @media (max-width: 768px) {
 
   header,
@@ -604,14 +663,10 @@ h1 {
 
   #toolbar-top {
     margin-left: 0;
-    /* stop pushing it right */
     width: 100%;
-    /* let it span the menu width */
     justify-content: center;
     flex-wrap: wrap;
-    /* allow wrap if space is tight */
     order: 99;
-    /* place after the nav links */
     padding: 6px 0;
     gap: 8px;
   }
@@ -642,5 +697,63 @@ h1 {
     order: 2;
     padding: 6px 0
   }
+
+.team-switcher {
+  position: absolute;
+  top: -31px;
+  left: 10px;
+  display: flex;
+  gap: 6px;
+  align-items: flex-end;
+  z-index: 0;
+}
+
+
+.team-btn {
+  appearance: none;
+  border: 1px solid var(--ring);
+  border-bottom: none;
+  background: var(--card);
+  color: var(--text);
+  padding: 6px 12px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transform: translateY(1px);
+  transition: background 0.2s, color 0.2s;
+}
+
+.team-btn.active {
+  background: var(--bg);
+  border-color: var(--ring);
+  color: var(--text);
+  font-weight: 600;
+  box-shadow: 0 2px 0 var(--bg);
+  transform: translateY(0);
+}
+
+.team-btn.add {
+  background: var(--card);
+  color: var(--muted);
+}
+
+.team-btn:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.team-x {
+  margin-left: 6px;
+  color: var(--muted);
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.team-x:hover {
+  color: var(--danger);
+}
 
 }

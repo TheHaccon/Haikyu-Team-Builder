@@ -90,6 +90,7 @@ function renderBoard() {
   benchSlots().forEach((b, i) => renderTile(b, state.bench[i] || null));
   renderSynergies();
   syncAddBenchButton();
+  updateActiveTeam();
 }
 
 function openModalForRole(slotKey) {
@@ -427,6 +428,90 @@ function wireServerToggle() {
   });
 }
 
+let teams = JSON.parse(localStorage.getItem("teams") || "[]");
+let activeTeamIndex = 0;
+
+if (teams.length === 0) {
+  teams.push(createEmptyTeam("Team 1"));
+  localStorage.setItem("teams", JSON.stringify(teams));
+}
+
+function createEmptyTeam(name) {
+  return {
+    name,
+    starters: { S: null, MB1: null, WS1: null, LI: null, WS2: null, MB2: null, OP: null },
+    bench: []
+  };
+}
+
+function saveTeams() {
+  localStorage.setItem("teams", JSON.stringify(teams));
+}
+
+function loadActiveTeam() {
+  const team = teams[activeTeamIndex];
+  state.starters = { ...team.starters };
+  state.bench = [...team.bench];
+  renderBoard();
+}
+
+function updateActiveTeam() {
+  teams[activeTeamIndex].starters = { ...state.starters };
+  teams[activeTeamIndex].bench = [...state.bench];
+  saveTeams();
+}
+
+function renderTeamSwitcher() {
+  const switcher = document.getElementById("teamSwitcher");
+  switcher.innerHTML = "";
+
+  teams.forEach((t, i) => {
+    const btn = document.createElement("button");
+    btn.className = "team-btn" + (i === activeTeamIndex ? " active" : "");
+    btn.innerHTML = `
+      <span class="team-label">${t.name}</span>
+      ${i > 0 ? '<span class="team-x"> X </span>' : ''}
+    `;
+    btn.addEventListener("click", (e) => {
+      if (e.target.classList.contains("team-x")) {
+        removeTeam(i);
+      } else {
+        activeTeamIndex = i;
+        saveTeams();
+        loadActiveTeam();
+        renderTeamSwitcher();
+      }
+    });
+    switcher.appendChild(btn);
+  });
+
+  const addBtn = document.createElement("button");
+  addBtn.className = "team-btn add";
+  addBtn.textContent = "+";
+  addBtn.addEventListener("click", () => {
+    const newTeam = createEmptyTeam("Team " + (teams.length + 1));
+    teams.push(newTeam);
+    activeTeamIndex = teams.length - 1;
+    saveTeams();
+    loadActiveTeam();
+    renderTeamSwitcher();
+  });
+  switcher.appendChild(addBtn);
+}
+
+function removeTeam(index) {
+  if (index <= 0) return; // always keep Team 1
+  teams.splice(index, 1);
+  if (activeTeamIndex >= teams.length) {
+    activeTeamIndex = teams.length - 1;
+  }
+  saveTeams();
+  loadActiveTeam();
+  renderTeamSwitcher();
+}
+
+
+
 function wire() {
   deployFilterRadios.forEach(r => r.addEventListener('change', () => renderSynergies()));
   statsFilterRadios.forEach(r => r.addEventListener('change', () => renderSynergies()));
@@ -448,7 +533,11 @@ function wire() {
 function init() {
   state.bench = benchSlots().map(() => null);
   wire();
-  loadDataset(state.server);
+  loadDataset(state.server).then(() => {
+    renderTeamSwitcher();
+    loadActiveTeam();
+  });
 }
+
 
 init();
