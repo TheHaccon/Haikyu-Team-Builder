@@ -432,7 +432,6 @@
           description: "Asahi Azumane consumes 30 additional Stamina to perform a Power Spike with 235/250/265/280/295% of Power Attack stat as power, receives 1 stack of 'Power Charge'; when casting [Charged Spike] skill, each stack of 'Power Charge' increases Power Spike power by 50% of Power Attack stat."
         },
       ]
-
     },
     {
       id: "asahi(Practice)",
@@ -495,9 +494,7 @@
           description: "Asahi Azumane (Practice) consumes 3 additional Stamina to perform a Power Spike with 225/240/255/270/285% of Power Attack stat as power."
         },
       ]
-
     },
-
     {
       id: "yu",
       name: "Yu Nishinoya",
@@ -621,7 +618,6 @@
           description: "Yu Nishinoya (Practice) performs a Receive with 215/230/245/260/275% of Receive stat as power; when receiving an opponent's Quick Spike, increases this receive's power by 8% of Receive stat."
         },
       ]
-
     },
     {
       id: "ryunosuke",
@@ -684,7 +680,6 @@
           description: "Ryunosuke Tanaka consumes 5 extra Stamina to perform a Short Diagonal Spike with 250/260/275/290/305% of Power Attack stat as power; when this is Tanaka's first spike in this set, increases spike power by an additional 30% of Tanaka's Power Attack stat."
         },
       ]
-
     },
     {
       id: "ryunosuke(Practice)",
@@ -747,7 +742,6 @@
           description: "Ryunosuke Tanaka (Practice) performs a Receive with 215/230/245/260/275% of Receive stat as power; when receiving an opponent's Quick Attack, Tanaka (Practice)'s Reflex increases by 5%."
         },
       ]
-
     },
     {
       id: "kei",
@@ -810,7 +804,6 @@
           description: "Kei Tsukishima performs a Block with 195/210/225/240/255% of his Block stat as power. Applies the 'Enrage' debuff to the opposing spiker (reducing their Power/Quick Attack stats by 10%)."
         },
       ]
-
     },
     {
       id: "kei(Practice)",
@@ -873,7 +866,6 @@
           description: "Kei Tsukishima (Practice) performs a Block with 180/195/210/225/240% of Block stat as power."
         },
       ]
-
     },
     {
       id: "tadashi",
@@ -936,7 +928,6 @@
           description: "Tadashi Yamaguchi performs a Jump Float Serve with 210/225/240/225/270% of his Serve stat as power. If your side is behind, this serve's power is additionally increased by 25% of his Serve stat."
         },
       ]
-
     },
     {
       id: "tadashi(Practice)",
@@ -1123,7 +1114,6 @@
           description: "Chikara Ennoshita (Practice) performs a Receive with 200/210/220% of Receive stat as power."
         },
       ]
-
     },
     {
       id: "hisashi",
@@ -1216,40 +1206,39 @@
       },
       tags: ["Middle Blocker", "Karasuno", "R"],
       skills: [
-  {
-    name: "Basic Serve",
-    icon: "skills/kazuhitoS1.png",
-    tags: [
-      "Passive", "Serve",
-    ],
-    description: "Increases Kazuhito Narita's Serve stat by 7%."
-  },
-  {
-    name: "Basic Receive",
-    icon: "skills/kazuhitoS2.png",
-    tags: [
-      "Passive", "Receive",
-    ],
-    description: "Increases Kazuhito Narita's Receive stat by 7%."
-  },
-  {
-    name: "Basic Blocking",
-    icon: "skills/kazuhitoS3.png",
-    tags: [
-      "Passive", "Block",
-    ],
-    description: "Increases Kazuhito Narita's Block stat by 7%."
-  },
-  {
-    name: "Hearty Spike",
-    icon: "skills/kazuhitoS4.png",
-    tags: [
-      "Ultimate", "Active", "Quick Attack",
-    ],
-    description: "Kazuhito Narita performs a Quick Spike with 200% of Quick Attack stat as power."
-  },
-]
-
+        {
+          name: "Basic Serve",
+          icon: "skills/kazuhitoS1.png",
+          tags: [
+            "Passive", "Serve",
+          ],
+          description: "Increases Kazuhito Narita's Serve stat by 7/9%."
+        },
+        {
+          name: "Basic Receive",
+          icon: "skills/kazuhitoS2.png",
+          tags: [
+            "Passive", "Receive",
+          ],
+          description: "Increases Kazuhito Narita's Receive stat by 7/9%."
+        },
+        {
+          name: "Basic Blocking",
+          icon: "skills/kazuhitoS3.png",
+          tags: [
+            "Passive", "Block",
+          ],
+          description: "Increases Kazuhito Narita's Block stat by 7/9%."
+        },
+        {
+          name: "Hearty Spike",
+          icon: "skills/kazuhitoS4.png",
+          tags: [
+            "Ultimate", "Active", "Quick Attack",
+          ],
+          description: "Kazuhito Narita performs a Quick Spike with 200/210/220% of Quick Attack stat as power."
+        },
+      ]
     },
     {
       id: "toru(Practice)",
@@ -1277,7 +1266,41 @@
           Technique: 88
         }
       },
-      tags: ["Setter", "Aoba Johsai", "SSR"]
+      tags: ["Setter", "Aoba Johsai", "SSR"],
+      skills: [
+        {
+          name: "Court Vision",
+          icon: "skills/oikawa2S1.png",
+          tags: [
+            "Passive", "Received 'Attack Tempo'",
+          ],
+          description: "Increases Toru Oikawa (Practice)'s Set stat by 10%. When your players cast a Spike skill, they gain 1 stack(s) of 'Attack Tempo'. Each stack increases your players’ Awareness by 1%, up to 10 stacks."
+        },
+        {
+          name: "Game Changer",
+          icon: "skills/oikawa2S2.png",
+          tags: [
+            "Passive", "Enhance Team",
+          ],
+          description: "While Toru Oikawa (Practice) is on the court, at the start of each turn, if your side is behind, increases all basic stats of your players by 6%, lasting for 8 net crossings."
+        },
+        {
+          name: "Control Tower",
+          icon: "skills/oikawa2S3.png",
+          tags: [
+            "Passive", "Awareness Up",
+          ],
+          description: "While Toru Oikawa (Practice) is on the court, increases your players’ Awareness by 6%. Each stack of 'Attack Tempo' provides an additional 1% Awareness."
+        },
+        {
+          name: "Double-Edged Serve",
+          icon: "skills/oikawa2S4.png",
+          tags: [
+            "Ultimate", "Passive", "Serve", "Awareness Up",
+          ],
+          description: "Toru Oikawa (Practice) performs a Power Jump Serve with 240% of his Serve stat. For this Serve, his Awareness increases by 15%. This Serve has a 5% chance to fail."
+        },
+      ]
     },
     {
       id: "iwaizumi",
