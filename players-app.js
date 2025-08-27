@@ -964,7 +964,41 @@
           Technique: 88
         }
       },
-      tags: ["Middle Blocker", "Karasuno", "R"]
+      tags: ["Middle Blocker", "Karasuno", "R"],
+      skills: [
+        {
+          name: "Practice Mastery",
+          icon: "skills/tadashi2S1.png",
+          tags: [
+            "Passive",
+          ],
+          description: "Increases Tadashi Yamaguchi (Practice)'s Serve stat by 7/9%."
+        },
+        {
+          name: "Hard Work",
+          icon: "skills/tadashi2S2.png",
+          tags: [
+            "Passive",
+          ],
+          description: "Increases Tadashi Yamaguchi (Practice)'s Receive stat by 7/9%."
+        },
+        {
+          name: "Will and Power",
+          icon: "skills/tadashi2S3.png",
+          tags: [
+            "Passive", "Receive",
+          ],
+          description: "Tadashi Yamaguchi (Practice) performs a Receive with 120/130% of Receive stat as power."
+        },
+        {
+          name: "Signature Serve",
+          icon: "skills/tadashi2S4.png",
+          tags: [
+            "Ultimate", "Passive", "Serve",
+          ],
+          description: "Tadashi Yamaguchi (Practice) performs a Jump Float Serve with 200/210/220% of Serve stat as power."
+        },
+      ]
     },
     {
       id: "chikara",
@@ -992,7 +1026,41 @@
           Technique: 88
         }
       },
-      tags: ["Wing Spiker", "Karasuno", "SR"]
+      tags: ["Wing Spiker", "Karasuno", "SR"],
+      skills: [
+        {
+          name: "Forceful Spike",
+          icon: "skills/chikaraS1.png",
+          tags: [
+            "Active", "Power Attack",
+          ],
+          description: "Chikara Ennoshita performs a Power Spike with 120/135/150% of his Power Attack stat."
+        },
+        {
+          name: "Carry the Torch",
+          icon: "skills/chikaraS2.png",
+          tags: [
+            "Passive", "Chance to Trigger",
+          ],
+          description: "While Chikara Ennoshita is present, at the end of each start of each turn, there is a 30/45/60% chance to remove 1 debuff(s) from players on your side."
+        },
+        {
+          name: "Rising Leader",
+          icon: "skills/chikaraS3.png",
+          tags: [
+            "Passive", "Enhance Team",
+          ],
+          description: "While Chikara Ennoshita is on the court, when your side loses a point, the next spike from your side gains additional power equal to 8/10/12% of the spiker’s Power/Quick Attack stat. If the spike is a Power Spike skill, its power increases further by 6% of the spiker’s Power Attack stat."
+        },
+        {
+          name: "Fighting Spirit",
+          icon: "skills/chikaraS4.png",
+          tags: [
+            "Ultimate", "Passive", "Receive",
+          ],
+          description: "Chikara Ennoshita performs a Receive with 220/235/250/265/280% of his Receive stat."
+        },
+      ]
     },
     {
       id: "chikara(Practice)",
@@ -1020,7 +1088,42 @@
           Technique: 88
         }
       },
-      tags: ["Wing Spiker", "Karasuno", "R"]
+      tags: ["Wing Spiker", "Karasuno", "R"],
+      skills: [
+        {
+          name: "Face Your Fears",
+          icon: "skills/chikara2S1.png",
+          tags: [
+            "Passive",
+          ],
+          description: "Increases Chikara Ennoshita (Practice)'s Power Attack stat by 7/9%."
+        },
+        {
+          name: "Skilled Spike",
+          icon: "skills/chikara2S2.png",
+          tags: [
+            "Active", "Power Attack",
+          ],
+          description: "Chikara Ennoshita (Practice) performs a Power Spike with 120/130% of Power Attack stat as power."
+        },
+        {
+          name: "Defender's Duty",
+          icon: "skills/chikara2S3.png",
+          tags: [
+            "Passive", "Receive",
+          ],
+          description: "Increases Chikara Ennoshita (Practice)'s Receive stat by 7/9%."
+        },
+        {
+          name: "Tenacious Successor",
+          icon: "skills/chikara2S4.png",
+          tags: [
+            "Ultimate", "Passive", "Receive",
+          ],
+          description: "Chikara Ennoshita (Practice) performs a Receive with 200/210/220% of Receive stat as power."
+        },
+      ]
+
     },
     {
       id: "hisashi",
@@ -1048,7 +1151,42 @@
           Technique: 88
         }
       },
-      tags: ["Wing Spiker", "Karasuno", "R"]
+      tags: ["Wing Spiker", "Karasuno", "R"],
+      skills: [
+        {
+          name: "Sharp Focus",
+          icon: "skills/hisashiS1.png",
+          tags: [
+            "Passive",
+          ],
+          description: "Increases Hisashi Kinoshita's Serve stat by 7/9%."
+        },
+        {
+          name: "Resolute Receive",
+          icon: "skills/hisashiS2.png",
+          tags: [
+            "Passive",
+          ],
+          description: "Increases Hisashi Kinoshita's Receive stat by 7/9%."
+        },
+        {
+          name: "Clutch Arrival",
+          icon: "skills/hisashiS3.png",
+          tags: [
+            "Passive", "Team Morale",
+          ],
+          description: "When Hisashi Kinoshita enters the court for the 1st time in each match, increases your Team Morale by 5/7."
+        },
+        {
+          name: "Tension Serve",
+          icon: "skills/hisashiS4.png",
+          tags: [
+            "Ultimate", "Passive", "Serve",
+          ],
+          description: "Hisashi Kinoshita performs a Jump Float Serve with 200/210/220% of his Serve stat."
+        },
+      ]
+
     },
     {
       id: "kazuhito",
@@ -1076,7 +1214,42 @@
           Technique: 88
         }
       },
-      tags: ["Middle Blocker", "Karasuno", "R"]
+      tags: ["Middle Blocker", "Karasuno", "R"],
+      skills: [
+  {
+    name: "Basic Serve",
+    icon: "skills/kazuhitoS1.png",
+    tags: [
+      "Passive", "Serve",
+    ],
+    description: "Increases Kazuhito Narita's Serve stat by 7%."
+  },
+  {
+    name: "Basic Receive",
+    icon: "skills/kazuhitoS2.png",
+    tags: [
+      "Passive", "Receive",
+    ],
+    description: "Increases Kazuhito Narita's Receive stat by 7%."
+  },
+  {
+    name: "Basic Blocking",
+    icon: "skills/kazuhitoS3.png",
+    tags: [
+      "Passive", "Block",
+    ],
+    description: "Increases Kazuhito Narita's Block stat by 7%."
+  },
+  {
+    name: "Hearty Spike",
+    icon: "skills/kazuhitoS4.png",
+    tags: [
+      "Ultimate", "Active", "Quick Attack",
+    ],
+    description: "Kazuhito Narita performs a Quick Spike with 200% of Quick Attack stat as power."
+  },
+]
+
     },
     {
       id: "toru(Practice)",
