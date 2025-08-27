@@ -102,6 +102,15 @@ function renderBoard() {
   document.querySelectorAll(".hex[data-slot]").forEach(hex => {
     const key = hex.dataset.slot;
     renderTile(hex, state.starters[key]);
+    document.querySelectorAll(".slot").forEach(slot => {
+      const key = slot.querySelector(".hex")?.dataset.slot;
+      if (!key) return;
+      const player = state.starters[key];
+      const nameEl = slot.querySelector(".player-name");
+      if (nameEl) {
+        nameEl.textContent = player ? ` - ${player.name}` : "";
+      }
+    });
   });
   benchSlots().forEach((b, i) => renderTile(b, state.bench[i] || null));
   renderSynergies();
@@ -254,17 +263,17 @@ function renderSynergies() {
   const onlyDeploy = onlyActiveDeploy();
   const onlyStats = onlyActiveStats();
 
-  const schools = starters.reduce((acc,p)=>{ if(p.school){ acc[p.school]=(acc[p.school]||0)+1; } return acc; },{});
-  const bondsPickedCount = [...starters, ...bench].reduce((acc,p)=>{ (p.bonds||[]).forEach(b=>{ acc[b]=(acc[b]||0)+1; }); return acc; },{});
+  const schools = starters.reduce((acc, p) => { if (p.school) { acc[p.school] = (acc[p.school] || 0) + 1; } return acc; }, {});
+  const bondsPickedCount = [...starters, ...bench].reduce((acc, p) => { (p.bonds || []).forEach(b => { acc[b] = (acc[b] || 0) + 1; }); return acc; }, {});
 
   schoolList.innerHTML = "";
   let anySchool = false;
-  Object.entries(schools).forEach(([s,c])=>{
+  Object.entries(schools).forEach(([s, c]) => {
     const need = state.synergyMeta?.[s]?.activation?.min ?? 4;
-    if (c>=need) {
+    if (c >= need) {
       anySchool = true;
       const li = document.createElement("li");
-      li.innerHTML = `<strong>${s}</strong> — ${state.synergyDescriptions[s]||""}`;
+      li.innerHTML = `<strong>${s}</strong> — ${state.synergyDescriptions[s] || ""}`;
       schoolList.appendChild(li);
     }
   });
@@ -313,7 +322,7 @@ function renderSynergies() {
         <div style="font-weight:bold; margin-bottom:4px; text-decoration: underline;">${b}</div>
         <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:6px;">${row}</div>
         <div style="font-size:14px; color:#FFFFFF;">
-          ${isActive ? (desc || "") : (!onlyDeploy && missingPlayers.length ? "Missing: " + missingPlayers.map(p=>p.name).join(", ") : "")}
+          ${isActive ? (desc || "") : (!onlyDeploy && missingPlayers.length ? "Missing: " + missingPlayers.map(p => p.name).join(", ") : "")}
         </div>
       `;
       deployList.appendChild(li);
@@ -417,14 +426,14 @@ function syncTabFilters() {
 function onTabClick(e) {
   const btn = e.target.closest(".tabbtn");
   if (!btn) return;
-  Array.from(tabbar.querySelectorAll(".tabbtn")).forEach(b=>b.setAttribute("aria-selected", b===btn ? "true" : "false"));
+  Array.from(tabbar.querySelectorAll(".tabbtn")).forEach(b => b.setAttribute("aria-selected", b === btn ? "true" : "false"));
   const tab = btn.dataset.tab;
-  if (tab==="deploy") { 
-    tabDeploy.hidden=false; 
-    tabBuffs.hidden=true; 
-  } else { 
-    tabDeploy.hidden=true; 
-    tabBuffs.hidden=false; 
+  if (tab === "deploy") {
+    tabDeploy.hidden = false;
+    tabBuffs.hidden = true;
+  } else {
+    tabDeploy.hidden = true;
+    tabBuffs.hidden = false;
   }
   syncTabFilters();
 }
