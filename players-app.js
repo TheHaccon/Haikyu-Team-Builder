@@ -1176,7 +1176,6 @@
           description: "Hisashi Kinoshita performs a Jump Float Serve with 200/210/220% of his Serve stat."
         },
       ]
-
     },
     {
       id: "kazuhito",
@@ -1274,7 +1273,7 @@
           tags: [
             "Passive", "Received 'Attack Tempo'",
           ],
-          description: "Increases Toru Oikawa (Practice)'s Set stat by 10%. When your players cast a Spike skill, they gain 1 stack(s) of 'Attack Tempo'. Each stack increases your players’ Awareness by 1%, up to 10 stacks."
+          description: "Increases Toru Oikawa (Practice)'s Set stat by 10/12/14%. When your players cast a Spike skill, they gain 1 stack(s) of 'Attack Tempo'. Each stack increases your players’ Awareness by 1%, up to 10 stacks."
         },
         {
           name: "Game Changer",
@@ -1282,7 +1281,7 @@
           tags: [
             "Passive", "Enhance Team",
           ],
-          description: "While Toru Oikawa (Practice) is on the court, at the start of each turn, if your side is behind, increases all basic stats of your players by 6%, lasting for 8 net crossings."
+          description: "While Toru Oikawa (Practice) is on the court, at the start of each turn, if your side is behind, increases all basic stats of your players by 6/9/12%, lasting for 8 net crossings."
         },
         {
           name: "Control Tower",
@@ -1290,7 +1289,7 @@
           tags: [
             "Passive", "Awareness Up",
           ],
-          description: "While Toru Oikawa (Practice) is on the court, increases your players’ Awareness by 6%. Each stack of 'Attack Tempo' provides an additional 1% Awareness."
+          description: "While Toru Oikawa (Practice) is on the court, increases your players’ Awareness by 6/9/12%. Each stack of 'Attack Tempo' provides an additional 1% Awareness."
         },
         {
           name: "Double-Edged Serve",
@@ -1298,7 +1297,7 @@
           tags: [
             "Ultimate", "Passive", "Serve", "Awareness Up",
           ],
-          description: "Toru Oikawa (Practice) performs a Power Jump Serve with 240% of his Serve stat. For this Serve, his Awareness increases by 15%. This Serve has a 5% chance to fail."
+          description: "Toru Oikawa (Practice) performs a Power Jump Serve with 240/255/270/285/300% of his Serve stat. For this Serve, his Awareness increases by 15%. This Serve has a 5% chance to fail."
         },
       ]
     },
@@ -1328,7 +1327,41 @@
           Technique: 88
         }
       },
-      tags: ["Wing Spiker", "Aoba Johsai", "SSR"]
+      tags: ["Wing Spiker", "Aoba Johsai", "SSR"],
+      skills: [
+        {
+          name: "Ace's Strength",
+          icon: "skills/iwaizumiS1.png",
+          tags: [
+            "Passive",
+          ],
+          description: "Increases Hajime Iwaizumi's Awareness by 5/5/8% and Strength by 10/15/15%."
+        },
+        {
+          name: "Focused Defense",
+          icon: "skills/iwaizumiS2.png",
+          tags: [
+            "Passive", "Receive",
+          ],
+          description: "Hajime Iwaizumi performs a Receive with 120/135/150% of Receive stat as power."
+        },
+        {
+          name: "Vice-Captain's Rally",
+          icon: "skills/iwaizumiS3.png",
+          tags: [
+            "Passive",
+          ],
+          description: "While Hajime Iwaizumi is present, increases Strength of players on your side by 6/8.5/11%."
+        },
+        {
+          name: "Head-to-Head",
+          icon: "skills/iwaizumiS4.png",
+          tags: [
+            "Ultimate", "Active", "Power Attack", "Critical Power Up",
+          ],
+          description: "Hajime Iwaizumi performs a Power Spike with 240/255/270/285/300% of Power Attack stat as power; when this spike achieves Critical result, increases its power by 15% of Power Attack stat."
+        },
+      ]
     },
     {
       id: "iwaizumi(Practice)",
@@ -1356,7 +1389,41 @@
           Technique: 88
         }
       },
-      tags: ["Wing Spiker", "Aoba Johsai", "SR"]
+      tags: ["Wing Spiker", "Aoba Johsai", "SR"],
+      skills: [
+        {
+          name: "Burning Spike",
+          icon: "skills/iwaizumi2S1.png",
+          tags: [
+            "Passive", "Power Attack",
+          ],
+          description: "Increases Hajime Iwaizumi (Practice)'s Power Attack stat by 10/12/14%."
+        },
+        {
+          name: "Calm Receive",
+          icon: "skills/iwaizumi2S2.png",
+          tags: [
+            "Passive", "Receive",
+          ],
+          description: "Hajime Iwaizumi (Practice) performs a Receive with 115/130/145% of Receive stat as power; for this Receive, Iwaizumi (Practice)'s Spirit increases by 8%."
+        },
+        {
+          name: "Rising Spirit",
+          icon: "skills/iwaizumi2S3.png",
+          tags: [
+            "Passive",
+          ],
+          description: "Increases Hajime Iwaizumi (Practice)'s Awareness and Reflex by 5/7.5/10%."
+        },
+        {
+          name: "Unstoppable Spike",
+          icon: "skills/iwaizumi2S4.png",
+          tags: [
+            "Ultimate", "Active", "Power Attack",
+          ],
+          description: "Hajime Iwaizumi (Practice) performs a Power Spike with 220/235/250/265/280% of Power Attack stat as power."
+        },
+      ]
     },
     {
       id: "matsukawa",
@@ -1384,7 +1451,41 @@
           Technique: 88
         }
       },
-      tags: ["Middle Blocker", "Aoba Johsai", "SR"]
+      tags: ["Middle Blocker", "Aoba Johsai", "SR"],
+      skills: [
+        {
+          name: "Perfect Touch",
+          icon: "skills/matsukawaS1.png",
+          tags: [
+            "Passive", "Counter Quick Attack",
+          ],
+          description: "When Issei Matsukawa blocks an opponent's Quick Spike, increases blocking power by 11/13/15% of Block stat."
+        },
+        {
+          name: "Overwhelming Spike",
+          icon: "skills/matsukawaS2.png",
+          tags: [
+            "Active", "Quick Attack",
+          ],
+          description: "Issei Matsukawa performs a Quick Spike with 120/135/150% of Quick Attack stat as power."
+        },
+        {
+          name: "Crushing Block",
+          icon: "skills/matsukawaS3.png",
+          tags: [
+            "Passive", "Enhance Team",
+          ],
+          description: "Increases Issei Matsukawa's Block stat by 8/10.5/13%; when Matsukawa performs a PERFECT Block, increases your side's next spiker's Awareness by 4%."
+        },
+        {
+          name: "Unbreakable Block",
+          icon: "skills/matsukawaS4.png",
+          tags: [
+            "Ultimate", "Active", "Block",
+          ],
+          description: "Issei Matsukawa performs a Block with 180/195/210/225/240% of Block stat as power."
+        },
+      ]
     },
     {
       id: "hanamaki",
@@ -1412,7 +1513,41 @@
           Technique: 88
         }
       },
-      tags: ["Wing Spiker", "Aoba Johsai", "SR"]
+      tags: ["Wing Spiker", "Aoba Johsai", "SR"],
+      skills: [
+        {
+          name: "Reliable Wing Spiker",
+          icon: "skills/hanamakiS1.png",
+          tags: [
+            "Passive", "Counter Quick Attack",
+          ],
+          description: "Increases Takahiro Hanamaki's Awareness by 8/10/12%; when his Power Spike is Critical, reduces blocking players' Block stat by 5%."
+        },
+        {
+          name: "Precise Spike",
+          icon: "skills/hanamakiS2.png",
+          tags: [
+            "Active", "Power Attack", "Received 'Attack Tempo'",
+          ],
+          description: "Takahiro Hanamaki performs a Power Spike with 115/130/145% of Power Attack stat as power; receives 1 stack(s) of 'Attack Tempo', each stack increases the Awareness of players on your side by 1%, up to 10 stacks."
+        },
+        {
+          name: "Perfect Defense",
+          icon: "skills/hanamakiS3.png",
+          tags: [
+            "Passive", "Counter Quick Attack",
+          ],
+          description: "Increases Takahiro Hanamaki's Receive stat by 8/10/12%; when he receives an opponent's Quick Spike, increases receive power by 4% of Receive stat."
+        },
+        {
+          name: "Perfect Read",
+          icon: "skills/hanamakiS4.png",
+          tags: [
+            "Ultimate", "Passive", "Receive",
+          ],
+          description: "Takahiro Hanamaki performs a Receive with 220/235/250/265/280% of Receive stat as power."
+        },
+      ]
     },
     {
       id: "yahaba",
@@ -1440,7 +1575,41 @@
           Technique: 88
         }
       },
-      tags: ["Setter", "Aoba Johsai", "SR"]
+      tags: ["Setter", "Aoba Johsai", "SR"],
+      skills: [
+        {
+          name: "All-Out Set",
+          icon: "skills/yahabaS1.png",
+          tags: [
+            "Passive", "Set",
+          ],
+          description: "Shigeru Yahaba performs a Set with 120/135/150% of Set stat as power."
+        },
+        {
+          name: "Developing Setter",
+          icon: "skills/yahabaS2.png",
+          tags: [
+            "Passive",
+          ],
+          description: "Increases Shigeru Yahaba's Serve and Set stats by 8/10/12%."
+        },
+        {
+          name: "Pride Defense",
+          icon: "skills/yahabaS3.png",
+          tags: [
+            "Passive", "Enhance Team",
+          ],
+          description: "Increases Shigeru Yahaba's Set stat by 4/6/8%; while Yahaba is present, increases Awareness and Reflex of players on your side by 8%."
+        },
+        {
+          name: "Will to Score",
+          icon: "skills/yahabaS4.png",
+          tags: [
+            "Ultimate", "Passive", "Serve",
+          ],
+          description: "Shigeru Yahaba performs a Jump Serve with 220/235/250/265/280% of Serve stat as power."
+        },
+      ]
     },
     {
       id: "watari",
@@ -1468,7 +1637,41 @@
           Technique: 88
         }
       },
-      tags: ["Libero", "Aoba Johsai", "SR"]
+      tags: ["Libero", "Aoba Johsai", "SR"],
+      skills: [
+        {
+          name: "Complete Defense",
+          icon: "skills/watariS1.png",
+          tags: [
+            "Passive",
+          ],
+          description: "Increases Shinji Watari's Save and Receive stats by 8/10/12%."
+        },
+        {
+          name: "Skilled Save",
+          icon: "skills/watariS2.png",
+          tags: [
+            "Passive", "Save",
+          ],
+          description: "Shinji Watari performs a Save with 120/135/150% of Save stat as power."
+        },
+        {
+          name: "Seamless Reception",
+          icon: "skills/watariS3.png",
+          tags: [
+            "Passive", "Counter Quick Attack",
+          ],
+          description: "When receiving an opponent's Quick Spike, increases Shinji Watari's receive power by 20/35/50% of Receive stat."
+        },
+        {
+          name: "Consistent Reception",
+          icon: "skills/watariS4.png",
+          tags: [
+            "Ultimate", "Passive", "Receive", "Enhance Team",
+          ],
+          description: "Shinji Watari performs a Receive with 215/230/245/260/275% of Receive stat as power; when this Receive achieves a PERFECT result, increases your side's players' Strength by 10% when performing Power Spikes for 1 turn."
+        },
+      ]
     },
     {
       id: "kindaichi",
@@ -1496,7 +1699,41 @@
           Technique: 88
         }
       },
-      tags: ["Middle Blocker", "Aoba Johsai", "SR"]
+      tags: ["Middle Blocker", "Aoba Johsai", "SR"],
+      skills: [
+        {
+          name: "Overhead Spike",
+          icon: "skills/kindaichiS1.png",
+          tags: [
+            "Passive", "Counter Block",
+          ],
+          description: "When Yutaro Kindaichi performs a Quick Spike, reduces the opponent blocker's Block by 10/12/14% of their Block stat."
+        },
+        {
+          name: "Elevated Block",
+          icon: "skills/kindaichiS2.png",
+          tags: [
+            "Active", "Block",
+          ],
+          description: "Yutaro Kindaichi performs a Block with 105/120/135% of his Block stat."
+        },
+        {
+          name: "Decisive Hit",
+          icon: "skills/kindaichiS3.png",
+          tags: [
+            "Passive",
+          ],
+          description: "Increases Yutaro Kindaichi's Awareness by 8/10/12% and Strength by 8/10/12%."
+        },
+        {
+          name: "Power C-Quick",
+          icon: "skills/kindaichiS4.png",
+          tags: [
+            "Ultimate", "Active", "Quick Attack",
+          ],
+          description: "Yutaro Kindaichi performs a Quick Spike with 220/235/250/265/280% of Quick Attack stat as power."
+        },
+      ]
     },
     {
       id: "kunimi",
@@ -1524,7 +1761,41 @@
           Technique: 88
         }
       },
-      tags: ["Opposite Hitter", "Aoba Johsai", "SR"]
+      tags: ["Opposite Hitter", "Aoba Johsai", "SR"],
+      skills: [
+        {
+          name: "Efficient Spike",
+          icon: "skills/kunimiS1.png",
+          tags: [
+            "Passive", "Power Attack",
+          ],
+          description: "Increases Akira Kunimi's Power Attack stat by 10/12/14%."
+        },
+        {
+          name: "Effortless Reception",
+          icon: "skills/kunimiS2.png",
+          tags: [
+            "Passive", "Receive",
+          ],
+          description: "Akira Kunimi performs a Receive with 120/135/150% of Receive stat as power."
+        },
+        {
+          name: "Power Saving Mode",
+          icon: "skills/kunimiS3.png",
+          tags: [
+            "Passive", "Stamina",
+          ],
+          description: "Reduces Akira Kunimi's Stamina consumption by 15/20/25%."
+        },
+        {
+          name: "Focus Mode",
+          icon: "skills/kunimiS4.png",
+          tags: [
+            "Ultimate", "Active", "Power Attack",
+          ],
+          description: "Akira Kunimi performs a Power Spike with 220/235/250/265/280% of Power Attack stat as power."
+        },
+      ]
     },
     {
       id: "kyotani",
@@ -1552,7 +1823,41 @@
           Technique: 88
         }
       },
-      tags: ["Opposite Hitter", "Aoba Johsai", "SSR"]
+      tags: ["Opposite Hitter", "Aoba Johsai", "SSR"],
+      skills: [
+        {
+          name: "Fierce Attack",
+          icon: "skills/kyotaniS1.png",
+          tags: [
+            "Passive", "Awareness", "Power Attack",
+          ],
+          description: "Increases Kentaro Kyotani's Awareness by 8/10/12% and Power Attack stat by 5/6/7%."
+        },
+        {
+          name: "Mad Dog Serve",
+          icon: "skills/kyotaniS2.png",
+          tags: [
+            "Passive", "Serve", "Awareness Up",
+          ],
+          description: "Kentaro Kyotani performs a Serve with 130/145/160% of his Serve stat. For this Serve, his Awareness increases by 15%, with a fixed 10% chance to fail."
+        },
+        {
+          name: "Strength Burst",
+          icon: "skills/kyotaniS3.png",
+          tags: [
+            "Passive", "Strength",
+          ],
+          description: "Increases Kentaro Kyotani's Strength by 18/22/26%."
+        },
+        {
+          name: "Mad Dog's Fang",
+          icon: "skills/kyotaniS4.png",
+          tags: [
+            "Ultimate", "Active", "Power Attack", "Reduce opponent's Stamina",
+          ],
+          description: "Kentaro Kyotani performs a Power Spike with 210/225/240/255/270% of his Power Attack stat, reducing the Stamina of the opponent’s blocking and receiving players by 10."
+        },
+      ]
     },
     {
       id: "kyotani(Practice)",
@@ -1580,7 +1885,41 @@
           Technique: 88
         }
       },
-      tags: ["Opposite Hitter", "Aoba Johsai", "SR"]
+      tags: ["Opposite Hitter", "Aoba Johsai", "SR"],
+      skills: [
+        {
+          name: "Predator Serve",
+          icon: "skills/kyotani2S1.png",
+          tags: [
+            "Passive", "Serve"
+          ],
+          description: "Kentaro Kyotani (Practice) performs a Jump Serve with 120/135/150% of Serve stat as power."
+        },
+        {
+          name: "Explosive Strength",
+          icon: "skills/kyotani2S2.png",
+          tags: [
+            "Passive", "Stat Bonus"
+          ],
+          description: "When Kentaro Kyotani (Practice) performs a Power Spike, increases his Strength by 15/18/21% for this Spike."
+        },
+        {
+          name: "Revving Up",
+          icon: "skills/kyotani2S3.png",
+          tags: [
+            "Passive", "Stat Bonus"
+          ],
+          description: "Increases Kentaro Kyotani (Practice)'s Power Attack stat by 8/10/12%; when he performs a Power Spike, receives 1 stack of 'Heat Up', each stack increases Power Attack stat by 1%, up to 4 stacks."
+        },
+        {
+          name: "Rampaging Offense",
+          icon: "skills/kyotani2S4.png",
+          tags: [
+            "Ultimate", "Active", "Power Attack"
+          ],
+          description: "Kentaro Kyotani (Practice) performs a Power Spike with 220/235/250/265/280% of Power Attack stat as power."
+        }
+      ]
     },
     {
       id: "kenma",
