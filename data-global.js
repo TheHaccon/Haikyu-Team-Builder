@@ -22,16 +22,17 @@ const characters = [
     { name: "Kazuhito R", role: "MB", img: "img-global/kazuhitoR.png", school: "Karasuno", bonds: ["Bench cheer","The Returning Trio"] },
     { name: "Kageyama SR", role: "S", img: "img-global/tobioSR.png", school: "Kitagawa", bonds: [] },
 
+    { name: "Oikawa UR", role: "S", img: "img-japan/oikawaUR.png", school: "Aoba Johsai", bonds: ["Breath of Aoba","To Greater Heights","Fated Rivals","Merciless Trust"] },
     { name: "Oikawa SSR", role: "S", img: "img-global/oikawaSSR.png", school: "Aoba Johsai", bonds: ["Team Chemistry"] },
-    { name: "Iwaizumi SSR", role: "WS", img: "img-global/iwaizumiSSR.png", school: "Aoba Johsai", bonds: ["The Wolf Pack"] },
+    { name: "Iwaizumi SSR", role: "WS", img: "img-global/iwaizumiSSR.png", school: "Aoba Johsai", bonds: ["The Wolf Pack","Breath of Aoba"] },
     { name: "Iwaizumi SR", role: "WS", img: "img-global/iwaizumiSR.png", school: "Aoba Johsai", bonds: ["The Wolf Pack(Practice)","Team Chemistry"] },
     { name: "Matsukawa SR", role: "MB", img: "img-global/matsukawaSR.png", school: "Aoba Johsai", bonds: ["Seijoh\'s Senior Year Pillars"] },
     { name: "Hanamaki SR", role: "WS", img: "img-global/hanamakiSR.png", school: "Aoba Johsai", bonds: ["Seijoh\'s Senior Year Pillars"] },
     { name: "Yahaba SR", role: "S", img: "img-global/yahabaSR.png", school: "Aoba Johsai", bonds: ["Aoba Johsai's Sophomore","Hidden Fire"] },
     { name: "Watari SR", role: "Li", img: "img-global/watariSR.png", school: "Aoba Johsai", bonds: ["Aoba Johsai's Sophomore"] },
-    { name: "Kindaichi SR", role: "MB", img: "img-global/kindaichiSR.png", school: "Aoba Johsai", bonds: ["Blunt and Composed"] },
+    { name: "Kindaichi SR", role: "MB", img: "img-global/kindaichiSR.png", school: "Aoba Johsai", bonds: ["Blunt and Composed","To Greater Heights"] },
     { name: "Kunimi SR", role: "OP", img: "img-global/kunimiSR.png", school: "Aoba Johsai", bonds: ["Blunt and Composed"] },
-    { name: "Kentaro SSR", role: "OP", img: "img-global/kyotaniSSR.png", school: "Aoba Johsai", bonds: ["Aoba Johsai's Sophomore","Hidden Fire","The Wolf Pack"] },
+    { name: "Kentaro SSR", role: "OP", img: "img-global/kyotaniSSR.png", school: "Aoba Johsai", bonds: ["Aoba Johsai's Sophomore","Hidden Fire","The Wolf Pack","Merciless Trust"] },
     { name: "Kentaro SR", role: "OP", img: "img-global/kyotaniSR.png", school: "Aoba Johsai", bonds: ["The Wolf Pack(Practice)"] },
 
     { name: "Kenma SSR", role: "S", img: "img-global/kenmaSSR.png", school: "Nekoma", bonds: ["Rival Friends","\"Brain\" and \"Control Tower\"","Grit and Competitive","The \"Enigmatic\" Teammate"] },
@@ -62,7 +63,7 @@ const characters = [
     { name: "Jingo R", role: "MB", img: "img-global/jingoR.png", school: "Date Kogyo", bonds: ["Date Kogyo\'s Junior"] },
     { name: "Taro R", role: "OP", img: "img-global/taroR.png", school: "Date Kogyo", bonds: [] },
 
-    { name: "Ushijima UR", role: "OP", img: "img-global/ushijimaUR.png", school: "Shiratorizawa", bonds: ["Lifelong Best Friends","Undisputed Aces"] },
+    { name: "Ushijima UR", role: "OP", img: "img-global/ushijimaUR.png", school: "Shiratorizawa", bonds: ["Lifelong Best Friends","Undisputed Aces","Fated Rivals"] },
     { name: "Goshiki SSR", role: "WS", img: "img-global/goshikiSSR.png", school: "Shiratorizawa", bonds: ["Promising Senpai","Undisputed Aces"] },
     { name: "Tendo SSR", role: "MB", img: "img-global/tendoSSR.png", school: "Shiratorizawa", bonds: ["Lifelong Best Friends","Promising Senpai","Shiratorizawa\'s Middke Blocker","Prediction VS System"] },
     { name: "Taichi SR", role: "MB", img: "img-global/kawanishiSR.png", school: "Shiratorizawa", bonds: ["Shiratorizawa\'s Middke Blocker"] },
@@ -112,6 +113,11 @@ const synergyDescriptions = {
     "Seijoh\'s Senior Year Pillars": "Increases Matsukawa\'s Block stat by 6/67/8/9/10% and Hanamaki\'s Receive stat by 6/7/8/9/10%",
     "The Wolf Pack(Practice)": "Increases Iwaisumi and Kentaro's Awareness by 6/7/8/9/10%",
     "Team Chemistry" : "Increases Oikawa and Iwaizumi's Awareness by 6/7/8/9/10%",
+    "To Greater Heights": {"Kindaichi SR": "","Oikawa UR": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%"},
+    "Breath of Aoba": "When Oikawa performs a toss, Iwaizumi performs a Spike with 255% Attack power. Gains 2 stacks of [Attack Rhythm]. For each stack of [Attack Rhythm], all allies' Awareness increases by 1%. Max 10 stacks.",
+    "Merciless Trust": {"Kentaro SSR": "Spike +5/7/9/12/15, Spike +1/2/3/4/5%","Oikawa UR": "Block +5/7/9/12/15, Block +1/2/3/4/5%"},
+    "Fated Rivals": {"Oikawa UR": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%", "Ushijima UR": ""},
+
 
     //Nekoma
     "Nekoma\'s Junior":{"Teshiro SR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Inuoka SR": "No buff", "Lev SSR":"No Buff"},
@@ -185,6 +191,11 @@ const synergyMeta = {
     "Seijoh\'s Senior Year Pillars": { category: "deployment", activation: { scope: "any", min: 2 } },
     "The Wolf Pack(Practice)": { category: "deployment", activation: { scope: "any", min: 2 } },
     "Team Chemistry": { category: "deployment", activation: { scope: "any", min: 2 } },
+    "To Greater Heights": { category: "stats", activation: { scope: "any", min: 2 } },
+    "Breath of Aoba": { category: "deployment", activation: { scope: "any", min: 2 } },
+    "Merciless Trust": { category: "stats", activation: { scope: "any", min: 2 } },
+    "Fated Rivals": { category: "stats", activation: { scope: "any", min: 2 } },
+
 
     "Nekoma\'s Junior": { category: "stats", activation: { scope: "any", min: 3 } },
     "\"Brain\" and \"Control Tower\"": { category: "deployment", activation: { scope: "any", min: 2 } },
@@ -248,6 +259,10 @@ const synergyPairs = {
     "Seijoh\'s Senior Year Pillars":[["Matsukawa", "Hanamaki"]],
     "The Wolf Pack(Practice)":[["Iwaizumi", "Kentaro"]],
     "Team Chemistry":[["Oikawa", "Iwaizumi"]],
+    "To Greater Heights":[["Oikawa", "Kindaichi"]],
+    "Breath of Aoba":[["Iwaizumi", "Oikawa"]],
+    "Merciless Trust":[["Oikawa","Kentaro"]],
+    "Fated Rivals":[["Oikawa","Ushijima"]],
 
     "Nekoma\'s Junior":[["Teshiro", "Inuoka","Lev"]],
     "\"Brain\" and \"Control Tower\"":[["Kenma", "Kuroo"]],
