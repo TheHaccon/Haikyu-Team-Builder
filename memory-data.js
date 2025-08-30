@@ -452,7 +452,7 @@ window.MEMORIES = [
     },
     {
         name: "Attack Boost: Li",
-        position: "Li",
+        position: "LI",
         rarity: "SSR",
         image: "memory/liSSR.png",
         description: {
@@ -560,7 +560,7 @@ window.MEMORIES = [
     },
     {
         name: "Spike Boost: SHINJI WATARI",
-        position: "Li",
+        position: "LI",
         rarity: "SR",
         image: "memory/watariSR.png",
         description: {
@@ -632,7 +632,7 @@ window.MEMORIES = [
     },
     {
         name: "Defense Boost: YU NISHINOYA (Practice)",
-        position: "Li",
+        position: "LI",
         rarity: "SR",
         image: "memory/nishinoyaSR.png",
         description: {
@@ -704,7 +704,7 @@ window.MEMORIES = [
     },
     {
         name: "Receive Boost: MORISUKE YAKU (Practice)",
-        position: "Li",
+        position: "LI",
         rarity: "SR",
         image: "memory/yakuSR.png",
         description: {
