@@ -756,8 +756,4 @@ window.MEMORIES = [
             set: { lvl1: 33, max: 390 }
         }
     },
-
-
-
-
 ];

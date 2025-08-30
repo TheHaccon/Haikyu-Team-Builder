@@ -28,47 +28,54 @@
     </header>
 
     <main class="wrap">
-        <div class="filters">
-            <label>
-                School:
-                <select id="filterSchool">
-                    <option value="">All</option>
-                    <option value="Karasuno">Karasuno</option>
-                    <option value="Aoba Johsai">Aoba Johsai</option>
-                    <option value="Nekoma">Nekoma</option>
-                    <option value="Date Kogyo">Date Kogyo</option>
-                    <option value="Shiratorizawa">Shiratorizawa</option>
-                </select>
-            </label>
+        <div class="wrap">
+            <div class="controls">
+                <div class="group">
+                    <label for="positionFilter">Filter by Position</label>
+                    <select id="positionFilter">
+                        <option value="">All Positions</option>
+                        <option value="S">S (Setter)</option>
+                        <option value="MB">MB (Middle Blocker)</option>
+                        <option value="WS">WS (Wing Spiker)</option>
+                        <option value="LI">LI (Libero)</option>
+                        <option value="OP">OP (Opposite Hitter)</option>
+                    </select>
+                </div>
+                <div class="group">
+                    <label for="rarityFilter">Filter by Rarity</label>
+                    <select id="rarityFilter">
+                        <option value="">All Rarities</option>
+                        <option value="UR">UR</option>
+                        <option value="SSR">SSR</option>
+                        <option value="SR">SR</option>
+                        <option value="R">R</option>
+                    </select>
+                </div>
+                <div class="group">
+                    <label for="schoolFilter">Filter by School</label>
+                    <select id="schoolFilter">
+                        <option value="">All Schools</option>
+                        <option value="Karasuno">Karasuno</option>
+                        <option value="Aoba Johsai">Aoba Johsai</option>
+                        <option value="Nekoma">Nekoma</option>
+                        <option value="Date Kogyo">Date Kogyo</option>
+                        <option value="Shiratorizawa">Shiratorizawa</option>
+                    </select>
+                </div>
+                <div class="group">
+                    <label for="search">Search by Name</label>
+                    <div class="search-container">
+                        <input id="search" type="text" placeholder="Search players…" />
+                        <button id="clearSearch" type="button" class="hidden">X</button>
+                    </div>
+                </div>
 
-            <label>
-                Rarity:
-                <select id="filterRarity">
-                    <option value="">All</option>
-                    <option value="UR">UR</option>
-                    <option value="SSR">SSR</option>
-                    <option value="SR">SR</option>
-                    <option value="R">R</option>
-                </select>
-            </label>
-            <label>
-                Position:
-                <select id="filterPosition">
-                    <option value="">All</option>
-                    <option value="Setter">Setter</option>
-                    <option value="Wing Spiker">Wing Spiker</option>
-                    <option value="Middle Blocker">Middle Blocker</option>
-                    <option value="Opposite Hitter">Opposite Hitter</option>
-                    <option value="Libero">Libero</option>
-
-                    
-                </select>
-            </label>
+            </div>
         </div>
 
         <div id="playerGrid" aria-live="polite"></div>
     </main>
-
+    <script src="players-data.js"></script>
     <script src="players-app.js" defer></script>
     <script>
         document.getElementById('navToggle').addEventListener('click', () => {

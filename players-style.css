@@ -99,6 +99,7 @@ header p {
 
 .stats dt {
   color: var(--muted);
+  white-space: nowrap;
 }
 
 .stats dd {
@@ -124,10 +125,11 @@ header p {
 
 .img-wrap {
   width: 100%;
+  height: 420px;
   border-radius: 10px;
   background: transparent;
   border: 1px solid var(--ring);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .img-wrap img {
@@ -314,20 +316,107 @@ header p {
   color: var(--text);
 }
 
+.controls {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: end;
+  margin-bottom: 16px;
+}
+
+.group {
+  display: grid;
+  gap: 6px;
+  min-width: 220px;
+}
+
+.group label {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.group select,
+.group input[type="search"] {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--ring);
+  background: var(--card);
+  color: var(--text);
+  outline: none;
+}
+
+.btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--ring);
+  background: var(--card);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.search-container input {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--ring);
+  background: var(--card);
+  color: var(--text);
+}
+
+.search-container button {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--ring);
+  background: var(--card);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
 
 @media (max-width: 520px) {
+
+  .controls {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    align-items: end;
+  }
+
+  .controls .group {
+    min-width: 0;
+    width: 100%;
+  }
+
   .details-grid {
-    grid-template-columns: 1fr;
+grid-template-columns: 1fr 1fr;
   }
 
   .img-wrap {
-    max-width: 100px;
-    margin: 0 auto;
+    height: 360px;
+    margin: 0;
   }
 
   .img-wrap img {
+    width: 100%;
+    height: 100%;
     object-fit: contain;
   }
+
+  .stats,
+  .badges,
+  .skills {
+    font-size: 12px;
+  }
+
 
   .footer-content {
     align-items: center;
@@ -409,6 +498,35 @@ header p {
 
   .hidden {
     display: none !important;
+  }
+
+  .filters {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 2 side by side */
+    gap: 12px;
+  }
+
+  .filters label {
+    min-width: 0;
+    /* let them shrink inside grid */
+    width: 100%;
+  }
+
+  .group select,
+  .group input[type="search"] {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--ring);
+    background: var(--card);
+    color: var(--text);
+    outline: none;
+  }
+
+  input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+    display: none;
   }
 
 }
