@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Haikyu Team Builder – Memories</title>
+    <link rel="stylesheet" href="memory-style.css">
+</head>
+
+<body>
+    <nav class="app-nav">
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Team Builder</a></li>
+            <li class="nav-disabled"><span>Bonds<small>(coming soon)</small></span></li>
+            <li><a href="players.html"> Players (New not fully done)</a></li>
+            <li class="nav-disabled"><span>Resources counter<small>(coming soon)</small></span></li>
+            <li><a href="memory.html"> Memory (New)</a></li>
+            <li><a href="about.html">About (New)</a></li>
+        </ul>
+    </nav>
+    <header>
+        <div class="wrap">
+            <h1>Memories</h1>
+            <div class="controls">
+                <div class="group">
+                    <label for="positionFilter">Filter by Position</label>
+                    <select id="positionFilter">
+                        <option value="">All Positions</option>
+                        <option value="S">S (Setter)</option>
+                        <option value="MB">MB (Middle)</option>
+                        <option value="WS">WS (Wing)</option>
+                        <option value="LI">LI (Libero)</option>
+                    </select>
+                </div>
+                <div class="group">
+                    <label for="rarityFilter">Filter by Rarity</label>
+                    <select id="rarityFilter">
+                        <option value="">All Rarities</option>
+                        <option value="UR">UR</option>
+                        <option value="SSR">SSR</option>
+                        <option value="SP">SP</option>
+                        <option value="SR">SR</option>
+                        <option value="R">R</option>
+                        <option value="N">N</option>
+                    </select>
+                </div>
+                <div class="group">
+                    <label for="search">Search (name/desc)</label>
+                    <input id="search" type="search" placeholder="Search memories…" />
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="group">
+            <label>Level View</label>
+            <button id="toggleLevel" class="btn">Show Max LVL</button>
+        </div>
+        <table class="table" id="memTable">
+            <thead>
+                <tr>
+                    <th>Memory</th>
+                    <th id="sortPos" class="sortable">Position <span class="arrow"></span></th>
+                    <th id="sortRar" class="sortable">Rarity <span class="arrow"></span></th>
+                    <th>Stats</th>
+                    <th>Description</th>
+                    <th class="muted">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="memBody"></tbody>
+        </table>
+    </main>
+    <script src="memory-data.js"></script>
+    <script src="memory-app.js"></script>
+</body>
+
+</html>
