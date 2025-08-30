@@ -95,7 +95,7 @@ h1 {
 
 .controls {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 10px;
     align-items: end;
 }
@@ -281,14 +281,66 @@ main {
 }
 
 @media (max-width: 760px) {
+    .footer-icon {
+        height: 30px;
+    }
+
+    .app-footer {
+        padding: 16px 10px;
+    }
+
+    #addBench {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 12px;
+    }
+
+    .nav-links.active {
+        display: flex;
+        gap: 12px;
+        border-top: 1px solid var(--ring);
+        padding-top: 10px;
+    }
+
     .controls {
         grid-template-columns: 1fr;
-        background: rgba(62, 62, 62, .9);
-        padding: 12px;
+        background: rgba(62, 62, 62, 0.95);
+        padding: 8px;
         border: 1px solid var(--ring);
-        border-radius: 12px;
+        border-radius: 10px;
         position: sticky;
         top: 60px;
+        z-index: 999;
+        gap: 6px;
+    }
+
+    .controls .group {
+        gap: 4px;
+    }
+
+    .controls label {
+        font-size: 11px;
+    }
+
+    select,
+    input[type="search"] {
+        font-size: 13px;
+        padding: 6px 8px;
+    }
+
+    .btn {
+        font-size: 13px;
+        padding: 6px 8px;
     }
 
     .table thead {
@@ -299,17 +351,26 @@ main {
         display: grid;
         grid-template-columns: 1fr;
         gap: 8px;
+        padding: 10px;
+        margin-bottom: 20px;
     }
 
     .row td {
         padding: 10px 12px;
     }
 
-    .desc {
-        display: none;
-    }
 
     .stats {
         grid-template-columns: 1fr 1fr;
     }
+
+    .controls .group {
+        flex-direction: column;
+    }
+
+    .controls label {
+        font-size: 11px;
+    }
+
+
 }

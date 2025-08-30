@@ -89,7 +89,7 @@ function render() {
       <td class="desc">${desc}</td>
       <td>
         <div class="actions">
-          <span>soon </span>
+          <span>Soon </span>
         </div>
       </td>
     `;

@@ -30,9 +30,10 @@
                     <select id="positionFilter">
                         <option value="">All Positions</option>
                         <option value="S">S (Setter)</option>
-                        <option value="MB">MB (Middle)</option>
-                        <option value="WS">WS (Wing)</option>
+                        <option value="MB">MB (Middle Blocker)</option>
+                        <option value="WS">WS (Wing Spiker)</option>
                         <option value="LI">LI (Libero)</option>
+                        <option value="OP">OP (Opposite Hitter)</option>
                     </select>
                 </div>
                 <div class="group">
@@ -41,25 +42,22 @@
                         <option value="">All Rarities</option>
                         <option value="UR">UR</option>
                         <option value="SSR">SSR</option>
-                        <option value="SP">SP</option>
                         <option value="SR">SR</option>
-                        <option value="R">R</option>
-                        <option value="N">N</option>
                     </select>
                 </div>
                 <div class="group">
                     <label for="search">Search (name/desc)</label>
                     <input id="search" type="search" placeholder="Search memories…" />
                 </div>
+                <div class="group">
+                    <label>Level Viewer</label>
+                    <button id="toggleLevel" class="btn">Show Max LVL</button>
+                </div>
             </div>
         </div>
     </header>
 
     <main>
-        <div class="group">
-            <label>Level View</label>
-            <button id="toggleLevel" class="btn">Show Max LVL</button>
-        </div>
         <table class="table" id="memTable">
             <thead>
                 <tr>
@@ -76,6 +74,11 @@
     </main>
     <script src="memory-data.js"></script>
     <script src="memory-app.js"></script>
+      <script>
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('active');
+    });
+  </script>
 </body>
 
 </html>
