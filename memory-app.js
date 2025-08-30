@@ -136,7 +136,7 @@ sortRarTh?.addEventListener("click", () => setSort("rarity"));
 
 toggleLevelBtn?.addEventListener("click", () => {
   showMax = !showMax;
-  toggleLevelBtn.textContent = showMax ? "Show Lv.1" : "Show Max Lv";
+  toggleLevelBtn.textContent = showMax ? "Show Lv.1" : "Show Max LVL";
   render();
 });
 

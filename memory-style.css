@@ -313,33 +313,31 @@ main {
     }
 
     .controls {
-        grid-template-columns: 1fr;
-        background: rgba(62, 62, 62, 0.95);
-        padding: 8px;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        padding: 6px;
         border: 1px solid var(--ring);
         border-radius: 10px;
-        position: sticky;
-        top: 60px;
-        z-index: 999;
-        gap: 6px;
+        background: rgba(62, 62, 62, 0.95);
     }
 
     .controls .group {
         gap: 4px;
+        flex-direction: column;
     }
 
     .controls label {
-        font-size: 11px;
+        font-size: 10px;
     }
 
     select,
     input[type="search"] {
-        font-size: 13px;
-        padding: 6px 8px;
+        font-size: 12px;
+        padding: 4px 6px;
     }
 
     .btn {
-        font-size: 13px;
+        font-size: 12px;
         padding: 6px 8px;
     }
 
@@ -359,18 +357,7 @@ main {
         padding: 10px 12px;
     }
 
-
     .stats {
         grid-template-columns: 1fr 1fr;
     }
-
-    .controls .group {
-        flex-direction: column;
-    }
-
-    .controls label {
-        font-size: 11px;
-    }
-
-
 }
