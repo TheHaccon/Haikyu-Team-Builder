@@ -508,7 +508,7 @@ window.MEMORIES = [
         name: "Set Boost: KENMA KOZUME (Practice)",
         position: "S",
         rarity: "SR",
-        image: "memory/KenmaSR.png",
+        image: "memory/kenmaSR.png",
         description: {
             lvl1: "Memory Tier I – [Setter] Exclusive Effects:\nWhen equipper Sets, increases Set stat by 2.8%,stacking up to 5 times.",
             max: "Memory Tier V – [Setter] Exclusive Effects:\nWhen equipper Sets, increases Set stat by 5.6%,stacking up to 5 times."
@@ -525,8 +525,8 @@ window.MEMORIES = [
     {
         name: "Attack Boost: HAJIME IWAIZUMI (Practice)",
         position: "WS",
-        rarity: "SSR",
-        image: "memory/hajimeSSR.png",
+        rarity: "SR",
+        image: "memory/iwaizumiSR.png",
         description: {
             lvl1: "Memory Tier I – [Wing Spiker] Exclusive Effects:\nIncreases equipper's Awareness by 4.8%; when equipper performs a Critical play, increases Strength by 2.8%, up to 3 stacks.",
             max: "Memory Tier V – [Wing Spiker] Exclusive Effects:\nIncreases equipper's Awareness by 9.6%; when equipper performs a Critical play, increases Strength by 5.6%, up to 3 stacks."
@@ -543,8 +543,8 @@ window.MEMORIES = [
     {
         name: "Block Boost: ISSEI MATSUKAWA",
         position: "MB",
-        rarity: "SSR",
-        image: "memory/isseiSSR.png",
+        rarity: "SR",
+        image: "memory/matsukawaSR.png",
         description: {
             lvl1: "Memory Tier I – [Middle Blocker] Exclusive Effects:\nWhen equipper blocks, increases Block stat by 2.8%, stacking up to 5 times.",
             max: "Memory Tier V – [Middle Blocker] Exclusive Effects:\nWhen equipper blocks, increases Block stat by 5.6%, stacking up to 5 times.",
@@ -670,7 +670,7 @@ window.MEMORIES = [
         name: "Spike Boost: DAICHI SAWAMURA (Practice)",
         position: "OP",
         rarity: "SR",
-        image: "memory/sawamuraSR.png",
+        image: "memory/daichiSR.png",
         description: {
             lvl1: "Memory Tier I – [Opposite Hitter] Exclusive Effects:\nWhen equipper receives, increases your side's next spike power by 18% of the spiker's Power Attack or Quick Attack stat.",
             max: "Memory Tier V – [Opposite Hitter] Exclusive Effects:\nWhen equipper receives, increases your side's next spike power by 36% of the spiker's Power Attack or Quick Attack stat."
@@ -687,8 +687,8 @@ window.MEMORIES = [
     {
         name: "Awareness Boost: ASAHI AZUMANE (Practice)",
         position: "WS",
-        rarity: "SSR",
-        image: "memory/wsSSR_asahi.png",
+        rarity: "SR",
+        image: "memory/asahiSR.png",
         description: {
             lvl1: "Memory Tier I – [Wing Spiker] Exclusive Effects:\nIncreases equipper's Awareness by 4% when serving; when equipper scores a Service Ace, recovers 5 Stamina and increases next serve's power by 8% of Serve stat.",
             max: "Memory Tier V – [Wing Spiker] Exclusive Effects:\nIncreases equipper's Awareness by 8% when serving; when equipper scores a Service Ace, recovers 5 Stamina and increases next serve's power by 16% of Serve stat."
