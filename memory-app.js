@@ -62,11 +62,10 @@ function renderStats(s) {
     ["Receive", val(s.receive)],
     ["Save", val(s.save)],
     ["Set", val(s.set)]
-  ].filter(([,v]) => v !== undefined && v !== null);
+  ].filter(([, v]) => v !== undefined && v !== null);
   if (!items.length) return "";
-  return `<div class="stats">${
-    items.map(([k,v],i)=>`<div class="stat"><span class="stat-name">${k}</span><span class="stat-val">${v}</span></div>`).join("")
-  }</div>`;
+  return `<div class="stats">${items.map(([k, v], i) => `<div class="stat"><span class="stat-name">${k}</span><span class="stat-val">${v}</span></div>`).join("")
+    }</div>`;
 }
 
 function render() {
@@ -77,21 +76,28 @@ function render() {
     tr.className = "row";
     const desc = getDesc(m, showMax);
     tr.innerHTML = `
-      <td>
-        <div class="mem">
-          <img src="${m.image || ""}" alt="${m.name}" onerror="this.style.display='none'"/>
-          <div><div class="name">${m.name}</div></div>
-        </div>
-      </td>
-      <td><span class="pill pos">${m.position}</span></td>
-      <td><span class="pill rar rar-${(m.rarity || "N").toUpperCase()}">${m.rarity}</span></td>
-      <td>${renderStats(m.stats)}</td>
-      <td class="desc">${desc}</td>
-      <td>
-        <div class="actions">
-          <span>Soon </span>
-        </div>
-      </td>
+      <tr class="row">
+  <td>
+    <div class="mem">
+      <img src="${m.image || ""}" alt="${m.name}" onerror="this.style.display='none'"/>
+      <div><div class="name">${m.name}</div></div>
+    </div>
+  </td>
+  <td colspan="2">
+    <div class="meta">
+      <span class="pill pos">${m.position}</span>
+      <span class="pill rar rar-${(m.rarity || "N").toUpperCase()}">${m.rarity}</span>
+      <p class="desc-mobile">${desc}</p>
+    </div>
+  </td>
+  <td>${renderStats(m.stats)}</td>
+  <td class="desc-desktop">${desc}</td>
+  <td>
+    <div class="actions">
+      <span>Soon</span>
+    </div>
+  </td>
+</tr>
     `;
     memBody.appendChild(tr);
   }
@@ -102,7 +108,7 @@ function render() {
         await navigator.clipboard.writeText(id);
         e.currentTarget.textContent = "Copied!";
         setTimeout(() => (e.currentTarget.textContent = "Copy ID"), 1000);
-      } catch {}
+      } catch { }
     });
   });
 }

@@ -280,6 +280,46 @@ main {
     margin-top: 2px;
 }
 
+.app-footer {
+    background-color: #1f1f1f;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid #444;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-icon {
+    height: 36px;
+    width: auto;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    filter: brightness(0.95);
+}
+
+.footer-icon:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+.desc-desktop {
+    display: table-cell;
+    font-size: 13px;
+}
+
+.desc-mobile {
+    display: none;
+}
+
 @media (max-width: 760px) {
     .footer-icon {
         height: 30px;
@@ -359,5 +399,38 @@ main {
 
     .stats {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-content {
+        align-items: center;
+        flex-direction: row;
+        gap: 16px;
+    }
+
+    .footer-icon {
+        height: 30px;
+    }
+
+    .app-footer {
+        padding: 16px 10px;
+    }
+
+    .desc-desktop {
+        display: none;
+    }
+
+    .desc-mobile {
+        display: block;
+        font-size: 12px;
+        color: var(--text);
+        margin-top: 6px;
+        flex: 1 1 100%;
+    }
+
+    .meta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 6px;
     }
 }

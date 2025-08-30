@@ -292,7 +292,7 @@ header p {
   max-width: 240px;
   white-space: normal;
   z-index: 1000;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .skill:hover .skill-detail {
@@ -329,8 +329,9 @@ header p {
     object-fit: contain;
   }
 
-    .footer-content {
-    flex-direction: column;
+  .footer-content {
+    align-items: center;
+    flex-direction: row;
     gap: 16px;
   }
 
@@ -346,6 +347,7 @@ header p {
     width: 100%;
     padding: 10px;
   }
+
   .nav-toggle {
     display: block;
   }
@@ -369,23 +371,23 @@ header p {
   }
 
   .skills {
-  display: flex;
-  gap: 10px;
-  margin-top: 12px;
-  flex-wrap: wrap;
-}
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
 
-.skill {
-  position: relative;
-  cursor: pointer;
-}
+  .skill {
+    position: relative;
+    cursor: pointer;
+  }
 
-.skill img {
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--ring);
-  border-radius: 6px;
-}
+  .skill img {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--ring);
+    border-radius: 6px;
+  }
 
   .skill-detail {
     position: static;
@@ -401,9 +403,10 @@ header p {
     margin-top: 6px;
   }
 
-.skill:hover .skill-detail {
-  display: block;
-}
+  .skill:hover .skill-detail {
+    display: block;
+  }
+
   .hidden {
     display: none !important;
   }
