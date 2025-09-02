@@ -16,7 +16,28 @@ const closeModalBtn = document.getElementById("closeModal");
 const deployFilterRadios = document.querySelectorAll('#deploy-filter input[name="deployFilter"]');
 const statsFilterRadios = document.querySelectorAll('#stats-filter input[name="statsFilter"]');
 
-//bond button not sure if I'll keep
+const POSITIONLESS_LS_KEY = 'htb_positionless';
+let POSITIONLESS = JSON.parse(localStorage.getItem(POSITIONLESS_LS_KEY) || 'false');
+const positionlessToggle = document.getElementById('positionlessToggle');
+if (positionlessToggle) {
+  positionlessToggle.checked = !!POSITIONLESS;
+  positionlessToggle.addEventListener('change', (e) => {
+    POSITIONLESS = !!e.target.checked;
+    localStorage.setItem(POSITIONLESS_LS_KEY, JSON.stringify(POSITIONLESS));
+    activeTeamIndex = 0;
+    ensureModeBuckets();
+    renderTeamSwitcher();
+    loadActiveTeam();
+    if (modal && modal.getAttribute('aria-hidden') === 'false') {
+      if (state.ui.activeSlotKey) buildRoleGallery();
+      else if (state.ui.targetBenchIndex != null) buildBenchGallery(state.ui.targetBenchIndex);
+    }
+  });
+}
+function isPositionless() { return !!POSITIONLESS; }
+function modeSuffix()     { return isPositionless() ? 'pos' : 'norm'; }
+function modeKey(server)  { return `${server}__${modeSuffix()}`; }
+
 function onlyActiveDeploy() {
   const el = document.querySelector('#deploy-filter input[name="deployFilter"]:checked');
   return !!el && el.value === 'active';
@@ -50,6 +71,7 @@ function benchSlots() {
 }
 
 function getExpectedRole(slotKey) {
+  if (isPositionless()) return "";
   if (!slotKey) return "";
   if (slotKey.startsWith("MB")) return "MB";
   if (slotKey.startsWith("WS")) return "WS";
@@ -75,8 +97,6 @@ async function loadDataset(server) {
   state.synergyDescriptions = data.synergyDescriptions || {};
   state.synergyMeta = data.synergyMeta || null;
   state.synergyPairs = data.synergyPairs || null;
-  Object.keys(state.starters).forEach(k => state.starters[k] = null);
-  state.bench = benchSlots().map(() => null);
   renderBoard();
   isLoading = false;
 }
@@ -121,7 +141,7 @@ function renderBoard() {
 function openModalForRole(slotKey) {
   state.ui.activeSlotKey = slotKey;
   state.ui.targetBenchIndex = null;
-  state.ui.filterRole = getExpectedRole(slotKey);
+  state.ui.filterRole = isPositionless() ? null : getExpectedRole(slotKey);
   searchInput.value = "";
   buildRoleGallery();
   modal.setAttribute("aria-hidden", "false");
@@ -151,7 +171,8 @@ function getAllPicked() {
 function buildRoleGallery() {
   const role = state.ui.filterRole;
   const q = (searchInput.value || "").toLowerCase();
-  let items = state.players.filter(p => p.role === role);
+  let items = state.players.slice();
+  if (!isPositionless() && role) items = items.filter(p => p.role === role);
   if (q) items = items.filter(p => p.name.toLowerCase().includes(q) || (p.school || "").toLowerCase().includes(q));
   items.sort((a, b) => a.name.localeCompare(b.name));
   const picked = getAllPicked();
@@ -204,7 +225,9 @@ function buildBenchGallery(targetIndex) {
 function assignToStarter(slotKey, player) {
   if (!slotKey) return;
   const expected = getExpectedRole(slotKey);
-  if (player.role !== expected) { alert(`This slot expects role ${expected}.`); return; }
+  if (!isPositionless()) {
+    if (player.role !== expected) { alert(`This slot expects role ${expected}.`); return; }
+  }
   const picked = getAllPicked();
   if (picked.some(x => x.name === player.name)) { alert(`"${player.name}" is already selected.`); return; }
   if (picked.some(x => baseName(x.name) === baseName(player.name) && x.name !== player.name)) { alert(`Another rarity of "${baseName(player.name)}" is already selected.`); return; }
@@ -352,7 +375,6 @@ function renderSynergies() {
       const hasAnyPicked = entries.some(e => e.isPicked);
       if (!hasAnyPicked) continue;
 
-      const missingList = requiredFull.filter(n => !pickedFullNames.has(n)).join(", ");
       const li = document.createElement("li");
       li.innerHTML = `
         <div style="font-weight:bold;margin-bottom:4px;text-decoration: underline;">
@@ -438,34 +460,7 @@ function onTabClick(e) {
   syncTabFilters();
 }
 
-function wireServerToggle() {
-  const toggle = document.getElementById("serverToggle");
-  if (!toggle) return;
-  const opts = toggle.querySelectorAll(".server-option");
-  opts.forEach(opt => {
-    opt.addEventListener("click", () => {
-      opts.forEach(o => o.classList.remove("active"));
-      opt.classList.add("active");
-      const server = opt.dataset.server === "japan" ? "japan" : "global";
-      state.server = server;
-      activeTeamIndex = 0;
-      loadDataset(server).then(() => {
-        renderTeamSwitcher();
-        loadActiveTeam();
-      });
-    });
-  });
-}
-
 let allTeams = JSON.parse(localStorage.getItem("allTeams") || "{}");
-if (!allTeams.global) {
-  allTeams.global = [{ name: "Team 1", starters: { S: null, MB1: null, WS1: null, LI: null, WS2: null, MB2: null, OP: null }, bench: [] }];
-}
-if (!allTeams.japan) {
-  allTeams.japan = [{ name: "Team 1", starters: { S: null, MB1: null, WS1: null, LI: null, WS2: null, MB2: null, OP: null }, bench: [] }];
-}
-
-let activeTeamIndex = 0;
 
 function createEmptyTeam(name) {
   return {
@@ -475,24 +470,59 @@ function createEmptyTeam(name) {
   };
 }
 
+function ensureBucket(key) {
+  if (!allTeams[key]) {
+    allTeams[key] = [createEmptyTeam("Team 1")];
+  }
+}
+
+function migrateLegacyIfNeeded() {
+  if (Array.isArray(allTeams.global)) {
+    allTeams["global__norm"] = allTeams.global;
+    delete allTeams.global;
+  }
+  if (Array.isArray(allTeams.japan)) {
+    allTeams["japan__norm"] = allTeams.japan;
+    delete allTeams.japan;
+  }
+  ensureBucket("global__pos");
+  ensureBucket("japan__pos");
+  ensureBucket("global__norm");
+  ensureBucket("japan__norm");
+  persistTeams();
+}
+
+function ensureModeBuckets() {
+  migrateLegacyIfNeeded();
+  ensureBucket(modeKey(state.server));
+}
+
 function getCurrentTeams() {
-  return allTeams[state.server];
+  ensureModeBuckets();
+  return allTeams[modeKey(state.server)];
 }
 
 function persistTeams() {
   localStorage.setItem("allTeams", JSON.stringify(allTeams));
 }
 
+let activeTeamIndex = 0;
+
 function loadActiveTeam() {
   const teams = getCurrentTeams();
   const team = teams[activeTeamIndex] || teams[0];
-  state.starters = { ...team.starters };
-  state.bench = [...team.bench];
+  if (!team) {
+    teams[0] = createEmptyTeam("Team 1");
+  }
+  const chosen = teams[activeTeamIndex] || teams[0];
+  state.starters = { ...chosen.starters };
+  state.bench = Array.isArray(chosen.bench) ? [...chosen.bench] : [];
   renderBoard();
 }
 
 function updateActiveTeam() {
   const teams = getCurrentTeams();
+  teams[activeTeamIndex] = teams[activeTeamIndex] || createEmptyTeam(`Team ${activeTeamIndex + 1}`);
   teams[activeTeamIndex].starters = { ...state.starters };
   teams[activeTeamIndex].bench = [...state.bench];
   persistTeams();
@@ -551,6 +581,26 @@ function removeTeam(index) {
   renderTeamSwitcher();
 }
 
+function wireServerToggle() {
+  const toggle = document.getElementById("serverToggle");
+  if (!toggle) return;
+  const opts = toggle.querySelectorAll(".server-option");
+  opts.forEach(opt => {
+    opt.addEventListener("click", () => {
+      opts.forEach(o => o.classList.remove("active"));
+      opt.classList.add("active");
+      const server = opt.dataset.server === "japan" ? "japan" : "global";
+      state.server = server;
+      activeTeamIndex = 0;
+      ensureModeBuckets();
+      loadDataset(server).then(() => {
+        renderTeamSwitcher();
+        loadActiveTeam();
+      });
+    });
+  });
+}
+
 function wire() {
   deployFilterRadios.forEach(r => r.addEventListener('change', () => renderSynergies()));
   statsFilterRadios.forEach(r => r.addEventListener('change', () => renderSynergies()));
@@ -570,6 +620,8 @@ function wire() {
 }
 
 function init() {
+  migrateLegacyIfNeeded();
+  ensureModeBuckets();
   state.bench = benchSlots().map(() => null);
   wire();
   loadDataset(state.server).then(() => {
