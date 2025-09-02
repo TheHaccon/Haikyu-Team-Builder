@@ -124,8 +124,8 @@ const synergyDescriptions = {
     "Aoba Johsai": "Increases Power Attack stats of all players present by 15%",
     "Nekoma": "Increases Receive stat of all players present by 15%",
     "Date Kogyo": "Increases Block stat of all players present by 15%",
-    "Fukurōdani": "When 4 or more members from Fukurōdani Academy are on the court, the team's Morale increases by 20.",
-    "Jōzenji": " all allies gain 2 stacks of [Play More]. Each stack of [Play More] increases Power Attack and Quick Attack by 2.5%, up to 4 stacks.",
+    "Fukurodani": "When 4 or more members from Fukurōdani Academy are on the court, the team's Morale increases by 20.",
+    "Jozenji": " all allies gain 2 stacks of [Play More]. Each stack of [Play More] increases Power Attack and Quick Attack by 2.5%, up to 4 stacks.",
     "Inarizaki": "Increases Attack and Defense stat of all players present +5%",
 
     //karasuno bond
@@ -277,8 +277,8 @@ const synergyMeta = {
     "Aoba Johsai": { category: "school", activation: { scope: "starters", min: 4 } },
     "Nekoma": { category: "school", activation: { scope: "starters", min: 4 } },
     "Date Kogyo": { category: "school", activation: { scope: "starters", min: 4 } },
-    "Fukurōdani": { category: "school", activation: { scope: "starters", min: 4 } },
-    "Jōzenji": { category: "school", activation: { scope: "starters", min: 4 } },
+    "Fukurodani": { category: "school", activation: { scope: "starters", min: 4 } },
+    "Jozenji": { category: "school", activation: { scope: "starters", min: 4 } },
     "Inarizaki": { category: "school", activation: { scope: "starters", min: 4 } },
 
     "Karasuno\'s Pillar": { category: "deployment", activation: { scope: "any", min: 2 } },
