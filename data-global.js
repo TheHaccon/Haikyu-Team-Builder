@@ -40,13 +40,15 @@ const characters = [
     { name: "Kuroo UR", role: "MB", img: "img-global/kurooUR.png", school: "Nekoma", bonds: ["Behind the Smile","Master and Apprentice","\"Brain\" and \"Control Tower\""] },
     { name: "Kuroo SSR", role: "MB", img: "img-global/kurooSSR.png", school: "Nekoma", bonds: ["Leaders Cut from the Same Cloth","\"Pivot\" and \"Control Tower\""] },
     { name: "Yaku SR", role: "Li", img: "img-global/yakuSR.png", school: "Nekoma", bonds: ["Formidable Opponent","One-on-One Training","\"Pivot\" and \"Defensive Pivot\""] },
-    { name: "Lev SSR", role: "MB", img: "img-global/levSSR.png", school: "Nekoma", bonds: ["Flexible Aces","Nekoma\'s Junior","The \"Enigmatic\" Teammate"] },
+    { name: "Lev SSR", role: "MB", img: "img-global/levSSR.png", school: "Nekoma", bonds: ["Flexible Aces","Nekoma\'s Junior","The \"Enigmatic\" Teammate","Protective Guidance"] },
     { name: "Lev SR", role: "MB", img: "img-global/levSR.png", school: "Nekoma", bonds: ["One-on-One Training"] },
     { name: "Yamamoto SR", role: "WS", img: "img-global/yamamotoSR.png", school: "Nekoma", bonds: ["TOMODACHI(Friends!)","Nekoma\'s Wing Spiker","Grit and Competitive"] },
     { name: "Kai SR", role: "OP", img: "img-global/kaiSR.png", school: "Nekoma", bonds: ["Nekoma\'s Wing Spiker"] },
     { name: "Fukunaga SR", role: "WS", img: "img-global/fukunagaSR.png", school: "Nekoma", bonds: ["Nekoma\'s Wing Spiker"] },
     { name: "Inuoka SR", role: "MB", img: "img-global/inuokaSR.png", school: "Nekoma", bonds: ["Worthy Rival","Nekoma\'s Junior"] },
     { name: "Teshiro SR", role: "S", img: "img-global/teshiroSR.png", school: "Nekoma", bonds: ["Nekoma\'s Junior"] },
+    { name: "Yaku SSR", role: "Li", img: "img-japan/yakuSSR.png", school: "Nekoma", bonds: ["Team's Guardians","Reliable Seniors","Protective Guidance"] },
+
 
     { name: "Aone SSR", role: "MB", img: "img-global/aoneSSR.png", school: "Date Kogyo", bonds: ["Cannon \& Iron Wall","Surprising Friendship","The Silent and the Snarky"] },
     { name: "Aone SR", role: "MB", img: "img-global/aoneSR.png", school: "Date Kogyo", bonds: [] },
@@ -63,10 +65,14 @@ const characters = [
     { name: "Jingo R", role: "MB", img: "img-global/jingoR.png", school: "Date Kogyo", bonds: ["Date Kogyo\'s Junior"] },
     { name: "Taro R", role: "OP", img: "img-global/taroR.png", school: "Date Kogyo", bonds: [] },
 
-    { name: "Ushijima UR", role: "OP", img: "img-global/ushijimaUR.png", school: "Shiratorizawa", bonds: ["Lifelong Best Friends","Undisputed Aces","Fated Rivals"] },
-    { name: "Goshiki SSR", role: "WS", img: "img-global/goshikiSSR.png", school: "Shiratorizawa", bonds: ["Promising Senpai","Undisputed Aces"] },
+    { name: "Ushijima UR", role: "OP", img: "img-global/ushijimaUR.png", school: "Shiratorizawa", bonds: ["Lifelong Best Friends","Undisputed Aces","Fated Rivals","Ushiwaka and Benkei","The Absolute King and the Steadfast Setter"] },
+    { name: "Goshiki SSR", role: "WS", img: "img-global/goshikiSSR.png", school: "Shiratorizawa", bonds: ["Promising Senpai","Undisputed Aces","Shiratorizawa's WS"] },
     { name: "Tendo SSR", role: "MB", img: "img-global/tendoSSR.png", school: "Shiratorizawa", bonds: ["Lifelong Best Friends","Promising Senpai","Shiratorizawa\'s Middke Blocker","Prediction VS System"] },
-    { name: "Taichi SR", role: "MB", img: "img-global/kawanishiSR.png", school: "Shiratorizawa", bonds: ["Shiratorizawa\'s Middke Blocker"] },
+    { name: "Taichi SR", role: "MB", img: "img-global/kawanishiSR.png", school: "Shiratorizawa", bonds: ["Shiratorizawa\'s Middke Blocker","Shiratorizawa 2nd Years"] },
+    { name: "Shirabu SSR", role: "S", img: "img-japan/shirabuSSR.png",school: "Shiratorizawa", bonds: ["The Absolute King and the Steadfast Setter","Shiratorizawa 2nd Years"] },
+    { name: "Ohira SSR", role: "WS", img: "img-japan/ohiraSSR.png",school: "Shiratorizawa", bonds: ["Ushiwaka and Benkei","Shiratorizawa's WS"] },
+
+
 ];
 // tempalte: "": "",
 const synergyDescriptions = {
@@ -104,6 +110,8 @@ const synergyDescriptions = {
     "Rival Friends": {"Hinata SSR": "Quick Attack +5/7/9/12/15, Quick Attack +1/2/3/4/5%", "Kenma SSR": "Set +5/7/9/12/15, Set +1/2/3/4/5%" },
     "Behind the Smile": {"Daichi SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%", "Kuroo UR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%" },
     "Master and Apprentice": {"Tsukishima SSR": "Block +5/7/9/12/15, Block +1/2/3/4/5%","Kuroo UR": "Block +5/7/9/12/15, Block +1/2/3/4/5%"},
+    "Team's Guardians": {"Nishinoya SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Yaku SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%"},
+
 
     //Aoba Johsai
     "Aoba Johsai's Sophomore": {"Watari SR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%", "Yahaba SR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%", "Kentaro SSR": "No buff" },
@@ -128,6 +136,8 @@ const synergyDescriptions = {
     "The \"Enigmatic\" Teammate":{"Lev SSR": "Block +5/7/9/12/15, Block +1/2/3/4/5%","Kenma SSR": "No buff"},
     "\"Pivot\" and \"Defensive Pivot\"":{"Yaku SR": "Save +5/7/9/12/15, Save +1/2/3/4/5%","Kenma SSR": "Power Attack +5/7/9/12/15, Power Attack +1/2/3/4/5%"},
     "\"Pivot\" and \"Control Tower\"":"Increases Kenma\'s Set stat by 6/7/8/9/10% and Kuroo\'s Block Stat by 6/7/8/9/10%",
+    "Reliable Seniors": {"Kuroo UR": "Quick Attack +5/7/9/12/15, Quick Attack +1/2/3/4/5%","Yaku SSR": "","Kai SR": ""},
+    "Protective Guidance": "increases Yaku receive by 6% and Lev Quick Attack by 6%",
 
     //Date Kogyo
     "Date Kogyo\'s Captains":{"Kaname SR":"No buff","Kenji SSR":"Power Attack +5/7/9/12/15, Power Attack +1/2/3/4/5%"},
@@ -144,7 +154,10 @@ const synergyDescriptions = {
     "Undisputed Aces":{"Goshiki SSR":"Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Ushijima UR":"Power Attack +5/7/9/12/15, Power Attack +1/2/3/4/5%"},
     "Shiratorizawa\'s Middke Blocker":"Increases Block stat of your side\'s front row players by 5/5.5/6/6.5/7%",
     "Prediction VS System":{"Tsukishima SSR":"No buff","Tendo SSR":"Block +5/7/9/12/15, Block +1/2/3/4/5%"},
-
+    "Ushiwaka and Benkei": {"Ushijima UR": "Block +5/7/9/12/15, Block +1/2/3/4/5%","Ohira SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%"},
+    "The Absolute King and the Steadfast Setter": "When Shirabu sets, Ushijima performs a [Spike] with 260% of [Spike] power. Ushijima’s [Power] increases by 10% for this spike.",
+    "Shiratorizawa 2nd Years": {"Shirabu SSR": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%","Taichi SR": "Quick +5/7/9/12/15, Quick +1/2/3/4/5%"},
+    "Shiratorizawa's WS": "Allies’ [Spike] increases by 4%",
 };
 
 //Lowkey just have to remeber that when a bond is create I put it here
@@ -183,6 +196,8 @@ const synergyMeta = {
     "Rival Friends": { category: "stats", activation: { scope: "any", min: 2 } },
     "Behind the Smile": { category: "stats", activation: { scope: "any", min: 2 } },
     "Master and Apprentice": { category: "stats", activation: { scope: "any", min: 1 } },
+    "Team's Guardians": { category: "stats", activation: { scope: "any", min: 2 } },
+
 
     "Aoba Johsai's Sophomore": { category: "stats", activation: { scope: "any", min: 3 } },
     "Blunt and Composed": { category: "deployment", activation: { scope: "any", min: 2 } },
@@ -205,7 +220,10 @@ const synergyMeta = {
     "The \"Enigmatic\" Teammate": { category: "stats", activation: { scope: "any", min: 2 } },
     "\"Pivot\" and \"Defensive Pivot\"": { category: "stats", activation: { scope: "any", min: 2 } },
     "\"Pivot\" and \"Control Tower\"": { category: "deployment", activation: { scope: "any", min: 2 } },
+    "Reliable Seniors": { category: "stats", activation: { scope: "any", min: 3 } },
+    "Protective Guidance": { category: "deployment", activation: { scope: "any", min: 2 } },
 
+    
     "Date Kogyo\'s Captains": { category: "stats", activation: { scope: "any", min: 2 } },
     "The Silent and the Snarky": { category: "deployment", activation: { scope: "any", min: 2 } },
     "New Captain \& Tall Rookie": { category: "deployment", activation: { scope: "any", min: 2 } },
@@ -219,6 +237,10 @@ const synergyMeta = {
     "Undisputed Aces":{ category: "stats", activation: { scope: "any", min: 2 } },
     "Shiratorizawa\'s Middke Blocker":{ category: "deployment", activation: { scope: "any", min: 2 } },
     "Prediction VS System":{ category: "stats", activation: { scope: "any", min: 2 } },
+    "Ushiwaka and Benkei": { category: "stats", activation: { scope: "any", min: 2 } },
+    "The Absolute King and the Steadfast Setter": { category: "deployment", activation: { scope: "any", min: 2 } },
+    "Shiratorizawa 2nd Years": { category: "stats", activation: { scope: "any", min: 2 } },
+    "Shiratorizawa's WS": { category: "deployment", activation: { scope: "any", min: 2 } },
 
 };
 
@@ -251,6 +273,7 @@ const synergyPairs = {
     "Rival Friends": [["Kenma","Hinata"]],
     "Behind the Smile": [["Daichi","Kuroo"]],
     "Master and Apprentice": [["Tsukishima","Kuroo"]],
+    "Team's Guardians": [["Nishinoya","Yaku"]],
 
     "Aoba Johsai's Sophomore":[["Watari", "Yahaba", "Kentaro"]],
     "Blunt and Composed":[["Kindaichi", "Kunimi"]],
@@ -272,6 +295,8 @@ const synergyPairs = {
     "The \"Enigmatic\" Teammate":[["Kenma", "Lev"]],
     "\"Pivot\" and \"Defensive Pivot\"":[["Kenma", "Yaku"]],
     "\"Pivot\" and \"Control Tower\"":[["Kenma", "Kuroo"]],
+    "Reliable Seniors":[["Kuroo","Yaku","Kai"]],
+
     
     "Date Kogyo\'s Captains":[["Kenji","Kaname"]],
     "The Silent and the Snarky":[["Aone","Kenji"]],
@@ -279,7 +304,13 @@ const synergyPairs = {
     "Date Kogyo\'s Wing Spiker": [["Yutaka","Takehito"]],
     "Date Kogyo\'s Setter":[["Kanji","Kaname"]],
     "Date Kogyo\'s Junior": [["Jingo","Sakunami"]],
-    "Date Kogyo\'s Senior": [["Takehito"," Kaname","Kamasaki"]]
+    "Date Kogyo\'s Senior": [["Takehito"," Kaname","Kamasaki"]],
+
+    "Ushiwaka and Benkei":[["Ushijima","Ohira Shion"]],
+    "The Absolute King and the Steadfast Setter":[["Shirabu","Ushijima"]],
+    "Shiratorizawa 2nd Years":[["Shirabu","Kawanishi"]],
+    "Shiratorizawa's WS": [["Ohira", "Goshiki"]],
+    
 };
 
 window.characters = characters;
