@@ -12,12 +12,63 @@
   const slotB = document.querySelector('[data-vslot="B"]');
   const nameA = slotA?.parentElement?.querySelector(".player-name");
   const nameB = slotB?.parentElement?.querySelector(".player-name");
+
+  /* 🔔 Missing-stats submission (unchanged except moved up) */
   const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1415787104528760952/eSaZW8MSmrpQkP7epDlif2aL4be1kBvoqeocpNKLH1x52STwJWTZKyliAzqnHLdDyN3E";
   const YOUR_USER_ID = "192790568479358977";
   const EMAIL_TO = "matcote111@gmail.com";
+  const USE_MAILTO_FALLBACK = true;
 
+  /* ✅ Load players from versus-data.js (expects global `players`) */
   const GLOBAL_DATA = (typeof players !== "undefined" && Array.isArray(players)) ? players : [];
   let allPlayers = GLOBAL_DATA.slice();
+
+  /* 🌏 Server toggle state */
+  const DEFAULT_SERVER = "global"; // "global" | "japan"
+  let currentServer = DEFAULT_SERVER;
+
+  currentServer = (localStorage.getItem("server") === "japan") ? "japan" : "global";
+
+  function getServerButtons() {
+    const scoped = document.querySelectorAll('#serverToggle .server-option[data-server]');
+    if (scoped.length) return scoped;
+    return document.querySelectorAll('.server-option[data-server]');
+  }
+
+  function reflectServerButtons() {
+    const btns = getServerButtons();
+    btns.forEach(b => {
+      const isActive = (b.dataset.server === currentServer);
+      b.classList.toggle('active', isActive);
+      b.setAttribute('aria-pressed', String(isActive));
+    });
+  }
+
+  function setServer(next) {
+    const normalized = (String(next).toLowerCase() === 'japan') ? 'japan' : 'global';
+    if (currentServer === normalized) return;
+    currentServer = normalized;
+    localStorage.setItem("server", currentServer);
+    reflectServerButtons();
+    renderSelectionUI();
+    renderGallery();
+  }
+
+  function wireServerToggle() {
+    const btns = getServerButtons();
+    if (!btns.length) return;
+    btns.forEach(opt => {
+      opt.setAttribute('role', 'button');
+      opt.setAttribute('tabindex', '0');
+      opt.style.cursor = 'pointer';
+      opt.addEventListener('click', () => setServer(opt.dataset.server));
+      opt.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); opt.click(); }
+      });
+    });
+    reflectServerButtons();
+  }
+
   let selectingSlot = null;
   const selections = { A: null, B: null };
   let searchTerm = "";
@@ -25,7 +76,6 @@
   let posFilter = "";
   let pickerInput = null;
   let pickerMode = false;
-
 
   const POS_MAP = {
     "Middle Blocker": "MB",
@@ -60,11 +110,14 @@
       .replace(/^_+|_+$/g, "");
   }
 
+  /* 🖼️ Choose image based on server, no fallback: if missing → null */
   function pickImage(p) {
-    if (p?.card_g) return p.card_g;
-    const base = p?.id ? String(p.id) : slug(p?.name || "unknown");
-    return `img-global/${base}.png`;
+    if (!p) return null;
+    return currentServer === 'japan' ? (p.card_j || null) : (p.card_g || null);
   }
+
+  // In getFilteredPlayers(), keep hiding unreleased characters:
+
 
   function getTierObject(player, tier) {
     if (!player?.stats) return null;
@@ -87,8 +140,7 @@
     return Number.isFinite(n) ? n : null;
   }
 
-
-
+  /* ---------- Missing stats UI (unchanged) ---------- */
   function insertMissingStatsUI() {
     const aside = document.getElementById("school-panel");
     if (!aside) { console.warn("Missing stats: #school-panel not found"); return; }
@@ -239,7 +291,6 @@
       return false;
     });
 
-
     formWrap.appendChild(form);
     box.append(btn, formWrap);
     aside.appendChild(box);
@@ -271,8 +322,6 @@
       content: `<@${YOUR_USER_ID}>\n\`\`\`${text}\`\`\``,
       username: "Versus Missing Stats",
     };
-    console.log("Sending to Discord:", body);
-
     try {
       const res = await fetch(DISCORD_WEBHOOK_URL, {
         method: "POST",
@@ -286,18 +335,14 @@
     }
   }
 
-
-
   function openMailto(p) {
     if (!EMAIL_TO) return false;
     const subject = encodeURIComponent(`[Versus] Missing stats - ${p.player}`);
     const body = encodeURIComponent(formatPlainStructured(p));
-
     const url = `mailto:${EMAIL_TO}?subject=${subject}&body=${body}`;
     window.open(url, "_blank", "noopener,noreferrer");
     return true;
   }
-
 
   function escapeHtml(s) {
     return String(s)
@@ -353,8 +398,19 @@
       return;
     }
 
+    const src = pickImage(player);
+    if (!src) {
+      // No image for this server → show initials
+      const fb = document.createElement("div");
+      fb.className = "slot-initials";
+      fb.textContent = initials(player.name);
+      slotEl.appendChild(fb);
+      if (nameEl) nameEl.textContent = ` — ${player.name}`;
+      return;
+    }
+
     const img = document.createElement("img");
-    img.src = pickImage(player);
+    img.src = src;
     img.alt = player.name;
     img.className = "slot-img";
     img.referrerPolicy = "no-referrer";
@@ -486,6 +542,7 @@
     return card;
   }
 
+  /* 👇 Filters now also enforce "has image for active server" */
   function getFilteredPlayers() {
     const q = (searchTerm || "").trim().toLowerCase();
     let list = allPlayers.slice();
@@ -507,6 +564,12 @@
       list = list.filter(p => shortPos(p) === posFilter);
     }
 
+    // 🚫 Hide players with no image for the current server (not released yet)
+    list = list.filter(p => {
+      const src = pickImage(p);
+      return !!src;
+    });
+
     return list;
   }
 
@@ -518,13 +581,56 @@
     }
   }
 
-  function renderGallery() {
+  // Cache: src -> boolean (true = exists, false = 404)
+  const imgExistCache = new Map();
+
+  function probeImage(src) {
+    if (!src) return Promise.resolve(false);
+    if (imgExistCache.has(src)) return Promise.resolve(imgExistCache.get(src));
+
+    return new Promise((resolve) => {
+      const img = new Image();
+      img.onload = () => { imgExistCache.set(src, true); resolve(true); };
+      img.onerror = () => { imgExistCache.set(src, false); resolve(false); };
+      img.src = src;
+    });
+  }
+
+  // Build a card element for a known-good image
+  function buildPlayerCard(p, src, isTaken) {
+    const card = document.createElement("div");
+    card.className = "card";
+    if (isTaken) card.classList.add("is-disabled");
+
+    const img = document.createElement("img");
+    img.className = "card-img";
+    img.src = src;
+    img.alt = p.name;
+    img.referrerPolicy = "no-referrer";
+
+    const name = document.createElement("div");
+    name.className = "name card-name";
+    name.textContent = p.name;
+
+    const meta = document.createElement("div");
+    meta.className = "meta card-meta";
+    meta.textContent = `${p.school ? p.school + " · " : ""}${shortPos(p)}`.trim();
+
+    card.appendChild(img);
+    card.appendChild(name);
+    card.appendChild(meta);
+    return card;
+  }
+
+
+  async function renderGallery() {
     if (!galleryEl) return;
-    const list = getFilteredPlayers();
+    const list = getFilteredPlayers(); // still filters by text/position
 
     galleryEl.innerHTML = "";
     galleryEl.classList.add("gallery-grid");
 
+    // Position filter bar
     const bar = document.createElement("div");
     bar.className = "pos-filter-bar";
     const buttons = ["All", "S", "MB", "WS", "OP", "Li"];
@@ -542,26 +648,25 @@
     }
     galleryEl.appendChild(bar);
 
-    if (!list || list.length === 0) {
-      const empty = document.createElement("div");
-      empty.className = "empty grid-full";
-      empty.textContent = "No players match your search (or none loaded).";
-      galleryEl.appendChild(empty);
-      return;
-    }
-
     const picked = getPicked();
-    const frag = document.createDocumentFragment();
 
-    for (const p of list) {
+    // We’ll append cards only for images that actually exist
+    const frag = document.createDocumentFragment();
+    let appended = 0;
+
+    // Probe all candidates in parallel for snappy UI
+    await Promise.all(list.map(async (p) => {
       const exactTaken = picked.some(x => x.name === p.name);
       const variantTaken = picked.some(x => baseName(x.name) === baseName(p.name) && x.name !== p.name);
-
       const isTaken = !pickerMode && (exactTaken || variantTaken);
 
-      const card = document.createElement("div");
-      card.className = "card";
-      if (isTaken) card.classList.add("is-disabled");
+      const src = pickImage(p);
+      if (!src) return;                       // no path at all → unreleased for this server
+
+      const ok = await probeImage(src);
+      if (!ok) return;                        // 404 → hide (unreleased)
+
+      const card = buildPlayerCard(p, src, isTaken);
 
       if (pickerMode) {
         card.addEventListener("click", () => {
@@ -581,51 +686,21 @@
           renderSelectionUI();
         });
       }
-      const img = document.createElement("img");
-      img.className = "card-img";
-      img.src = pickImage(p);
-      img.alt = p.name;
-      img.referrerPolicy = "no-referrer";
-      img.onerror = () => {
-        const fb = document.createElement("div");
-        fb.className = "card-fallback";
-        fb.textContent = initials(p.name);
-        img.replaceWith(fb);
-      };
 
-      const name = document.createElement("div");
-      name.className = "name card-name";
-      name.textContent = p.name;
-
-      const meta = document.createElement("div");
-      meta.className = "meta card-meta";
-      meta.textContent = `${p.school ? p.school + " · " : ""}${shortPos(p)}`.trim();
-
-      if (!(exactTaken || variantTaken)) {
-        card.addEventListener("click", () => {
-          if (pickerMode && pickerInput) {
-            pickerInput.value = p.name;
-            pickerInput.dispatchEvent(new Event("input", { bubbles: true }));
-            pickerInput = null;
-            pickerMode = false;
-            closeModal();
-            return;
-          }
-          if (!selectingSlot) return;
-          selections[selectingSlot] = p;
-          closeModal();
-          renderSelectionUI();
-        });
-      }
-
-      card.appendChild(img);
-      card.appendChild(name);
-      card.appendChild(meta);
       frag.appendChild(card);
-    }
+      appended++;
+    }));
 
-    galleryEl.appendChild(frag);
+    if (appended === 0) {
+      const empty = document.createElement("div");
+      empty.className = "empty grid-full";
+      empty.textContent = "No players match your search (or none loaded).";
+      galleryEl.appendChild(empty);
+    } else {
+      galleryEl.appendChild(frag);
+    }
   }
+
 
   function openModal(slotKey) {
     selectingSlot = slotKey;
@@ -679,22 +754,74 @@
   modalEl?.addEventListener("click", (e) => { if (e.target === modalEl) closeModal(); });
   window.addEventListener("keydown", (e) => { if (e.key === "Escape" && modalEl?.classList.contains("open")) closeModal(); });
 
+  // --- server toggle state ---
+  currentServer = (localStorage.getItem("server") === "japan") ? "japan" : "global";
+
+  // Find the server buttons the same way as your other files
+  function getServerButtons() {
+    // Prefer a scoped container (matches your other pages),
+    // but still work if the two divs are just in the DOM by themselves.
+    const scoped = document.querySelectorAll('#serverToggle .server-option[data-server]');
+    if (scoped.length) return scoped;
+    return document.querySelectorAll('.server-option[data-server]');
+  }
+
+  // Make the UI reflect the current server (CSS expects .active)
+  function reflectServerButtons() {
+    const btns = getServerButtons();
+    btns.forEach(b => {
+      const isActive = (b.dataset.server === currentServer);
+      b.classList.toggle('active', isActive);         // ✅ your CSS hook
+      b.setAttribute('aria-pressed', String(isActive)); // a11y bonus
+    });
+  }
+
+  // Change server + re-render everything that depends on it
+  function setServer(next) {
+    const normalized = (String(next).toLowerCase() === 'japan') ? 'japan' : 'global';
+    if (currentServer === normalized) return;
+
+    currentServer = normalized;
+    localStorage.setItem("server", currentServer); // keep in sync with other pages
+
+    reflectServerButtons();
+    // Re-render UI that uses images / availability
+    renderSelectionUI();
+    renderGallery();
+  }
+
+  // Wire click/keyboard handlers (same pattern as your other files)
+  function wireServerToggle() {
+    const btns = getServerButtons();
+    if (!btns.length) return;
+
+    btns.forEach(opt => {
+      opt.setAttribute('role', 'button');
+      opt.setAttribute('tabindex', '0');
+      opt.style.cursor = 'pointer';
+
+      opt.addEventListener('click', () => setServer(opt.dataset.server));
+      opt.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); opt.click(); }
+      });
+    });
+
+    // Initial visual state
+    reflectServerButtons();
+  }
+
+
   function init() {
     renderSelectionUI();
     renderGallery();
     insertMissingStatsUI();
+    wireServerToggle();
     document.querySelector('.tabbtn[data-tab="stats"]')?.click?.();
   }
 
-  try { init(); }
-  catch (e) {
-    console.error("Versus init error:", e);
-    setTimeout(() => {
-      try { init(); }
-      catch (err) {
-        console.error("Versus second init failed:", err);
-        if (galleryEl) galleryEl.innerHTML = `<div class="empty">Failed to load player data.</div>`;
-      }
-    }, 0);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
 })();
