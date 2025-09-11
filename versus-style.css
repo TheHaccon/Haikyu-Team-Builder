@@ -161,6 +161,7 @@ h1 {
   grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
+
 .meta-card {
   border: 1px solid var(--ring);
   border-radius: 12px;
@@ -168,7 +169,12 @@ h1 {
   min-height: 80px;
   background: var(--card);
 }
-.meta-title { font-weight: 700; margin-bottom: 6px; }
+
+.meta-title {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
 .meta-list {
   list-style: none;
   margin: 0;
@@ -176,7 +182,10 @@ h1 {
   display: grid;
   gap: 4px;
 }
-.dim { opacity: .8; }
+
+.dim {
+  opacity: .8;
+}
 
 #toolbar-top {
   display: flex;
@@ -433,7 +442,7 @@ h1 {
 }
 
 #gallery .pos-filter-bar button[aria-pressed="true"] {
-  background: var(--accent, rgba(255,255,255,.12));
+  background: var(--accent, rgba(255, 255, 255, .12));
   font-weight: 700;
 }
 
@@ -473,9 +482,14 @@ h1 {
   pointer-events: none;
 }
 
-.empty { opacity: .7; padding: 12px; }
+.empty {
+  opacity: .7;
+  padding: 12px;
+}
 
-.slot-placeholder { opacity: .75; }
+.slot-placeholder {
+  opacity: .75;
+}
 
 .stats-row {
   display: grid;
@@ -483,9 +497,18 @@ h1 {
   gap: 10px;
 }
 
-.stats-row.head .stat-label { font-weight: 700; }
-.col.stat-label { font-weight: 600; opacity: .9; }
-.dash { opacity: .5; }
+.stats-row.head .stat-label {
+  font-weight: 700;
+}
+
+.col.stat-label {
+  font-weight: 600;
+  opacity: .9;
+}
+
+.dash {
+  opacity: .5;
+}
 
 .bar {
   position: relative;
@@ -498,7 +521,7 @@ h1 {
 
 .bar__fill {
   height: 100%;
-  background: var(--accent, rgba(255,255,255,.15));
+  background: var(--accent, rgba(255, 255, 255, .15));
 }
 
 .bar__label {
@@ -508,7 +531,7 @@ h1 {
   transform: translateY(-50%);
   font-size: 0.9rem;
   font-weight: 600;
-  text-shadow: 0 1px 0 rgba(0,0,0,.4);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, .4);
 }
 
 .meta-card {
@@ -519,21 +542,41 @@ h1 {
   background: var(--card, #3e3e3e);
 }
 
-.meta-title { font-weight: 700; margin-bottom: 6px; }
-.meta-list  { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
-.dim { opacity: .8; }
+.meta-title {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.meta-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 4px;
+}
+
+.dim {
+  opacity: .8;
+}
 
 #modal {
   transition: opacity .18s ease;
 }
-#modal.open { opacity: 1; }
-#modal[aria-hidden="true"] { opacity: 0; }
+
+#modal.open {
+  opacity: 1;
+}
+
+#modal[aria-hidden="true"] {
+  opacity: 0;
+}
 
 #sheet {
   transform: scale(.98);
   opacity: .85;
   transition: transform .18s ease, opacity .18s ease;
 }
+
 #modal.open #sheet {
   transform: scale(1);
   opacity: 1;
@@ -768,7 +811,165 @@ h1 {
   grid-column: 1 / -1;
 }
 
+/* --- Missing Stats panel container --- */
+#missing-stats-box {
+  margin-top: 12px;
+  padding: 12px;
+}
 
+/* --- Toggle button ("Missing stats?") --- */
+#missing-stats-box #missingStatsBtn {
+  display: inline-block;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 10px;
+  background: #2d2d2d;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .2s ease, transform .15s ease, box-shadow .2s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,.25);
+}
+#missing-stats-box #missingStatsBtn:hover {
+  background: #404040;
+  transform: translateY(-1px);
+}
+#missing-stats-box #missingStatsBtn:active {
+  transform: none;
+}
+
+/* --- Form wrapper: smooth reveal --- */
+#missing-stats-box form#missingStatsForm {
+  margin-top: 12px;
+}
+#missing-stats-box [hidden] {
+  display: none !important;
+}
+
+/* --- Field rows --- */
+#missing-stats-box #missingStatsForm > div {
+  margin: 10px 0;
+}
+#missing-stats-box #missingStatsForm label {
+  display: block;
+  margin-bottom: 6px;
+  color: #c9c9c9;
+  font-size: 0.92rem;
+}
+
+/* --- Inputs / selects --- */
+#missing-stats-box #missingStatsForm input[type="text"],
+#missing-stats-box #missingStatsForm input[type="number"],
+#missing-stats-box #missingStatsForm select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 10px 10px;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+#missing-stats-box #missingStatsForm input::placeholder {
+  color: #8a8a8a;
+}
+#missing-stats-box #missingStatsForm input:focus,
+#missing-stats-box #missingStatsForm select:focus {
+  border-color: #6ea8ff;
+  box-shadow: 0 0 0 3px rgba(110,168,255,.2);
+}
+
+/* --- Inline player row (input + "Choose from gallery") --- */
+#missing-stats-box #missingStatsForm .player-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+#missing-stats-box #missingStatsForm .player-row input[readonly] {
+  flex: 1 1 auto;
+}
+
+/* --- Secondary button (Choose from gallery) --- */
+#missing-stats-box #missingStatsForm .choose-btn {
+  display: inline-block;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #2d2d2d;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s ease, transform .15s ease, box-shadow .2s;
+  box-shadow: 0 1px 2px rgba(0,0,0,.25);
+  white-space: nowrap;
+}
+#missing-stats-box #missingStatsForm .choose-btn:hover {
+  background: #404040;
+  transform: translateY(-1px);
+}
+#missing-stats-box #missingStatsForm .choose-btn:active {
+  background: #1f1f1f;
+  transform: none;
+}
+
+/* --- "Stats" header text --- */
+#missing-stats-box #missingStatsForm .stats-hdr {
+  margin: 10px 0 6px;
+  font-weight: 700;
+  color: #eaeaea;
+}
+
+/* --- Stats grid (label + number) --- */
+#missing-stats-box #missingStatsForm .stats-grid {
+  display: grid;
+  grid-template-columns: auto 120px;
+  align-items: center;
+  column-gap: 10px;
+  row-gap: 8px;
+}
+#missing-stats-box #missingStatsForm .stats-grid > div {
+  color: #dddddd;
+  font-size: 0.95rem;
+}
+
+/* --- Actions (Send / Clear) --- */
+#missing-stats-box #missingStatsForm .actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+}
+#missing-stats-box #missingStatsForm .actions button[type="submit"] {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 10px;
+  background: #3b7cff;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .2s ease, transform .15s ease, box-shadow .2s;
+  box-shadow: 0 1px 2px rgba(0,0,0,.25);
+}
+#missing-stats-box #missingStatsForm .actions button[type="submit"]:hover {
+  background: #2f6aee;
+  transform: translateY(-1px);
+}
+#missing-stats-box #missingStatsForm .actions button[type="submit"]:active {
+  background: #2557c9;
+  transform: none;
+}
+#missing-stats-box #missingStatsForm .actions button[type="button"] {
+  padding: 10px 14px;
+  border: 1px solid #2e2e2e;
+  border-radius: 10px;
+  background: #1a1a1a;
+  color: #eaeaea;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s ease, border-color .2s ease;
+}
+#missing-stats-box #missingStatsForm .actions button[type="button"]:hover {
+  background: #232323;
+  border-color: #3a3a3a;
+}
 
 @media (max-width: 768px) {
 

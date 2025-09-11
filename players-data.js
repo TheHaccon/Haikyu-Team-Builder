@@ -80,14 +80,13 @@ const players = [{
       Save: 89
     },
     max: {
-      Attack: 95,
-      Block: 75,
-      Defense: 78,
-      Receive: 66,
-      Speed: 92,
-      Stamina: 84,
-      Technique: 76
-    }
+      Serve: "TBD",
+      Quick_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Middle Blocker", "Karasuno", "SR"],
   skills: [
@@ -144,14 +143,13 @@ const players = [{
       Save: 92
     },
     max: {
-      Attack: 90,
-      Block: 70,
-      Defense: 69,
-      Receive: 66,
-      Speed: 80,
-      Stamina: 83,
-      Technique: 90
-    }
+      Serve: "TBD",
+      Quick_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Setter", "Karasuno", "SSR"],
   skills: [
@@ -208,14 +206,13 @@ const players = [{
       Save: 104
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Opposite Hitter", "Karasuno", "SSR"],
   skills: [
@@ -272,14 +269,13 @@ const players = [{
       Save: 85
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Opposite Hitter", "Karasuno", "SR"],
   skills: [
@@ -336,14 +332,13 @@ const players = [{
       Save: 75
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Setter", "Karasuno", "SR"],
   skills: [
@@ -400,14 +395,13 @@ const players = [{
       Save: 98
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Wing Spike", "Karasuno", "SSR"],
   skills: [
@@ -464,14 +458,13 @@ const players = [{
       Save: 80
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Wing Spiker", "Karasuno", "SR"],
   skills: [
@@ -528,14 +521,13 @@ const players = [{
       Save: 116
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Libero", "Karasuno", "SSR"],
   skills: [
@@ -592,14 +584,13 @@ const players = [{
       Save: 95
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Libero", "Karasuno", "SR"],
   skills: [
@@ -656,14 +647,13 @@ const players = [{
       Save: 99
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Wing Spiker", "Karasuno", "SSR"],
   skills: [
@@ -720,14 +710,13 @@ const players = [{
       Save: 80
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Wing Spiker", "Karasuno", "SR"],
   skills: [
@@ -784,14 +773,13 @@ const players = [{
       Save: 97
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Quick_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Middle Blocker", "Karasuno", "SSR"],
   skills: [
@@ -848,14 +836,13 @@ const players = [{
       Save: 78
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Quick_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Middle Blocker", "Karasuno", "SR"],
   skills: [
@@ -912,14 +899,13 @@ const players = [{
       Save: 75
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Quick_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Middle Blocker", "Karasuno", "SR"],
   skills: [
@@ -976,14 +962,13 @@ const players = [{
       Save: 69
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Quick_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Middle Blocker", "Karasuno", "R"],
   skills: [
@@ -1040,14 +1025,13 @@ const players = [{
       Save: 85
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Wing Spiker", "Karasuno", "SR"],
   skills: [
@@ -1104,14 +1088,13 @@ const players = [{
       Save: 78
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Wing Spiker", "Karasuno", "R"],
   skills: [
@@ -1168,14 +1151,13 @@ const players = [{
       Save: 73
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Wing Spiker", "Karasuno", "R"],
   skills: [
@@ -1232,14 +1214,13 @@ const players = [{
       Save: 73
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Quick_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Middle Blocker", "Karasuno", "R"],
   skills: [
@@ -1296,14 +1277,13 @@ const players = [{
       Save: 92
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Setter", "Aoba Johsai", "SSR"],
   skills: [
@@ -1360,14 +1340,13 @@ const players = [{
       Save: 99
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Wing Spiker", "Aoba Johsai", "SSR"],
   skills: [
@@ -1424,14 +1403,13 @@ const players = [{
       Save: 81
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Wing Spiker", "Aoba Johsai", "SR"],
   skills: [
@@ -1488,14 +1466,13 @@ const players = [{
       Save: 79
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Quick_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Middle Blocker", "Aoba Johsai", "SR"],
   skills: [
@@ -1552,14 +1529,13 @@ const players = [{
       Save: 84
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Wing Spiker", "Aoba Johsai", "SR"],
   skills: [
@@ -1616,14 +1592,13 @@ const players = [{
       Save: 75
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Setter", "Aoba Johsai", "SR"],
   skills: [
@@ -1680,14 +1655,13 @@ const players = [{
       Save: 94
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Libero", "Aoba Johsai", "SR"],
   skills: [
@@ -1744,14 +1718,13 @@ const players = [{
       Save: 88
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Quick_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Middle Blocker", "Aoba Johsai", "SR"],
   skills: [
@@ -1808,14 +1781,13 @@ const players = [{
       Save: 80
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Opposite Hitter", "Aoba Johsai", "SR"],
   skills: [
@@ -1872,14 +1844,13 @@ const players = [{
       Save: 97
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Opposite Hitter", "Aoba Johsai", "SSR"],
   skills: [
@@ -1936,14 +1907,13 @@ const players = [{
       Save: 79
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Opposite Hitter", "Aoba Johsai", "SR"],
   skills: [
@@ -2000,14 +1970,13 @@ const players = [{
       Save: 93
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Setter", "Nekoma", "SSR"]
 },
@@ -2030,14 +1999,13 @@ const players = [{
       Save: 73
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Setter", "Nekoma", "SR"]
 },
@@ -2060,14 +2028,13 @@ const players = [{
       Save: 113
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Quick_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Middle Blocker", "Nekoma", "UR"]
 },
@@ -2090,14 +2057,13 @@ const players = [{
       Save: 98
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Quick_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Middle Blocker", "Nekoma", "SSR"]
 },
@@ -2120,14 +2086,13 @@ const players = [{
       Save: 95
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Libero", "Nekoma", "SR"]
 },
@@ -2150,14 +2115,13 @@ const players = [{
       Save: 96
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Quick_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Middle Blocker", "Nekoma", "SSR"]
 },
@@ -2180,14 +2144,13 @@ const players = [{
       Save: 79
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Quick_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Middle Blocker", "Nekoma", "SR"]
 },
@@ -2210,14 +2173,13 @@ const players = [{
       Save: 80
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Wing Spiker", "Nekoma", "SR"]
 },
@@ -2240,14 +2202,13 @@ const players = [{
       Save: 85
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Opposite Hitter", "Nekoma", "SR"]
 },
@@ -2270,14 +2231,13 @@ const players = [{
       Save: 80
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Wing Spiker", "Nekoma", "SR"]
 },
@@ -2300,14 +2260,13 @@ const players = [{
       Save: 80
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Quick_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Middle Blocker", "Nekoma", "SR"]
 },
@@ -2330,14 +2289,13 @@ const players = [{
       Save: 75
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Setter", "Nekoma", "SR"]
 },
@@ -2360,14 +2318,13 @@ const players = [{
       Save: 97
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Quick_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Middle Blocker", "Date Kogyo", "SSR"]
 },
@@ -2390,14 +2347,13 @@ const players = [{
       Save: 79
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Quick_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Middle Blocker", "Date Kogyo", "SR"]
 },
@@ -2420,14 +2376,13 @@ const players = [{
       Save: 98
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Wing Spiker", "Date Kogyo", "SSR"]
 },
@@ -2450,14 +2405,13 @@ const players = [{
       Save: 80
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Wing Spiker", "Date Kogyo", "SR"]
 },
@@ -2480,14 +2434,13 @@ const players = [{
       Save: 91
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Setter", "Date Kogyo", "SSR"]
 },
@@ -2510,14 +2463,13 @@ const players = [{
       Save: 74
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Setter", "Date Kogyo", "SR"]
 },
@@ -2540,14 +2492,13 @@ const players = [{
       Save: 86
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Libero", "Date Kogyo", "R"]
 },
@@ -2570,14 +2521,13 @@ const players = [{
       Save: 80
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Quick_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Middle Blocker", "Date Kogyo", "SR"]
 },
@@ -2600,14 +2550,13 @@ const players = [{
       Save: 75
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Setter", "Date Kogyo", "SR"]
 },
@@ -2630,14 +2579,13 @@ const players = [{
       Save: 99
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Opposite Hitter", "Date Kogyo", "SSR"]
 },
@@ -2660,14 +2608,13 @@ const players = [{
       Save: 81
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Opposite Hitter", "Date Kogyo", "SR"]
 },
@@ -2690,14 +2637,13 @@ const players = [{
       Save: 79
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Wing Spiker", "Date Kogyo", "SR"]
 },
@@ -2720,14 +2666,13 @@ const players = [{
       Save: 73
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Opposite Hitter", "Date Kogyo", "R"]
 },
@@ -2750,14 +2695,13 @@ const players = [{
       Save: 81
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Quick_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Middle Blocker", "Date Kogyo", "R"]
 },
@@ -2780,14 +2724,13 @@ const players = [{
       Save: 112
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Opposite Hitter", "Shiratorizawa", "UR"]
 },
@@ -2810,14 +2753,13 @@ const players = [{
       Save: 96
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Quick_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Middle Blocker", "Shiratorizawa", "SSR"]
 },
@@ -2840,14 +2782,13 @@ const players = [{
       Save: 98
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Wing Spiker", "Shiratorizawa", "SSR"]
 },
@@ -2870,14 +2811,13 @@ const players = [{
       Save: 79
     },
     max: {
-      Attack: 70,
-      Block: 65,
-      Defense: 67,
-      Receive: 70,
-      Speed: 75,
-      Stamina: 78,
-      Technique: 88
-    }
+      Serve: "TBD",
+      Quick_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
   },
   tags: ["Middle Blocker", "Shiratorizawa", "SR"]
 },]
