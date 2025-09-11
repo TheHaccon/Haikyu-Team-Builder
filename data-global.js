@@ -1,6 +1,6 @@
 // template: { name: "", role: "", img: "img-global/", school: "", bonds: [] },
 const characters = [
-    { name: "Hinata SSR", role: "MB", img: "img-global/hinataSSR.png", school: "Karasuno", bonds: ["Flexible Aces", "Worthy Rival", "Surprising Friendship","Rival Friends"] },
+    { name: "Hinata SSR", role: "MB", img: "img-global/hinataSSR.png", school: "Karasuno", bonds: ["Flexible Aces", "Worthy Rival", "Surprising Friendship","Rival Friends","Number One Disciple"] },
     { name: "Hinata SR", role: "MB", img: "img-global/hinataSR.png", school: "Karasuno", bonds: ["Teammates on the Court","\"Sun\" and \"Moon\""] },
     { name: "Kageyama SSR", role: "S", img: "img-global/tobioSSR.png", school: "Karasuno", bonds: ["Teammates on the Court","Building Team Chemistry"] },
     { name: "Daichi SSR", role: "OP", img: "img-global/daichiSSR.png", school: "Karasuno", bonds: ["Karasuno\'s Pillar","karasuno Senior Year","Behind the Smile"] },
@@ -71,6 +71,8 @@ const characters = [
     { name: "Taichi SR", role: "MB", img: "img-global/kawanishiSR.png", school: "Shiratorizawa", bonds: ["Shiratorizawa\'s Middke Blocker","Shiratorizawa 2nd Years"] },
     { name: "Shirabu SSR", role: "S", img: "img-japan/shirabuSSR.png",school: "Shiratorizawa", bonds: ["The Absolute King and the Steadfast Setter","Shiratorizawa 2nd Years"] },
     { name: "Ohira SSR", role: "WS", img: "img-japan/ohiraSSR.png",school: "Shiratorizawa", bonds: ["Ushiwaka and Benkei","Shiratorizawa's WS"] },
+
+    { name: "Bokuto UR", role: "WS", img: "img-japan/BokutoUR.png",school: "Fukurodani", bonds: ["Number One Disciple"] },
 
 
 ];
@@ -158,6 +160,9 @@ const synergyDescriptions = {
     "The Absolute King and the Steadfast Setter": "When Shirabu sets, Ushijima performs a [Spike] with 260% of [Spike] power. Ushijima’s [Power] increases by 10% for this spike.",
     "Shiratorizawa 2nd Years": {"Shirabu SSR": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%","Taichi SR": "Quick +5/7/9/12/15, Quick +1/2/3/4/5%"},
     "Shiratorizawa's WS": "Allies’ [Spike] increases by 4%",
+
+    "Number One Disciple": {"Bokuto UR": "Spike +5/7/9/12/15, Spike +1/2/3/4/5%", "Hinata SSR":""},
+
 };
 
 //Lowkey just have to remeber that when a bond is create I put it here
@@ -242,6 +247,7 @@ const synergyMeta = {
     "Shiratorizawa 2nd Years": { category: "stats", activation: { scope: "any", min: 2 } },
     "Shiratorizawa's WS": { category: "deployment", activation: { scope: "any", min: 2 } },
 
+    "Number One Disciple": { category: "stats", activation: { scope: "any", min: 2 } },
 };
 
 //put what player create the bond
@@ -310,6 +316,8 @@ const synergyPairs = {
     "The Absolute King and the Steadfast Setter":[["Shirabu","Ushijima"]],
     "Shiratorizawa 2nd Years":[["Shirabu","Kawanishi"]],
     "Shiratorizawa's WS": [["Ohira", "Goshiki"]],
+
+    "Number One Disciple": [["Bokuto", "Hinata"]],
     
 };
 
