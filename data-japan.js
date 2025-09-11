@@ -35,7 +35,8 @@ const characters = [
     { name: "Hanamaki SR", role: "WS", img: "img-japan/hanamakiSR.png", school: "Aoba Johsai", bonds: ["Seijoh\'s Senior Year Pillars"] },
     { name: "Yahaba SR", role: "S", img: "img-japan/yahabaSR.png", school: "Aoba Johsai", bonds: ["Aoba Johsai's Sophomore","Hidden Fire"] },
     { name: "Watari SR", role: "Li", img: "img-japan/watariSR.png", school: "Aoba Johsai", bonds: ["Aoba Johsai's Sophomore"] },
-    { name: "Kindaichi SR", role: "MB", img: "img-japan/kindaichiSR.png", school: "Aoba Johsai", bonds: ["Blunt and Composed","To Greater Heights"] },
+    { name: "Kindaichi SR", role: "MB", img: "img-japan/kindaichiSR.png", school: "Aoba Johsai", bonds: ["Blunt and Composed","To Greater Heights","Calm and honest"] },
+    { name: "Kunimi SP", role: "OP", img: "img-japan/kunimiSP.png", school: "Aoba Johsai", bonds: ["Calm and honest"] },
     { name: "Kunimi SR", role: "OP", img: "img-japan/kunimiSR.png", school: "Aoba Johsai", bonds: ["Blunt and Composed"] },
     { name: "Kentaro SSR", role: "OP", img: "img-japan/kyotaniSSR.png", school: "Aoba Johsai", bonds: ["Aoba Johsai's Sophomore","Hidden Fire","The Wolf Pack","Merciless Trust"] },
     { name: "Kentaro SR", role: "OP", img: "img-japan/kyotaniSR.png", school: "Aoba Johsai", bonds: ["The Wolf Pack(Practice)"] },
@@ -191,6 +192,7 @@ const synergyDescriptions = {
     "Breath of Aoba": "When Oikawa performs a toss, Iwaizumi performs a Spike with 255% Attack power. Gains 2 stacks of [Attack Rhythm]. For each stack of [Attack Rhythm], all allies' Awareness increases by 1%. Max 10 stacks.",
     "Merciless Trust": {"Oikawa UR": "Block +5/7/9/12/15, Block +1/2/3/4/5%","Kentaro SSR": "Spike +5/7/9/12/15, Spike +1/2/3/4/5%"},
     "Fated Rivals": {"Oikawa UR": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%", "Ushijima UR": ""},
+    "Calm and honest":{"Kunimi SP": "Spike +5/7/9/12/15, Spike +1/2/3/4/5%", "Kindaichi SR": "Quick Attack +5/7/9/12/15, Quick Attack +1/2/3/4/5%"},
 
     //Nekoma
     "Nekoma\'s Junior":{"Teshiro SR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Inuoka SR": "No buff", "Lev SSR":"No Buff"},
@@ -340,7 +342,7 @@ const synergyMeta = {
     "Breath of Aoba": { category: "deployment", activation: { scope: "any", min: 2 } },
     "Merciless Trust": { category: "stats", activation: { scope: "any", min: 2 } },
     "Fated Rivals": { category: "stats", activation: { scope: "any", min: 2 } },
-
+    "Calm and honest":{ category: "stats", activation: { scope: "any", min: 2 } },
     
     "Nekoma\'s Junior": { category: "stats", activation: { scope: "any", min: 3 } },
     "\"Brain\" and \"Control Tower\"": { category: "deployment", activation: { scope: "any", min: 2 } },
@@ -475,6 +477,7 @@ const synergyPairs = {
     "Breath of Aoba":[["Oikawa", "Iwaizumi"]],
     "Merciless Trust":[["Oikawa","Kentaro"]],
     "Fated Rivals":[["Oikawa","Ushijima"]],
+    "Calm and honest":[["Kunimi SP","Kindaichi SR"]],
 
 
     "Nekoma\'s Junior":[["Teshiro", "Inuoka","Lev"]],
