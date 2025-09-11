@@ -72,7 +72,7 @@ const characters = [
     { name: "Shirabu SSR", role: "S", img: "img-japan/shirabuSSR.png",school: "Shiratorizawa", bonds: ["The Absolute King and the Steadfast Setter","Shiratorizawa 2nd Years"] },
     { name: "Ohira SSR", role: "WS", img: "img-japan/ohiraSSR.png",school: "Shiratorizawa", bonds: ["Ushiwaka and Benkei","Shiratorizawa's WS"] },
 
-    { name: "Bokuto UR", role: "WS", img: "img-japan/BokutoUR.png",school: "Fukurodani", bonds: ["Number One Disciple"] },
+    { name: "Bokuto UR", role: "WS", img: "img-japan/bokutoUR.png",school: "Fukurodani", bonds: ["Number One Disciple"] },
 
 
 ];
