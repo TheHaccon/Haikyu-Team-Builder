@@ -443,7 +443,7 @@ const players = [{
   id: "asahi(Practice)",
   name: "Asahi Azumane (Practice)",
   img: "img-char/asahiSR.png",
-    card_g: "img-global/asahiSR.png",
+  card_g: "img-global/asahiSR.png",
   card_j: "img-japan/asahiSR.png",
   school: "Karasuno",
   rarity: "SR",
@@ -1259,6 +1259,35 @@ const players = [{
   ]
 },
 {
+  id: "toru",
+  name: "Toru Oikawa",
+  img: "img-char/oikawaUR.png",
+  card_g: "img-global/oikawaUR.png",
+  card_j: "img-japan/oikawaUR.png",
+  school: "Aoba Johsai",
+  rarity: "UR",
+  position: "Setter",
+  stats: {
+    lvl1: {
+      Serve: 140,
+      Power_Attack: 126,
+      Set: 134,
+      Receive: 113,
+      Block: 126,
+      Save: 106
+    },
+    max: {
+      Serve: "TBD",
+      Power_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
+  },
+  tags: ["Setter", "Aoba Johsai", "URR"],
+},
+{
   id: "toru(Practice)",
   name: "Toru Oikawa (Practice)",
   img: "img-char/oikawaSSR.png",
@@ -2013,7 +2042,7 @@ const players = [{
   id: "kuroo",
   name: "Tetsuro Kuroo",
   img: "img-char/kurooUR.png",
-    card_g: "img-global/kurooUR.png",
+  card_g: "img-global/kurooUR.png",
   card_j: "img-japan/kurooUR.png",
   school: "Nekoma",
   rarity: "UR",
@@ -2216,7 +2245,7 @@ const players = [{
   id: "fukunaga",
   name: "Shohei Fukunaga",
   img: "img-char/fukunagaSR.png",
-      card_g: "img-global/fukunagaSR.png",
+  card_g: "img-global/fukunagaSR.png",
   card_j: "img-japan/fukunagaSR.png",
   school: "Nekoma",
   rarity: "SR",
@@ -2820,4 +2849,33 @@ const players = [{
     },
   },
   tags: ["Middle Blocker", "Shiratorizawa", "SR"]
+},
+{
+  id: "bokuto",
+  name: "kotaro Bokuto",
+  img: "img-char/bokutoUR.png",
+  card_g: "img-global/bokutoUR.png",
+  card_j: "img-japan/bokutoUR.png",
+  school: "Fukurodani",
+  rarity: "UR",
+  position: "Wing Spiker",
+  stats: {
+    lvl1: {
+      Serve: 133,
+      Power_Attack: 140,
+      Set: 112,
+      Receive: 126,
+      Block: 120,
+      Save: 113
+    },
+    max: {
+      Serve: "TBD",
+      Quick_Attack: "TBD",
+      Set: "TBD",
+      Receive: "TBD",
+      Block: "TBD",
+      Save: "TBD"
+    },
+  },
+  tags: ["Wing Spiker", "Fukurodani", "UR"]
 },]

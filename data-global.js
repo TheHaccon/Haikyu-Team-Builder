@@ -22,7 +22,7 @@ const characters = [
     { name: "Kazuhito R", role: "MB", img: "img-global/kazuhitoR.png", school: "Karasuno", bonds: ["Bench cheer","The Returning Trio"] },
     { name: "Kageyama SR", role: "S", img: "img-global/tobioSR.png", school: "Kitagawa", bonds: [] },
 
-    { name: "Oikawa UR", role: "S", img: "img-japan/oikawaUR.png", school: "Aoba Johsai", bonds: ["Breath of Aoba","To Greater Heights","Fated Rivals","Merciless Trust"] },
+    { name: "Oikawa UR", role: "S", img: "img-global/oikawaUR.png", school: "Aoba Johsai", bonds: ["Breath of Aoba","To Greater Heights","Fated Rivals","Merciless Trust"] },
     { name: "Oikawa SSR", role: "S", img: "img-global/oikawaSSR.png", school: "Aoba Johsai", bonds: ["Team Chemistry"] },
     { name: "Iwaizumi SSR", role: "WS", img: "img-global/iwaizumiSSR.png", school: "Aoba Johsai", bonds: ["The Wolf Pack","Breath of Aoba"] },
     { name: "Iwaizumi SR", role: "WS", img: "img-global/iwaizumiSR.png", school: "Aoba Johsai", bonds: ["The Wolf Pack(Practice)","Team Chemistry"] },
@@ -47,7 +47,7 @@ const characters = [
     { name: "Fukunaga SR", role: "WS", img: "img-global/fukunagaSR.png", school: "Nekoma", bonds: ["Nekoma\'s Wing Spiker"] },
     { name: "Inuoka SR", role: "MB", img: "img-global/inuokaSR.png", school: "Nekoma", bonds: ["Worthy Rival","Nekoma\'s Junior"] },
     { name: "Teshiro SR", role: "S", img: "img-global/teshiroSR.png", school: "Nekoma", bonds: ["Nekoma\'s Junior"] },
-    { name: "Yaku SSR", role: "Li", img: "img-japan/yakuSSR.png", school: "Nekoma", bonds: ["Team's Guardians","Reliable Seniors","Protective Guidance"] },
+    { name: "Yaku SSR", role: "Li", img: "img-global/yakuSSR.png", school: "Nekoma", bonds: ["Team's Guardians","Reliable Seniors","Protective Guidance"] },
 
 
     { name: "Aone SSR", role: "MB", img: "img-global/aoneSSR.png", school: "Date Kogyo", bonds: ["Cannon \& Iron Wall","Surprising Friendship","The Silent and the Snarky"] },
@@ -69,10 +69,10 @@ const characters = [
     { name: "Goshiki SSR", role: "WS", img: "img-global/goshikiSSR.png", school: "Shiratorizawa", bonds: ["Promising Senpai","Undisputed Aces","Shiratorizawa's WS"] },
     { name: "Tendo SSR", role: "MB", img: "img-global/tendoSSR.png", school: "Shiratorizawa", bonds: ["Lifelong Best Friends","Promising Senpai","Shiratorizawa\'s Middke Blocker","Prediction VS System"] },
     { name: "Taichi SR", role: "MB", img: "img-global/kawanishiSR.png", school: "Shiratorizawa", bonds: ["Shiratorizawa\'s Middke Blocker","Shiratorizawa 2nd Years"] },
-    { name: "Shirabu SSR", role: "S", img: "img-japan/shirabuSSR.png",school: "Shiratorizawa", bonds: ["The Absolute King and the Steadfast Setter","Shiratorizawa 2nd Years"] },
-    { name: "Ohira SSR", role: "WS", img: "img-japan/ohiraSSR.png",school: "Shiratorizawa", bonds: ["Ushiwaka and Benkei","Shiratorizawa's WS"] },
+    { name: "Shirabu SSR", role: "S", img: "img-global/shirabuSSR.png",school: "Shiratorizawa", bonds: ["The Absolute King and the Steadfast Setter","Shiratorizawa 2nd Years"] },
+    { name: "Ohira SSR", role: "WS", img: "img-global/ohiraSSR.png",school: "Shiratorizawa", bonds: ["Ushiwaka and Benkei","Shiratorizawa's WS"] },
 
-    { name: "Bokuto UR", role: "WS", img: "img-japan/bokutoUR.png",school: "Fukurodani", bonds: ["Number One Disciple"] },
+    { name: "Bokuto UR", role: "WS", img: "img-global/bokutoUR.png",school: "Fukurodani", bonds: ["Number One Disciple"] },
 
 
 ];
