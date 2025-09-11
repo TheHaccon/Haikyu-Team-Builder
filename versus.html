@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Versus | Team Builder</title>
+    <link rel="stylesheet" href="versus-style.css" />
+    <!-- Load your shared data first -->
+</head>
+
+<body>
+    <nav class="app-nav">
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Team Builder</a></li>
+            <li class="nav-disabled"><span>Bonds<small>(coming soon)</small></span></li>
+            <li><a href="players.html">Players (New not fully done)</a></li>
+            <li class="nav-disabled"><span>Resources counter<small>(coming soon)</small></span></li>
+            <li><a href="memory.html">Memory (New)</a></li>
+            <li><a href="versus.html">Versus (New)</a></li>
+            <li><a href="about.html">About (New)</a></li>
+
+            <div id="toolbar-top">
+                <span class="server-label">Server:</span>
+                <div id="serverToggle" class="server-toggle">
+                    <div class="server-option" data-server="global">Global</div>
+                    <div class="server-option" data-server="japan">Japan</div>
+                </div>
+
+                <div class="posless-wrap" title="Allow any player in any role"
+                    style="display:flex;align-items:center;gap:8px;margin-left:12px;">
+                    <span class="posless-label">Normal</span>
+                    <label class="posless-switch" aria-label="Toggle positionless mode">
+                        <input type="checkbox" id="positionlessToggle" />
+                        <span class="posless-slider"></span>
+                    </label>
+                    <span class="posless-label">Positionless</span>
+                </div>
+            </div>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Versus — Compare Player Stats</h1>
+        <p id="hint">Click a slot to choose a player. Use the toggle to view <b>Lv.1</b> or <b>Max</b> stats. Currently max stats aren't accurate</p>
+    </header>
+
+    <main id="layout">
+        <section id="main">
+            <!-- Selection area -->
+            <div id="board">
+                <div class="row" id="versus-row" style="padding:14px 10px;">
+                    <div class="slot">
+                        <div class="hex" data-vslot="A" style="width:160px;height:210px;">
+                            <span style="opacity:.75;">Player A</span>
+                        </div>
+                        <div class="label">A<span class="player-name"></span></div>
+                    </div>
+
+                    <div class="slot">
+                        <div class="hex" style="width:auto;height:auto;border-style:solid;padding:6px 10px;">
+                            <span style="font-weight:700;letter-spacing:.5px;">VS</span>
+                        </div>
+                    </div>
+
+                    <div class="slot">
+                        <div class="hex" data-vslot="B" style="width:160px;height:210px;">
+                            <span style="opacity:.75;">Player B</span>
+                        </div>
+                        <div class="label">B<span class="player-name"></span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comparison panel -->
+            <section id="tabs">
+                <nav id="tabbar" aria-label="Comparison sections">
+                    <button class="tabbtn" data-tab="stats" aria-controls="tab-stats"
+                        aria-selected="true">Stats</button>
+                    <button class="tabbtn" data-tab="meta" aria-controls="tab-meta" aria-selected="false">Infos</button>
+                    <div id="bond-filter" style="margin-left:auto;display:flex;gap:10px;align-items:center;">
+                        <label class="bond-filter" title="Which stat tier to display">
+                            <span>View:</span>
+                            <label><input type="radio" name="tier" value="lv1" checked> Lv.1</label>
+                            <label><input type="radio" name="tier" value="max"> Max</label>
+                        </label>
+                    </div>
+                </nav>
+
+                <div id="tab-stats" class="tabcontent" role="region" aria-labelledby="tab-stats-label">
+                    <h2 id="tab-stats-label" style="margin:0 0 8px 0;">Stat Comparison</h2>
+                    <div id="statsTable" style="display:grid; gap:10px;"></div>
+                </div>
+
+                <div id="tab-meta" class="tabcontent" role="region" aria-labelledby="tab-meta-label" hidden>
+                    <h2 id="tab-meta-label" style="margin:0 0 8px 0;">Overview</h2>
+                    <div id="metaPanel" style="display:grid; gap:10px;"></div>
+                </div>
+            </section>
+        </section>
+
+        <aside id="school-panel" aria-label="Selection details">
+            <h2>Selections</h2>
+            <ul id="selectionList">
+                <li>(choose two players)</li>
+            </ul>
+        </aside>
+    </main>
+
+    <!-- Modal + gallery (same structure as your app for styling parity) -->
+    <div id="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalTitle">
+        <div id="sheet">
+            <header id="modal-header">
+                <h3 id="modalTitle">Players</h3>
+                <div id="modal-actions">
+                    <input id="search" type="search" placeholder="Search by name or school…" aria-label="Search" />
+                    <button id="closeModal" type="button">Close</button>
+                </div>
+            </header>
+            <div id="gallery" aria-live="polite"></div>
+        </div>
+    </div>
+
+    <!-- Page logic -->
+    <script src="players-data.js"></script>
+    <script src="data-global.js"></script>
+    <script type="module" src="versus.js"></script>
+    <script>
+        document.getElementById('navToggle').addEventListener('click', () => {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+    </script>
+</body>
+
+<footer class="app-footer">
+    <div class="footer-content">
+        <a href="https://discordapp.com/users/192790568479358977" target="_blank" title="Add me on Discord">
+            <img src="icon/Discord.png" alt="Discord" class="footer-icon" />
+        </a>
+        •
+        <a href="https://ko-fi.com/K3K51JN9Z2" target="_blank" title="Support me on Ko-fi">
+            <img src="icon/Kofi.png" alt="Ko-fi" class="footer-icon" />
+        </a>
+    </div>
+</footer>
+
+</html>
