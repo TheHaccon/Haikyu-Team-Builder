@@ -811,13 +811,11 @@ h1 {
   grid-column: 1 / -1;
 }
 
-/* --- Missing Stats panel container --- */
 #missing-stats-box {
   margin-top: 12px;
   padding: 12px;
 }
 
-/* --- Toggle button ("Missing stats?") --- */
 #missing-stats-box #missingStatsBtn {
   display: inline-block;
   padding: 10px 14px;
@@ -828,28 +826,30 @@ h1 {
   font-weight: 700;
   cursor: pointer;
   transition: background .2s ease, transform .15s ease, box-shadow .2s ease;
-  box-shadow: 0 1px 2px rgba(0,0,0,.25);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .25);
 }
+
 #missing-stats-box #missingStatsBtn:hover {
   background: #404040;
   transform: translateY(-1px);
 }
+
 #missing-stats-box #missingStatsBtn:active {
   transform: none;
 }
 
-/* --- Form wrapper: smooth reveal --- */
 #missing-stats-box form#missingStatsForm {
   margin-top: 12px;
 }
+
 #missing-stats-box [hidden] {
   display: none !important;
 }
 
-/* --- Field rows --- */
-#missing-stats-box #missingStatsForm > div {
+#missing-stats-box #missingStatsForm>div {
   margin: 10px 0;
 }
+
 #missing-stats-box #missingStatsForm label {
   display: block;
   margin-bottom: 6px;
@@ -857,7 +857,6 @@ h1 {
   font-size: 0.92rem;
 }
 
-/* --- Inputs / selects --- */
 #missing-stats-box #missingStatsForm input[type="text"],
 #missing-stats-box #missingStatsForm input[type="number"],
 #missing-stats-box #missingStatsForm select {
@@ -869,26 +868,27 @@ h1 {
   outline: none;
   transition: border-color .2s ease, box-shadow .2s ease;
 }
+
 #missing-stats-box #missingStatsForm input::placeholder {
   color: #8a8a8a;
 }
+
 #missing-stats-box #missingStatsForm input:focus,
 #missing-stats-box #missingStatsForm select:focus {
   border-color: #6ea8ff;
-  box-shadow: 0 0 0 3px rgba(110,168,255,.2);
+  box-shadow: 0 0 0 3px rgba(110, 168, 255, .2);
 }
 
-/* --- Inline player row (input + "Choose from gallery") --- */
 #missing-stats-box #missingStatsForm .player-row {
   display: flex;
   align-items: center;
   gap: 8px;
 }
+
 #missing-stats-box #missingStatsForm .player-row input[readonly] {
   flex: 1 1 auto;
 }
 
-/* --- Secondary button (Choose from gallery) --- */
 #missing-stats-box #missingStatsForm .choose-btn {
   display: inline-block;
   padding: 8px 12px;
@@ -899,26 +899,26 @@ h1 {
   font-weight: 600;
   cursor: pointer;
   transition: background .2s ease, transform .15s ease, box-shadow .2s;
-  box-shadow: 0 1px 2px rgba(0,0,0,.25);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .25);
   white-space: nowrap;
 }
+
 #missing-stats-box #missingStatsForm .choose-btn:hover {
   background: #404040;
   transform: translateY(-1px);
 }
+
 #missing-stats-box #missingStatsForm .choose-btn:active {
   background: #1f1f1f;
   transform: none;
 }
 
-/* --- "Stats" header text --- */
 #missing-stats-box #missingStatsForm .stats-hdr {
   margin: 10px 0 6px;
   font-weight: 700;
   color: #eaeaea;
 }
 
-/* --- Stats grid (label + number) --- */
 #missing-stats-box #missingStatsForm .stats-grid {
   display: grid;
   grid-template-columns: auto 120px;
@@ -926,17 +926,19 @@ h1 {
   column-gap: 10px;
   row-gap: 8px;
 }
-#missing-stats-box #missingStatsForm .stats-grid > div {
+
+#missing-stats-box #missingStatsForm .stats-grid>div {
   color: #dddddd;
   font-size: 0.95rem;
 }
 
-/* --- Actions (Send / Clear) --- */
+
 #missing-stats-box #missingStatsForm .actions {
   margin-top: 12px;
   display: flex;
   gap: 8px;
 }
+
 #missing-stats-box #missingStatsForm .actions button[type="submit"] {
   padding: 10px 14px;
   border: none;
@@ -946,16 +948,19 @@ h1 {
   font-weight: 700;
   cursor: pointer;
   transition: background .2s ease, transform .15s ease, box-shadow .2s;
-  box-shadow: 0 1px 2px rgba(0,0,0,.25);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .25);
 }
+
 #missing-stats-box #missingStatsForm .actions button[type="submit"]:hover {
   background: #2f6aee;
   transform: translateY(-1px);
 }
+
 #missing-stats-box #missingStatsForm .actions button[type="submit"]:active {
   background: #2557c9;
   transform: none;
 }
+
 #missing-stats-box #missingStatsForm .actions button[type="button"] {
   padding: 10px 14px;
   border: 1px solid #2e2e2e;
@@ -966,6 +971,7 @@ h1 {
   cursor: pointer;
   transition: background .2s ease, border-color .2s ease;
 }
+
 #missing-stats-box #missingStatsForm .actions button[type="button"]:hover {
   background: #232323;
   border-color: #3a3a3a;
@@ -1139,7 +1145,6 @@ h1 {
     z-index: 0;
   }
 
-
   .team-btn {
     appearance: none;
     border: 1px solid var(--ring);
@@ -1187,4 +1192,72 @@ h1 {
     color: var(--danger);
   }
 
+}
+
+:root {
+
+  --vs-card-w: clamp(220px, 88vw, 420px);
+}
+
+@media (max-width: 768px) {
+
+  header {
+    padding: 6px 10px 0 10px;
+  }
+
+  #board {
+    padding: 10px;
+  }
+
+  .row#versus-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .row#versus-row .slot {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .row#versus-row .hex {
+    width: var(--vs-card-w);
+    height: auto;
+    aspect-ratio: 3 / 4;
+    border-radius: 12px;
+    border-style: solid;
+    background: #2b2b2b;
+  }
+
+  .row#versus-row .hex img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .row#versus-row .slot:nth-child(2) .hex {
+    width: auto;
+    aspect-ratio: auto;
+    padding: 6px 12px;
+    background: #2f2f2f;
+    border-radius: 999px;
+    font-weight: 700;
+  }
+
+  .label {
+    font-size: 14px;
+    margin-top: 8px;
+  }
+
+  #tabs {
+    margin-top: 6px;
+  }
+}
+
+@media (max-width: 420px) {
+  :root {
+    --vs-card-w: clamp(230px, 92vw, 400px);
+  }
 }
