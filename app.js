@@ -15,7 +15,10 @@ const searchInput = document.getElementById("search");
 const closeModalBtn = document.getElementById("closeModal");
 const deployFilterRadios = document.querySelectorAll('#deploy-filter input[name="deployFilter"]');
 const statsFilterRadios = document.querySelectorAll('#stats-filter input[name="statsFilter"]');
+const rotateBtn = document.getElementById("rotateBtn");
 
+const ROTATE_RING = ["S", "MB1", "WS1", "OP", "MB2", "WS2", "LI"];
+const currentRoles = { S: "S", MB1: "MB", WS1: "WS", OP: "OP", MB2: "MB", WS2: "WS", LI: "LI", };
 const POSITIONLESS_LS_KEY = 'htb_positionless';
 let POSITIONLESS = JSON.parse(localStorage.getItem(POSITIONLESS_LS_KEY) || 'false');
 const positionlessToggle = document.getElementById('positionlessToggle');
@@ -34,9 +37,33 @@ if (positionlessToggle) {
     }
   });
 }
+
+function rotateMapLeft(map, ring) {
+  const prev = { ...map };
+  for (let i = 0; i < ring.length; i++) {
+    const src = ring[i];
+    const dst = ring[(i + 1) % ring.length];
+    map[dst] = prev[src];
+  }
+}
+
+function rotateStartersLeft() {
+  // 1) joueurs
+  const prevStarters = { ...state.starters };
+  for (let i = 0; i < ROTATE_RING.length; i++) {
+    const src = ROTATE_RING[i];
+    const dst = ROTATE_RING[(i + 1) % ROTATE_RING.length];
+    state.starters[dst] = prevStarters[src] || null;
+  }
+  // 2) rôles visibles (même si la case est vide)
+  rotateMapLeft(currentRoles, ROTATE_RING);
+
+  renderBoard();
+}
+
 function isPositionless() { return !!POSITIONLESS; }
-function modeSuffix()     { return isPositionless() ? 'pos' : 'norm'; }
-function modeKey(server)  { return `${server}__${modeSuffix()}`; }
+function modeSuffix() { return isPositionless() ? 'pos' : 'norm'; }
+function modeKey(server) { return `${server}__${modeSuffix()}`; }
 
 function onlyActiveDeploy() {
   const el = document.querySelector('#deploy-filter input[name="deployFilter"]:checked');
@@ -121,31 +148,43 @@ function ensureTeamSwitcher() {
 function renderBoard() {
   document.querySelectorAll(".hex[data-slot]").forEach(hex => {
     const key = hex.dataset.slot;
-    renderTile(hex, state.starters[key]);
-    document.querySelectorAll(".slot").forEach(slot => {
-      const key = slot.querySelector(".hex")?.dataset.slot;
-      if (!key) return;
-      const player = state.starters[key];
-      const nameEl = slot.querySelector(".player-name");
-      if (nameEl) {
-        nameEl.textContent = player ? ` - ${player.name}` : "";
-      }
-    });
+    const player = state.starters[key];
+
+    // image
+    renderTile(hex, player);
+
+    // label: rôle pris dans currentRoles, nom si présent
+    const slot = hex.closest(".slot");
+    const label = slot?.querySelector(".label");
+    if (label) {
+      const roleText = currentRoles[key] || key;
+      label.innerHTML = `${roleText}<span class="player-name"></span>`;
+      const nameEl = label.querySelector(".player-name");
+      if (nameEl) nameEl.textContent = player ? ` - ${player.name}` : "";
+    }
   });
+
   benchSlots().forEach((b, i) => renderTile(b, state.bench[i] || null));
+
   renderSynergies();
   syncAddBenchButton();
   if (!isLoading) updateActiveTeam();
 }
 
+
 function openModalForRole(slotKey) {
   state.ui.activeSlotKey = slotKey;
   state.ui.targetBenchIndex = null;
-  state.ui.filterRole = isPositionless() ? null : getExpectedRole(slotKey);
+
+  // rôle affiché dans la case (tourne avec Rotate)
+  state.ui.filterRole = isPositionless() ? null : (currentRoles[slotKey] || "");
+
   searchInput.value = "";
   buildRoleGallery();
   modal.setAttribute("aria-hidden", "false");
 }
+
+
 
 function openModalForBench(index) {
   state.ui.activeSlotKey = null;
@@ -224,17 +263,25 @@ function buildBenchGallery(targetIndex) {
 
 function assignToStarter(slotKey, player) {
   if (!slotKey) return;
-  const expected = getExpectedRole(slotKey);
+
+  const expected = isPositionless() ? "" : (currentRoles[slotKey] || "");
+
   if (!isPositionless()) {
-    if (player.role !== expected) { alert(`This slot expects role ${expected}.`); return; }
+    if (player.role !== expected) {
+      alert(`This slot currently expects role ${expected}.`);
+      return;
+    }
   }
+
   const picked = getAllPicked();
   if (picked.some(x => x.name === player.name)) { alert(`"${player.name}" is already selected.`); return; }
   if (picked.some(x => baseName(x.name) === baseName(player.name) && x.name !== player.name)) { alert(`Another rarity of "${baseName(player.name)}" is already selected.`); return; }
+
   state.starters[slotKey] = player;
   closeModal();
   renderBoard();
 }
+
 
 function clearStarter(slotKey) {
   state.starters[slotKey] = null;
@@ -615,6 +662,7 @@ function wire() {
   modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
   searchInput.addEventListener("input", onSearchInput);
   tabbar.addEventListener("click", onTabClick);
+  if (rotateBtn) rotateBtn.addEventListener("click", rotateStartersLeft);
   wireServerToggle();
   syncTabFilters();
 }

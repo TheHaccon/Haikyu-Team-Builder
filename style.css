@@ -551,34 +551,64 @@ h1 {
 }
 
 /* Positionless switch (namespaced to avoid collisions) */
-.posless-wrap { user-select: none; }
+.posless-wrap {
+  user-select: none;
+}
+
 .posless-switch {
   position: relative;
   display: inline-block;
   width: 44px;
   height: 22px;
 }
-.posless-switch input { display: none; }
+
+.posless-switch input {
+  display: none;
+}
+
 .posless-slider {
-  position: absolute; inset: 0;
+  position: absolute;
+  inset: 0;
   background: #434a57;
   border-radius: 999px;
   transition: .2s;
   border: 1px solid #2d3647;
 }
+
 .posless-slider:before {
   content: "";
   position: absolute;
-  height: 16px; width: 16px;
-  left: 3px; top: 2px;
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  top: 2px;
   background: #fff;
   border-radius: 50%;
   transition: .2s;
 }
-.posless-switch input:checked + .posless-slider { background: #6aa9ff; }
-.posless-switch input:checked + .posless-slider:before { transform: translateX(22px); }
-.posless-label { font-size: 13px; opacity: .85; }
 
+.posless-switch input:checked+.posless-slider {
+  background: #6aa9ff;
+}
+
+.posless-switch input:checked+.posless-slider:before {
+  transform: translateX(22px);
+}
+
+.posless-label {
+  font-size: 13px;
+  opacity: .85;
+}
+
+.hex img,
+.bench-slot img {
+  transition: transform 0.6s ease;
+}
+
+/* classe qui déclenche la rotation */
+.rotated {
+  transform: rotateY(180deg);
+}
 
 @media (max-width: 768px) {
 
