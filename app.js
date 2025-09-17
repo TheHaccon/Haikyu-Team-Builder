@@ -18,7 +18,7 @@ const statsFilterRadios = document.querySelectorAll('#stats-filter input[name="s
 const rotateBtn = document.getElementById("rotateBtn");
 
 const ROTATE_RING = ["S", "MB1", "WS1", "OP", "MB2", "WS2", "LI"];
-const currentRoles = { S: "S", MB1: "MB", WS1: "WS", OP: "OP", MB2: "MB", WS2: "WS", LI: "LI", };
+
 const POSITIONLESS_LS_KEY = 'htb_positionless';
 let POSITIONLESS = JSON.parse(localStorage.getItem(POSITIONLESS_LS_KEY) || 'false');
 const positionlessToggle = document.getElementById('positionlessToggle');
@@ -36,29 +36,6 @@ if (positionlessToggle) {
       else if (state.ui.targetBenchIndex != null) buildBenchGallery(state.ui.targetBenchIndex);
     }
   });
-}
-
-function rotateMapLeft(map, ring) {
-  const prev = { ...map };
-  for (let i = 0; i < ring.length; i++) {
-    const src = ring[i];
-    const dst = ring[(i + 1) % ring.length];
-    map[dst] = prev[src];
-  }
-}
-
-function rotateStartersLeft() {
-  // 1) joueurs
-  const prevStarters = { ...state.starters };
-  for (let i = 0; i < ROTATE_RING.length; i++) {
-    const src = ROTATE_RING[i];
-    const dst = ROTATE_RING[(i + 1) % ROTATE_RING.length];
-    state.starters[dst] = prevStarters[src] || null;
-  }
-  // 2) rôles visibles (même si la case est vide)
-  rotateMapLeft(currentRoles, ROTATE_RING);
-
-  renderBoard();
 }
 
 function isPositionless() { return !!POSITIONLESS; }
@@ -82,6 +59,9 @@ const state = {
   synergyDescriptions: {},
   synergyMeta: null,
   synergyPairs: null,
+
+  roles: { S: "S", MB1: "MB", WS1: "WS", LI: "LI", WS2: "WS", MB2: "MB", OP: "OP" },
+
   starters: { S: null, MB1: null, WS1: null, LI: null, WS2: null, MB2: null, OP: null },
   bench: [],
   ui: { activeSlotKey: null, targetBenchIndex: null, filterRole: null }
@@ -150,14 +130,12 @@ function renderBoard() {
     const key = hex.dataset.slot;
     const player = state.starters[key];
 
-    // image
     renderTile(hex, player);
 
-    // label: rôle pris dans currentRoles, nom si présent
     const slot = hex.closest(".slot");
     const label = slot?.querySelector(".label");
     if (label) {
-      const roleText = currentRoles[key] || key;
+      const roleText = state.roles[key] || key;
       label.innerHTML = `${roleText}<span class="player-name"></span>`;
       const nameEl = label.querySelector(".player-name");
       if (nameEl) nameEl.textContent = player ? ` - ${player.name}` : "";
@@ -171,20 +149,16 @@ function renderBoard() {
   if (!isLoading) updateActiveTeam();
 }
 
-
 function openModalForRole(slotKey) {
   state.ui.activeSlotKey = slotKey;
   state.ui.targetBenchIndex = null;
 
-  // rôle affiché dans la case (tourne avec Rotate)
-  state.ui.filterRole = isPositionless() ? null : (currentRoles[slotKey] || "");
+  state.ui.filterRole = isPositionless() ? null : (state.roles[slotKey] || "");
 
   searchInput.value = "";
   buildRoleGallery();
   modal.setAttribute("aria-hidden", "false");
 }
-
-
 
 function openModalForBench(index) {
   state.ui.activeSlotKey = null;
@@ -264,8 +238,7 @@ function buildBenchGallery(targetIndex) {
 function assignToStarter(slotKey, player) {
   if (!slotKey) return;
 
-  const expected = isPositionless() ? "" : (currentRoles[slotKey] || "");
-
+  const expected = isPositionless() ? "" : (state.roles[slotKey] || "");
   if (!isPositionless()) {
     if (player.role !== expected) {
       alert(`This slot currently expects role ${expected}.`);
@@ -281,7 +254,6 @@ function assignToStarter(slotKey, player) {
   closeModal();
   renderBoard();
 }
-
 
 function clearStarter(slotKey) {
   state.starters[slotKey] = null;
@@ -507,11 +479,13 @@ function onTabClick(e) {
   syncTabFilters();
 }
 
+
 let allTeams = JSON.parse(localStorage.getItem("allTeams") || "{}");
 
 function createEmptyTeam(name) {
   return {
     name,
+    roles: { S: "S", MB1: "MB", WS1: "WS", LI: "LI", WS2: "WS", MB2: "MB", OP: "OP" },
     starters: { S: null, MB1: null, WS1: null, LI: null, WS2: null, MB2: null, OP: null },
     bench: []
   };
@@ -562,6 +536,11 @@ function loadActiveTeam() {
     teams[0] = createEmptyTeam("Team 1");
   }
   const chosen = teams[activeTeamIndex] || teams[0];
+
+  state.roles = chosen.roles
+    ? { ...chosen.roles }
+    : { S: "S", MB1: "MB", WS1: "WS", LI: "LI", WS2: "WS", MB2: "MB", OP: "OP" };
+
   state.starters = { ...chosen.starters };
   state.bench = Array.isArray(chosen.bench) ? [...chosen.bench] : [];
   renderBoard();
@@ -570,6 +549,7 @@ function loadActiveTeam() {
 function updateActiveTeam() {
   const teams = getCurrentTeams();
   teams[activeTeamIndex] = teams[activeTeamIndex] || createEmptyTeam(`Team ${activeTeamIndex + 1}`);
+  teams[activeTeamIndex].roles = { ...state.roles };
   teams[activeTeamIndex].starters = { ...state.starters };
   teams[activeTeamIndex].bench = [...state.bench];
   persistTeams();
@@ -646,6 +626,23 @@ function wireServerToggle() {
       });
     });
   });
+}
+
+function rotateStartersLeft() {
+  const prevStarters = { ...state.starters };
+  for (let i = 0; i < ROTATE_RING.length; i++) {
+    const src = ROTATE_RING[i];
+    const dst = ROTATE_RING[(i + 1) % ROTATE_RING.length];
+    state.starters[dst] = prevStarters[src] || null;
+  }
+  const prevRoles = { ...state.roles };
+  for (let i = 0; i < ROTATE_RING.length; i++) {
+    const src = ROTATE_RING[i];
+    const dst = ROTATE_RING[(i + 1) % ROTATE_RING.length];
+    state.roles[dst] = prevRoles[src];
+  }
+
+  renderBoard();
 }
 
 function wire() {
