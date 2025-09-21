@@ -222,7 +222,7 @@ const synergyDescriptions = {
     "Sports Festival":"When an ally member touches the ball, consume 1 Stamina and increase that member’s main stats by 3%/3.5%/4%/4.5%/5% for 2 net crossings.If that ball touch is a block, that member’s Block increases by an additional 5% for 2 net crossings.",
     "Date Tech’s Setter":{"Kanji SP": "Set +5/7/9/12/15, Set +1/2/3/4/5%","Kaname SR": "Set +5/7/9/12/15, Set +1/2/3/4/5%"},
     "Training Camp Teammates - Youth Selection":"Ally members on the court with a block skill gain +6%/+7%/+8%/+9%/+10% Block. The cooldown of <Block System> is reduced by 2 net crossings. When an ally member activates a serve skill, inflict Enrage debuff on the opponent’s back row (Power Attack / Quick Attack –10%) for 8 net crossings.",
-    "The Big Rookie and the New Captain":{"Kanji SP": "Block +5/7/9/12/15, Block +1/2/3/4/5%","Kenji SR": "Block +5/7/9/12/15, Block +1/2/3/4/5%"},
+    "The Big Rookie and the New Captain":{"Kanji SP": "Block +5/7/9/12/15, Block +1/2/3/4/5%","Kenji SSR": "Block +5/7/9/12/15, Block +1/2/3/4/5%"},
     "The New “Iron Wall”":"When Kanji is on the court, if at least 2 members included in the Bond Skill are present, the Bond Skill becomes active. When allies perform a 2- or 3-man block, front-row allies’ Defense Technique increases by 3%/4%/5%/6%/7% for 1 rally. When an ally activates a serve skill, the serve will not fail. During rallies where an ally activates a serve skill, if allies perform a 2- or 3-man block, gain 1 stack of [Create Iron Wall].",
 
     //Shiratorizawa
