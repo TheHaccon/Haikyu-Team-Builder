@@ -12,7 +12,7 @@ const characters = [
     { name: "Nishinoya SR", role: "Li", img: "img-global/nishinoyaSR.png", school: "Karasuno", bonds: ["\"Guardian Deity\" and \"Ace\"", "Formidable Opponent", "Karasuno\'s Sophomore(practice)"] },
     { name: "Tanaka SSR", role: "WS", img: "img-global/tanakaSSR.png", school: "Karasuno", bonds: ["Karasuno\'s sophomore", "Kiyoko\'s Knights", "TOMODACHI(Friends!)"] },
     { name: "Tanaka SR", role: "WS", img: "img-global/tanakaSR.png", school: "Karasuno", bonds: ["Karasuno\'s Wing Spiker", "Building Team Chemistry", "Karasuno\'s Sophomore(practice)"] },
-    { name: "Tsukishima SSR", role: "MB", img: "img-global/tsukishimaSSR.png", school: "Karasuno", bonds: ["The Moment you'll be hooked on volleyball","\"Shield\" and \"Spear\"", "Master and Apprentice", "Prediction VS System"] },
+    { name: "Tsukishima SSR", role: "MB", img: "img-global/tsukishimaSSR.png", school: "Karasuno", bonds: ["The Moment you'll be hooked on volleyball","\"Shield\" and \"Spear\"", "Master and Apprentice", "Prediction VS System","Tokyo Camp Training Partners"] },
     { name: "Tsukishima SR", role: "MB", img: "img-global/tsukishimaSR.png", school: "Karasuno", bonds: ["Simulated Junior Training Teamate", "\"Shield\" and \"Spear\"(practice)", "\"Sun\" and \"Moon\""] },
     { name: "Tadashi SR", role: "MB", img: "img-global/tadashiSR.png", school: "Karasuno", bonds: ["\"Shield\" and \"Spear\"",] },
     { name: "Tadashi R", role: "MB", img: "img-global/tadashiR.png", school: "Karasuno", bonds: ["\"Shield\" and \"Spear\"(practice)"] },
@@ -37,7 +37,7 @@ const characters = [
 
     { name: "Kenma SSR", role: "S", img: "img-global/kenmaSSR.png", school: "Nekoma", bonds: ["Rival Friends", "\"Brain\" and \"Control Tower\"", "Grit and Competitive", "The \"Enigmatic\" Teammate"] },
     { name: "Kenma SR", role: "S", img: "img-global/kenmaSR.png", school: "Nekoma", bonds: ["\"Pivot\" and \"Defensive Pivot\"", "\"Pivot\" and \"Control Tower\""] },
-    { name: "Kuroo UR", role: "MB", img: "img-global/kurooUR.png", school: "Nekoma", bonds: ["Behind the Smile", "Master and Apprentice", "\"Brain\" and \"Control Tower\""] },
+    { name: "Kuroo UR", role: "MB", img: "img-global/kurooUR.png", school: "Nekoma", bonds: ["Behind the Smile", "Master and Apprentice", "\"Brain\" and \"Control Tower\"","Tokyo Camp Training Partners"] },
     { name: "Kuroo SSR", role: "MB", img: "img-global/kurooSSR.png", school: "Nekoma", bonds: ["Leaders Cut from the Same Cloth", "\"Pivot\" and \"Control Tower\""] },
     { name: "Yaku SR", role: "Li", img: "img-global/yakuSR.png", school: "Nekoma", bonds: ["Formidable Opponent", "One-on-One Training", "\"Pivot\" and \"Defensive Pivot\""] },
     { name: "Lev SSR", role: "MB", img: "img-global/levSSR.png", school: "Nekoma", bonds: ["Flexible Aces", "Nekoma\'s Junior", "The \"Enigmatic\" Teammate", "Protective Guidance"] },
@@ -74,9 +74,9 @@ const characters = [
     { name: "Ohira SSR", role: "WS", img: "img-global/ohiraSSR.png", school: "Shiratorizawa", bonds: ["Shiratorizawa's Senior", "Ushiwaka and Benkei", "Shiratorizawa's WS"] },
     { name: "Yamagata SSR", role: "Li", img: "img-global/yamagataSSR.png", school: "Shiratorizawa", bonds: ["Shiratorizawa's Senior"] },
 
-    { name: "Bokuto UR", role: "WS", img: "img-global/bokutoUR.png", school: "Fukurodani", bonds: ["Top Disciple","The Moment you'll be hooked on volleyball"] },
-    { name: "Akaashi SSR", role: "S", img: "img-global/akaashiSSR.png",school: "Fukurodani", bonds: ["Tokyo Training Camp Self-Practice Buddies","Miracle Ace and the Stubborn Setter"] },
-    { name: "Sarukui SR", role: "Li", img: "img-global/sarukuiSR.png",school: "Fukurodani", bonds: ["Fukurodani WS","Fukurodani 3rd Years"] },
+    { name: "Bokuto UR", role: "WS", img: "img-global/bokutoUR.png", school: "Fukurodani", bonds: ["Miracle Ace and Attentive Setter","Top Disciple","The Moment you'll be hooked on volleyball","Fukurodani's Wing Spiker","Tokyo Camp Training Partners"] },
+    { name: "Akaashi SSR", role: "S", img: "img-global/akaashiSSR.png",school: "Fukurodani", bonds: ["Miracle Ace and Attentive Setter","Tokyo Camp Training Partners"] },
+    { name: "Sarukui SR", role: "Li", img: "img-global/sarukuiSR.png",school: "Fukurodani", bonds: ["Fukurodani's Wing Spiker","Fukurodani 3rd Years"] },
     { name: "Onaga R", role: "MB", img: "img-global/onagaR.png",school: "Fukurodani", bonds: [] },
 
 
@@ -170,10 +170,11 @@ const synergyDescriptions = {
     "Shiratorizawa's WS": "Allies’ [Spike] increases by 4%",
     "Contrasting Setters":{"Shirabu SSR": "Serve +5/7/9/12/15, Serve +1/2/3/4/5%","Semi SSR": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%"},
 
+    //fukurodani
     "Top Disciple": { "Bokuto UR": "Spike +5/7/9/12/15, Spike +1/2/3/4/5%", "Hinata SSR": "" },
     "The Moment you'll be hooked on volleyball": {"Bokuto SP": "Spikes +5/7/9/12/15, Spikes +1/2/3/4/5%","Tsukishima SP": "Quick +5/7/9/12/15, Quick +1/2/3/4/5%"},
     "Fukurodani's Wing Spiker": {"Bokuto UR":"","Sarukui SSR": "Serve +5/7/9/12/15, Serve +1/2/3/4/5%"},
-    "Miracle Ace and Attentive Setter": "Akaashi (Beach) Toss +6%. While teammates are in Team Spirit mode, Bokuto (Beach) gets +18% Power. Akaashi (Beach) Toss +5% more during this time.",
+    "Miracle Ace and Attentive Setter": "KOTARO BOKUTO exits the [Down Mode] state. KEIJI AKAASHI sets the ball, and BOKUTO performs a Power Spike with 265/280/295/310/325% of his Power Attack stat. For this Spike, BOKUTO’s Power Attack stat increases by 20%, and your Team Morale increases by 15.",
     "Tokyo Camp Training Partners": {"Bokuto SP": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Akaashi SP": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%","Tsukishima SP": "Block +5/7/9/12/15, Block +1/2/3/4/5%","Kuroo SP": "Block +5/7/9/12/15, Block +1/2/3/4/5%"},
 };
 
@@ -265,8 +266,9 @@ const synergyMeta = {
 
     "Top Disciple": { category: "stats", activation: { scope: "any", min: 2 } },
     "The Moment you'll be hooked on volleyball":{ category: "stats", activation: { scope: "any", min: 2 } },
-    "Fukurodani WS": { category: "stats", activation: { scope: "any", min: 2 } },
-
+    "Fukurodani's Wing Spiker": { category: "stats", activation: { scope: "any", min: 2 } },
+    "Miracle Ace and Attentive Setter": { category: "deployment", activation: { scope: "any", min: 2 } },
+    "Tokyo Camp Training Partners": { category: "stats", activation: { scope: "any", min: 4 } },
 };
 
 //put what player create the bond
@@ -342,8 +344,9 @@ const synergyPairs = {
 
     "Top Disciple": [["Bokuto", "Hinata"]],
     "The Moment you'll be hooked on volleyball": [["Bokuto", "Tsukishima"]],
-    "Fukurodani WS": [["Bokuto", "Sarukui"]],
-
+    "Fukurodani's Wing Spiker": [["Bokuto", "Sarukui"]],
+    "Miracle Ace and Attentive Setter": [["Bokuto", "Akaashi"]],
+    "Tokyo Camp Training Partners": [["Bokuto", "Kuroo", "Akaashi", "Tsukishima"]],
 
 };
 
