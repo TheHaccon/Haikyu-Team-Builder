@@ -79,6 +79,11 @@ const characters = [
     { name: "Sarukui SR", role: "Li", img: "img-global/sarukuiSR.png",school: "Fukurodani", bonds: ["Fukurodani's Wing Spiker","Fukurodani 3rd Years"] },
     { name: "Onaga R", role: "MB", img: "img-global/onagaR.png",school: "Fukurodani", bonds: [] },
 
+    { name: "Atsumu UR", role: "S", img: "img-global/atsumuUR.png",school: "Inarizaki", bonds: [] },
+    { name: "Omimi SR", role: "MB", img: "img-global/omimiSR.png",school: "Inarizaki", bonds: [] },
+    { name: "Kosaku R", role: "WS", img: "img-global/kosakuR.png",school: "Inarizaki", bonds: [] },
+    { name: "Riseki R", role: "WS", img: "img-global/risekiR.png",school: "Inarizaki", bonds: [] },
+
 
 
 ];
