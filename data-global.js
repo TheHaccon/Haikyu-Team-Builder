@@ -79,7 +79,8 @@ const characters = [
     { name: "Sarukui SR", role: "Li", img: "img-global/sarukuiSR.png",school: "Fukurodani", bonds: ["Fukurodani's Wing Spiker","Fukurodani 3rd Years"] },
     { name: "Onaga R", role: "MB", img: "img-global/onagaR.png",school: "Fukurodani", bonds: [] },
 
-    { name: "Atsumu UR", role: "S", img: "img-global/atsumuUR.png",school: "Inarizaki", bonds: [] },
+    { name: "Osamu UR", role: "OP", img: "img-global/osamuUR.png",school: "Inarizaki", bonds: ["Strongest High School Twins"] },
+    { name: "Atsumu UR", role: "S", img: "img-global/atsumuUR.png",school: "Inarizaki", bonds: ["Strongest High School Twins"] },
     { name: "Omimi SR", role: "MB", img: "img-global/omimiSR.png",school: "Inarizaki", bonds: [] },
     { name: "Kosaku R", role: "WS", img: "img-global/kosakuR.png",school: "Inarizaki", bonds: [] },
     { name: "Riseki R", role: "WS", img: "img-global/risekiR.png",school: "Inarizaki", bonds: [] },
@@ -94,6 +95,9 @@ const synergyDescriptions = {
     "Aoba Johsai": "Increases Power Attack stats of all players present by 15%",
     "Nekoma": "Increases Receive stat of all players present by 15%",
     "Date Kogyo": "Increases Block stat of all players present by 15%",
+    "Fukurodani":"Your Team Morale increases by 20 at the start of the match",
+    "Johsenji":"All players on your side gain 2 stacks of \"Play Hard\"",
+    "Inarizaki":"Increases Attack Technique and Defense Technique of all players on the court by 5%",
 
     //karasuno bond
     "Karasuno\'s Pillar": "When achieving a PERFECT receive, increases Team Morale by 3/3/4/4/5",
@@ -181,6 +185,9 @@ const synergyDescriptions = {
     "Fukurodani's Wing Spiker": {"Bokuto UR":"","Sarukui SSR": "Serve +5/7/9/12/15, Serve +1/2/3/4/5%"},
     "Miracle Ace and Attentive Setter": "KOTARO BOKUTO exits the [Down Mode] state. KEIJI AKAASHI sets the ball, and BOKUTO performs a Power Spike with 265/280/295/310/325% of his Power Attack stat. For this Spike, BOKUTO’s Power Attack stat increases by 20%, and your Team Morale increases by 15.",
     "Tokyo Camp Training Partners": {"Bokuto SP": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Akaashi SP": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%","Tsukishima SP": "Block +5/7/9/12/15, Block +1/2/3/4/5%","Kuroo SP": "Block +5/7/9/12/15, Block +1/2/3/4/5%"},
+
+    //inarizaki
+    "Strongest High School Twins" : "ATSUMU MIYA sets the ball, and OSAMU MIYA performs a Twin Quick Spike - Reverse Rhythm with 265/280/295/310/325% of his Quick Attack stat (This Spike cannot be blocked). Their Attack Technique increases by 15%, lasting until either Atsumu or Osamu leaves the court."
 };
 
 //Lowkey just have to remeber that when a bond is create I put it here
@@ -191,6 +198,9 @@ const synergyMeta = {
     "Aoba Johsai": { category: "school", activation: { scope: "starters", min: 4 } },
     "Nekoma": { category: "school", activation: { scope: "starters", min: 4 } },
     "Date Kogyo": { category: "school", activation: { scope: "starters", min: 4 } },
+    "Fukurodani": { category: "school", activation: { scope: "starters", min: 4 } },
+    "Johsenji": { category: "school", activation: { scope: "starters", min: 4 } },
+    "Inarizaki": { category: "school", activation: { scope: "starters", min: 4 } },
 
     "Karasuno\'s Pillar": { category: "deployment", activation: { scope: "any", min: 2 } },
     "Flexible Aces": { category: "stats", activation: { scope: "any", min: 2 } },
@@ -274,6 +284,8 @@ const synergyMeta = {
     "Fukurodani's Wing Spiker": { category: "stats", activation: { scope: "any", min: 2 } },
     "Miracle Ace and Attentive Setter": { category: "deployment", activation: { scope: "any", min: 2 } },
     "Tokyo Camp Training Partners": { category: "stats", activation: { scope: "any", min: 4 } },
+
+    "Strongest High School Twins": { category: "deployment", activation: { scope: "any", min: 2 } },
 };
 
 //put what player create the bond
@@ -353,6 +365,7 @@ const synergyPairs = {
     "Miracle Ace and Attentive Setter": [["Bokuto", "Akaashi"]],
     "Tokyo Camp Training Partners": [["Bokuto", "Kuroo", "Akaashi", "Tsukishima"]],
 
+    "Strongest High School Twins": [["Osamu", "Atsumu"]],
 };
 
 window.characters = characters;
