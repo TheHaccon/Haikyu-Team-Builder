@@ -17,7 +17,7 @@ const deployFilterRadios = document.querySelectorAll('#deploy-filter input[name=
 const statsFilterRadios = document.querySelectorAll('#stats-filter input[name="statsFilter"]');
 const rotateBtn = document.getElementById("rotateBtn");
 
-const ROTATE_RING = ["S", "MB1", "WS1", "OP", "MB2", "WS2", "LI"];
+const ROTATE_RING = ["S", "MB1", "WS1", "OP", "MB2", "WS2"];
 
 const POSITIONLESS_LS_KEY = 'htb_positionless';
 let POSITIONLESS = JSON.parse(localStorage.getItem(POSITIONLESS_LS_KEY) || 'false');
