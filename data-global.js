@@ -1,6 +1,6 @@
 // template: { name: "", role: "", img: "img-global/", school: "", bonds: [] },
 const characters = [
-    { name: "Hinata SSR", role: "MB", img: "img-global/hinataSSR.png", school: "Karasuno", bonds: ["Flexible Aces", "Worthy Rival", "Surprising Friendship", "Rival Friends", "Top Disciple"] },
+    { name: "Hinata SSR", role: "MB", img: "img-global/hinataSSR.png", school: "Karasuno", bonds: ["Flexible Aces", "Worthy Rival", "Surprising Friendship", "Rival Friends", "Top Disciple","Little Giants"] },
     { name: "Hinata SR", role: "MB", img: "img-global/hinataSR.png", school: "Karasuno", bonds: ["Teammates on the Court", "\"Sun\" and \"Moon\""] },
     { name: "Kageyama SSR", role: "S", img: "img-global/tobioSSR.png", school: "Karasuno", bonds: ["Teammates on the Court", "Building Team Chemistry"] },
     { name: "Daichi SSR", role: "OP", img: "img-global/daichiSSR.png", school: "Karasuno", bonds: ["Karasuno\'s Pillar", "karasuno Senior Year", "Behind the Smile"] },
@@ -85,7 +85,13 @@ const characters = [
     { name: "Kosaku R", role: "WS", img: "img-global/kosakuR.png",school: "Inarizaki", bonds: [] },
     { name: "Riseki R", role: "WS", img: "img-global/risekiR.png",school: "Inarizaki", bonds: [] },
 
+    { name: "Hoshiumi UR", role: "WS", img: "img-global/hoshiumiUR.png",school: "Kamomedai", bonds: ["Little Giants","Friends from Junior High"] },
+    { name: "Hirugami UR", role: "MB", img: "img-japan/hirugamiUR.png",school: "Kamomedai", bonds: ["Friends from Junior High"] },
 
+    /*
+    { name: "Sakusa UR", role: "WS", img: "img-japan/sakusaUR.png",school: "Itachiyama", bonds: ["Japan Youth Training Camp Teammates","Top Spiker and Top-Class Libero"] },
+    { name: "Komori UR", role: "Li", img: "img-japan/komoriUR.png",school: "Itachiyama", bonds: ["Japan Youth Training Camp Teammates","Top Spiker and Top-Class Libero"] },
+    */
 
 ];
 // tempalte: "": "",
@@ -187,7 +193,11 @@ const synergyDescriptions = {
     "Tokyo Camp Training Partners": {"Bokuto SP": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Akaashi SP": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%","Tsukishima SP": "Block +5/7/9/12/15, Block +1/2/3/4/5%","Kuroo SP": "Block +5/7/9/12/15, Block +1/2/3/4/5%"},
 
     //inarizaki
-    "Strongest High School Twins" : "ATSUMU MIYA sets the ball, and OSAMU MIYA performs a Twin Quick Spike - Reverse Rhythm with 265/280/295/310/325% of his Quick Attack stat (This Spike cannot be blocked). Their Attack Technique increases by 15%, lasting until either Atsumu or Osamu leaves the court."
+    "Strongest High School Twins" : "ATSUMU MIYA sets the ball, and OSAMU MIYA performs a Twin Quick Spike - Reverse Rhythm with 265/280/295/310/325% of his Quick Attack stat (This Spike cannot be blocked). Their Attack Technique increases by 15%, lasting until either Atsumu or Osamu leaves the court.",
+
+    //kamomedai
+    "Little Giants":{ "Hoshiumi UR": "Power Attack +5/7/9/12/15, Power Attack +1/2/3/4/5%", "Hinata SSR": "" },
+    "Friends from Junior High":"Increases Hoshiumi's main stats by 6/7/8/9/10% and increases the [Block] of front row allies by 6/7/8/9/10%. At the start of the match, Hoshiumi gains 1 stack of [All-Rounder] and Hirugami gains 1 stack of [Strong Block].",
 };
 
 //Lowkey just have to remeber that when a bond is create I put it here
@@ -286,6 +296,9 @@ const synergyMeta = {
     "Tokyo Camp Training Partners": { category: "stats", activation: { scope: "any", min: 4 } },
 
     "Strongest High School Twins": { category: "deployment", activation: { scope: "any", min: 2 } },
+
+    "Little Giants": { category: "stats", activation: { scope: "any", min: 2 } },
+    "Friends from Junior High": { category: "deployment", activation: { scope: "any", min: 2 } },
 };
 
 //put what player create the bond
@@ -366,6 +379,9 @@ const synergyPairs = {
     "Tokyo Camp Training Partners": [["Bokuto", "Kuroo", "Akaashi", "Tsukishima"]],
 
     "Strongest High School Twins": [["Osamu", "Atsumu"]],
+
+    "Little Giants": [["Hoshiumi", "Hinata"]],
+    "Friends from Junior High": [["Hoshiumi", "Hirugami"]],
 };
 
 window.characters = characters;
