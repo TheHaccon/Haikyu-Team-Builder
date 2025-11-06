@@ -450,8 +450,11 @@ function onBenchContext(e) {
 }
 
 function onSearchInput() {
-  if (state.ui.filterRole) buildRoleGallery();
-  else if (state.ui.targetBenchIndex != null) buildBenchGallery(state.ui.targetBenchIndex);
+  if (state.ui.activeSlotKey != null) {
+    buildRoleGallery();
+  } else if (state.ui.targetBenchIndex != null) {
+    buildBenchGallery(state.ui.targetBenchIndex);
+  }
 }
 
 const deployFilterBox = document.getElementById('deploy-filter');
