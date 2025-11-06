@@ -628,6 +628,57 @@ h1 {
   transform: scale(0.97);
 }
 
+.card .meta-line { font-size: 12px; color: #9ca3af; line-height: 1.2; margin-top: 2px; }
+.card .meta-line:empty { display: none; }
+
+.card .power { font-weight: 600; color: #cbd5e1; }
+.card .power-label { margin-right: 6px; }
+.card .power-seq .seq-num { padding: 0 2px; }
+.card .power-seq .seq-num.active { font-weight: 800; text-decoration: underline; }
+
+#power-title {
+  margin-top: 16px;
+  font-size: 18px;
+  border-top: 1px solid var(--ring);
+  padding-top: 10px;
+  color: var(--text);
+}
+
+#power-list {
+  list-style: none;
+  margin: 8px 0 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#power-list li strong {
+  min-width: 84px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+#power-list .seq-num {
+  padding: 0 2px;
+  line-height: 1;
+  display: inline-block;
+  border-radius: 4px;
+  color: var(--text);
+  opacity: 0.9;
+}
+
+#power-list .seq-num.active {
+  font-weight: 800;
+  text-decoration: underline;
+  opacity: 1;
+}
+
+body:not(.pos-on) #power-title,
+body:not(.pos-on) #power-list {
+  display: none !important;
+}
+
 @media (max-width: 768px) {
 
   header,

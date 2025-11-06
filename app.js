@@ -19,6 +19,9 @@ const rotateBtn = document.getElementById("rotateBtn");
 
 const ROTATE_RING = ["S", "MB1", "WS1", "OP", "MB2", "WS2"];
 
+function syncPosClass() {
+  document.body.classList.toggle('pos-on', isPositionless());
+}
 const POSITIONLESS_LS_KEY = 'htb_positionless';
 let POSITIONLESS = JSON.parse(localStorage.getItem(POSITIONLESS_LS_KEY) || 'false');
 const positionlessToggle = document.getElementById('positionlessToggle');
@@ -35,6 +38,9 @@ if (positionlessToggle) {
       if (state.ui.activeSlotKey) buildRoleGallery();
       else if (state.ui.targetBenchIndex != null) buildBenchGallery(state.ui.targetBenchIndex);
     }
+    syncPosClass();
+    syncPositionlessPanels();
+    renderPowerPanel();
   });
 }
 
@@ -98,6 +104,9 @@ async function loadDataset(server) {
     role: (c.role || "").toUpperCase(),
     img: c.img,
     school: c.school || "",
+    power: Array.isArray(c.power)
+      ? c.power.filter(Boolean)
+      : (c.power || c.type ? [c.power || c.type] : []),
     bonds: Array.isArray(c.bonds) ? c.bonds.filter(Boolean) : Array.isArray(c.links) ? c.links.filter(Boolean) : []
   }));
   state.players = norm;
@@ -145,6 +154,7 @@ function renderBoard() {
   benchSlots().forEach((b, i) => renderTile(b, state.bench[i] || null));
 
   renderSynergies();
+  renderPowerPanel();
   syncAddBenchButton();
   if (!isLoading) updateActiveTeam();
 }
@@ -179,6 +189,58 @@ function closeModal() {
 
 function getAllPicked() {
   return [...Object.values(state.starters).filter(Boolean), ...state.bench.filter(Boolean)];
+}
+
+function toPowerArray(p) {
+  if (!p) return [];
+  return Array.isArray(p) ? p.filter(Boolean) : [p];
+}
+
+function getStarterPowerCounts() {
+  const counts = {};
+  for (const x of Object.values(state.starters)) {
+    if (!x) continue;
+    for (const pw of toPowerArray(x.power)) {
+      counts[pw] = (counts[pw] || 0) + 1;
+    }
+  }
+  return counts;
+}
+function renderPowerSequence(label, index, max = 5) {
+  const nums = [];
+  for (let i = 1; i <= max; i++) {
+    nums.push(`<span class="seq-num${i === index ? ' active' : ''}">${i}</span>`);
+  }
+  return `<li><strong>${label}</strong> — ${nums.join('/')}</li>`;
+}
+
+function renderPowerPanel() {
+  const list = document.getElementById('power-list');
+  if (!list) return;
+
+  if (!isPositionless()) {
+    list.innerHTML = '<li>(turn on Positionless to see power stacks)</li>';
+    return;
+  }
+
+  const counts = getStarterPowerCounts();
+  const labels = Object.keys(counts).sort((a,b)=>a.localeCompare(b));
+  if (!labels.length) {
+    list.innerHTML = '<li>(no power synergies yet)</li>';
+    return;
+  }
+
+  list.innerHTML = labels
+    .map(lbl => renderPowerSequence(lbl, (counts[lbl] || 0), 5))
+    .join('');
+}
+
+function syncPositionlessPanels() {
+  document.querySelectorAll('.pos-only').forEach(el => {
+    const hide = !isPositionless();
+    el.hidden = hide;
+    el.setAttribute('aria-hidden', String(hide));
+  });
 }
 
 function buildRoleGallery() {
@@ -482,7 +544,6 @@ function onTabClick(e) {
   syncTabFilters();
 }
 
-
 let allTeams = JSON.parse(localStorage.getItem("allTeams") || "{}");
 
 function createEmptyTeam(name) {
@@ -626,6 +687,7 @@ function wireServerToggle() {
       loadDataset(server).then(() => {
         renderTeamSwitcher();
         loadActiveTeam();
+        renderPowerPanel();
       });
     });
   });
@@ -675,6 +737,9 @@ function init() {
   loadDataset(state.server).then(() => {
     renderTeamSwitcher();
     loadActiveTeam();
+    syncPosClass();
+    syncPositionlessPanels();
+    renderPowerPanel();
   });
 }
 
