@@ -88,7 +88,7 @@ const characters = [
 
     { name: "Bokuto SP",      role: "WS", img: "img-japan/bokutoSP.png",      power:["Receive","Power"],         school: "Fukurodani",    bonds: ["Number One Disciple SP","The Moment They Fell for Volleyball","Beach",,"Kizuna Skills","Miracle Ace & Considerate Setter","Tokyo Training Camp Buddies"] },
     { name: "Bokuto UR",      role: "WS", img: "img-japan/bokutoUR.png",      power:"Power",                     school: "Fukurodani",    bonds: ["The Moment They Fell for Volleyball","Tokyo Training Camp Self-Practice Buddies","Miracle Ace and the Stubborn Setter","Number One Disciple","Fukurodani WS","Fukurodani 3rd Years"] },
-    { name: "Akaashi SP",     role: "S",  img: "img-japan/akaashiSP.png",     power:"Power",                     school: "Fukurodani",    bonds: ["Beach",,"Kizuna Skills","Miracle Ace & Considerate Setter","Tokyo Training Camp Buddies"] },
+    { name: "Akaashi SP",     role: "S",  img: "img-japan/akaashiSP.png",     power:"Power",                     school: "Fukurodani",    bonds: ["Beach","Kizuna Skills","Miracle Ace & Considerate Setter","Tokyo Training Camp Buddies"] },
     { name: "Akaashi SSR",    role: "S",  img: "img-japan/akaashiSSR.png",    power:"Power",                     school: "Fukurodani",    bonds: ["Tokyo Training Camp Self-Practice Buddies","Miracle Ace and the Stubborn Setter"] },
     { name: "Konoha SSR",     role: "OP", img: "img-japan/konohaSSR.png",     power:"Receive",                   school: "Fukurodani",    bonds: ["Fukurodani 3rd Years"] },
     { name: "Sarukui SR",     role: "WS", img: "img-japan/sarukuiSR.png",     power:["Receive","Power"],         school: "Fukurodani",    bonds: ["Fukurodani WS","Fukurodani 3rd Years"] },

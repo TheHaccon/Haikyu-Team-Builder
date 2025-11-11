@@ -76,8 +76,11 @@ const characters = [
 
     { name: "Bokuto UR", role: "WS", img: "img-global/bokutoUR.png", school: "Fukurodani", bonds: ["Miracle Ace and Attentive Setter","Top Disciple","The Moment you'll be hooked on volleyball","Fukurodani's Wing Spiker","Tokyo Camp Training Partners"] },
     { name: "Akaashi SSR", role: "S", img: "img-global/akaashiSSR.png",school: "Fukurodani", bonds: ["Miracle Ace and Attentive Setter","Tokyo Camp Training Partners"] },
-    { name: "Sarukui SR", role: "Li", img: "img-global/sarukuiSR.png",school: "Fukurodani", bonds: ["Fukurodani's Wing Spiker","Fukurodani 3rd Years"] },
-    { name: "Onaga R", role: "MB", img: "img-global/onagaR.png",school: "Fukurodani", bonds: [] },
+    { name: "Konoha SSR",role: "OP", img: "img-japan/konohaSSR.png",school: "Fukurodani",bonds: ["Fukurodani 3rd Years"] },
+    { name: "Sarukui SR", role: "WS", img: "img-global/sarukuiSR.png",school: "Fukurodani", bonds: ["Fukurodani 3rd Years","Fukurodani's Wing Spiker"]},
+    { name: "Komi SSR",role: "Li", img: "img-japan/komiSSR.png",school: "Fukurodani",bonds: ["Fukurodani 3rd Years"] },
+    { name: "Onaga R", role: "MB", img: "img-global/onagaR.png",school: "Fukurodani", bonds: ["Fukurodani MBs"] },
+    { name: "Washio SSR",role: "MB", img: "img-japan/washioSSR.png",school: "Fukurodani",bonds: ["Fukurodani MBs","Fukurodani 3rd Years"] },
 
     { name: "Osamu UR", role: "OP", img: "img-global/osamuUR.png",school: "Inarizaki", bonds: ["Strongest High School Twins"] },
     { name: "Atsumu UR", role: "S", img: "img-global/atsumuUR.png",school: "Inarizaki", bonds: ["Strongest High School Twins"] },
@@ -189,6 +192,9 @@ const synergyDescriptions = {
     "Top Disciple": { "Bokuto UR": "Spike +5/7/9/12/15, Spike +1/2/3/4/5%", "Hinata SSR": "" },
     "The Moment you'll be hooked on volleyball": {"Bokuto SP": "Spikes +5/7/9/12/15, Spikes +1/2/3/4/5%","Tsukishima SP": "Quick +5/7/9/12/15, Quick +1/2/3/4/5%"},
     "Fukurodani's Wing Spiker": {"Bokuto UR":"","Sarukui SSR": "Serve +5/7/9/12/15, Serve +1/2/3/4/5%"},
+    "Fukurodani MBs": {"Washio SSR": "Quick Attack +5/7/9/12/15, Quick Attack +1/2/3/4/5%","Onaga R":""},
+    "Fukurodani 3rd Years": {"Bokuto UR": "","Komi SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Konoha SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Sarukui SR": "Power +5/7/9/12/15, Power +1/2/3/4/5%", "Washio SSR": "Block +5/7/9/12/15, Block +1/2/3/4/5%"},
+
     "Miracle Ace and Attentive Setter": "KOTARO BOKUTO exits the [Down Mode] state. KEIJI AKAASHI sets the ball, and BOKUTO performs a Power Spike with 265/280/295/310/325% of his Power Attack stat. For this Spike, BOKUTO’s Power Attack stat increases by 20%, and your Team Morale increases by 15.",
     "Tokyo Camp Training Partners": {"Bokuto SP": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Akaashi SP": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%","Tsukishima SP": "Block +5/7/9/12/15, Block +1/2/3/4/5%","Kuroo SP": "Block +5/7/9/12/15, Block +1/2/3/4/5%"},
 
@@ -292,6 +298,8 @@ const synergyMeta = {
     "Top Disciple": { category: "stats", activation: { scope: "any", min: 2 } },
     "The Moment you'll be hooked on volleyball":{ category: "stats", activation: { scope: "any", min: 2 } },
     "Fukurodani's Wing Spiker": { category: "stats", activation: { scope: "any", min: 2 } },
+    "Fukurodani MBs":{ category: "stats",activation: { scope: "any", min: 2 } },
+    "Fukurodani 3rd Years":{ category: "stats",activation: { scope: "any", min: 2 } },
     "Miracle Ace and Attentive Setter": { category: "deployment", activation: { scope: "any", min: 2 } },
     "Tokyo Camp Training Partners": { category: "stats", activation: { scope: "any", min: 4 } },
 
@@ -374,7 +382,9 @@ const synergyPairs = {
 
     "Top Disciple": [["Bokuto", "Hinata"]],
     "The Moment you'll be hooked on volleyball": [["Bokuto", "Tsukishima"]],
-    "Fukurodani's Wing Spiker": [["Bokuto", "Sarukui"]],
+    "Fukurodani's Wing Spiker": [["Bokuto UR", "Sarukui SR"]],
+    "Fukurodani MBs":[["Onaga","Washio"]],
+    "Fukurodani 3rd Years": [["Bokuto", "Komi", "Konoha", "Sarukui", "Washio"]],
     "Miracle Ace and Attentive Setter": [["Bokuto", "Akaashi"]],
     "Tokyo Camp Training Partners": [["Bokuto", "Kuroo", "Akaashi", "Tsukishima"]],
 
