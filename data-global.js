@@ -77,17 +77,22 @@ const characters = [
     { name: "Bokuto UR", role: "WS", img: "img-global/bokutoUR.png", school: "Fukurodani", bonds: ["Miracle Ace and Attentive Setter","Top Disciple","The Moment you'll be hooked on volleyball","Fukurodani's Wing Spiker","Tokyo Camp Training Partners"] },
     { name: "Akaashi SSR", role: "S", img: "img-global/akaashiSSR.png",school: "Fukurodani", bonds: ["Miracle Ace and Attentive Setter","Tokyo Camp Training Partners"] },
     { name: "Konoha SSR",role: "OP", img: "img-japan/konohaSSR.png",school: "Fukurodani",bonds: ["Fukurodani 3rd Years"] },
-    { name: "Sarukui SR", role: "WS", img: "img-global/sarukuiSR.png",school: "Fukurodani", bonds: ["Fukurodani 3rd Years","Fukurodani's Wing Spiker"]},
+    { name: "Sarukui SR", role: "WS", img: "img-global/sarukuiSR.png",school: "Fukurodani", bonds: ["Fukurodani's Wing Spiker","Fukurodani 3rd Years"] },
     { name: "Komi SSR",role: "Li", img: "img-japan/komiSSR.png",school: "Fukurodani",bonds: ["Fukurodani 3rd Years"] },
     { name: "Onaga R", role: "MB", img: "img-global/onagaR.png",school: "Fukurodani", bonds: ["Fukurodani MBs"] },
     { name: "Washio SSR",role: "MB", img: "img-japan/washioSSR.png",school: "Fukurodani",bonds: ["Fukurodani MBs","Fukurodani 3rd Years"] },
 
-    { name: "Osamu UR", role: "OP", img: "img-global/osamuUR.png",school: "Inarizaki", bonds: ["Strongest High School Twins"] },
-    { name: "Atsumu UR", role: "S", img: "img-global/atsumuUR.png",school: "Inarizaki", bonds: ["Strongest High School Twins"] },
-    { name: "Omimi SR", role: "MB", img: "img-global/omimiSR.png",school: "Inarizaki", bonds: [] },
-    { name: "Kosaku R", role: "WS", img: "img-global/kosakuR.png",school: "Inarizaki", bonds: [] },
-    { name: "Riseki R", role: "WS", img: "img-global/risekiR.png",school: "Inarizaki", bonds: [] },
-
+    { name: "Atsumu UR",      role: "S",  img: "img-japan/atsumuUR.png",      /*power:"Quick",*/                     school: "Inarizaki",     bonds: ["Head and Core",,"Strongest High School Twins","Friends from Volleyball Class","Inarizaki 2nd Years",] },
+    { name: "Osamu UR",       role: "OP", img: "img-japan/osamuUR.png",       /*power:"Quick",*/                     school: "Inarizaki",     bonds: ["Head and Core","Strongest High School Twins","Classmates","Friends from Volleyball Class","Inarizaki 2nd Years"] },
+    { name: "Kita SSR",       role: "WS", img: "img-japan/kitaSSR.png",       /*power:"Receive",*/                   school: "Inarizaki",     bonds: ["Head and Core","Third Year from Inarizaki","Inarizaki WS Teammates"] },
+    { name: "Suna SSR",       role: "MB", img: "img-japan/sunaSSR.png",       /*power:["Block","Quick"],*/           school: "Inarizaki",     bonds: ["Classmates","Inarizaki's Middle Blockers","Inarizaki 2nd Years"] },
+    { name: "Ojiro SSR",      role: "WS", img: "img-japan/ojiroSSR.png",      /*power:"Power",*/                     school: "Inarizaki",     bonds: ["Friends from Volleyball Class","Third Year from Inarizaki","Inarizaki WS Teammates"] },
+    { name: "Akagi SSR",      role: "Li", img: "img-japan/akagiSSR.png",      /*power:"Receive",*/                   school: "Inarizaki",     bonds: ["Third Year from Inarizaki",] },
+    { name: "Ginjima SSR",    role: "WS", img: "img-japan/ginjimaSSR.png",    /*power:["Receive","Power"],*/         school: "Inarizaki",     bonds: ["Inarizaki 2nd Years","Inarizaki WS Teammates"] },
+    { name: "Omimi SR",       role: "MB", img: "img-japan/omimiSR.png",       /*power:"Block",*/                     school: "Inarizaki",     bonds: ["Inarizaki's Middle Blockers","Third Year from Inarizaki"] },
+    { name: "Kosaku R",       role: "WS", img: "img-japan/kosakuR.png",       /*power:"Receive",*/                   school: "Inarizaki",     bonds: ["Inarizaki 2nd Years","Inarizaki WS Teammates"] },
+    { name: "Riseki R",       role: "WS", img: "img-japan/risekiR.png",       /*power:"Power",*/                     school: "Inarizaki",     bonds: ["Inarizaki WS Teammates"] },
+    
     { name: "Hoshiumi UR", role: "WS", img: "img-global/hoshiumiUR.png",school: "Kamomedai", bonds: ["Little Giants","Friends from Junior High"] },
     { name: "Hirugami UR", role: "MB", img: "img-japan/hirugamiUR.png",school: "Kamomedai", bonds: ["Friends from Junior High"] },
 
@@ -191,7 +196,7 @@ const synergyDescriptions = {
     //fukurodani
     "Top Disciple": { "Bokuto UR": "Spike +5/7/9/12/15, Spike +1/2/3/4/5%", "Hinata SSR": "" },
     "The Moment you'll be hooked on volleyball": {"Bokuto SP": "Spikes +5/7/9/12/15, Spikes +1/2/3/4/5%","Tsukishima SP": "Quick +5/7/9/12/15, Quick +1/2/3/4/5%"},
-    "Fukurodani's Wing Spiker": {"Bokuto UR":"","Sarukui SSR": "Serve +5/7/9/12/15, Serve +1/2/3/4/5%"},
+    "Fukurodani's Wing Spiker": {"Bokuto UR":"","Sarukui SR": "Serve +5/7/9/12/15, Serve +1/2/3/4/5%"},
     "Fukurodani MBs": {"Washio SSR": "Quick Attack +5/7/9/12/15, Quick Attack +1/2/3/4/5%","Onaga R":""},
     "Fukurodani 3rd Years": {"Bokuto UR": "","Komi SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Konoha SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Sarukui SR": "Power +5/7/9/12/15, Power +1/2/3/4/5%", "Washio SSR": "Block +5/7/9/12/15, Block +1/2/3/4/5%"},
 
@@ -199,7 +204,16 @@ const synergyDescriptions = {
     "Tokyo Camp Training Partners": {"Bokuto SP": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Akaashi SP": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%","Tsukishima SP": "Block +5/7/9/12/15, Block +1/2/3/4/5%","Kuroo SP": "Block +5/7/9/12/15, Block +1/2/3/4/5%"},
 
     //inarizaki
-    "Strongest High School Twins" : "ATSUMU MIYA sets the ball, and OSAMU MIYA performs a Twin Quick Spike - Reverse Rhythm with 265/280/295/310/325% of his Quick Attack stat (This Spike cannot be blocked). Their Attack Technique increases by 15%, lasting until either Atsumu or Osamu leaves the court.",
+    "Head and Core":"Atsumu: Attack Technique +3%, gains 3 stacks of [Donpishari] (Toss +2% per stack, max 10). Kita: Main Parameter +3%, gains 1 stack of [Reliable Action] (Receive +2% per stack, max 3).",
+    "Youth Camp Setters":{"Kageyama UR":"Toss +5/7/9/12/15, Toss +1/2/3/4/5%","Atsumu UR":"Toss +5/7/9/12/15, Toss +1/2/3/4/5%"},
+    "Strongest High School Twins":"Atsumu tosses to Osamu who performs a minus tempo Twin Quick with [Quick] ×265% power, and Osamu’s Attack Technique increases by 15% while either twin is on court; cannot be blocked",
+    "Classmates":{"Suna SSR":"Quick Attack +5/7/9/12/15, Quick Attack +1/2/3/4/5%","Osamu UR":"Block +5/7/9/12/15, Block +1/2/3/4/5%"},
+    "Inarizaki's Middle Blockers":{"Suna SSR":"Block +5/7/9/12/15, Block +1/2/3/4/5%", "Omimi SR":"Block +5/7/9/12/15, Block +1/2/3/4/5%"},
+    "Third Year from Inarizaki": {"Kita SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Ojiro SSR": "Power Attack +5/7/9/12/15, Power Attack +1/2/3/4/5%","Akagi SSR": "Cover +5/7/9/12/15, Cover +1/2/3/4/5%","Omimi SR": "Block +5/7/9/12/15, Block +1/2/3/4/5%"},
+    "Inarizaki 2nd Years": {"Suna SSR": "Quick Spike +5/7/9/12/15, Quick Spike +1/2/3/4/5%","Ginjima SSR": "Power Spike +5/7/9/12/15, Power Spike +1/2/3/4/5%","Osamu UR": "Quick Spike +5/7/9/12/15, Quick Spike +1/2/3/4/5%","Atsumu UR":"","Kosaku R":""},
+    "Japan Youth Training Camp Teammates":{"Kageyama UR": "","Atsumu UR": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%","Sakusa UR": "Strong Spike +5/7/9/12/15, Strong Spike +1/2/3/4/5%","Komori UR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Hoshiumi UR": "Strong Spike +5/7/9/12/15, Strong Spike +1/2/3/4/5%"},
+    "Inarizaki WS Teammates": {"Kita SSR": "Cover +5/7/9/12/15, Cover +1/2/3/4/5%","Ojiro SSR": "Serve +5/7/9/12/15, Serve +1/2/3/4/5%","Ginjima SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Kosaku R": "Serve +5/7/9/12/15, Serve +1/2/3/4/5%","Riseki R": "Serve +5/7/9/12/15, Serve +1/2/3/4/5%"},
+
 
     //kamomedai
     "Little Giants":{ "Hoshiumi UR": "Power Attack +5/7/9/12/15, Power Attack +1/2/3/4/5%", "Hinata SSR": "" },
@@ -303,7 +317,20 @@ const synergyMeta = {
     "Miracle Ace and Attentive Setter": { category: "deployment", activation: { scope: "any", min: 2 } },
     "Tokyo Camp Training Partners": { category: "stats", activation: { scope: "any", min: 4 } },
 
-    "Strongest High School Twins": { category: "deployment", activation: { scope: "any", min: 2 } },
+    "The Value of the 'Stage'":                     { category: "stats",      activation: { scope: "any", min: 2 } },
+    "Two High-Energy Guys":                         { category: "stats",      activation: { scope: "any", min: 2 } },
+    "Jouzenji's WS":                                { category: "stats",      activation: { scope: "any", min: 2 } },
+    "Head and Core":                                { category: "deployment", activation: { scope: "any", min: 3 } },
+    "Youth Camp Setters":                           { category: "stats",      activation: { scope: "any", min: 2 } },
+    "Strongest High School Twins":                  { category: "deployment", activation: { scope: "any", min: 2 } },
+    "Classmates":                                   { category: "stats",      activation: { scope: "any", min: 2 } },
+    "Friends from Volleyball Class":                { category: "stats",      activation: { scope: "any", min: 3 } },
+    "Inarizaki's Middle Blockers":                  { category: "stats",      activation: { scope: "any", min: 2 } },
+    "Third Year from Inarizaki":                    { category: "stats",      activation: { scope: "any", min: 4 } },
+    "Inarizaki 2nd Years":                          { category: "stats",      activation: { scope: "any", min: 5 } },
+    "Japan Youth Training Camp Teammates":          { category: "stats",      activation: { scope: "any", min: 5 } },
+    "Inarizaki WS Teammates":                       { category: "stats",      activation: { scope: "any", min: 5 } },
+
 
     "Little Giants": { category: "stats", activation: { scope: "any", min: 2 } },
     "Friends from Junior High": { category: "deployment", activation: { scope: "any", min: 2 } },
@@ -382,13 +409,21 @@ const synergyPairs = {
 
     "Top Disciple": [["Bokuto", "Hinata"]],
     "The Moment you'll be hooked on volleyball": [["Bokuto", "Tsukishima"]],
-    "Fukurodani's Wing Spiker": [["Bokuto UR", "Sarukui SR"]],
+    "Fukurodani's Wing Spiker": [["Bokuto", "Sarukui"]],
     "Fukurodani MBs":[["Onaga","Washio"]],
     "Fukurodani 3rd Years": [["Bokuto", "Komi", "Konoha", "Sarukui", "Washio"]],
     "Miracle Ace and Attentive Setter": [["Bokuto", "Akaashi"]],
     "Tokyo Camp Training Partners": [["Bokuto", "Kuroo", "Akaashi", "Tsukishima"]],
 
-    "Strongest High School Twins": [["Osamu", "Atsumu"]],
+    "Head and Core":[["Kita","Atsumu","Osamu"]],
+    "Strongest High School Twins":[["Atsumu","Osamu"]],
+    "Classmates":[["Suna","Osamu"]],
+    "Friends from Volleyball Class":[["Atsumu","Osamu","Ojiro"]],
+    "Inarizaki's Middle Blockers":[["Suna","Omimi"]],
+    "Third Year from Inarizaki":[["Kita","Akagi","Ojiro","Omimi"]],
+    "Inarizaki 2nd Years":[["Suna","Kosaku","Atsumu","Osamu","Ginjuma"]],
+    "Inarizaki WS Teammates":[["Kita","Ojiro","Ginjima","Kosaku","Riseki"]],
+
 
     "Little Giants": [["Hoshiumi", "Hinata"]],
     "Friends from Junior High": [["Hoshiumi", "Hirugami"]],
