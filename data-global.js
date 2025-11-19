@@ -82,24 +82,22 @@ const characters = [
     { name: "Onaga R", role: "MB", img: "img-global/onagaR.png",school: "Fukurodani", bonds: ["Fukurodani MBs"] },
     { name: "Washio SSR",role: "MB", img: "img-japan/washioSSR.png",school: "Fukurodani",bonds: ["Fukurodani MBs","Fukurodani 3rd Years"] },
 
-    { name: "Atsumu UR",      role: "S",  img: "img-japan/atsumuUR.png",      /*power:"Quick",*/                     school: "Inarizaki",     bonds: ["Head and Core",,"Strongest High School Twins","Friends from Volleyball Class","Inarizaki 2nd Years",] },
-    { name: "Osamu UR",       role: "OP", img: "img-japan/osamuUR.png",       /*power:"Quick",*/                     school: "Inarizaki",     bonds: ["Head and Core","Strongest High School Twins","Classmates","Friends from Volleyball Class","Inarizaki 2nd Years"] },
-    { name: "Kita SSR",       role: "WS", img: "img-japan/kitaSSR.png",       /*power:"Receive",*/                   school: "Inarizaki",     bonds: ["Head and Core","Third Year from Inarizaki","Inarizaki WS Teammates"] },
-    { name: "Suna SSR",       role: "MB", img: "img-japan/sunaSSR.png",       /*power:["Block","Quick"],*/           school: "Inarizaki",     bonds: ["Classmates","Inarizaki's Middle Blockers","Inarizaki 2nd Years"] },
-    { name: "Ojiro SSR",      role: "WS", img: "img-japan/ojiroSSR.png",      /*power:"Power",*/                     school: "Inarizaki",     bonds: ["Friends from Volleyball Class","Third Year from Inarizaki","Inarizaki WS Teammates"] },
-    { name: "Akagi SSR",      role: "Li", img: "img-japan/akagiSSR.png",      /*power:"Receive",*/                   school: "Inarizaki",     bonds: ["Third Year from Inarizaki",] },
-    { name: "Ginjima SSR",    role: "WS", img: "img-japan/ginjimaSSR.png",    /*power:["Receive","Power"],*/         school: "Inarizaki",     bonds: ["Inarizaki 2nd Years","Inarizaki WS Teammates"] },
-    { name: "Omimi SR",       role: "MB", img: "img-japan/omimiSR.png",       /*power:"Block",*/                     school: "Inarizaki",     bonds: ["Inarizaki's Middle Blockers","Third Year from Inarizaki"] },
-    { name: "Kosaku R",       role: "WS", img: "img-japan/kosakuR.png",       /*power:"Receive",*/                   school: "Inarizaki",     bonds: ["Inarizaki 2nd Years","Inarizaki WS Teammates"] },
-    { name: "Riseki R",       role: "WS", img: "img-japan/risekiR.png",       /*power:"Power",*/                     school: "Inarizaki",     bonds: ["Inarizaki WS Teammates"] },
+    { name: "Atsumu UR",      role: "S",  img: "img-global/atsumuUR.png",      /*power:"Quick",*/                     school: "Inarizaki",     bonds: ["Head and Core",,"Strongest High School Twins","Friends from Volleyball Class","Inarizaki 2nd Years",] },
+    { name: "Osamu UR",       role: "OP", img: "img-global/osamuUR.png",       /*power:"Quick",*/                     school: "Inarizaki",     bonds: ["Head and Core","Strongest High School Twins","Classmates","Friends from Volleyball Class","Inarizaki 2nd Years"] },
+    { name: "Kita SSR",       role: "WS", img: "img-global/kitaSSR.png",       /*power:"Receive",*/                   school: "Inarizaki",     bonds: ["Head and Core","Third Year from Inarizaki","Inarizaki WS Teammates"] },
+    { name: "Suna SSR",       role: "MB", img: "img-global/sunaSSR.png",       /*power:["Block","Quick"],*/           school: "Inarizaki",     bonds: ["Classmates","Inarizaki's Middle Blockers","Inarizaki 2nd Years"] },
+    { name: "Ojiro SSR",      role: "WS", img: "img-global/ojiroSSR.png",      /*power:"Power",*/                     school: "Inarizaki",     bonds: ["Friends from Volleyball Class","Third Year from Inarizaki","Inarizaki WS Teammates"] },
+    { name: "Akagi SSR",      role: "Li", img: "img-global/akagiSSR.png",      /*power:"Receive",*/                   school: "Inarizaki",     bonds: ["Third Year from Inarizaki",] },
+    { name: "Ginjima SSR",    role: "WS", img: "img-global/ginjimaSSR.png",    /*power:["Receive","Power"],*/         school: "Inarizaki",     bonds: ["Inarizaki 2nd Years","Inarizaki WS Teammates"] },
+    { name: "Omimi SR",       role: "MB", img: "img-global/omimiSR.png",       /*power:"Block",*/                     school: "Inarizaki",     bonds: ["Inarizaki's Middle Blockers","Third Year from Inarizaki"] },
+    { name: "Kosaku R",       role: "WS", img: "img-global/kosakuR.png",       /*power:"Receive",*/                   school: "Inarizaki",     bonds: ["Inarizaki 2nd Years","Inarizaki WS Teammates"] },
+    { name: "Riseki R",       role: "WS", img: "img-global/risekiR.png",       /*power:"Power",*/                     school: "Inarizaki",     bonds: ["Inarizaki WS Teammates"] },
     
-    { name: "Hoshiumi UR", role: "WS", img: "img-global/hoshiumiUR.png",school: "Kamomedai", bonds: ["Little Giants","Friends from Junior High"] },
-    { name: "Hirugami UR", role: "MB", img: "img-japan/hirugamiUR.png",school: "Kamomedai", bonds: ["Friends from Junior High"] },
-
-    /*
-    { name: "Sakusa UR", role: "WS", img: "img-japan/sakusaUR.png",school: "Itachiyama", bonds: ["Japan Youth Training Camp Teammates","Top Spiker and Top-Class Libero"] },
-    { name: "Komori UR", role: "Li", img: "img-japan/komoriUR.png",school: "Itachiyama", bonds: ["Japan Youth Training Camp Teammates","Top Spiker and Top-Class Libero"] },
-    */
+    { name: "Hoshiumi UR",    role: "WS", img: "img-global/hoshiumiUR.png",school: "Kamomedai", bonds: ["Little Giants","Friends from Junior High"] },
+    { name: "Hirugami UR",    role: "MB", img: "img-global/hirugamiUR.png",school: "Kamomedai", bonds: ["Friends from Junior High"] },
+    
+    { name: "Sakusa UR",      role: "WS", img: "img-global/sakusaUR.png",school: "Itachiyama", bonds: ["Japan Youth Training Camp Teammates","Top Spiker and Top-Class Libero"] },
+    { name: "Komori UR",      role: "Li", img: "img-japan/komoriUR.png",school: "Itachiyama", bonds: ["Japan Youth Training Camp Teammates","Top Spiker and Top-Class Libero"] },
 
 ];
 // tempalte: "": "",
@@ -211,13 +209,16 @@ const synergyDescriptions = {
     "Inarizaki's Middle Blockers":{"Suna SSR":"Block +5/7/9/12/15, Block +1/2/3/4/5%", "Omimi SR":"Block +5/7/9/12/15, Block +1/2/3/4/5%"},
     "Third Year from Inarizaki": {"Kita SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Ojiro SSR": "Power Attack +5/7/9/12/15, Power Attack +1/2/3/4/5%","Akagi SSR": "Cover +5/7/9/12/15, Cover +1/2/3/4/5%","Omimi SR": "Block +5/7/9/12/15, Block +1/2/3/4/5%"},
     "Inarizaki 2nd Years": {"Suna SSR": "Quick Spike +5/7/9/12/15, Quick Spike +1/2/3/4/5%","Ginjima SSR": "Power Spike +5/7/9/12/15, Power Spike +1/2/3/4/5%","Osamu UR": "Quick Spike +5/7/9/12/15, Quick Spike +1/2/3/4/5%","Atsumu UR":"","Kosaku R":""},
-    "Japan Youth Training Camp Teammates":{"Kageyama UR": "","Atsumu UR": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%","Sakusa UR": "Strong Spike +5/7/9/12/15, Strong Spike +1/2/3/4/5%","Komori UR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Hoshiumi UR": "Strong Spike +5/7/9/12/15, Strong Spike +1/2/3/4/5%"},
+    //"Japan Youth Training Camp Teammates":{"Kageyama UR": "","Atsumu UR": "Toss +5/7/9/12/15, Toss +1/2/3/4/5%","Sakusa UR": "Strong Spike +5/7/9/12/15, Strong Spike +1/2/3/4/5%","Komori UR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Hoshiumi UR": "Strong Spike +5/7/9/12/15, Strong Spike +1/2/3/4/5%"},
     "Inarizaki WS Teammates": {"Kita SSR": "Cover +5/7/9/12/15, Cover +1/2/3/4/5%","Ojiro SSR": "Serve +5/7/9/12/15, Serve +1/2/3/4/5%","Ginjima SSR": "Receive +5/7/9/12/15, Receive +1/2/3/4/5%","Kosaku R": "Serve +5/7/9/12/15, Serve +1/2/3/4/5%","Riseki R": "Serve +5/7/9/12/15, Serve +1/2/3/4/5%"},
 
 
     //kamomedai
     "Little Giants":{ "Hoshiumi UR": "Power Attack +5/7/9/12/15, Power Attack +1/2/3/4/5%", "Hinata SSR": "" },
     "Friends from Junior High":"Increases Hoshiumi's main stats by 6/7/8/9/10% and increases the [Block] of front row allies by 6/7/8/9/10%. At the start of the match, Hoshiumi gains 1 stack of [All-Rounder] and Hirugami gains 1 stack of [Strong Block].",
+
+    "Top Spiker and Top-Class Libero": "Sakusa’s [Spike] increases by 10%, and Komori’s [Receive] increases by 10%. All allies’ [Receive] power increases by 20% of their [Receive] stat.",
+
 };
 
 //Lowkey just have to remeber that when a bond is create I put it here
@@ -332,8 +333,10 @@ const synergyMeta = {
     "Inarizaki WS Teammates":                       { category: "stats",      activation: { scope: "any", min: 5 } },
 
 
-    "Little Giants": { category: "stats", activation: { scope: "any", min: 2 } },
-    "Friends from Junior High": { category: "deployment", activation: { scope: "any", min: 2 } },
+    "Little Giants":                                { category: "stats",      activation: { scope: "any", min: 2 } },
+    "Friends from Junior High":                     { category: "deployment", activation: { scope: "any", min: 2 } },
+
+    "Top Spiker and Top-Class Libero":              { category: "deployment", activation: { scope: "any", min: 2 } },
 };
 
 //put what player create the bond
@@ -424,9 +427,10 @@ const synergyPairs = {
     "Inarizaki 2nd Years":[["Suna","Kosaku","Atsumu","Osamu","Ginjuma"]],
     "Inarizaki WS Teammates":[["Kita","Ojiro","Ginjima","Kosaku","Riseki"]],
 
-
     "Little Giants": [["Hoshiumi", "Hinata"]],
     "Friends from Junior High": [["Hoshiumi", "Hirugami"]],
+
+    "Top Spiker and Top-Class Libero":[["Komori","Sakusa"]],
 };
 
 window.characters = characters;
