@@ -17,7 +17,7 @@
   const DISCORD_WEBHOOK_URL = "https://curly-wood-cd21.matcote111.workers.dev/";
   const YOUR_USER_ID = "192790568479358977";
   const EMAIL_TO = "matcote111@gmail.com";
-  const USE_MAILTO_FALLBACK = true;
+  const USE_MAILTO_FALLBACK = false;
 
   /* ✅ Load players from versus-data.js (expects global `players`) */
   const GLOBAL_DATA = (typeof players !== "undefined" && Array.isArray(players)) ? players : [];
@@ -322,18 +322,25 @@
       content: `<@${YOUR_USER_ID}>\n\`\`\`${text}\`\`\``,
       username: "Versus Missing Stats",
     };
+
+    console.log("Sending to Worker:", DISCORD_WEBHOOK_URL, body);
+
     try {
       const res = await fetch(DISCORD_WEBHOOK_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
+
+      console.log("Worker result:", res.status, res.statusText);
+
       return res.ok;
     } catch (err) {
       console.error("Discord webhook failed:", err);
       return false;
     }
   }
+
 
   function openMailto(p) {
     if (!EMAIL_TO) return false;
