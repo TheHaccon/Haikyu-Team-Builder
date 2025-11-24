@@ -14,7 +14,7 @@
   const nameB = slotB?.parentElement?.querySelector(".player-name");
 
   /* 🔔 Missing-stats submission (unchanged except moved up) */
-  const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1415787104528760952/eSaZW8MSmrpQkP7epDlif2aL4be1kBvoqeocpNKLH1x52STwJWTZKyliAzqnHLdDyN3E";
+  const DISCORD_WEBHOOK_URL = "https://curly-wood-cd21.matcote111.workers.dev/";
   const YOUR_USER_ID = "192790568479358977";
   const EMAIL_TO = "matcote111@gmail.com";
   const USE_MAILTO_FALLBACK = true;
